@@ -3,13 +3,13 @@ Diverse 306 Gamers
 
 ### Team Members
 
-| Name | UPI |
-| ---- | --- |
-| Jess Alcantara | |
-| Liam Brand | lbra112 |
-| Darcy Cox | |
-| Buster Darragh-Major | |
-| Molly Farrant | mfar672 |
-| Cyrus Raitava-Kumar | crai897 |
-| Cameron Scoular | csco768 |
-| Edward Zhang | |
+| GitHub Username | Name | UPI |
+| --------------- | ---- | --- |
+| Jess-Alcantara | Jess Alcantara | |
+| liamtbrand | Liam Brand | lbra112 |
+| darcycox97 | Darcy Cox | |
+| Buster-Darragh-Major | Buster Darragh-Major | |
+| mollyfarrant | Molly Farrant | mfar672 |
+| cyrus-raitava | Cyrus Raitava-Kumar | crai897 |
+| cameronscoular | Cameron Scoular | csco768 |
+| encryptededdy | Edward Zhang | |
