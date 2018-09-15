@@ -9,7 +9,7 @@ Diverse 306 Gamers
 | Liam Brand | lbra112 |
 | Darcy Cox | |
 | Buster Darragh-Major | |
-| Molly Farrant | |
+| Molly Farrant | mfar672 |
 | Cyrus Raitava-Kumar | crai897 |
 | Cameron Scoular | csco768 |
 | Edward Zhang | |
