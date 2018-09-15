@@ -2,5 +2,13 @@
 Diverse 306 Gamers
 
 Team Members:
-Cyrus Raitava-Kumar (crai897),
-Cameron Scoular (csco768)
+| Name | UPI |
+| ---- | --- |
+| Jess Alcantara | |
+| Liam Brand | lbra112 |
+| Darcy Cox | |
+| Buster Darragh-Major | |
+| Molly Farrant | |
+| Cyrus Raitava-Kumar | crai897 |
+| Cameron Scoular | csco768 |
+| Edward Zhang | |
