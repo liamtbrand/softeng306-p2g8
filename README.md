@@ -2,5 +2,5 @@
 Diverse 306 Gamers
 
 Team Members:
-Cyrus Raitava-Kumar (crai897)
+Cyrus Raitava-Kumar (crai897),
 Cameron Scoular (csco768)
