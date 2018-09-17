@@ -7,7 +7,7 @@ Diverse 306 Gamers
 | --------------- | ---- | --- |
 | Jess-Alcantara | Jess Alcantara | jalc504 |
 | liamtbrand | Liam Brand | lbra112 |
-| darcycox97 | Darcy Cox | |
+| darcycox97 | Darcy Cox | dcox740 |
 | Buster-Darragh-Major | Buster Darragh-Major | |
 | mollyfarrant | Molly Farrant | mfar672 |
 | cyrus-raitava | Cyrus Raitava-Kumar | crai897 |
