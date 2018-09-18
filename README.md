@@ -12,4 +12,4 @@ Diverse 306 Gamers
 | mollyfarrant | Molly Farrant | mfar672 |
 | cyrus-raitava | Cyrus Raitava-Kumar | crai897 |
 | cameronscoular | Cameron Scoular | csco768 |
-| encryptededdy | Edward Zhang | |
+| encryptededdy | Edward Zhang | ezha210 |
