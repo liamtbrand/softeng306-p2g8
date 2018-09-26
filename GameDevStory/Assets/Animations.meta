@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 1f8fbe8b8c8c64b45aca605068f7f410
+=======
+guid: 9fe93cddc1c364618a14b7742ca5c852
+>>>>>>> Added Cyrus Coding animation for fun. Resolution needs to be fixed
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
