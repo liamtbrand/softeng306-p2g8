@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCController : MonoBehaviour {
+public class NPC : MonoBehaviour {
 
     public GameObject[] npcs;
 
