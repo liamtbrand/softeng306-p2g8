@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 261324019}
   - component: {fileID: 261324020}
   m_Layer: 5
-  m_Name: CreativitySlider (1)
+  m_Name: DesignSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 366782504}
   - component: {fileID: 366782503}
   m_Layer: 5
-  m_Name: SociabilityText
+  m_Name: CommunicationText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Socialbility
+  m_text: Communication
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -488,10 +488,10 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.14727783, w: -0.5710449}
+  m_margin: {x: -15.597473, y: 0, z: -0.14727783, w: -0.5710449}
   m_textInfo:
     textComponent: {fileID: 0}
-    characterCount: 12
+    characterCount: 13
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -556,8 +556,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 81, y: 47.30002}
-  m_SizeDelta: {x: 154.35, y: 20}
+  m_AnchoredPosition: {x: 74.81, y: 47.30002}
+  m_SizeDelta: {x: 166.73, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &371694441
 MonoBehaviour:
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.24072266, w: -0.5710449}
+  m_margin: {x: -3.2546387, y: 0, z: -0.24072266, w: -0.5710449}
   m_textInfo:
     textComponent: {fileID: 0}
     characterCount: 9
@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 443524718}
   - component: {fileID: 443524717}
   m_Layer: 5
-  m_Name: Noidability Text
+  m_Name: TestingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -767,7 +767,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Niodability
+  m_text: Testing
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -832,10 +832,10 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.14727783, w: -0.5710449}
+  m_margin: {x: -14.984802, y: 0, z: -0.14727783, w: -0.5710449}
   m_textInfo:
     textComponent: {fileID: 0}
-    characterCount: 11
+    characterCount: 7
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.24072266, w: -0.5710449}
+  m_margin: {x: -12.378784, y: 0, z: -0.24072266, w: -0.5710449}
   m_textInfo:
     textComponent: {fileID: 0}
     characterCount: 10
@@ -1810,7 +1810,7 @@ GameObject:
   - component: {fileID: 1165622054}
   - component: {fileID: 1165622055}
   m_Layer: 5
-  m_Name: NoidabilitySlider
+  m_Name: TestingSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2138,7 +2138,7 @@ GameObject:
   - component: {fileID: 1252366128}
   - component: {fileID: 1252366129}
   m_Layer: 5
-  m_Name: SociabilitySlider
+  m_Name: CommunicationSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2199,7 +2199,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 871090409}
   m_HandleRect: {fileID: 0}
@@ -2592,7 +2592,7 @@ GameObject:
   - component: {fileID: 1577045532}
   - component: {fileID: 1577045531}
   m_Layer: 5
-  m_Name: CreativityText (1)
+  m_Name: DesignText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2700,7 +2700,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.24072266, w: -0.5710449}
+  m_margin: {x: -11.075745, y: 0, z: -0.24072266, w: -0.5710449}
   m_textInfo:
     textComponent: {fileID: 0}
     characterCount: 6

@@ -1,19 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class InitialiseSlider : MonoBehaviour {
 
     public Image Fill; // Assign the fill value for the slider in the editor
 
-    private const float SLIDER_MAX_VALUE = 100;
-    private const float VALUE = 60;
+    private readonly float SLIDER_MAX_VALUE = 100;
+    private readonly float VALUE = 60;
 
-    // TODO: Change from const to file read value
-	void Start()
+    void Start()
     {
+        string filepath = new string[] { Application.dataPath, "Scripts", "Hiring", "jeremiah.json" }
+                .Aggregate((x, y) => Path.Combine(x, y)); // Append all four path elements
+        
+        if (File.Exists(filepath))
+        {
+            string jsonData = File.ReadAllText(filepath);
+            Debug.Log(jsonData);
+        } else
+        {
+            Debug.Log("Path does not exist: " + filepath);
+        }
 
+        // Adjust slider values
         Slider slider = gameObject.GetComponent<Slider>();
         slider.maxValue = SLIDER_MAX_VALUE;
 
