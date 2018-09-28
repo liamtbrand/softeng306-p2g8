@@ -16,8 +16,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - NPCs
+  - Desks
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: NPCs
+    uniqueID: 4243404975
+    locked: 0
+  - name: Desks
+    uniqueID: 3490581799
     locked: 0

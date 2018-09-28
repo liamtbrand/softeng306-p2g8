@@ -14,17 +14,6 @@ public class InitialiseSlider : MonoBehaviour {
 
     void Start()
     {
-        string filepath = new string[] { Application.dataPath, "Scripts", "Hiring", "jeremiah.json" }
-                .Aggregate((x, y) => Path.Combine(x, y)); // Append all four path elements
-        
-        if (File.Exists(filepath))
-        {
-            string jsonData = File.ReadAllText(filepath);
-            Debug.Log(jsonData);
-        } else
-        {
-            Debug.Log("Path does not exist: " + filepath);
-        }
 
         // Adjust slider values
         Slider slider = gameObject.GetComponent<Slider>();
