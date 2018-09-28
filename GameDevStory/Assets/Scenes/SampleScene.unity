@@ -665,6 +665,7 @@ MonoBehaviour:
     - Hello friends
     - My name is Cameron
     - And I made this :^)
+    Choices: []
 --- !u!114 &843509904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -984,6 +985,7 @@ MonoBehaviour:
     Sentences:
     - Unfortunately this company is bad
     - so I'm leaving etc.
+    Choices: []
 --- !u!114 &1443309087
 MonoBehaviour:
   m_ObjectHideFlags: 0

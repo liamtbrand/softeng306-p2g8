@@ -13,10 +13,10 @@ public class GameManager : Singleton<GameManager> {
     private static bool created = false;
 
     private double moneyBalance;
-
+    
     public GameScene gameScene;
 
-
+    public Scenario[] scenarioArray;
 
     void Awake()
     {
@@ -53,12 +53,20 @@ public class GameManager : Singleton<GameManager> {
     // Use this for initialization
     void Start () {
 		
-        // 
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+        foreach(Scenario scenario in scenarioArray){
+
+            if( Scenario.getActive() == false && Random.Range(0.0f, 1.0f) < scenario.GetScenarioProbability()){
+                scenario.StartScenario();
+            }
+
+        }
+
+
 	}
 }

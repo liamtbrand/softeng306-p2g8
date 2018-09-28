@@ -10,4 +10,6 @@ public class Dialogue {
     //todo configure text sizing
     public string[] Sentences;
 
+    public string[] Choices;
+
 }
