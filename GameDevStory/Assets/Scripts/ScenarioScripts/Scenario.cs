@@ -8,6 +8,8 @@ public class Scenario : MonoBehaviour{
 
     public AScenarioCondition condition;
 
+    public ScenarioType type;
+
     // Control variable indicating if ANY scenario is in progress
     private static bool active = false;
 
@@ -24,7 +26,12 @@ public class Scenario : MonoBehaviour{
     {
         status = ScenarioStatus.IN_PROGRESS;
         active = true;
-        // Send scenario to NPC manager for execution
+        if(type != null && type == ScenarioType.NOTIFICATION){
+            // Send scenario to NPC manager for notification popup and execution
+        }else{
+            ExecuteScenario();
+        }
+        
     }
 
     public void ExecuteScenario()
@@ -39,9 +46,17 @@ public class Scenario : MonoBehaviour{
         return active;
     }
 
+    public ScenarioStatus getStatus(){
+        return status;
+    }
+
 }
 
 public enum ScenarioStatus
 {
     INCOMPLETE, COMPLETE, IN_PROGRESS
+}
+
+public enum ScenarioType{
+    INSTANT, NOTIFICATION
 }

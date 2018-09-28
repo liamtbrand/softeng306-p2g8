@@ -9,7 +9,7 @@ public class TestScenarioCondition : AScenarioCondition {
 
         Debug.Log("Test scenario condition checked");
 
-        return 0.5;
+        return 0.2;
     }
 
 }

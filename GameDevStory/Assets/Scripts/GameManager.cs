@@ -61,7 +61,7 @@ public class GameManager : Singleton<GameManager> {
 
         foreach(Scenario scenario in scenarioArray){
 
-            if( Scenario.getActive() == false && Random.Range(0.0f, 1.0f) < scenario.GetScenarioProbability()){
+            if( scenario.getStatus() == ScenarioStatus.INCOMPLETE && Scenario.getActive() == false && Random.Range(0.0f, 1.0f) < scenario.GetScenarioProbability()){
                 scenario.StartScenario();
             }
 
