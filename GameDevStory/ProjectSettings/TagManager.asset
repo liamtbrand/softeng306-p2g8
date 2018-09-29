@@ -42,10 +42,13 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackNPC
+    uniqueID: 2802919925
+    locked: 0
   - name: BackDesk
     uniqueID: 965153735
     locked: 0
-  - name: NPC
+  - name: FrontNPC
     uniqueID: 3131429841
     locked: 0
   - name: FrontDesk

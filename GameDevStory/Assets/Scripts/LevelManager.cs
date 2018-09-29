@@ -6,8 +6,9 @@ using Random = UnityEngine.Random;      //Tells Random to use the Unity Engine r
     
     public class LevelManager : MonoBehaviour
     {
-		private float xSpacing = 0.3f;									// Spacing along x axis;
-		private float ySpacing = 0.15f;									// Spacing along y axis;
+		private float xSpacing = 0.3f;									// Spacing along x axis.
+		private float ySpacing = 0.15f;									// Spacing along y axis.
+		private float NPCSpacing = 0.08f;								// Spacing between desk and NPC.
 
 		private int desksPerRow = 2;									// Hard coded for now.
 
@@ -15,7 +16,7 @@ using Random = UnityEngine.Random;      //Tells Random to use the Unity Engine r
 		public GameObject[] desks;                                 		//Array of desk prefabs.
 
 		private Transform levelHolder;                                  //A variable to store a reference to the transform of our Board object.
-        private List <Vector3> NPCPosiitons = new List <Vector3> ();    //A list of possible locations to place NPCs.
+        private List <Vector3> NPCPositions = new List <Vector3> ();    //A list of possible locations to place NPCs.
         
         
         //Sets up the desks of the game level.
@@ -37,6 +38,7 @@ using Random = UnityEngine.Random;      //Tells Random to use the Unity Engine r
 				//Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
                 instance.transform.SetParent (levelHolder);
 
+				NPCPositions.Add (new Vector3(xFrontPos+NPCSpacing, yFrontPos+NPCSpacing, 0f));
 				xFrontPos+=xSpacing;
 				yFrontPos-=ySpacing;
 			}
@@ -54,6 +56,7 @@ using Random = UnityEngine.Random;      //Tells Random to use the Unity Engine r
 				//Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
                 instance.transform.SetParent (levelHolder);
 
+				NPCPositions.Add (new Vector3(xFrontPos+NPCSpacing, yFrontPos+NPCSpacing, 0f));
 				xBackPos+=xSpacing;
 				yBackPos-=ySpacing;
 			}
