@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCController : MonoBehaviour {
+public class NPCController : Singleton<NPCController> { 
 
 	public static float[][] deskPositions = {
 		new float[]{0.06f,-0.06f},
@@ -23,9 +23,10 @@ public class NPCController : MonoBehaviour {
             Instantiate(npcs[i], new Vector3(x, y, 0f), Quaternion.identity);
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Sends a scenario notification to an npc that the player should click on to start the scenario.
+    public void PopUpScenario(Scenario s)
+    {
+
+    }
 }
