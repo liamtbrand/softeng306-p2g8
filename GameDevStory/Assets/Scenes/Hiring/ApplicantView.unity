@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 48712881}
   - component: {fileID: 48712884}
   - component: {fileID: 48712882}
+  - component: {fileID: 48712883}
   m_Layer: 5
   m_Name: TextMeshPro Text
   m_TagString: Untagged
@@ -147,7 +148,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 4, y: 0}
-  m_SizeDelta: {x: -8, y: 1055}
+  m_SizeDelta: {x: -8, y: 1094.16}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &48712882
 MonoBehaviour:
@@ -250,7 +251,7 @@ MonoBehaviour:
     spaceCount: 133
     wordCount: 134
     linkCount: 0
-    lineCount: 40
+    lineCount: 47
     pageCount: 1
     materialCount: 2
   m_havePropertiesChanged: 0
@@ -271,6 +272,19 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &48712883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 48712880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!222 &48712884
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1581,7 +1595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 1.7782178
+  m_AspectRatio: 1.6
 --- !u!1 &993718531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,7 +3459,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 29.85
+  m_fontSize: 26.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
