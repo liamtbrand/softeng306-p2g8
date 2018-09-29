@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 393594443}
   - component: {fileID: 393594442}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ProgressText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -722,6 +722,62 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1128528990}
   m_CullTransparentMesh: 0
+--- !u!1 &1149130337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1149130340}
+  - component: {fileID: 1149130339}
+  - component: {fileID: 1149130338}
+  m_Layer: 0
+  m_Name: ProjectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1149130338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1149130337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc17d49e6f36e4489ff6e47200df35c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameScene: 3
+  scenarioArray: []
+--- !u!114 &1149130339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1149130337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe1200e3286c4703acb393b6d8e1d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startProject: {fileID: 1472394714}
+  projects: []
+--- !u!4 &1149130340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1149130337}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.25646514, y: -0.0741511, z: 26.555492}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1186923126
 Prefab:
   m_ObjectHideFlags: 0
@@ -888,6 +944,7 @@ GameObject:
   - component: {fileID: 1472394716}
   - component: {fileID: 1472394715}
   - component: {fileID: 1472394714}
+  - component: {fileID: 1472394717}
   - component: {fileID: 1472394718}
   m_Layer: 5
   m_Name: StartProject
@@ -954,9 +1011,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1472394718}
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 1472394717}
+        m_MethodName: StartProject
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1001,6 +1058,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1472394712}
   m_CullTransparentMesh: 0
+--- !u!114 &1472394717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1472394712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe1200e3286c4703acb393b6d8e1d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startProject: {fileID: 1472394714}
+  projects: []
 --- !u!114 &1472394718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,7 +1084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressPanel: {fileID: 264268932}
   progressBar: {fileID: 1491441631}
-  timeText: {fileID: 393594442}
+  progressText: {fileID: 393594442}
 --- !u!1 &1491441629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,47 +1169,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &1817005797
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1817005799}
-  - component: {fileID: 1817005798}
-  m_Layer: 0
-  m_Name: ProjectManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1817005798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1817005797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbe1200e3286c4703acb393b6d8e1d45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartButton: {fileID: 1472394714}
---- !u!4 &1817005799
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1817005797}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17664066, y: -0.13216318, z: 154.42995}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1849436625
 GameObject:
   m_ObjectHideFlags: 0
