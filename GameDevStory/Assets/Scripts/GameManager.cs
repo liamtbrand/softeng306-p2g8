@@ -18,6 +18,9 @@ public class GameManager : Singleton<GameManager> {
 
     public Scenario[] scenarioArray;
 
+    private LevelManager levelScript;
+    private int level = 0; // Hardcoded to first level for now
+
     void Awake()
     {
         if (!created)
@@ -31,6 +34,16 @@ public class GameManager : Singleton<GameManager> {
 
         moneyBalance = 1000;
 
+        levelScript = GetComponent <LevelManager>();
+        InitLevel();
+
+    }
+
+    //Initializes the game for each level.
+    void InitLevel()
+    {
+        //Call the SetupScene function of the BoardManager script, pass it current level number.
+        levelScript.SetupScene(level);
     }
 
     public void switchScene(GameScene scene)
