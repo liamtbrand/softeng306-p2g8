@@ -61,6 +61,12 @@ using Random = UnityEngine.Random;      //Tells Random to use the Unity Engine r
 				yBackPos-=ySpacing;
 			}
         }
+
+		// Sets up the NPC at the desk
+		private void NPCSetup ()
+		{
+			// Call NPC Controller
+		}
         
         //SetupScene initializes our level and calls the previous functions to lay out the game board
         public void SetupScene (int level)
@@ -70,5 +76,7 @@ using Random = UnityEngine.Random;      //Tells Random to use the Unity Engine r
 
             //Creates the outer walls and floor.
             LevelSetup ();
+
+			// NPCSetup ();
         }
     }
