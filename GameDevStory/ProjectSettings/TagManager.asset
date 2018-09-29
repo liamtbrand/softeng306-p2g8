@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Office
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Desk
   - 
   - 
   - NPCs
@@ -41,9 +42,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: NPCs
     uniqueID: 4243404975
     locked: 0
   - name: Desks
     uniqueID: 3490581799
+=======
+  - name: BackDesk
+    uniqueID: 965153735
+    locked: 0
+  - name: NPC
+    uniqueID: 3131429841
+    locked: 0
+  - name: FrontDesk
+    uniqueID: 2663867163
+>>>>>>> Create level manager
     locked: 0
