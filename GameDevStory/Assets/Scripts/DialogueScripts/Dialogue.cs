@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Dialogue {
+namespace DialogueScripts{
+    
+    [System.Serializable]
+    public class Dialogue {
 
-    public string Title;
+        public string Title;
 
-    //todo configure text sizing
-    public string[] Sentences;
+        //todo configure text sizing
+        public Sentence[] Sentences;
 
+    }
 }
