@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD
 public class NPCController : MonoBehaviour
 {
+=======
+public class NPCController : Singleton<NPCController> { 
+>>>>>>> Framework in place for sending an NPC scenario notifications which, on click, will execute the scenario
 
     public static float[][] deskPositions = {
         new float[]{0.06f,-0.06f},
@@ -26,8 +30,13 @@ public class NPCController : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     // Update is called once per frame
     void Update()
+=======
+    // Sends a scenario notification to an npc that the player should click on to start the scenario.
+    public void PopUpScenario(Scenario s)
+>>>>>>> Framework in place for sending an NPC scenario notifications which, on click, will execute the scenario
     {
 
     }
