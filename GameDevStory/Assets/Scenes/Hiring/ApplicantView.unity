@@ -148,7 +148,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 4, y: 0}
-  m_SizeDelta: {x: -8, y: 950.09}
+  m_SizeDelta: {x: -8, y: 53.23}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &48712882
 MonoBehaviour:
@@ -169,16 +169,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "Reasonably, like 90 people. Bit skeptical about the work though cause they
-    do a bit of everything rather than just selling their own products like most software
-    companies\r\nOh interesting\r\nSounds like it could be a bit different\r\nFor
-    sure, whether its good or bad different will just have to see\r\n\U0001F60D1\r\n18:14\r\nhow
-    would i go about adding stats to a prefab?\r\nwould i add a scriptable object
-    component or wah?\r\nI havent heard of scriptable objects tbh\r\nBut i would add
-    them as public fields in the corresponding script\r\nSo there should be an npc
-    script\r\nAnd having public fields means you can open the prefab in the inspector
-    and manually set those properties\r\nWhich you should then be able to access programatically
-    in theory??\r\noke im having a play around "
+  m_text: <Fill me up with yummy bio content>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -246,14 +237,14 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -1.5667114, w: 0.46652222}
   m_textInfo:
     textComponent: {fileID: 48712882}
-    characterCount: 753
+    characterCount: 35
     spriteCount: 0
-    spaceCount: 133
-    wordCount: 134
+    spaceCount: 6
+    wordCount: 8
     linkCount: 0
-    lineCount: 36
+    lineCount: 2
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1595,7 +1586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 1.6
+  m_AspectRatio: 1.7782178
 --- !u!1 &993718531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,8 +2176,9 @@ CanvasRenderer:
 --- !u!1 &1073585229
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1829675592902778, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1174988933}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1073585230}
@@ -2202,8 +2194,9 @@ GameObject:
 --- !u!224 &1073585230
 RectTransform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1174988933}
   m_GameObject: {fileID: 1073585229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -2220,8 +2213,9 @@ RectTransform:
 --- !u!114 &1073585231
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 114506019230878774, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1174988933}
   m_GameObject: {fileID: 1073585229}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2236,7 +2230,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 20
+  m_text: <age>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -2304,10 +2298,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1073585231}
-    characterCount: 2
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -2333,8 +2327,9 @@ MonoBehaviour:
 --- !u!222 &1073585232
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 222761068702809938, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1174988933}
   m_GameObject: {fileID: 1073585229}
   m_CullTransparentMesh: 0
 --- !u!1 &1088650112
@@ -2643,6 +2638,131 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1001 &1174988933
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 449582618}
+    m_Modifications:
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224971274801052166, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114506019230878774, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114506019230878774, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114506019230878774, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_text
+      value: <age>
+      objectReference: {fileID: 0}
+    - target: {fileID: 114506019230878774, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_textInfo.characterCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114506019230878774, guid: b5cd2b22d6c777843ab1bdccd3071c0a,
+        type: 2}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5cd2b22d6c777843ab1bdccd3071c0a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1189804709
 GameObject:
   m_ObjectHideFlags: 0
@@ -3152,7 +3272,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: male
+  m_text: <gender>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -3179,7 +3299,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
+  m_fontSize: 28
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3220,10 +3340,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1380769438}
-    characterCount: 4
+    characterCount: 8
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -3371,8 +3491,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd485bfe5ec13c941bb12d8e5a1547df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 1500f30a2556c42c7b7f5dfcdcd55d2c, type: 3}
+  npc: {fileID: 1059422083248826, guid: aa7d913a7ce8e854e91261e29b695d50, type: 2}
   spriteImage: {fileID: 1859938527}
+  nameHeader: {fileID: 1740007196}
+  ageHeader: {fileID: 1073585231}
+  genderHeader: {fileID: 1380769438}
+  bioBox: {fileID: 48712882}
   communicationSlider: {fileID: 1252366128}
   testingSlider: {fileID: 1165622055}
   technicalSlider: {fileID: 1704283845}
@@ -4051,7 +4175,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Cyrus Raitava-Kumar
+  m_text: <NAME>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -4119,9 +4243,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -0.000030517578, w: 0.93408203}
   m_textInfo:
     textComponent: {fileID: 0}
-    characterCount: 19
+    characterCount: 6
     spriteCount: 0
-    spaceCount: 1
+    spaceCount: 0
     wordCount: 2
     linkCount: 0
     lineCount: 1

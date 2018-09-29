@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
 
 public class InitialiseApplicantView : MonoBehaviour
 {
@@ -11,9 +8,15 @@ public class InitialiseApplicantView : MonoBehaviour
     private readonly float SLIDER_MAX_VALUE = 100;
     private readonly float VALUE = 60;
 
-    // Character image
-    public Sprite sprite;
+    // NPC to be displayed
+    public GameObject npc;
+
+    // Misc. character info
     public Image spriteImage;
+    public TextMeshProUGUI nameHeader;
+    public TextMeshProUGUI ageHeader;
+    public TextMeshProUGUI genderHeader;
+    public TextMeshProUGUI bioBox;
 
     // Skill bars
     public Slider communicationSlider;
@@ -25,14 +28,26 @@ public class InitialiseApplicantView : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        spriteImage.sprite = sprite;
+        // Get the npc's stat from their stats script
+        var stats = npc.GetComponent<CharacterStats>();
+
+        spriteImage.sprite = stats.sprite;
+        nameHeader.text = stats.name;
+        ageHeader.text = stats.age.ToString();
+        genderHeader.text = stats.gender.ToString();
+        bioBox.text = stats.bio;
 
         // Initialise sliders
-        FillSlider(communicationSlider, 54);
-        FillSlider(testingSlider, 78);
-        FillSlider(technicalSlider, 89);
-        FillSlider(creativitySlider, 23);
-        FillSlider(designSlider, 34);
+        FillSlider(communicationSlider, stats.communicationStat);
+        FillSlider(testingSlider, stats.testingStat);
+        FillSlider(technicalSlider, stats.technicalStat);
+        FillSlider(creativitySlider, stats.creativityStat);
+        FillSlider(designSlider, stats.designStat);
+    }
+
+    void Update()
+    {
+        Start();
     }
 
     private void FillSlider(Slider slider, float value)
