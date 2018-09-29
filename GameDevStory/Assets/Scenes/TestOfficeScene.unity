@@ -588,9 +588,12 @@ MonoBehaviour:
   Dialogue:
     Title: Cameron
     Sentences:
-    - Hello friends
-    - My name is Cameron
-    - And I made this :^)
+    - sentenceLine: 
+      sentenceChoices: []
+    - sentenceLine: 
+      sentenceChoices: []
+    - sentenceLine: 
+      sentenceChoices: []
 --- !u!114 &843509904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,6 +709,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameText: {fileID: 2081900242}
   DialogueText: {fileID: 1608699458}
+  OptionTextArray: []
+  OptionButtonArray: []
+  ContinueButton: {fileID: 0}
   DialoguePanel: {fileID: 505845880}
 --- !u!4 &965558259
 Transform:
@@ -1171,8 +1177,10 @@ MonoBehaviour:
   Dialogue:
     Title: I'm leaving
     Sentences:
-    - Unfortunately this company is bad
-    - so I'm leaving etc.
+    - sentenceLine: 
+      sentenceChoices: []
+    - sentenceLine: 
+      sentenceChoices: []
 --- !u!114 &1443309087
 MonoBehaviour:
   m_ObjectHideFlags: 0
