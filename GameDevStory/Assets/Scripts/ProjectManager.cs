@@ -3,24 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ProjectStatus
-{
-    NONE, COMPLETE, IN_PROGRESS
-}
-
 public class ProjectManager : MonoBehaviour {
 
-	private ProjectStatus status = ProjectStatus.NONE;
 	private ProjectTimer timerScript;
 	private GameManager gameScript;
+	public Button startProject;
 
-	public Button StartButton;
+	private double profit;
+	public GameObject[] projects;		// Array of project prefabs.
 
+	void Start () {
+		gameScript = GetComponent<GameManager> ();
+		timerScript = GetComponent<ProjectTimer> ();
+		timerScript.enabled = false;
+	}
+
+	// Starts a project
 	public void StartProject ()
 	{
-		status = ProjectStatus.IN_PROGRESS;
-		//timerScript = GetComponent <ProjectTimer>();
+		// Start project timer
+		timerScript.enabled = true;
+		
+		// Calculate project profit
+		profit = CalculateProjectProfit ();
 
+		// Add to total profits
+		gameScript.changeBalance(profit);
+	}
+
+	double CalculateProjectProfit () {
+		// int femaleNPC = NPCScript.getFemaleWorkers();
+		// int maleNPC = NPCScript.getMaleWorkers();
+		// calculate diversity???
+		return 0.0;
 	}
 
 }
