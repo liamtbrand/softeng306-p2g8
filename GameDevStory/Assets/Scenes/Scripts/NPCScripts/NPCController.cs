@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+// singleton that is responsible for all npcs that exist in the current scene
 public class NPCController : Singleton<NPCController> { 
 
     // for npcs, but where the desk are.
@@ -46,7 +46,7 @@ public class NPCController : Singleton<NPCController> {
         
         foreach(GameObject npc in npcInstances)
         {
-            NPC npcScript = npc.GetComponent<NPC>();
+            NPCBehaviour npcScript = npc.GetComponent<NPCBehaviour>();
             if (!npcScript.HasNotification())
             {
                 npcScript.ShowScenarioNotification(s);

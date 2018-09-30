@@ -29,7 +29,9 @@ public class InitialiseApplicantView : MonoBehaviour
     void Start()
     {
         // Get the npc's stat from their stats script
-        var stats = npc.GetComponent<NPCStats>();
+        var npcInfo = npc.GetComponent<NPCFactory>().CreateNPCWithRandomizedStats();
+        var stats = npcInfo.stats; // the randomly generated stats
+        var attributes = npcInfo.attributes; // the pre-made NPC attributes
 
         //spriteImage.sprite = stats.sprite;
         //nameHeader.text = stats.name;
