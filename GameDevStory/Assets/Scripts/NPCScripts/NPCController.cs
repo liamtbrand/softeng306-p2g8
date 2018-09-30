@@ -43,13 +43,14 @@ public class NPCController : Singleton<NPCController> {
     // Sends a scenario notification to an npc that the player should click on to start the scenario.
     public void ShowScenarioNotification(Scenario s)
     {
-		/*
+        
         foreach(GameObject npc in npcInstances)
         {
             NPC npcScript = npc.GetComponent<NPC>();
             if (!npcScript.HasNotification())
             {
                 npcScript.ShowScenarioNotification(s);
+                return;
             }
             else
             {
@@ -57,6 +58,6 @@ public class NPCController : Singleton<NPCController> {
                 Debug.Log("No NPC free to accept notification");
             }
         }
-        */
+              
     }
 }
