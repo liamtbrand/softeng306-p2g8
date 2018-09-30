@@ -198,7 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e5fe1a420fbde40a304b975e947542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcs: []
+  npcTemplate: {fileID: 0}
+  animatorControllers: []
   coordinateSystem: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
@@ -602,9 +603,12 @@ MonoBehaviour:
   Dialogue:
     Title: Cameron
     Sentences:
-    - Hello friends
-    - My name is Cameron
-    - And I made this :^)
+    - sentenceLine: 
+      sentenceChoices: []
+    - sentenceLine: 
+      sentenceChoices: []
+    - sentenceLine: 
+      sentenceChoices: []
 --- !u!114 &843509904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,6 +722,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e5fe1a420fbde40a304b975e947542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcTemplate: {fileID: 1278780124481134, guid: 0dccc0e54ae3e84468bea5e1c7bdfc23,
+    type: 2}
+  animatorControllers:
+  - {fileID: 22100000, guid: 3200dbb6d3a421e479b80471405a30e8, type: 2}
+  - {fileID: 22100000, guid: 468bd375ffb03a24cbcc5e6fdddcd4a0, type: 2}
+  - {fileID: 9100000, guid: 63ba7f5a5c85a4d588e8b229606e1b4c, type: 2}
+  - {fileID: 22100000, guid: ef02e43de55acf545ab7e54ebf14dab2, type: 2}
+  - {fileID: 22100000, guid: 6992cba3f5fd79b4eb117018fd011124, type: 2}
+  - {fileID: 22100000, guid: b6b366127a0904445832ec90cfabb082, type: 2}
+  - {fileID: 22100000, guid: f809473de6fe3794d9e0215050c93037, type: 2}
+  - {fileID: 22100000, guid: 53983b9e0b6f482438ec8be070fbeee7, type: 2}
+  coordinateSystem: {fileID: 1933604212}
 --- !u!4 &927107528
 Transform:
   m_ObjectHideFlags: 0
@@ -1105,8 +1121,10 @@ MonoBehaviour:
   Dialogue:
     Title: I'm leaving
     Sentences:
-    - Unfortunately this company is bad
-    - so I'm leaving etc.
+    - sentenceLine: 
+      sentenceChoices: []
+    - sentenceLine: 
+      sentenceChoices: []
 --- !u!114 &1443309087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1426,6 +1444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1933604211}
+  - component: {fileID: 1933604212}
   m_Layer: 0
   m_Name: CoordinateSystem
   m_TagString: Untagged
@@ -1445,6 +1464,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1933604212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1933604210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9d0bab254124ad494cd36c1b0fb3a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0.04, z: 0}
+  x: {x: -0.16, y: -0.08, z: -1}
+  y: {x: 0.16, y: -0.08, z: -1}
+--- !u!1 &1955854714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1955854716}
+  - component: {fileID: 1955854715}
+  m_Layer: 0
+  m_Name: OfficeLayout
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1955854715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1955854714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210abc84b8ab4499297830c68607ed50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coordinateSystem: {fileID: 1933604212}
+  deskOffset: {x: 0, y: -0.04, z: 0}
+  desk: {fileID: 1822675527662198, guid: db9f56b1283e64f508809c3a92597054, type: 2}
+--- !u!4 &1955854716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1955854714}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1991959400
 GameObject:
