@@ -15,19 +15,7 @@ public class NPCController : Singleton<NPCController> {
     };
 
     public GameObject npcTemplate; // the generic npc template to instantiate
-    public RuntimeAnimatorController[] animatorControllers; // pool of possible animations to give the generated npc
-
 	public CoordinateSystem coordinateSystem;
-
-	private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector2 position)
-	{
-		Vector3 pos = coordinateSystem.getVector3(position);
-		GameObject npcInstance = Instantiate(npcTemplate, pos, Quaternion.identity);
-		npcInstance.GetComponent<Animator>().runtimeAnimatorController = animation; // set the animator controller
-        npcInstance.transform.SetParent(this.transform); // npcs should show up as a child of the npc controller
-		npcInstances.Add(npcInstance);
-		return npcInstance;
-	}
 
     private List<GameObject> npcInstances = new List<GameObject>(); // maintain a reference to each npc in the scene
 
@@ -36,7 +24,7 @@ public class NPCController : Singleton<NPCController> {
 
 		for (int i = 0; i < npcPositions.Length; i++)
         {
-			InstantiateNPC(animatorControllers[i % animatorControllers.Length], npcPositions[i]);
+			AddNPCToScene(NPCFactory.Instance.CreateNPCWithRandomizedStats(), npcPositions[i]);
         }
     }
 
@@ -59,5 +47,21 @@ public class NPCController : Singleton<NPCController> {
             }
         }
               
+    }
+
+    public void AddNPCToScene(NPCInfo npc, Vector2 position)
+    {
+        InstantiateNPC(npc.attributes.animationController, position);
+    }
+
+
+    private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector2 position)
+    {
+        Vector3 pos = coordinateSystem.getVector3(position);
+        GameObject npcInstance = Instantiate(npcTemplate, pos, Quaternion.identity);
+        npcInstance.GetComponent<Animator>().runtimeAnimatorController = animation; // set the animator controller
+        npcInstance.transform.SetParent(this.transform); // npcs should show up as a child of the npc controller
+        npcInstances.Add(npcInstance);
+        return npcInstance;
     }
 }
