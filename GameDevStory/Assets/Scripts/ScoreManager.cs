@@ -21,7 +21,7 @@ public class ScoreManager : Singleton<ScoreManager> {
         // TODO: Actually get score
         ScoreDisplay.text = "$" + score;
         var sorted = from entry in _scores orderby entry.Value ascending select entry;
-        foreach (var entry in _scores)
+        foreach (var entry in sorted)
         {
             DisplayScore(name, score);
         }
