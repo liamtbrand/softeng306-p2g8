@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 6fe3459cf3cf3ff46837ab83ad377352
+guid: 51111f33c430f4d42bdfe8d59b56b44c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Edward_Coding_0
-    21300002: Edward_Coding_1
-    21300004: Edward_Coding_2
-    21300006: Edward_Coding_3
-    21300008: Edward_Coding_4
-    21300010: Edward_Coding_5
-    21300012: Edward_Coding_6
-    21300014: Edward_Coding_7
-    21300016: Edward_Coding_8
-    21300018: Edward_Coding_9
-    21300020: Edward_Coding_10
-    21300022: Edward_Coding_11
+    21300000: Jess_Coding_0
+    21300002: Jess_Coding_1
+    21300004: Jess_Coding_2
+    21300006: Jess_Coding_3
+    21300008: Jess_Coding_4
+    21300010: Jess_Coding_5
+    21300012: Jess_Coding_6
+    21300014: Jess_Coding_7
+    21300016: Jess_Coding_8
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -118,12 +115,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Edward_Coding_0
+      name: Jess_Coding_0
       rect:
         serializedVersion: 2
         x: 2
         y: 54
-        width: 15
+        width: 16
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -132,18 +129,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d94d19d2b1836d4bbd5cf8c91176561
+      spriteID: 97abab335fe61d542927426537a3c118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Edward_Coding_1
+      name: Jess_Coding_1
       rect:
         serializedVersion: 2
         x: 22
         y: 54
-        width: 15
+        width: 16
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -152,18 +149,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02d9bd47acba1064ca3006bc3d8a308d
+      spriteID: 7d832050fa0d85743989959343c57b51
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Edward_Coding_2
+      name: Jess_Coding_2
       rect:
         serializedVersion: 2
         x: 42
         y: 54
-        width: 15
+        width: 16
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -172,38 +169,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f68b9ac97919614ea45fcea7afe5183
+      spriteID: 6903f286bfb53e24fb8fa43b4346d66c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Edward_Coding_3
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 54
-        width: 15
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2688c3c3831bd60418821e9928a8395c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Edward_Coding_4
+      name: Jess_Coding_3
       rect:
         serializedVersion: 2
         x: 2
         y: 28
-        width: 15
+        width: 16
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -212,18 +189,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2273cc67b3dd8e479f2c7af79daf6a8
+      spriteID: f79d3eb357c1d1345b7ee765735ec89d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Edward_Coding_5
+      name: Jess_Coding_4
       rect:
         serializedVersion: 2
         x: 22
         y: 28
-        width: 15
+        width: 16
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -232,18 +209,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 949b20fc7e1cdfd4ea04e69de8d1da33
+      spriteID: bdb9082891658b644aae63657119e6be
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Edward_Coding_6
+      name: Jess_Coding_5
       rect:
         serializedVersion: 2
         x: 42
         y: 28
-        width: 15
+        width: 16
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -252,38 +229,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6118f2c17331427468eb832f6057ca32
+      spriteID: e39a93d540618ac4f8eaa533bdb110e6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Edward_Coding_7
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 28
-        width: 15
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4dcf3ddcf24e0fb46ab55254908b01c4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Edward_Coding_8
+      name: Jess_Coding_6
       rect:
         serializedVersion: 2
         x: 2
         y: 2
-        width: 15
+        width: 16
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -292,18 +249,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7183111009202324d81fa4cc2a0a1323
+      spriteID: 0a614605e229d8b488121e52b8176693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Edward_Coding_9
+      name: Jess_Coding_7
       rect:
         serializedVersion: 2
         x: 22
         y: 2
-        width: 15
+        width: 16
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -312,18 +269,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11a64b53ed5fe154b8e82da597f8355c
+      spriteID: a080758c411cdb34695b983c740dbc36
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Edward_Coding_10
+      name: Jess_Coding_8
       rect:
         serializedVersion: 2
         x: 42
         y: 2
-        width: 15
+        width: 16
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -332,27 +289,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25898910afacae844bd38117f7ee0359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Edward_Coding_11
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 2
-        width: 15
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0619ba6a8fcbf143b6a3d3894668c2a
+      spriteID: bd1ee14639d85b44db9ff66739b0676c
       vertices: []
       indices: 
       edges: []
@@ -360,7 +297,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 74e05e49cc716ff469c4f200dffb7e70
+    spriteID: 82be9778568b81d43981285ec4af2f23
     vertices: []
     indices: 
     edges: []
