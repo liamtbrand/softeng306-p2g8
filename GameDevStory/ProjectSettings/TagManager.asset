@@ -42,19 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - name: NPCs
-    uniqueID: 4243404975
-    locked: 0
-  - name: Desks
-    uniqueID: 3490581799
-=======
-=======
   - name: BackNPC
     uniqueID: 2802919925
     locked: 0
->>>>>>> Add NPC positions
   - name: BackDesk
     uniqueID: 965153735
     locked: 0
@@ -63,7 +53,6 @@ TagManager:
     locked: 0
   - name: FrontDesk
     uniqueID: 2663867163
->>>>>>> Create level manager
     locked: 0
   - name: GUI
     uniqueID: 605149443

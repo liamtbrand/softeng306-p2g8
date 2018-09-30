@@ -4,16 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class NPC : MonoBehaviour
 {
 =======
 // script containing state for an individual NPC
 public class NPC : MonoBehaviour {
 >>>>>>> Framework in place for sending an NPC scenario notifications which, on click, will execute the scenario
+=======
+// script containing state for an individual NPC
+public class NPC : MonoBehaviour {
+>>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
 
     private const float NOTIFICATION_HEIGHT_OFFSET = 0.22f; //todo adjust the scale of the world so we don't need to deal in tiny numbers
     private bool hasNotification = false; // so we know when this NPC is available to show a notification
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     // Use this for initialization
     void Start()
@@ -31,6 +37,8 @@ public class NPC : MonoBehaviour {
     }
 }
 =======
+=======
+>>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
     public GameObject notificationButton;
 
     void Start()
@@ -66,4 +74,7 @@ public class NPC : MonoBehaviour {
     }
 
 }
+<<<<<<< HEAD
 >>>>>>> Framework in place for sending an NPC scenario notifications which, on click, will execute the scenario
+=======
+>>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8

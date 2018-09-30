@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class NPCController : MonoBehaviour
 {
 =======
@@ -29,6 +30,18 @@ public class NPCController : Singleton<NPCController> {
             y = deskPositions[i % 3][1];
             Instantiate(npcs[i], new Vector3(x, y, 0f), Quaternion.identity);
 =======
+=======
+public class NPCController : Singleton<NPCController> { 
+
+	public static float[][] deskPositions = {
+		new float[]{0.06f,-0.06f},
+		new float[]{0.08f,-0.37f},
+		new float[]{-0.24f,-0.21f}
+	};
+
+    public GameObject[] npcs;
+
+>>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
     private List<GameObject> npcInstances = new List<GameObject>(); // maintain a reference to each npc in the scene
 
 	// Use this for initialization
@@ -42,6 +55,7 @@ public class NPCController : Singleton<NPCController> {
             GameObject npcInstance = Instantiate(npcs[i], new Vector3(x, y, 0f), Quaternion.identity);
             npcInstance.transform.SetParent(this.transform); // npcs should show up as a child of the npc controller
             npcInstances.Add(npcInstance);
+<<<<<<< HEAD
 >>>>>>> 
         }
     }
@@ -57,6 +71,13 @@ public class NPCController : Singleton<NPCController> {
 =======
     public void ShowScenarioNotification(Scenario s)
 >>>>>>> 
+=======
+        }
+    }
+
+    // Sends a scenario notification to an npc that the player should click on to start the scenario.
+    public void ShowScenarioNotification(Scenario s)
+>>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
     {
         foreach(GameObject npc in npcInstances)
         {
@@ -73,4 +94,7 @@ public class NPCController : Singleton<NPCController> {
         }
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
