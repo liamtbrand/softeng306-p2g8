@@ -143,17 +143,14 @@ RectTransform:
   m_Children:
   - {fileID: 2081900241}
   - {fileID: 1608699457}
-  - {fileID: 210766394}
   - {fileID: 741705233}
-  - {fileID: 1076752048}
-  - {fileID: 223883515}
   m_Father: {fileID: 1991959404}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -84.899994}
-  m_SizeDelta: {x: -100, y: -209.7}
+  m_AnchoredPosition: {x: 0, y: -115}
+  m_SizeDelta: {x: -100, y: -270}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &505845882
 MonoBehaviour:
@@ -445,7 +442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &741705233
 RectTransform:
   m_ObjectHideFlags: 0
@@ -458,11 +455,11 @@ RectTransform:
   m_Children:
   - {fileID: 673411464}
   m_Father: {fileID: 505845881}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 289.52, y: -72.69}
+  m_AnchoredPosition: {x: 289.52, y: -47.93}
   m_SizeDelta: {x: 99.36, y: 20.22}
   m_Pivot: {x: 0.50000006, y: 0.49999997}
 --- !u!114 &741705234
@@ -603,12 +600,9 @@ MonoBehaviour:
   Dialogue:
     Title: Cameron
     Sentences:
-    - sentenceLine: Hello my name is Cameron
-      sentenceChoices: []
-    - sentenceLine: And I have changed the dialogue manager
-      sentenceChoices: []
-    - sentenceLine: Hope you like it :^)
-      sentenceChoices: []
+    - Hello friends
+    - My name is Cameron
+    - And I made this :^)
 --- !u!114 &843509904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,118 +777,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1076752047
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1076752048}
-  - component: {fileID: 1076752051}
-  - component: {fileID: 1076752050}
-  - component: {fileID: 1076752049}
-  m_Layer: 5
-  m_Name: OptionButton1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1076752048
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1076752047}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.000310421}
-  m_LocalScale: {x: 0.99967146, y: 0.99967146, z: 0.99967146}
-  m_Children:
-  - {fileID: 1289807049}
-  m_Father: {fileID: 505845881}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.4508, y: -12.4}
-  m_SizeDelta: {x: 673.71, y: 24.3}
-  m_Pivot: {x: 0.50000006, y: 0.49999997}
---- !u!114 &1076752049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1076752047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1076752050}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1076752050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1076752047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1076752051
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1076752047}
-  m_CullTransparentMesh: 0
 --- !u!1 &1079520771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,10 +994,8 @@ MonoBehaviour:
   Dialogue:
     Title: I'm leaving
     Sentences:
-    - sentenceLine: 
-      sentenceChoices: []
-    - sentenceLine: 
-      sentenceChoices: []
+    - Unfortunately this company is bad
+    - so I'm leaving etc.
 --- !u!114 &1443309087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1234,8 +1114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.445, y: -10.4}
-  m_SizeDelta: {x: 673.5, y: 144.8}
+  m_AnchoredPosition: {x: 2.445, y: -3.76}
+  m_SizeDelta: {x: 673.51, y: 68.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608699458
 MonoBehaviour:
@@ -1632,8 +1512,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.445, y: 75.9}
-  m_SizeDelta: {x: 673.5, y: 17.6}
+  m_AnchoredPosition: {x: 2.445, y: 42.2}
+  m_SizeDelta: {x: 673.51, y: 23.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2081900242
 MonoBehaviour:
