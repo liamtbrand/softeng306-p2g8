@@ -10,7 +10,8 @@ public class NPCController : Singleton<NPCController> {
 		new float[]{-0.24f,-0.21f}
 	};
 
-    public GameObject[] npcs;
+    public GameObject npcTemplate; // the generic npc template to instantiate
+    public RuntimeAnimatorController[] animatorControllers; // pool of possible animations to give the generated npc
 
     private List<GameObject> npcInstances = new List<GameObject>(); // maintain a reference to each npc in the scene
 
@@ -18,11 +19,11 @@ public class NPCController : Singleton<NPCController> {
 	void Start () {
 		float x;
 		float y;
-		for (int i = 0; i < npcs.Length; i++)
+
+        for (int i = 0; i < animatorControllers.Length; i++)
         {
-			x = deskPositions[i % 3][0];
-			y = deskPositions[i % 3][1];
-            GameObject npcInstance = Instantiate(npcs[i], new Vector3(x, y, 0f), Quaternion.identity);
+            GameObject npcInstance = Instantiate(npcTemplate, new Vector3(-0.6f + i * 0.2f, -0.05f, 0), Quaternion.identity);
+            npcInstance.GetComponent<Animator>().runtimeAnimatorController = animatorControllers[i]; // set the animator controller
             npcInstance.transform.SetParent(this.transform); // npcs should show up as a child of the npc controller
             npcInstances.Add(npcInstance);
         }
