@@ -182,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   executor: {fileID: 1218897509}
   condition: {fileID: 929690502}
+  type: 0
 --- !u!4 &1116075345
 Transform:
   m_ObjectHideFlags: 0
