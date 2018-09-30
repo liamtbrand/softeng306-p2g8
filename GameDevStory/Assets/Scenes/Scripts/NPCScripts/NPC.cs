@@ -6,6 +6,9 @@ using UnityEngine.UI;
 // script containing state for an individual NPC
 public class NPC : MonoBehaviour {
 
+    public NPCAttributes attributes;
+    public NPCStats stats;
+
     private const float NOTIFICATION_HEIGHT_OFFSET = 0.22f; //todo adjust the scale of the world so we don't need to deal in tiny numbers
     private bool hasNotification = false; // so we know when this NPC is available to show a notification
 

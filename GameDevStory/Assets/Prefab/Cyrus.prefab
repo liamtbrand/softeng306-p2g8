@@ -68,24 +68,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1059422083248826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 254c8f4c80aaaf0468e8e3af201d8bd8, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Cyrus Raitava-Kumar
-  age: 20
-  gender: 0
-  communicationStat: 90
-  testingStat: 76
-  technicalStat: 79
-  creativityStat: 88
-  designStat: 80
-  bio: Cyrus is a very hard working young man who just wants to get some good grades
-    for his 306 project :). Growing up with a background in rugby sevens, Cyrus nearly
-    made the Fijian national team at the age of only 14, but declined to persue a
-    career in exhibitionist performance art. After being arrested for the 6th time
-    for innapropriate public display, Cyrus enrolled in the University of Auckland
-    to persue a degree in Software Engineering.
-  sprite: {fileID: 21300000, guid: 1500f30a2556c42c7b7f5dfcdcd55d2c, type: 3}
 --- !u!212 &212573358002767262
 SpriteRenderer:
   m_ObjectHideFlags: 1

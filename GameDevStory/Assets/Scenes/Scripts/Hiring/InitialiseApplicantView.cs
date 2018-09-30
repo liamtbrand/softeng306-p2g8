@@ -29,20 +29,20 @@ public class InitialiseApplicantView : MonoBehaviour
     void Start()
     {
         // Get the npc's stat from their stats script
-        var stats = npc.GetComponent<CharacterStats>();
+        var stats = npc.GetComponent<NPCStats>();
 
-        spriteImage.sprite = stats.sprite;
-        nameHeader.text = stats.name;
-        ageHeader.text = stats.age.ToString();
-        genderHeader.text = stats.gender.ToString();
-        bioBox.text = stats.bio;
+        //spriteImage.sprite = stats.sprite;
+        //nameHeader.text = stats.name;
+        //ageHeader.text = stats.age.ToString();
+        //genderHeader.text = stats.gender.ToString();
+        //bioBox.text = stats.bio;
 
-        // Initialise sliders
-        FillSlider(communicationSlider, stats.communicationStat);
-        FillSlider(testingSlider, stats.testingStat);
-        FillSlider(technicalSlider, stats.technicalStat);
-        FillSlider(creativitySlider, stats.creativityStat);
-        FillSlider(designSlider, stats.designStat);
+        //// Initialise sliders
+        //FillSlider(communicationSlider, stats.communicationStat);
+        //FillSlider(testingSlider, stats.testingStat);
+        //FillSlider(technicalSlider, stats.technicalStat);
+        //FillSlider(creativitySlider, stats.creativityStat);
+        //FillSlider(designSlider, stats.designStat);
     }
 
     void Update()
