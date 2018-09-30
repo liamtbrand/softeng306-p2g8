@@ -3,19 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ProjectManager : MonoBehaviour {
+public class ProjectManager : Singleton<ProjectManager> {
 
 	private ProjectTimer timerScript;
-	private GameManager gameScript;
 	public Button startProject;
+	public GameObject projectSelection;
+	private ProjectSelector projectScript;
 
 	private double profit;
 	public GameObject[] projects;		// Array of project prefabs.
 
 	void Start () {
-		gameScript = GetComponent<GameManager> ();
 		timerScript = GetComponent<ProjectTimer> ();
 		timerScript.enabled = false;
+	}
+
+	// Shows the project picker
+	public void PickProject () {
+		projectSelection.SetActive(true);
+		projectScript = GetComponent <ProjectSelector>();
+        projectScript.SetupProjectMenu();
 	}
 
 	// Starts a project
@@ -28,7 +35,7 @@ public class ProjectManager : MonoBehaviour {
 		profit = CalculateProjectProfit ();
 
 		// Add to total profits
-		gameScript.changeBalance(profit);
+		//gameScript.changeBalance(profit);
 	}
 
 	double CalculateProjectProfit () {
