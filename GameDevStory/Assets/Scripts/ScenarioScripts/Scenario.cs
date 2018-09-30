@@ -28,6 +28,7 @@ public class Scenario : MonoBehaviour{
         active = true;
         if(type != null && type == ScenarioType.NOTIFICATION){
             // Send scenario to NPC manager for notification popup and execution
+            NPCController.Instance.ShowScenarioNotification(this);
         }else{
             ExecuteScenario();
         }
