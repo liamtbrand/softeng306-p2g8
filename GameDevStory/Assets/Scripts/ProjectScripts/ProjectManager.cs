@@ -14,8 +14,8 @@ public class ProjectManager : Singleton<ProjectManager> {
 	public GameObject[] projects;		// Array of project prefabs.
 
 	void Start () {
-		timerScript = GetComponent<ProjectTimer> ();
-		timerScript.enabled = false;
+		//timerScript = GetComponent<ProjectTimer> ();
+		//timerScript.enabled = false; 
 	}
 
 	// Shows the project picker
@@ -23,12 +23,19 @@ public class ProjectManager : Singleton<ProjectManager> {
 		projectSelection.SetActive(true);
 		projectScript = GetComponent <ProjectSelector>();
         projectScript.SetupProjectMenu();
+
+		Dictionary<string,Project> projects = ProjectCreator.Instance.InitialiseProjects();
+		foreach(KeyValuePair<string, Project> entry in projects)
+		{
+			Debug.Log(entry.Key);
+		}
 	}
 
 	// Starts a project
 	public void StartProject ()
 	{
 		// Start project timer
+		timerScript = GetComponent<ProjectTimer> ();
 		timerScript.enabled = true;
 		
 		// Calculate project profit
@@ -42,7 +49,7 @@ public class ProjectManager : Singleton<ProjectManager> {
 		// int femaleNPC = NPCScript.getFemaleWorkers();
 		// int maleNPC = NPCScript.getMaleWorkers();
 		// calculate diversity???
-		return 0.0;
+		return 1000.00;
 	}
 
 }
