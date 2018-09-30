@@ -39,8 +39,7 @@ public class TestScenarioExecutor : AScenarioExecutor {
             }
         };
 
-        //TODO uncomment this once dialogue elements are in the scene
-      //  DialogueManager.Instance.StartDialogue(testDialogue);
+        DialogueManager.Instance.StartDialogue(testDialogue);
 
     }
 
