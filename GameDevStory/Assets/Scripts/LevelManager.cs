@@ -12,6 +12,8 @@ using Random = UnityEngine.Random;      //Tells Random to use the Unity Engine r
 
 		private int desksPerRow = 2;									// Hard coded for now.
 
+	    private int npcsToAdd = 2;										// TODO: Don't hardcode this
+
         public GameObject[] levels;                                 	//Array of level prefabs.
 		public GameObject[] desks;                                 		//Array of desk prefabs.
 
@@ -66,7 +68,14 @@ using Random = UnityEngine.Random;      //Tells Random to use the Unity Engine r
 		// Sets up the NPC at the desk
 		private void NPCSetup ()
 		{
+			var npcsAdded = 0;
 			// Call NPC Controller
+			foreach (var position in NPCPositions)
+			{
+				NPCController.Instance.AddNPCToScene(NPCFactory.Instance.CreateNPCWithRandomizedStats(), position);
+				npcsAdded++;
+				if (npcsAdded >= npcsToAdd) break;
+			}
 		}
         
         //SetupScene initializes our level and calls the previous functions to lay out the game board
@@ -77,7 +86,6 @@ using Random = UnityEngine.Random;      //Tells Random to use the Unity Engine r
 
             //Creates the outer walls and floor.
             LevelSetup ();
-
-			// NPCSetup ();
+			NPCSetup ();
         }
     }

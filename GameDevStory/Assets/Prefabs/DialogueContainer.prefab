@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogueInProgress: 0
+  DialogueContainer: {fileID: 0}
   NameText: {fileID: 114802042743646670}
   DialogueText: {fileID: 114437674586904784}
   OptionTextArray:
@@ -425,6 +426,7 @@ MonoBehaviour:
   - {fileID: 114412658090816316}
   ContinueButton: {fileID: 114571144559078062}
   DialoguePanel: {fileID: 1311013222956638}
+  NPCIcon: {fileID: 0}
 --- !u!114 &114315199319048726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -532,13 +534,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue:
-    Title: Cameron
     Sentences:
-    - sentenceLine: Hello my name is Cameron
+    - Title: 
+      icon: {fileID: 0}
+      sentenceLine: Hello my name is Cameron
       sentenceChoices: []
-    - sentenceLine: And I have changed the dialogue manager
+    - Title: 
+      icon: {fileID: 0}
+      sentenceLine: And I have changed the dialogue manager
       sentenceChoices: []
-    - sentenceLine: Hope you like it :^)
+    - Title: 
+      icon: {fileID: 0}
+      sentenceLine: Hope you like it :^)
       sentenceChoices: []
 --- !u!114 &114412658090816316
 MonoBehaviour:
