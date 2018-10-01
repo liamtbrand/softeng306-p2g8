@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 13702891}
   - component: {fileID: 13702893}
   - component: {fileID: 13702892}
+  - component: {fileID: 13702894}
   m_Layer: 5
   m_Name: A1_Image
   m_TagString: Untagged
@@ -315,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -337,6 +338,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 13702890}
   m_CullTransparentMesh: 0
+--- !u!95 &13702894
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 13702890}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &20191123
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +368,7 @@ GameObject:
   - component: {fileID: 20191127}
   - component: {fileID: 20191126}
   - component: {fileID: 20191125}
+  - component: {fileID: 20191129}
   m_Layer: 5
   m_Name: ViewA2Button
   m_TagString: Untagged
@@ -391,8 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9536e268dec54180bf7a120a29d2de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 1059422083248826, guid: aa7d913a7ce8e854e91261e29b695d50, type: 2}
-  spriteImage: {fileID: 1984646686}
+  image: {fileID: 1984646684}
   nameHeader: {fileID: 284610547}
   ageHeader: {fileID: 8176866}
   genderHeader: {fileID: 143848800}
@@ -471,6 +490,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 20191123}
   m_CullTransparentMesh: 0
+--- !u!95 &20191129
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 20191123}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &143848798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,8 +2617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9536e268dec54180bf7a120a29d2de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 1059422083248826, guid: aa7d913a7ce8e854e91261e29b695d50, type: 2}
-  spriteImage: {fileID: 1203550048}
+  image: {fileID: 1203550046}
   nameHeader: {fileID: 2077369464}
   ageHeader: {fileID: 1796925704}
   genderHeader: {fileID: 1639989218}
@@ -2982,6 +3018,7 @@ GameObject:
   - component: {fileID: 986404791}
   - component: {fileID: 986404793}
   - component: {fileID: 986404792}
+  - component: {fileID: 986404794}
   m_Layer: 5
   m_Name: A1_Image
   m_TagString: Untagged
@@ -3019,7 +3056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3041,6 +3078,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 986404790}
   m_CullTransparentMesh: 0
+--- !u!95 &986404794
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 986404790}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1044338798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3467,8 +3522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9536e268dec54180bf7a120a29d2de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 1059422083248826, guid: aa7d913a7ce8e854e91261e29b695d50, type: 2}
-  spriteImage: {fileID: 1998750169}
+  image: {fileID: 1998750167}
   nameHeader: {fileID: 1505889369}
   ageHeader: {fileID: 920851899}
   genderHeader: {fileID: 348603962}
@@ -3557,6 +3611,7 @@ GameObject:
   - component: {fileID: 1203550047}
   - component: {fileID: 1203550049}
   - component: {fileID: 1203550048}
+  - component: {fileID: 1203550050}
   m_Layer: 5
   m_Name: A1_Image
   m_TagString: Untagged
@@ -3594,7 +3649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3616,6 +3671,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1203550046}
   m_CullTransparentMesh: 0
+--- !u!95 &1203550050
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1203550046}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1219985384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3782,6 +3855,8 @@ GameObject:
   - component: {fileID: 1223683411}
   - component: {fileID: 1223683410}
   - component: {fileID: 1223683409}
+  - component: {fileID: 1223683414}
+  - component: {fileID: 1223683413}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3865,6 +3940,40 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1223683413
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1223683408}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1223683414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1223683408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8c8d44ee734794ab0a4279e07dfb3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcs:
+  - {fileID: 114872875726510126, guid: efbdfab8679cb364890530d22dbef03c, type: 2}
+  - {fileID: 114654778114926638, guid: d3e9ed63c06144244a527d81adfb3a58, type: 2}
+  - {fileID: 114632937985454658, guid: e959739796a3f5c45901701cb6200b23, type: 2}
+  - {fileID: 114909390779702190, guid: a1ee1ebb8018bc8459ef427c2c485910, type: 2}
 --- !u!1 &1240074364
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,8 +4028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9536e268dec54180bf7a120a29d2de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 1059422083248826, guid: aa7d913a7ce8e854e91261e29b695d50, type: 2}
-  spriteImage: {fileID: 13702892}
+  image: {fileID: 13702890}
   nameHeader: {fileID: 507366833}
   ageHeader: {fileID: 1992104440}
   genderHeader: {fileID: 1834108289}
@@ -4128,8 +4236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9536e268dec54180bf7a120a29d2de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 1059422083248826, guid: aa7d913a7ce8e854e91261e29b695d50, type: 2}
-  spriteImage: {fileID: 986404792}
+  image: {fileID: 986404790}
   nameHeader: {fileID: 681405534}
   ageHeader: {fileID: 307761699}
   genderHeader: {fileID: 1635228075}
@@ -4654,8 +4761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9536e268dec54180bf7a120a29d2de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 1059422083248826, guid: aa7d913a7ce8e854e91261e29b695d50, type: 2}
-  spriteImage: {fileID: 1599640968}
+  image: {fileID: 1599640966}
   nameHeader: {fileID: 928030096}
   ageHeader: {fileID: 729314066}
   genderHeader: {fileID: 1219985386}
@@ -4744,6 +4850,7 @@ GameObject:
   - component: {fileID: 1599640967}
   - component: {fileID: 1599640969}
   - component: {fileID: 1599640968}
+  - component: {fileID: 1599640970}
   m_Layer: 5
   m_Name: A1_Image
   m_TagString: Untagged
@@ -4781,7 +4888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4803,6 +4910,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1599640966}
   m_CullTransparentMesh: 0
+--- !u!95 &1599640970
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599640966}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1635228073
 GameObject:
   m_ObjectHideFlags: 0
@@ -5974,6 +6099,7 @@ GameObject:
   - component: {fileID: 1984646685}
   - component: {fileID: 1984646687}
   - component: {fileID: 1984646686}
+  - component: {fileID: 1984646688}
   m_Layer: 5
   m_Name: A1_Image
   m_TagString: Untagged
@@ -6011,7 +6137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6033,6 +6159,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1984646684}
   m_CullTransparentMesh: 0
+--- !u!95 &1984646688
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1984646684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1992104438
 GameObject:
   m_ObjectHideFlags: 0
@@ -6198,6 +6342,7 @@ GameObject:
   - component: {fileID: 1998750168}
   - component: {fileID: 1998750170}
   - component: {fileID: 1998750169}
+  - component: {fileID: 1998750171}
   m_Layer: 5
   m_Name: A1_Image
   m_TagString: Untagged
@@ -6235,7 +6380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6257,6 +6402,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1998750167}
   m_CullTransparentMesh: 0
+--- !u!95 &1998750171
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1998750167}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2077369462
 GameObject:
   m_ObjectHideFlags: 0
