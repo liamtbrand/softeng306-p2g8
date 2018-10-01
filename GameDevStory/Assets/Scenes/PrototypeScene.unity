@@ -412,6 +412,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224555150801116124, guid: 18d593fdd2681654dad262204be50abf,
     type: 2}
   m_PrefabInternal: {fileID: 4197273}
+--- !u!1 &4197275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1909578474363096, guid: 18d593fdd2681654dad262204be50abf,
+    type: 2}
+  m_PrefabInternal: {fileID: 4197273}
 --- !u!1 &76375800
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +604,7 @@ Prefab:
     - target: {fileID: 224300028738143000, guid: 3ac846b13cc63ca4f8f6c85dc5469763,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -28.929607
+      value: -96.12002
       objectReference: {fileID: 0}
     - target: {fileID: 224026789520875842, guid: 3ac846b13cc63ca4f8f6c85dc5469763,
         type: 2}
@@ -634,7 +639,7 @@ Prefab:
     - target: {fileID: 224847232446154574, guid: 3ac846b13cc63ca4f8f6c85dc5469763,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 250.63516
+      value: 231.43999
       objectReference: {fileID: 0}
     - target: {fileID: 224847232446154574, guid: 3ac846b13cc63ca4f8f6c85dc5469763,
         type: 2}
@@ -644,7 +649,7 @@ Prefab:
     - target: {fileID: 224847232446154574, guid: 3ac846b13cc63ca4f8f6c85dc5469763,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 491.27032
+      value: 452.87997
       objectReference: {fileID: 0}
     - target: {fileID: 224847232446154574, guid: 3ac846b13cc63ca4f8f6c85dc5469763,
         type: 2}
@@ -1104,6 +1109,7 @@ Transform:
   - {fileID: 342015025}
   - {fileID: 330614368}
   - {fileID: 2016083709}
+  - {fileID: 1537260591}
   - {fileID: 845432884}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1182,7 +1188,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 529573816}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1537260592}
+        m_MethodName: ShowHiringGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &529573816
@@ -1807,6 +1824,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseProjectCompleted
       objectReference: {fileID: 0}
+    - target: {fileID: 1096246085569624, guid: bd3f5dba36b50477290cb6b053547f43, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114965237004032512, guid: bd3f5dba36b50477290cb6b053547f43, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: bd3f5dba36b50477290cb6b053547f43, type: 2}
@@ -1945,7 +1966,7 @@ RectTransform:
   - {fileID: 786019446}
   - {fileID: 1983845879}
   m_Father: {fileID: 385111997}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2732,6 +2753,48 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435031693}
   m_CullTransparentMesh: 1
+--- !u!1 &1537260590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1537260591}
+  - component: {fileID: 1537260592}
+  m_Layer: 0
+  m_Name: HiringDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1537260591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537260590}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 385111997}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1537260592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537260590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1199bde4a9e35a54b85ae111a6ec2d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GridViewPanel: {fileID: 1583408860}
+  ApplicantViewPanel: {fileID: 4197275}
 --- !u!1001 &1583408859
 Prefab:
   m_ObjectHideFlags: 0
@@ -2926,6 +2989,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3130e556c79068843bd3b74034605d89, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1583408860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1404027470825566, guid: 3130e556c79068843bd3b74034605d89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1583408859}
 --- !u!1 &1591634097
 GameObject:
   m_ObjectHideFlags: 0

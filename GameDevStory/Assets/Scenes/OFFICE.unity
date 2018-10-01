@@ -262,6 +262,14 @@ Prefab:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1298704910118094, guid: fd2a7a6ceb2b847928738d92253a3431, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481751691882758, guid: fd2a7a6ceb2b847928738d92253a3431, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd2a7a6ceb2b847928738d92253a3431, type: 2}
   m_IsPrefabAsset: 0
@@ -362,6 +370,21 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224249006959614276, guid: fd2a7a6ceb2b847928738d92253a3431,
     type: 2}
   m_PrefabInternal: {fileID: 35539492}
+--- !u!1 &750452732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1855246498179358, guid: 01e9292bcf325954c92c5211527bf0c9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1524310417}
+--- !u!210 &750452733
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 750452732}
+  m_Enabled: 1
+  m_SortingLayerID: 605149443
+  m_SortingLayer: 5
+  m_SortingOrder: 1
 --- !u!1001 &1524310417
 Prefab:
   m_ObjectHideFlags: 0
