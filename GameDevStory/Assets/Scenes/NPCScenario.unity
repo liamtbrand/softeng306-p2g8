@@ -588,57 +588,83 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4638527985710520, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
+    - target: {fileID: 114820100401269228, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: dialogue2.Sentences.Array.data[3].sentenceChoices.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412526490594974, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.1968807
       objectReference: {fileID: 0}
-    - target: {fileID: 4638527985710520, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
+    - target: {fileID: 4412526490594974, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
       propertyPath: m_LocalPosition.y
       value: -0.18175845
       objectReference: {fileID: 0}
-    - target: {fileID: 4638527985710520, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
+    - target: {fileID: 4412526490594974, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0.07802425
       objectReference: {fileID: 0}
-    - target: {fileID: 4638527985710520, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
+    - target: {fileID: 4412526490594974, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4638527985710520, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
+    - target: {fileID: 4412526490594974, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4638527985710520, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
+    - target: {fileID: 4412526490594974, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4638527985710520, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
+    - target: {fileID: 4412526490594974, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4638527985710520, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
+    - target: {fileID: 4412526490594974, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223263718491683494, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+    - target: {fileID: 223924321499657130, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
         type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1275786622}
-    - target: {fileID: 224558143767772260, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+    - target: {fileID: 224736059305096902, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: -85
       objectReference: {fileID: 0}
-    - target: {fileID: 212348382263718228, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+    - target: {fileID: 224781773601373584, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
         type: 2}
-      propertyPath: m_Sprite
-      value: 
+      propertyPath: m_AnchoredPosition.x
+      value: -279
       objectReference: {fileID: 0}
-    - target: {fileID: 212348382263718228, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+    - target: {fileID: 224781773601373584, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
         type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
+      propertyPath: m_AnchoredPosition.y
+      value: 23.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820100401269228, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: dialogue2.Sentences.Array.data[4].sentenceLine
+      value: 'In my experience, top talent can manifest itself in anybody, so make
+        sure to keep an open mind when hiring! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820100401269228, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: dialogue2.Sentences.Array.data[3].sentenceChoices.Array.data[0]
+      value: Thanks for the advice!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820100401269228, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: dialogue2.Sentences.Array.data[3].sentenceChoices.Array.data[1]
+      value: Ok
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820100401269228, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: dialogue2.Sentences.Array.data[3].sentenceChoices.Array.data[2]
+      value: Get back to the kitchen like Wilson said hahaha
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}

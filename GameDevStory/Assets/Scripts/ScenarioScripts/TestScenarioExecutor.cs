@@ -20,37 +20,40 @@ public class TestScenarioExecutor : AScenarioExecutor {
         UnityAction unityAction3 = TestAction3;
 
         Dialogue testDialogue = new Dialogue{
-            Title = "Cameron",
             Sentences = new Sentence[]{
                 new Sentence(){
-                    sentenceLine = "Hi, I hope you are having a nice day"
+                    Title = "Cameron",
+                    sentenceLine = "Hi, I hope you are having a nice day",
+                    icon = investorHead
                 },
                 new Sentence(){
+                    Title = "Cameron",
                     sentenceLine = "Here are some choices",
                     sentenceChoices = new string[]{
                         "My first one",
                         "Another one!",
-                        "And a third! :)"
+                        "And a third! :)",
                     },
                     sentenceChoiceActions = new UnityAction[]{
                         unityAction1,
                         unityAction2,
                         unityAction3
-                    }
+                    },
+                    
                 }
             }
         };
 
-        DialogueManager.Instance.StartDialogue(testDialogue, investorHead);
+        DialogueManager.Instance.StartDialogue(testDialogue);
 
     }
 
     public void TestAction1(){
         Debug.Log("You chose choice 1!");
         DialogueManager.Instance.QueueDialogue(new Dialogue{
-            Title = "Cameron",
             Sentences = new Sentence[]{
                 new Sentence(){
+                    Title = "Cameron",
                     sentenceLine = "Great choice, you chose choice 1!"
                 }
             }
@@ -60,9 +63,9 @@ public class TestScenarioExecutor : AScenarioExecutor {
     public void TestAction2(){
         Debug.Log("You chose choice 2!");
         DialogueManager.Instance.QueueDialogue(new Dialogue{
-            Title = "Cameron",
             Sentences = new Sentence[]{
                 new Sentence(){
+                    Title = "Cameron",
                     sentenceLine = "Great choice, you chose choice 2!"
                 }
             }
@@ -72,9 +75,9 @@ public class TestScenarioExecutor : AScenarioExecutor {
     public void TestAction3(){
         Debug.Log("You chose choice 3!");
         DialogueManager.Instance.QueueDialogue(new Dialogue{
-            Title = "Cameron",
             Sentences = new Sentence[]{
                 new Sentence(){
+                    Title = "Cameron",
                     sentenceLine = "Great choice, you chose choice 3!"
                 }
             }

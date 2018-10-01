@@ -29,11 +29,6 @@ namespace DialogueScripts{
             
         }
 
-        public void StartDialogue(Dialogue dialogue, Sprite icon){
-            NPCIcon.sprite = icon;
-            StartDialogue(dialogue);
-        }
-
         public void StartDialogue(Dialogue dialogue)
         {
             DialogueInProgress = true;
@@ -47,10 +42,7 @@ namespace DialogueScripts{
             foreach(Button button in OptionButtonArray){
                 button.gameObject.SetActive(false);
             }
-
-            NameText.text = dialogue.Title;
-
-            //_dialogueQueue.Clear();
+            
             foreach(Sentence sentence in dialogue.Sentences)
             {
                 Debug.Log("Queueing dialogue");
@@ -58,11 +50,6 @@ namespace DialogueScripts{
             }
 
             DisplayNextSentence();
-        }
-
-        public void QueueDialogue(Dialogue dialogue, Sprite icon){
-            NPCIcon.sprite = icon;
-            QueueDialogue(dialogue);
         }
 
         public void QueueDialogue(Dialogue dialogue){
@@ -100,6 +87,11 @@ namespace DialogueScripts{
             Sentence sentence = _dialogueQueue.Dequeue();
 
             //DialogueText.text = sentence.sentenceLine;
+
+            
+            NameText.text = sentence.Title;
+
+            NPCIcon.sprite = sentence.icon;
 
             StopAllCoroutines();
 		    StartCoroutine(TypeSentence(sentence.sentenceLine));
