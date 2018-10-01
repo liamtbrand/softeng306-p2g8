@@ -56,8 +56,8 @@ public class ProjectDisplayManager : MonoBehaviour
         ProjectCompletePanel.SetActive(true);
         ProfitText.text = "$" + profit.ToString("f2");
         
-        float offset = 0.2f;
-        float xPos = -0.2f;
+        float offset = 0.3f;
+        float xPos = -0.3f;
         float yPos = 0.05f;
         int maxStars = 3;
         int hollowStars = maxStars - stars;
