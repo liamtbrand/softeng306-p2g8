@@ -7,11 +7,12 @@ public class ProjectDisplayManager : MonoBehaviour
 {
     public GameObject ProjectSelectionContent;
     public GameObject ProjectEntryPrefab;
-    public GameObject ProjectEntryTitlePrefab;
 
     public GameObject ProjectCompletePanel;
+    public GameObject ProjectCompleteContent;
     public GameObject Star;
     public GameObject HollowStar;
+    public Text ProfitText;
     
     protected ProjectDisplayManager () {} // enforces singleton use
 
@@ -20,8 +21,6 @@ public class ProjectDisplayManager : MonoBehaviour
         foreach (Transform child in ProjectSelectionContent.transform) {
             GameObject.Destroy(child.gameObject);
         }
-        // Add back the title!
-        Instantiate(ProjectEntryTitlePrefab, Vector3.zero, Quaternion.identity, ProjectSelectionContent.transform);
     }
 
     public void AddNewProject(string title, string company, string description, string stats, bool selectable,
@@ -52,9 +51,36 @@ public class ProjectDisplayManager : MonoBehaviour
         AddNewProject(title, company, description, stats, selectable, delegate {  });
     }
 
-    public void ProjectCompleted(double profit)
+    public void ProjectCompleted(double profit, int stars)
     {
         ProjectCompletePanel.SetActive(true);
+        ProfitText.text = "$" + profit.ToString("f2");
+        
+        float offset = 0.2f;
+        float xPos = -0.2f;
+        float yPos = 0.05f;
+        int maxStars = 3;
+        int hollowStars = maxStars - stars;
+
+        // Instantiate stars
+        for (int j=0; j<stars; j++) {
+            Instantiate(Star, new Vector3(xPos,yPos,0f), Quaternion.identity,ProjectCompleteContent.transform);
+            xPos+=offset;
+        }
+
+        // Instantiate hollow stars
+        for (int i=0; i<hollowStars; i++) {
+            Instantiate(HollowStar, new Vector3(xPos,yPos,0f), Quaternion.identity,ProjectCompleteContent.transform);
+            xPos+=offset;
+        }
+    }
+
+    public void CloseProjectCompleted()
+    {
+        ProjectCompletePanel.SetActive(false);
+        foreach (Transform child in ProjectCompleteContent.transform) {
+            GameObject.Destroy(child.gameObject);
+        }
     }
     
 }

@@ -17,11 +17,18 @@ public class ProjectManager : Singleton<ProjectManager> {
 		timerScript.enabled = false; 
 	}
 
-	// Shows the project picker
+	// Handle project selection
 	public void PickProject () {
+		// Show project menu
 		projectMenu.SetActive(true);
+
+		// Initialise list of projects
 		displayScript = GetComponent <ProjectDisplayManager>();
-		projects = ProjectCreator.Instance.InitialiseProjects();
+		if (projects == null) {
+			projects = ProjectCreator.Instance.InitialiseProjects();
+		}
+
+		// Display projects
 		foreach(KeyValuePair<string, Project> entry in projects)
 		{
 			displayScript.AddNewProject(
@@ -40,21 +47,30 @@ public class ProjectManager : Singleton<ProjectManager> {
 		// Remove project menu from display
 		selectedProject = project;
 		projectMenu.SetActive(false);
+		displayScript.ClearAllProjects();
 
 		// Start project progress timer
 		timerScript.enabled = true;
 
 		// Wait till a project is completed
-		Invoke("ExecuteAfterTime", 10f);
+		Invoke("CompletedProject", 10f);
 	}
 
 	void CompletedProject()
  	{
+		// Change project object to completed
+		Project projectObject = projects[selectedProject];
+		projectObject.setCompleted(true);
+		projects[selectedProject] = projectObject;
+
 		// Calculate project profit
 		double profit = CalculateProjectProfit(selectedProject);
 
+		// Calculate project stars
+		int stars = CalculateProjectStars(selectedProject);
+
 		// Show project completion display
-		displayScript.ProjectCompleted(profit);
+		displayScript.ProjectCompleted(profit,stars);
 
 		// Add to total profits
 		//gameScript.changeBalance(profit);
@@ -69,7 +85,7 @@ public class ProjectManager : Singleton<ProjectManager> {
 	double CalculateProjectProfit (string project) 
 	{
 		// TODO: Calculate project profit based on diversity
-		return 1000.00;
+		return 100.00;
 	}
 
 }

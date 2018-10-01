@@ -7,7 +7,7 @@ public enum ProjectDifficulty
     Easy,Medium,Hard
 }
 
-public class Project : MonoBehaviour {
+public class Project {
 
 	private string title;
 	private string company;
@@ -15,6 +15,7 @@ public class Project : MonoBehaviour {
 	private int length;
 	private ProjectDifficulty difficulty;
 	private bool enabled = false;
+	private bool completed = false;
 
 	public Project ()
 	{
@@ -60,6 +61,11 @@ public class Project : MonoBehaviour {
 		enabled = en;
 	}
 
+	public void setCompleted (bool complete)
+	{
+		completed = complete;
+	}
+
 	public string getTitle ()
 	{
 		return title;
@@ -88,6 +94,11 @@ public class Project : MonoBehaviour {
 	public bool getEnabled ()
 	{
 		return enabled;
+	}
+
+	public bool getCompleted ()
+	{
+		return completed;
 	}
 
 	public string getStats()
