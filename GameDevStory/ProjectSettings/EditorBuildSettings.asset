@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hiring/ApplicantView.unity
     guid: 621528616613908498d181f62c1d3290
+  - enabled: 1
+    path: Assets/Scenes/HighScoreTestScene.unity
+    guid: 2a5c4f47afd81934f85c03a8bdef5014
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3250d8e303518234a8d90f4309513b03
   m_configObjects: {}
