@@ -31,6 +31,6 @@ public class InitialiseTile : MonoBehaviour {
     {
         // Set the npc info field in applicant view script to be this applicant.
         InitialiseApplicantView.npcInfo = npcInfo;
-        SceneManager.LoadScene("ApplicantView"); // TODO: CHange
+        GameManager.Instance.switchScene(GameScene.ApplicantView);
     }
 }

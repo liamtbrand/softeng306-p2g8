@@ -49,9 +49,9 @@ public class InitialiseApplicantView : MonoBehaviour
         FillSlider(designSlider, stats.design);
     }
 
-    void Update()
+    public void BackClicked()
     {
-        Start();
+        GameManager.Instance.switchScene(GameScene.GridView);
     }
 
     private void FillSlider(Slider slider, float value)
