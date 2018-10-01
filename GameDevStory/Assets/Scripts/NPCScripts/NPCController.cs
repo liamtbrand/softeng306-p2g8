@@ -22,10 +22,10 @@ public class NPCController : Singleton<NPCController> {
 	// Use this for initialization
 	void Start () {
 
-		for (int i = 0; i < npcPositions.Length; i++)
-        {
-			AddNPCToScene(NPCFactory.Instance.CreateNPCWithRandomizedStats(), npcPositions[i]);
-        }
+		//for (int i = 0; i < npcPositions.Length; i++)
+  //      {
+		//	AddNPCToScene(NPCFactory.Instance.CreateNPCWithRandomizedStats(), npcPositions[i]);
+  //      }
     }
 
     // Sends a scenario notification to an npc that the player should click on to start the scenario.
