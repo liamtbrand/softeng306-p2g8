@@ -31,7 +31,19 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     filterMode: 0
+=======
+    filterMode: -1
+>>>>>>> Create level manager
+=======
+    filterMode: 0
+>>>>>>> Changed Sprite options to disable AA
+=======
+    filterMode: 0
+>>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -81,6 +93,8 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
+<<<<<<< HEAD
+=======
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -92,6 +106,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
+>>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -108,7 +123,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD
+    spriteID: a1d5df15fe43d4ac0852ff02ccfc7a0e
+=======
     spriteID: 5359f1783c59940b8b20201f5a99bc2d
+>>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
     vertices: []
     indices: 
     edges: []

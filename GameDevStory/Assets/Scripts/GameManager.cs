@@ -11,13 +11,16 @@ public enum GameScene
 public class GameManager : Singleton<GameManager> {
 
     private static bool created = false;
-
     private double moneyBalance;
     
     public GameScene gameScene;
 
     public Scenario[] scenarioArray;
 
+    private LevelManager levelScript;
+    private int level = 0; // Hardcoded to first level for now
+
+    // Initialise game at splash screen
     void Awake()
     {
         if (!created)
@@ -28,9 +31,17 @@ public class GameManager : Singleton<GameManager> {
         }
 
         gameScene = GameScene.SPLASH_SCREEN;
-
         moneyBalance = 1000;
 
+                levelScript = GetComponent <LevelManager>();
+        levelScript.SetupScene(level);
+    }
+
+    void StartLevel(int level)
+    {
+        levelScript = GetComponent <LevelManager>();
+        levelScript.SetupScene(level);
+        gameScene = GameScene.OFFICE;
     }
 
     public void switchScene(GameScene scene)
@@ -51,14 +62,15 @@ public class GameManager : Singleton<GameManager> {
 
 
     // Use this for initialization
-    void Start () {
+    void Start () 
+    {
 		
 
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update () 
+    {
         foreach(Scenario scenario in scenarioArray){
 
             if( scenario.getStatus() == ScenarioStatus.INCOMPLETE && Scenario.getActive() == false && Random.Range(0.0f, 1.0f) < scenario.GetScenarioProbability()){
@@ -66,7 +78,5 @@ public class GameManager : Singleton<GameManager> {
             }
 
         }
-
-
 	}
 }

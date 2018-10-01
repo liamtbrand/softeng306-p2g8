@@ -11,6 +11,10 @@ namespace DialogueScripts{
 
         private Queue<Sentence> _dialogueQueue;
 
+        public bool DialogueInProgress = false;
+
+        public GameObject DialogueContainer;
+
         public Text NameText;
         public Text DialogueText;
         public Text[] OptionTextArray;
@@ -20,12 +24,16 @@ namespace DialogueScripts{
 
         protected DialogueManager() { }
         
-        void Start () {
+        void Awake () {
             _dialogueQueue = new Queue<Sentence>();
+            
         }
 
         public void StartDialogue(Dialogue dialogue)
         {
+            DialogueInProgress = true;
+
+            Debug.Log("Start dialogue");
             if (!DialoguePanel.activeInHierarchy)
             {
                 DialoguePanel.SetActive(true);
@@ -37,9 +45,10 @@ namespace DialogueScripts{
 
             NameText.text = dialogue.Title;
 
-            _dialogueQueue.Clear();
+            //_dialogueQueue.Clear();
             foreach(Sentence sentence in dialogue.Sentences)
             {
+                Debug.Log("Queueing dialogue");
                 _dialogueQueue.Enqueue(sentence);
             }
 
@@ -47,22 +56,25 @@ namespace DialogueScripts{
         }
 
         public void QueueDialogue(Dialogue dialogue){
-            // todo sort this shit out
-            if(_dialogueQueue.Count == 0){
-                StartDialogue(dialogue);
-            }else{
-                foreach(Sentence sentence in dialogue.Sentences)
-                {
-                    _dialogueQueue.Enqueue(sentence);
-                }
+            Debug.Log("Queueing dialogue");
+
+            foreach(Sentence sentence in dialogue.Sentences)
+            {
+                Debug.Log("Queueing dialogue");
+                _dialogueQueue.Enqueue(sentence);
             }
-
-
-
+            
         }
 
         public void DisplayNextSentence()
         {
+
+            if (!DialoguePanel.activeInHierarchy)
+            {
+                    DialoguePanel.SetActive(true);
+            }
+
+            Debug.Log("Displaying next sentence");
             foreach(Button button in OptionButtonArray){
                 button.gameObject.SetActive(false);
             }
@@ -77,7 +89,10 @@ namespace DialogueScripts{
 
             Sentence sentence = _dialogueQueue.Dequeue();
 
-            DialogueText.text = sentence.sentenceLine;
+            //DialogueText.text = sentence.sentenceLine;
+
+            StopAllCoroutines();
+		    StartCoroutine(TypeSentence(sentence.sentenceLine));
 
             if(sentence.sentenceChoices != null && sentence.sentenceChoices.Length > 0){
                 Debug.Log("Generating " + sentence.sentenceChoices.Length + " choice buttons");
@@ -96,9 +111,25 @@ namespace DialogueScripts{
 
         }
 
+        private IEnumerator TypeSentence(string sentenceLine){
+            DialogueText.text = "";
+		    foreach (char letter in sentenceLine.ToCharArray())
+		    {
+			    DialogueText.text += letter;
+			    yield return null;
+		    }
+        }
+
         public void EndDialogue()
         {
-            DialoguePanel.SetActive(false);
+            Debug.Log("Ending dialogue");
+
+            DialogueInProgress = false;
+            
+            if(_dialogueQueue.Count == 0)
+            {
+                DialoguePanel.SetActive(false);
+            }
         }
 
     }
