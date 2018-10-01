@@ -50,8 +50,16 @@
      * it's the state diagrams of the animation override controller that needs to be fucked around with
      */
 
-       // Action to trigger state change of a given NPC (or randomly chosen, if index is < 0)       public void Action(State state)       {                   // Get the animator for the specified NPC            Animator animator = this.GetComponent<Animator>();            if (state == State.IDLE)            {                animator.SetInteger("State", 1);            }
-       }
+       // Action to trigger state change of a given NPC (or randomly chosen, if index is < 0)
+      public void Action(State state)
+      {      
+            // Get the animator for the specified NPC
+           Animator animator = this.GetComponent<Animator>();
 
+          if (state == State.IDLE)
+           {
+               animator.SetInteger("State", 1);
+           }
 
+      }
     }
