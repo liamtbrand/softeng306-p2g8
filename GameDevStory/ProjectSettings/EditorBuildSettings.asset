@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Hiring/GridView.unity
+    guid: 57928eb16b1674f0cb0017268127d7cc
+  - enabled: 1
+    path: Assets/Scenes/Hiring/ApplicantView.unity
+    guid: 621528616613908498d181f62c1d3290
   m_configObjects: {}

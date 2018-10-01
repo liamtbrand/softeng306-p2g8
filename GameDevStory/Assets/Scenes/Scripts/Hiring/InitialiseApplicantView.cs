@@ -5,7 +5,7 @@ using TMPro;
 public class InitialiseApplicantView : MonoBehaviour
 {
     // Reference to npc to display from previous tile script.
-    public NPCInfo npcInfo;
+    public static NPCInfo npcInfo;
 
     // Read only's
     private readonly float SLIDER_MAX_VALUE = 100;
