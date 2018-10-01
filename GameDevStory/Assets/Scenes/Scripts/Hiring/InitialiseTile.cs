@@ -13,10 +13,11 @@ public class InitialiseTile : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        // TODO: Finish implementing
         // Get the npc's stat from their stats script
         var npc = NPCFactory.Instance.CreateNPCWithRandomizedStats();
         image.GetComponent<Animator>().runtimeAnimatorController = npc.attributes.animationController;
+
         //spriteImage.sprite = npc.attributes.sprite;
         nameHeader.text = npc.attributes.name;
         ageHeader.text = npc.attributes.age.ToString();
@@ -24,7 +25,7 @@ public class InitialiseTile : MonoBehaviour {
     }
 
     void Update()
-    {   
+    {
     }
 
 }
