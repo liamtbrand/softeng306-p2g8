@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +8,10 @@ public class ProjectDisplayManager : MonoBehaviour
     public GameObject ProjectSelectionContent;
     public GameObject ProjectEntryPrefab;
     public GameObject ProjectEntryTitlePrefab;
+
+    public GameObject ProjectCompletePanel;
+    public GameObject Star;
+    public GameObject HollowStar;
     
     protected ProjectDisplayManager () {} // enforces singleton use
 
@@ -20,11 +24,8 @@ public class ProjectDisplayManager : MonoBehaviour
         Instantiate(ProjectEntryTitlePrefab, Vector3.zero, Quaternion.identity, ProjectSelectionContent.transform);
     }
 
-    // This is called back when the project is selected
-    public delegate void ProjectSelectedCallBack();
-
     public void AddNewProject(string title, string company, string description, string stats, bool selectable,
-        ProjectSelectedCallBack callback)
+        Action<string> callback)
     {
         var projectPrefab = Instantiate(ProjectEntryPrefab, Vector3.zero, Quaternion.identity, ProjectSelectionContent.transform);
         var text = projectPrefab.GetComponentsInChildren<Text>();
@@ -36,7 +37,7 @@ public class ProjectDisplayManager : MonoBehaviour
         var button = projectPrefab.GetComponentsInChildren<Button>(true); // get inactive children too!
         if (selectable)
         {
-            button[0].onClick.AddListener(delegate { callback(); }); // set button callback
+            button[0].onClick.AddListener(delegate { callback(title); }); // set button callback
         }
         else
         {
@@ -49,6 +50,11 @@ public class ProjectDisplayManager : MonoBehaviour
     public void AddNewProject(string title, string company, string description, string stats, bool selectable)
     {
         AddNewProject(title, company, description, stats, selectable, delegate {  });
+    }
+
+    public void ProjectCompleted(double profit)
+    {
+        ProjectCompletePanel.SetActive(true);
     }
     
 }
