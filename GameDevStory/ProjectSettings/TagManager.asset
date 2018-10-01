@@ -47,3 +47,6 @@ TagManager:
   - name: Desks
     uniqueID: 3490581799
     locked: 0
+  - name: GUI
+    uniqueID: 381432137
+    locked: 0

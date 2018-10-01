@@ -7,8 +7,6 @@ using UnityEngine.UI;
 namespace DialogueScripts{
     public class DialogueManager : Singleton<DialogueManager> {
 
-        //todo implement ability to select choices
-
         private Queue<Sentence> _dialogueQueue;
 
         public bool DialogueInProgress = false;
@@ -22,11 +20,18 @@ namespace DialogueScripts{
         public Button ContinueButton;
         public GameObject DialoguePanel;
 
+        public SpriteRenderer NPCIcon;
+
         protected DialogueManager() { }
         
         void Awake () {
             _dialogueQueue = new Queue<Sentence>();
             
+        }
+
+        public void StartDialogue(Dialogue dialogue, Sprite icon){
+            NPCIcon.sprite = icon;
+            StartDialogue(dialogue);
         }
 
         public void StartDialogue(Dialogue dialogue)
@@ -53,6 +58,11 @@ namespace DialogueScripts{
             }
 
             DisplayNextSentence();
+        }
+
+        public void QueueDialogue(Dialogue dialogue, Sprite icon){
+            NPCIcon.sprite = icon;
+            QueueDialogue(dialogue);
         }
 
         public void QueueDialogue(Dialogue dialogue){

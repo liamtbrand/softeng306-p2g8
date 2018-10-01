@@ -6,6 +6,8 @@ using DialogueScripts;
 
 public class TestScenarioExecutor : AScenarioExecutor {
 
+    public Sprite investorHead;
+
     public override void execute()
     {
 
@@ -39,7 +41,7 @@ public class TestScenarioExecutor : AScenarioExecutor {
             }
         };
 
-        DialogueManager.Instance.StartDialogue(testDialogue);
+        DialogueManager.Instance.StartDialogue(testDialogue, investorHead);
 
     }
 
