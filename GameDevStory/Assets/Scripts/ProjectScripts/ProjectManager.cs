@@ -53,11 +53,14 @@ public class ProjectManager : Singleton<ProjectManager> {
 		timerScript.enabled = true;
 
 		// Wait till a project is completed
-		Invoke("CompletedProject", 10f);
+		Invoke("CompletedProject", 10.5f);
 	}
 
 	void CompletedProject()
  	{
+		// Reset timer
+		timerScript.enabled = false;
+
 		// Change project object to completed
 		Project projectObject = projects[selectedProject];
 		projectObject.setCompleted(true);

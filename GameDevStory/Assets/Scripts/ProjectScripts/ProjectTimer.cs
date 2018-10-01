@@ -13,7 +13,7 @@ public class ProjectTimer : MonoBehaviour {
 	public Text progressText;
 
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
 		progressPanel.SetActive(true);
 		timer = 10f;
 		progressBar.value = 0;
