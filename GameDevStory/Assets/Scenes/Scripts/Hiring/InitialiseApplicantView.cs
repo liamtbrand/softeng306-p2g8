@@ -11,11 +11,8 @@ public class InitialiseApplicantView : MonoBehaviour
     private readonly float SLIDER_MAX_VALUE = 100;
     private readonly float VALUE = 60;
 
-    // NPC to be displayed
-    public GameObject npc;
-
     // Misc. character info
-    public Image spriteImage;
+    public Animator animator;
     public TextMeshProUGUI nameHeader;
     public TextMeshProUGUI ageHeader;
     public TextMeshProUGUI genderHeader;
@@ -36,10 +33,12 @@ public class InitialiseApplicantView : MonoBehaviour
         var attributes = npcInfo.attributes; // the pre-made NPC attributes
 
         //spriteImage.sprite = stats.sprite;
-        nameHeader.text = attributes.name;
+        nameHeader.text = attributes.npcName;
         ageHeader.text = attributes.age.ToString();
         genderHeader.text = attributes.gender.ToString();
         bioBox.text = attributes.biography;
+
+        animator.runtimeAnimatorController = npcInfo.attributes.animationController;
 
         // Initialise sliders
         FillSlider(communicationSlider, stats.communication);
