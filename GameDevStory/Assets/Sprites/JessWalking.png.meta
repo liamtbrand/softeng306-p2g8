@@ -1,7 +1,9 @@
 fileFormatVersion: 2
-guid: 667455e1a34c34968a714bfd993a5411
+guid: 456c426250a06cc46bb8d7ea4e268a75
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: JessWalking_0
+    21300002: JessWalking_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -31,19 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     filterMode: 0
-=======
-    filterMode: -1
->>>>>>> Create level manager
-=======
-    filterMode: 0
->>>>>>> Changed Sprite options to disable AA
-=======
-    filterMode: 0
->>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -52,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -93,20 +83,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
-<<<<<<< HEAD
-=======
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
->>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -119,15 +95,51 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: JessWalking_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7904ed4234336be45af8c6bc9195d142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JessWalking_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 2
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308f8f5862bb4e646af9669567aa6312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< HEAD
-    spriteID: a1d5df15fe43d4ac0852ff02ccfc7a0e
-=======
-    spriteID: 5359f1783c59940b8b20201f5a99bc2d
->>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
+    spriteID: 23a59a11ce5f765499dd3db26e830117
     vertices: []
     indices: 
     edges: []

@@ -1,7 +1,11 @@
 fileFormatVersion: 2
-guid: 667455e1a34c34968a714bfd993a5411
+guid: 93875acd5fc47e14b9f3d252e5af2860
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Edward_20x26_0
+    21300002: Edward_20x26_1
+    21300004: Edward_20x26_2
+    21300006: Edward_20x26_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -31,19 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     filterMode: 0
-=======
-    filterMode: -1
->>>>>>> Create level manager
-=======
-    filterMode: 0
->>>>>>> Changed Sprite options to disable AA
-=======
-    filterMode: 0
->>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -52,7 +44,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -93,20 +85,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
-<<<<<<< HEAD
-=======
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
->>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -119,15 +97,91 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Edward_20x26_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 3
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84748bac1185a804a8e9761803b12ca5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edward_20x26_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 3
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b553ca95af71744a5eb62df59c7ba5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edward_20x26_2
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 3
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f688ca0746ced4c987a27c878a71c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edward_20x26_3
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 3
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c993365c7f9eba48a40a613034a8528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< HEAD
-    spriteID: a1d5df15fe43d4ac0852ff02ccfc7a0e
-=======
-    spriteID: 5359f1783c59940b8b20201f5a99bc2d
->>>>>>> 69db4beab69610d790c57e5212046aed3fd8deb8
+    spriteID: c52332e6e4105de44ab885228acf6cc8
     vertices: []
     indices: 
     edges: []
