@@ -5,7 +5,7 @@ Diverse 306 Gamers
 
 | GitHub Username | Name | UPI |
 | --------------- | ---- | --- |
-| Jess-Alcantara | Jess Alcantara | jalc504 |
+| Jess-Alcantara* | Jess Alcantara | jalc504 |
 | liamtbrand | Liam Brand | lbra112 |
 | darcycox97 | Darcy Cox | dcox740 |
 | Buster-Darragh-Major | Buster Darragh-Major | bmaj406 |
@@ -13,3 +13,5 @@ Diverse 306 Gamers
 | cyrus-raitava | Cyrus Raitava-Kumar | crai897 |
 | cameronscoular | Cameron Scoular | csco768 |
 | encryptededdy | Edward Zhang | ezha210 |
+
+\*also committed as Jessica Alcantara (not logged into GitHub)
