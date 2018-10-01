@@ -5,7 +5,17 @@ using UnityEngine.SceneManagement;
 
 public enum GameScene
 {
-    SPLASH_SCREEN, MAIN_MENU, PROJECT_SELECT, OFFICE, SCORE_SCREEN, CHECKPOINT_SCREEN, AD_SCREEN, SEND_JOB_SPLASH, HIRING_SCREEN, SHOP_SCREEN
+    SPLASH_SCREEN,
+    MAIN_MENU,
+    PROJECT_SELECT,
+    OFFICE,
+    SCORE_SCREEN,
+    CHECKPOINT_SCREEN,
+    AD_SCREEN,
+    SEND_JOB_SPLASH,
+    ApplicantView,
+    GridView,
+    SHOP_SCREEN
 }
 
 public class GameManager : Singleton<GameManager> {
@@ -69,14 +79,16 @@ public class GameManager : Singleton<GameManager> {
 	}
 	
 	// Update is called once per frame
-	void Update () 
-    {
-        foreach(Scenario scenario in scenarioArray){
+	void Update () {
 
-            if( scenario.getStatus() == ScenarioStatus.INCOMPLETE && Scenario.getActive() == false && Random.Range(0.0f, 1.0f) < scenario.GetScenarioProbability()){
+        foreach (Scenario scenario in scenarioArray)
+        {
+
+            if (scenario.getStatus() == ScenarioStatus.INCOMPLETE && Scenario.getActive() == false && Random.Range(0.0f, 1.0f) < scenario.GetScenarioProbability())
+            {
                 scenario.StartScenario();
             }
 
         }
-	}
+    }
 }

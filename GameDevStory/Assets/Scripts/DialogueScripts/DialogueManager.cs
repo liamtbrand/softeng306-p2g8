@@ -7,8 +7,6 @@ using UnityEngine.UI;
 namespace DialogueScripts{
     public class DialogueManager : Singleton<DialogueManager> {
 
-        //todo implement ability to select choices
-
         private Queue<Sentence> _dialogueQueue;
 
         public bool DialogueInProgress = false;
@@ -21,6 +19,8 @@ namespace DialogueScripts{
         public Button[] OptionButtonArray;
         public Button ContinueButton;
         public GameObject DialoguePanel;
+
+        public SpriteRenderer NPCIcon;
 
         protected DialogueManager() { }
         
@@ -42,10 +42,7 @@ namespace DialogueScripts{
             foreach(Button button in OptionButtonArray){
                 button.gameObject.SetActive(false);
             }
-
-            NameText.text = dialogue.Title;
-
-            //_dialogueQueue.Clear();
+            
             foreach(Sentence sentence in dialogue.Sentences)
             {
                 Debug.Log("Queueing dialogue");
@@ -90,6 +87,11 @@ namespace DialogueScripts{
             Sentence sentence = _dialogueQueue.Dequeue();
 
             //DialogueText.text = sentence.sentenceLine;
+
+            
+            NameText.text = sentence.Title;
+
+            NPCIcon.sprite = sentence.icon;
 
             StopAllCoroutines();
 		    StartCoroutine(TypeSentence(sentence.sentenceLine));

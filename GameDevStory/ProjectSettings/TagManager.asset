@@ -57,3 +57,6 @@ TagManager:
   - name: GUI
     uniqueID: 605149443
     locked: 0
+  - name: GUI
+    uniqueID: 381432137
+    locked: 0
