@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum ProjectDifficulty
 {
-    EASY,MEDIUM,HARD
+    Easy,Medium,Hard
 }
 
 public class Project : MonoBehaviour {
@@ -88,6 +88,11 @@ public class Project : MonoBehaviour {
 	public bool getEnabled ()
 	{
 		return enabled;
+	}
+
+	public string getStats()
+	{
+		return "Length: " + length + "\nDifficulty: " + difficulty.ToString();
 	}
 	
 }

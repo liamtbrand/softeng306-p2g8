@@ -6,28 +6,30 @@ using UnityEngine.UI;
 public class ProjectManager : Singleton<ProjectManager> {
 
 	private ProjectTimer timerScript;
-	public Button startProject;
-	public GameObject projectSelection;
-	private ProjectSelector projectScript;
-
+	private ProjectDisplayManager displayScript;
+	public GameObject projectMenu;
+	
+	Dictionary<string,Project> projects;
 	private double profit;
-	public GameObject[] projects;		// Array of project prefabs.
 
 	void Start () {
 		//timerScript = GetComponent<ProjectTimer> ();
 		//timerScript.enabled = false; 
+		projects = ProjectCreator.Instance.InitialiseProjects();
 	}
 
 	// Shows the project picker
 	public void PickProject () {
-		projectSelection.SetActive(true);
-		projectScript = GetComponent <ProjectSelector>();
-        projectScript.SetupProjectMenu();
-
-		Dictionary<string,Project> projects = ProjectCreator.Instance.InitialiseProjects();
+		projectMenu.SetActive(true);
+		displayScript = GetComponent <ProjectDisplayManager>();
 		foreach(KeyValuePair<string, Project> entry in projects)
 		{
-			Debug.Log(entry.Key);
+			displayScript.AddNewProject(
+				entry.Value.getTitle(), 
+				entry.Value.getCompany(), 
+				entry.Value.getDescription(), 
+				entry.Value.getStats(), 
+				entry.Value.getEnabled());
 		}
 	}
 

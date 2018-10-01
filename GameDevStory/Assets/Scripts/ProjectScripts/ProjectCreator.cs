@@ -14,16 +14,17 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectOne.setCompany("Bista Entertainment Solutions");
 		projectOne.setDescription("Build a web app to handle the booking of movie tickets. Needs to support the issuance of free tickets to student software engineering clubs.");
 		projectOne.setLength(7);
-		projectOne.setDifficulty(ProjectDifficulty.EASY);
+		projectOne.setDifficulty(ProjectDifficulty.Easy);
+		projectOne.setEnabled(true);
 		projects.Add(projectOne.getTitle(),projectOne);
 
 		// Project Two
 		Project projectTwo = new Project();
-		projectTwo.setTitle("Smart Campus Software");
-		projectTwo.setCompany("Quality Courses");
-		projectTwo.setDescription("Build software to calculate university course quality metrics, to help determine rankings.");
+		projectTwo.setTitle("High-performance Meeting-threading Library");
+		projectTwo.setCompany("Sheehan Software");
+		projectTwo.setDescription("Build a C library to assist the CEO in planning their day. Should support both Sequential and Concurrent meetings. ");
 		projectTwo.setLength(10);
-		projectTwo.setDifficulty(ProjectDifficulty.EASY);
+		projectTwo.setDifficulty(ProjectDifficulty.Easy);
 		projects.Add(projectTwo.getTitle(),projectTwo);
 
 		// Project Three
@@ -32,7 +33,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectThree.setCompany("ERail");
 		projectThree.setDescription("Build software to support the tracking & management of rail assets throughout New Zealand.");
 		projectThree.setLength(14);
-		projectThree.setDifficulty(ProjectDifficulty.MEDIUM);
+		projectThree.setDifficulty(ProjectDifficulty.Medium);
 		projects.Add(projectThree.getTitle(),projectThree);
 
 		// Project Four
@@ -41,16 +42,16 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectFour.setCompany("Zeroe");
 		projectFour.setDescription("Help provide consultancy services to Zeroe, to aid them in holding their accountants accountable. ");
 		projectFour.setLength(21);
-		projectFour.setDifficulty(ProjectDifficulty.MEDIUM);
+		projectFour.setDifficulty(ProjectDifficulty.Medium);
 		projects.Add(projectFour.getTitle(),projectFour);
 
 		// Project Five
 		Project projectFive = new Project();
 		projectFive.setTitle("Investment Software");
 		projectFive.setCompany("Optimar");
-		projectFive.setDescription("Build software to help Robert at Optimar calculate the WACC based on publicly available accounting information for various companies, in order to better inform investment decisions.");
+		projectFive.setDescription("Build software to help Robert at Optimar calculate the WACC based on publicly available accounting information for various companies.");
 		projectFive.setLength(30);
-		projectFive.setDifficulty(ProjectDifficulty.HARD);
+		projectFive.setDifficulty(ProjectDifficulty.Hard);
 		projects.Add(projectFive.getTitle(),projectFive);
 
 		return projects;
