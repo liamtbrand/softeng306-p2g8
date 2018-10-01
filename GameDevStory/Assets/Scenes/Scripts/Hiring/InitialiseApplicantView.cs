@@ -4,6 +4,9 @@ using TMPro;
 
 public class InitialiseApplicantView : MonoBehaviour
 {
+    // Reference to npc to display from previous tile script.
+    public NPCInfo npcInfo;
+
     // Read only's
     private readonly float SLIDER_MAX_VALUE = 100;
     private readonly float VALUE = 60;
@@ -29,22 +32,21 @@ public class InitialiseApplicantView : MonoBehaviour
     void Start()
     {
         // Get the npc's stat from their stats script
-        var npcInfo = npc.GetComponent<NPCFactory>().CreateNPCWithRandomizedStats();
         var stats = npcInfo.stats; // the randomly generated stats
         var attributes = npcInfo.attributes; // the pre-made NPC attributes
 
         //spriteImage.sprite = stats.sprite;
-        //nameHeader.text = stats.name;
-        //ageHeader.text = stats.age.ToString();
-        //genderHeader.text = stats.gender.ToString();
-        //bioBox.text = stats.bio;
+        nameHeader.text = attributes.name;
+        ageHeader.text = attributes.age.ToString();
+        genderHeader.text = attributes.gender.ToString();
+        bioBox.text = attributes.biography;
 
-        //// Initialise sliders
-        //FillSlider(communicationSlider, stats.communicationStat);
-        //FillSlider(testingSlider, stats.testingStat);
-        //FillSlider(technicalSlider, stats.technicalStat);
-        //FillSlider(creativitySlider, stats.creativityStat);
-        //FillSlider(designSlider, stats.designStat);
+        // Initialise sliders
+        FillSlider(communicationSlider, stats.communication);
+        FillSlider(testingSlider, stats.testing);
+        FillSlider(technicalSlider, stats.technical);
+        FillSlider(creativitySlider, stats.creativity);
+        FillSlider(designSlider, stats.design);
     }
 
     void Update()
