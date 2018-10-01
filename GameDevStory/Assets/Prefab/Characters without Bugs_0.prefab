@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4805450311633058}
   - component: {fileID: 212842185856063880}
+  - component: {fileID: 114612338222549386}
   m_Layer: 0
   m_Name: Characters without Bugs_0
   m_TagString: Untagged
@@ -40,6 +41,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114612338222549386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1748163261614690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 254c8f4c80aaaf0468e8e3af201d8bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Sarah Parker
+  age: 34
+  gender: 1
+  communicationStat: 70
+  testingStat: 50
+  technicalStat: 45
+  creativityStat: 98
+  designStat: 12
+  bio: Hello, my name is Sarah!
+  sprite: {fileID: 21300000, guid: 9041b1eceebc51643a40a5bd1ede0a56, type: 3}
 --- !u!212 &212842185856063880
 SpriteRenderer:
   m_ObjectHideFlags: 1

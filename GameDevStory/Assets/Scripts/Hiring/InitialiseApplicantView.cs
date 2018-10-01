@@ -4,15 +4,15 @@ using TMPro;
 
 public class InitialiseApplicantView : MonoBehaviour
 {
+    // Reference to npc to display from previous tile script.
+    public static NPCInfo npcInfo;
+
     // Read only's
     private readonly float SLIDER_MAX_VALUE = 100;
     private readonly float VALUE = 60;
 
-    // NPC to be displayed
-    public GameObject npc;
-
     // Misc. character info
-    public Image spriteImage;
+    public Animator animator;
     public TextMeshProUGUI nameHeader;
     public TextMeshProUGUI ageHeader;
     public TextMeshProUGUI genderHeader;
@@ -29,27 +29,28 @@ public class InitialiseApplicantView : MonoBehaviour
     void Start()
     {
         // Get the npc's stat from their stats script
-        var npcInfo = npc.GetComponent<NPCFactory>().CreateNPCWithRandomizedStats();
         var stats = npcInfo.stats; // the randomly generated stats
         var attributes = npcInfo.attributes; // the pre-made NPC attributes
 
         //spriteImage.sprite = stats.sprite;
-        //nameHeader.text = stats.name;
-        //ageHeader.text = stats.age.ToString();
-        //genderHeader.text = stats.gender.ToString();
-        //bioBox.text = stats.bio;
+        nameHeader.text = attributes.npcName;
+        ageHeader.text = attributes.age.ToString();
+        genderHeader.text = attributes.gender.ToString();
+        bioBox.text = attributes.biography;
 
-        //// Initialise sliders
-        //FillSlider(communicationSlider, stats.communicationStat);
-        //FillSlider(testingSlider, stats.testingStat);
-        //FillSlider(technicalSlider, stats.technicalStat);
-        //FillSlider(creativitySlider, stats.creativityStat);
-        //FillSlider(designSlider, stats.designStat);
+        animator.runtimeAnimatorController = npcInfo.attributes.animationController;
+
+        // Initialise sliders
+        FillSlider(communicationSlider, stats.communication);
+        FillSlider(testingSlider, stats.testing);
+        FillSlider(technicalSlider, stats.technical);
+        FillSlider(creativitySlider, stats.creativity);
+        FillSlider(designSlider, stats.design);
     }
 
-    void Update()
+    public void BackClicked()
     {
-        Start();
+        GameManager.Instance.switchScene(GameScene.GridView);
     }
 
     private void FillSlider(Slider slider, float value)

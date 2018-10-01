@@ -22,6 +22,7 @@ using Random = UnityEngine.Random;      //Tells Random to use the Unity Engine r
         //Sets up the desks of the game level.
         private void LevelSetup ()
         {
+			Debug.Log("LEvel should set up");
             //Instantiate Level and set levelHolder to its transform.
             levelHolder = new GameObject ("Level").transform;
 

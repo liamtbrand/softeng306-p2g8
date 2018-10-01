@@ -6,13 +6,13 @@ using UnityEngine.UI;
 // An action to perform on the npc
 public abstract class NPCAction {
 
-    protected delegate void Callback();
+    //protected delegate void Callback();
 
-    abstract void DoActionHook();
+    //abstract void DoActionHook();
 
-    void DoAction(Callback callback) {
-        DoActionHook();
-        callback();
-    }
+    //void DoAction(Callback callback) {
+    //    DoActionHook();
+    //    callback();
+    //}
 
 }

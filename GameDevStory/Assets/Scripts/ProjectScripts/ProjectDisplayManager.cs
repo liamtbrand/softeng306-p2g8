@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +7,12 @@ public class ProjectDisplayManager : MonoBehaviour
 {
     public GameObject ProjectSelectionContent;
     public GameObject ProjectEntryPrefab;
-    public GameObject ProjectEntryTitlePrefab;
+
+    public GameObject ProjectCompletePanel;
+    public GameObject ProjectCompleteContent;
+    public GameObject Star;
+    public GameObject HollowStar;
+    public Text ProfitText;
     
     protected ProjectDisplayManager () {} // enforces singleton use
 
@@ -16,15 +21,10 @@ public class ProjectDisplayManager : MonoBehaviour
         foreach (Transform child in ProjectSelectionContent.transform) {
             GameObject.Destroy(child.gameObject);
         }
-        // Add back the title!
-        Instantiate(ProjectEntryTitlePrefab, Vector3.zero, Quaternion.identity, ProjectSelectionContent.transform);
     }
 
-    // This is called back when the project is selected
-    public delegate void ProjectSelectedCallBack();
-
     public void AddNewProject(string title, string company, string description, string stats, bool selectable,
-        ProjectSelectedCallBack callback)
+        Action<string> callback)
     {
         var projectPrefab = Instantiate(ProjectEntryPrefab, Vector3.zero, Quaternion.identity, ProjectSelectionContent.transform);
         var text = projectPrefab.GetComponentsInChildren<Text>();
@@ -36,7 +36,7 @@ public class ProjectDisplayManager : MonoBehaviour
         var button = projectPrefab.GetComponentsInChildren<Button>(true); // get inactive children too!
         if (selectable)
         {
-            button[0].onClick.AddListener(delegate { callback(); }); // set button callback
+            button[0].onClick.AddListener(delegate { callback(title); }); // set button callback
         }
         else
         {
@@ -49,6 +49,38 @@ public class ProjectDisplayManager : MonoBehaviour
     public void AddNewProject(string title, string company, string description, string stats, bool selectable)
     {
         AddNewProject(title, company, description, stats, selectable, delegate {  });
+    }
+
+    public void ProjectCompleted(double profit, int stars)
+    {
+        ProjectCompletePanel.SetActive(true);
+        ProfitText.text = "$" + profit.ToString("f2");
+        
+        float offset = 0.3f;
+        float xPos = -0.3f;
+        float yPos = 0.05f;
+        int maxStars = 3;
+        int hollowStars = maxStars - stars;
+
+        // Instantiate stars
+        for (int j=0; j<stars; j++) {
+            Instantiate(Star, new Vector3(xPos,yPos,0f), Quaternion.identity,ProjectCompleteContent.transform);
+            xPos+=offset;
+        }
+
+        // Instantiate hollow stars
+        for (int i=0; i<hollowStars; i++) {
+            Instantiate(HollowStar, new Vector3(xPos,yPos,0f), Quaternion.identity,ProjectCompleteContent.transform);
+            xPos+=offset;
+        }
+    }
+
+    public void CloseProjectCompleted()
+    {
+        ProjectCompletePanel.SetActive(false);
+        foreach (Transform child in ProjectCompleteContent.transform) {
+            GameObject.Destroy(child.gameObject);
+        }
     }
     
 }

@@ -7,8 +7,6 @@ namespace DialogueScripts{
     [System.Serializable]
     public class Dialogue {
 
-        public string Title;
-
         //todo configure text sizing
         public Sentence[] Sentences;
 

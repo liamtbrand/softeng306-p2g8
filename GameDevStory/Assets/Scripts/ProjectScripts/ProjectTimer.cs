@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class ProjectTimer : MonoBehaviour {
 
-	private GameManager gameScript;
-
 	public GameObject progressPanel;
 	public Slider progressBar;
 	private float maxTime = 10f;
@@ -15,8 +13,7 @@ public class ProjectTimer : MonoBehaviour {
 	public Text progressText;
 
 	// Use this for initialization
-	void Start () {
-		gameScript = GetComponent<GameManager> ();
+	void OnEnable () {
 		progressPanel.SetActive(true);
 		timer = 10f;
 		progressBar.value = 0;
@@ -31,8 +28,7 @@ public class ProjectTimer : MonoBehaviour {
 
 		if (timer <= 0) {
 			progressText.text = "100%";
-			// Load finish screen
-			//gameScript.switchScene(GameScene.CHECKPOINT_SCREEN);
+			progressPanel.SetActive(false);
 		}	
 	}
 }
