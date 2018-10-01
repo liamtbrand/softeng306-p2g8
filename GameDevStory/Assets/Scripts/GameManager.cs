@@ -33,7 +33,7 @@ public class GameManager : Singleton<GameManager> {
         gameScene = GameScene.SPLASH_SCREEN;
         moneyBalance = 1000;
 
-                levelScript = GetComponent <LevelManager>();
+        levelScript = GetComponent <LevelManager>();
         levelScript.SetupScene(level);
     }
 
