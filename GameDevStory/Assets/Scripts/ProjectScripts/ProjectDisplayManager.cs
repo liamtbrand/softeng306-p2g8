@@ -43,8 +43,7 @@ namespace ProjectScripts
             }
             else
             {
-                button[0].gameObject.SetActive(false);
-                button[1].gameObject.SetActive(true);
+                button[0].interactable = false;
             }
         }
 
