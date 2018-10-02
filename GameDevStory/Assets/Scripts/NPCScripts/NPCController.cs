@@ -55,9 +55,9 @@ public class NPCController : Singleton<NPCController> {
     }
 
 
-    private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector2 position)
+    private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector3 pos)
     {
-        Vector3 pos = coordinateSystem.getVector3(position);
+        //Vector3 pos = coordinateSystem.getVector3(position); // TODO: Finish coordinate system
         GameObject npcInstance = Instantiate(npcTemplate, pos, Quaternion.identity);
         npcInstance.GetComponent<Animator>().runtimeAnimatorController = animation; // set the animator controller
         npcInstance.transform.SetParent(this.transform); // npcs should show up as a child of the npc controller

@@ -28,6 +28,11 @@ public class InitialiseApplicantView : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Reload();
+    }
+
+    public void Reload()
+    {
         // Get the npc's stat from their stats script
         var stats = npcInfo.stats; // the randomly generated stats
         var attributes = npcInfo.attributes; // the pre-made NPC attributes

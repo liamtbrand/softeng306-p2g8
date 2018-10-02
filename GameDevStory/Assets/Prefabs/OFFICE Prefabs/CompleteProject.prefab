@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 224022880516340856}
   - component: {fileID: 222592044917164932}
   - component: {fileID: 114726263720846508}
+  - component: {fileID: 114660627066008458}
   m_Layer: 5
   m_Name: Stars
   m_TagString: Untagged
@@ -245,6 +246,28 @@ MonoBehaviour:
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114660627066008458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1144402487129444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 1
 --- !u!114 &114716586513950378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -397,10 +420,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd36d519400e044097185e281f94999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectSelectionContent: {fileID: 1607674005292668, guid: 9ae09fe40f9544c57801295f5ced5c93,
-    type: 2}
+  ProjectSelectionContent: {fileID: 0}
   ProjectEntryPrefab: {fileID: 1071460055584414, guid: a5cd47e953423df4497f527fe34638a3,
     type: 2}
+  ProjectTitlePrefab: {fileID: 0}
   ProjectCompletePanel: {fileID: 1096246085569624}
   ProjectCompleteContent: {fileID: 1144402487129444}
   Star: {fileID: 1319501843777500, guid: a27fad4795778472e8f1110b5d786556, type: 2}
@@ -499,8 +522,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -179}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 2, y: -177.25}
+  m_SizeDelta: {x: 215.1, y: 46.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224328313344514508
 RectTransform:
@@ -584,7 +607,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1096246085569624}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

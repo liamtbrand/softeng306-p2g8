@@ -9,4 +9,15 @@ public class LoadScene : MonoBehaviour {
 		SceneManager.LoadScene(index);
 	}
 
+	public void LoadMainMenu()
+	{
+		Destroy(GameManager.Instance.gameObject);
+		SceneManager.LoadScene("MainMenu");
+	}
+
+	public void LoadPrototypeScene()
+	{
+		SceneManager.LoadScene("PrototypeScene");
+	}
+
 }
