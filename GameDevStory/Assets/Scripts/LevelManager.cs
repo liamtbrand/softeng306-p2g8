@@ -19,7 +19,6 @@ public class LevelManager : MonoBehaviour {
 
 	private Transform levelHolder;                                  //A variable to store a reference to the transform of our Board object.
     private List <Vector3> NPCPositions = new List <Vector3> ();    //A list of possible locations to place NPCs.
-    private Dictionary<Vector3, bool> seatingPlan = new Dictionary<Vector3, bool>();
     
     //Sets up the desks of the game level.
     private void LevelSetup ()
