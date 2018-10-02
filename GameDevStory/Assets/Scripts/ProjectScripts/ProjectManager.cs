@@ -87,8 +87,8 @@ public class ProjectManager : Singleton<ProjectManager> {
 		displayScript.ProjectCompleted(profit,stars);
 
 		// Add to total profits
-		//gameScript.changeBalance(profit);
- 	}
+		 GameManager.Instance.changeBalance(profit);
+	 }
 
 	int CalculateProjectStars (string project)
 	{
