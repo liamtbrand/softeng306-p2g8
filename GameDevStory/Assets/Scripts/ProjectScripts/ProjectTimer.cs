@@ -9,6 +9,7 @@ public class ProjectTimer : MonoBehaviour {
 	public Slider progressBar;
 	public Text progressText;
 	private ProjectManager progressScript;
+	public Scenario[] scenarioArray;
 	private float maxTime = 10f;
 	private float timer;
 	private float currentTime;
@@ -24,9 +25,22 @@ public class ProjectTimer : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		if (!paused)
 		{
+			// Fire scenarios during projects
+			foreach (Scenario scenario in scenarioArray)
+			{
+				if (scenario.getStatus() == ScenarioStatus.INCOMPLETE && 
+				    Scenario.getActive() == false 
+				    && Random.Range(0.0f, 1.0f) < scenario.GetScenarioProbability())
+				{
+					Pause(scenario);
+					scenario.StartScenario();
+				}
+			}
+			
 			// Decrement timer
 			timer -= Time.deltaTime;
 			currentTime = timer;
@@ -36,7 +50,7 @@ public class ProjectTimer : MonoBehaviour {
 			progressText.text = progress.ToString("f0")+"%";
 			progressBar.value = progress/100;
 
-			// Stop timer
+			// Project completed stop timer
 			if (timer <= 0) {
 				progressText.text = "100%";
 				progressPanel.SetActive(false);
@@ -45,11 +59,10 @@ public class ProjectTimer : MonoBehaviour {
 		}
 	}
 
-	public void Pause()
+	public void Pause(Scenario scenario)
 	{
 		paused = true;
 		currentTime = timer;
-		progressText.text = "Paused";
 	}
 
 	public void Resume()

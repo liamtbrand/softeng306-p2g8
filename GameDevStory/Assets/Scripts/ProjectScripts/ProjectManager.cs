@@ -59,7 +59,7 @@ public class ProjectManager : Singleton<ProjectManager> {
 
 	public void PauseProject()
 	{
-		timerScript.Pause();
+		//timerScript.Pause();
 		// If you want to test the resume functionality (resumes after 5s)
 		//Invoke("ResumeProject", 5f);
 	}
