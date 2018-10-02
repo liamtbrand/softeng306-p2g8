@@ -9,6 +9,9 @@ public class StoryStartExecutor : AScenarioExecutor
 
 	public Dialogue dialogue1;
 	public Dialogue dialogue2;
+	public Dialogue dialogue3;
+	public Dialogue dialogue4;
+	public Dialogue dialogue5;
 
     public override void execute()
     {
@@ -29,6 +32,9 @@ public class StoryStartExecutor : AScenarioExecutor
         Debug.Log("Starting story start executor");
 		DialogueManager.Instance.StartDialogue(dialogue1);
 		DialogueManager.Instance.QueueDialogue(dialogue2);
+		DialogueManager.Instance.QueueDialogue(dialogue3);
+		DialogueManager.Instance.QueueDialogue(dialogue4);
+		DialogueManager.Instance.QueueDialogue(dialogue5);
 	    DialogueManager.Instance.QueueDialogue(completeDialogue);
     }
 
