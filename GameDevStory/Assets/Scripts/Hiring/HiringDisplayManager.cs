@@ -7,6 +7,11 @@ public class HiringDisplayManager : MonoBehaviour {
     public GameObject GridViewPanel;
     public GameObject ApplicantViewPanel;
 
+    void Start()
+    {
+        GridViewPanel.SetActive(false);
+    }
+
     public void ShowHiringGrid()
     {
         GridViewPanel.SetActive(true);
