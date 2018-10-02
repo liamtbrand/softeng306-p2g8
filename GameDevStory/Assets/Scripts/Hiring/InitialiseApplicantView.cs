@@ -11,6 +11,8 @@ public class InitialiseApplicantView : MonoBehaviour
     private readonly float SLIDER_MAX_VALUE = 100;
     private readonly float VALUE = 60;
 
+    public LevelManager levelManager;
+
     // Misc. character info
     public Animator animator;
     public TextMeshProUGUI nameHeader;
@@ -56,6 +58,10 @@ public class InitialiseApplicantView : MonoBehaviour
     public void BackClicked()
     {
         GameManager.Instance.switchScene(GameScene.GridView);
+    }
+
+    public void HireClicked() {
+        levelManager.AddEmployeeToLevel(npcInfo);
     }
 
     private void FillSlider(Slider slider, float value)
