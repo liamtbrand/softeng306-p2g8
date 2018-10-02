@@ -120,6 +120,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 918607919}
     m_Modifications:
+    - target: {fileID: 114989088720967236, guid: 18d593fdd2681654dad262204be50abf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224555150801116124, guid: 18d593fdd2681654dad262204be50abf,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -429,6 +434,36 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 114989088720967236, guid: 18d593fdd2681654dad262204be50abf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114989088720967236, guid: 18d593fdd2681654dad262204be50abf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114989088720967236, guid: 18d593fdd2681654dad262204be50abf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4197276}
+    - target: {fileID: 114989088720967236, guid: 18d593fdd2681654dad262204be50abf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: BackClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 114989088720967236, guid: 18d593fdd2681654dad262204be50abf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114633971331574220, guid: 18d593fdd2681654dad262204be50abf,
+        type: 2}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 385111995}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d593fdd2681654dad262204be50abf, type: 2}
   m_IsPrefabAsset: 0
