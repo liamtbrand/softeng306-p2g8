@@ -3,13 +3,15 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class InitialiseTile : MonoBehaviour {
+public class TileManager : MonoBehaviour {
 
     // Misc. character info
     public GameObject image;
     public TextMeshProUGUI nameHeader;
     public TextMeshProUGUI ageHeader;
     public TextMeshProUGUI genderHeader;
+    public GameObject ApplicantView;
+    public GameObject GridView;
 
     private NPCInfo npcInfo;
 
@@ -31,6 +33,8 @@ public class InitialiseTile : MonoBehaviour {
     {
         // Set the npc info field in applicant view script to be this applicant.
         InitialiseApplicantView.npcInfo = npcInfo;
-        GameManager.Instance.switchScene(GameScene.ApplicantView);
+        ApplicantView.GetComponent<InitialiseApplicantView>().Reload();
+        ApplicantView.SetActive(true);
+        GridView.SetActive(false); // Hide the underlying grid view in case
     }
 }
