@@ -53,11 +53,23 @@ public class ProjectManager : Singleton<ProjectManager> {
 		// Start project progress timer
 		timerScript.enabled = true;
 
-		// Wait till a project is completed
-		Invoke("CompletedProject", 10.5f);
+		// If you want to test the pausing functionality (pauses after 3s)
+		//Invoke("PauseProject", 5f);
 	}
 
-	void CompletedProject()
+	public void PauseProject()
+	{
+		timerScript.Pause();
+		// If you want to test the resume functionality (resumes after 5s)
+		//Invoke("ResumeProject", 5f);
+	}
+	
+	public void ResumeProject()
+	{
+		timerScript.Resume();
+	}
+
+	public void CompletedProject()
  	{
 		// Reset timer
 		timerScript.enabled = false;
