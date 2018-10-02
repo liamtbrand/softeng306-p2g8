@@ -18,12 +18,10 @@ public class TileManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        // TODO: Finish implementing
         // Get the npc's stat from their stats script
         npcInfo = NPCFactory.Instance.CreateNPCWithRandomizedStats();
         image.GetComponent<Animator>().runtimeAnimatorController = npcInfo.attributes.animationController;
 
-        //spriteImage.sprite = npc.attributes.sprite;
         nameHeader.text = npcInfo.attributes.npcName;
         ageHeader.text = npcInfo.attributes.age.ToString();
         genderHeader.text = npcInfo.attributes.gender.ToString();

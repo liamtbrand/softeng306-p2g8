@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HiringDisplayManager : MonoBehaviour {
 
+    public Button HireButton;
     public GameObject GridViewPanel;
     public GameObject ApplicantViewPanel;
 
@@ -14,11 +16,13 @@ public class HiringDisplayManager : MonoBehaviour {
 
     public void ShowHiringGrid()
     {
+        HireButton.interactable = false;
         GridViewPanel.SetActive(true);
     }
 
     public void CloseHiringGrid()
     {
+        HireButton.interactable = true;
         GridViewPanel.SetActive(false);
     }
 
