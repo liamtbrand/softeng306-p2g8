@@ -72,10 +72,10 @@ public class GameManager : Singleton<GameManager> {
         image.CrossFadeAlpha( 1.0f, 2, false );
 
     }
+    
+    public void Unfade(){
 
-    public void unfade(){
-
-        
+		image.CrossFadeAlpha(0f, 2, false);
         fadePanel.SetActive(false);
     }
 

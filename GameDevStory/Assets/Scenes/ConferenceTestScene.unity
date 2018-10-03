@@ -7399,44 +7399,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue2:
     Sentences:
-    - Title: Conference Introducer
-      icon: {fileID: 0}
+    - Title: Conference Receptionist [Martha]
+      icon: {fileID: 21300000, guid: 6120e8e814f2a4a6b9e4bce92e2a0d4f, type: 3}
       sentenceLine: Hi there! Welcome to the DivDevs Conference! Come on in, the next
         speaker's interview is just starting!....
       sentenceChoices: []
-    - Title: Interviewer
-      icon: {fileID: 0}
-      sentenceLine: Welcome! Welcome! My name is Sam, and I'm the current CEO of the
-        innovative tech start-up NextSpace. I've been fortunately invited along to
+    - Title: Speaker [Riley]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: 'Welcome! Welcome! My name is Riley, and I''m the current CEO
+        of the innovative tech start-up NextSpace. '
       sentenceChoices: []
-    - Title: Speaker
-      icon: {fileID: 0}
-      sentenceLine: 
+    - Title: Speaker [Riley]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: 'I''m lucky enough to have been invited along to this conference,
+        to talk about how - using my special techniques - I managed to double my PROFITS,
+        employee SATISFACTION, and customer base, in but a few months. I did this
+        by making three executive decisions:'
       sentenceChoices: []
-    - Title: Speaker
-      icon: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
-      sentenceLine: Anyway, next up is our only woman speaker who will be talking
-        about diversity in tech...
+    - Title: Speaker [Riley]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: '1: Listening to my employees, and fixing conflict scenarios by
+        making ethical decisions.'
       sentenceChoices: []
-    - Title: Jayne Hustleson
-      icon: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
-      sentenceLine: 
+    - Title: Speaker [Sam]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: '2: Ensuring my hiring of employees is not biased towards any
+        particular demographic, and hiring not purely based on skills, but on cultural
+        fit.'
       sentenceChoices: []
-    - Title: Speaker
-      icon: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
-      sentenceLine: Anyway, next up is our only woman speaker who will be talking
-        about the important of diversity...
+    - Title: Speaker [Sam]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: '3: Making sure my employees have a fun time as well, and incentivizing
+        good behaviour with rewards!'
       sentenceChoices: []
-    - Title: Speaker
-      icon: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
-      sentenceLine: Anyway, next up is our only woman speaker who will be talking
-        about the important of diversity...
+    - Title: Speaker [Riley]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: '3: Making sure my employees have a fun time as well, and incentivizing
+        good behaviour with rewards! With this in mind... [Continues Talking]'
       sentenceChoices: []
-    - Title: Speaker
-      icon: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
-      sentenceLine: Anyway, next up is our only woman speaker who will be talking
-        about the important of diversity...
+    - Title: Speaker [Riley]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: '[Finishes Talking] ... Thanks for listening to my talk! I hope
+        you took a lot out of it. Have a great day!'
       sentenceChoices: []
+  Jayne: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
 --- !u!114 &1738137071
 MonoBehaviour:
   m_ObjectHideFlags: 0
