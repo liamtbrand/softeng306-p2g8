@@ -26,6 +26,8 @@ public class GameManager : Singleton<GameManager> {
     
     public GameScene gameScene;
 
+    public MoneyCounterAnimator MoneyCounter;
+
     public Scenario[] scenarioArray;
 
     public GameObject fadePanel;
@@ -47,6 +49,10 @@ public class GameManager : Singleton<GameManager> {
 
         gameScene = GameScene.SPLASH_SCREEN;
         moneyBalance = 1000;
+        if (MoneyCounter != null)
+        {
+            MoneyCounter.Target = moneyBalance;
+        }
 
         levelScript = GetComponent <LevelManager>();
         levelScript.SetupScene(level);
@@ -82,6 +88,10 @@ public class GameManager : Singleton<GameManager> {
     public void changeBalance(double inc)
     {
         moneyBalance += inc;
+        if (MoneyCounter != null)
+        {
+            MoneyCounter.Target = moneyBalance;
+        }
     }
 
     public double getBalance()
