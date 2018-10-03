@@ -8,14 +8,18 @@ public class ConferenceScenarioExecutor : AScenarioExecutor
 {
 	public Dialogue dialogue2;
 
+	public Sprite Jayne;
+
     public override void execute()
     {
 
-		var dialogue1 = new Dialogue{
+		var dialogue1 = new Dialogue
+		{
 			Sentences = new Sentence[]{
 				new Sentence(){
+					icon = Jayne,
 					Title = "Jayne Hustleson",
-				    sentenceLine = "Hi, I am speaking at a the DivDevs conference tonight. It would mean a lot if you drop by and listen. You may learn a lot! Are you coming along?",
+				    sentenceLine = "Hey there, I've got a ticket to the DivDevs Diversity Conference tonight, and was wondering if you wanted to go along instead of me?",
 				    sentenceChoices = new string[]{
 					    "Sure thing!",
 						"Sorry I am sick that day"
@@ -31,10 +35,33 @@ public class ConferenceScenarioExecutor : AScenarioExecutor
 		DialogueManager.Instance.StartDialogue(dialogue1);
 		
     }
-
+    
 	public void YesChoice(){
 		StartCoroutine(WaitThenQueueDialogue());
 		DialogueManager.Instance.QueueDialogue(dialogue2);
+
+		var dialogue3 = new Dialogue
+		{
+			Sentences = new Sentence[]{
+				new Sentence(){
+					icon = Jayne,
+                    Title = "Jayne Hustleson",
+                    sentenceLine = "Thanks for going along to the conference! I really appreciate it, hope it went well.",
+                    sentenceChoices = new string[]{
+                        "Finish Conference"
+                    },
+                    sentenceChoiceActions = new UnityAction[]{
+                        Finish
+                    }
+                }
+            }
+        };
+		DialogueManager.Instance.QueueDialogue(dialogue3);
+	}
+
+	public void Finish() {
+		GameManager.Instance.Unfade();
+		//ProjectManager.Instance.ResumeProject();
 	}
 
 	public IEnumerator WaitThenQueueDialogue(){
