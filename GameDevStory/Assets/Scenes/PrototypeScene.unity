@@ -535,7 +535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &238674012
 RectTransform:
   m_ObjectHideFlags: 0
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -587,7 +587,7 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 238674011}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &238724954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1283495736547508, guid: a7e5294496f2a9e4f92f1d898a6584d4,
@@ -747,6 +747,7 @@ GameObject:
   - component: {fileID: 330614368}
   - component: {fileID: 330614367}
   - component: {fileID: 330614366}
+  - component: {fileID: 330614369}
   m_Layer: 0
   m_Name: ScenarioConditionContainer
   m_TagString: Untagged
@@ -792,6 +793,17 @@ Transform:
   m_Father: {fileID: 385111997}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &330614369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 330614365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2f64d3e25dbae47b659e3021903667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &342015022
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +815,7 @@ GameObject:
   - component: {fileID: 342015025}
   - component: {fileID: 342015024}
   - component: {fileID: 342015023}
+  - component: {fileID: 342015026}
   m_Layer: 0
   m_Name: ScenarioExecutorContainer
   m_TagString: Untagged
@@ -916,6 +929,63 @@ Transform:
   m_Father: {fileID: 385111997}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &342015026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 342015022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dc57fabb4a61e408b97a6984de91cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue2:
+    Sentences:
+    - Title: Conference Receptionist [Martha]
+      icon: {fileID: 21300000, guid: 6120e8e814f2a4a6b9e4bce92e2a0d4f, type: 3}
+      sentenceLine: Hi there! Welcome to the DivDevs Conference! Come on in, the next
+        speaker's interview is just starting!....
+      sentenceChoices: []
+    - Title: Speaker [Riley]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: 'Welcome! Welcome! My name is Riley, and I''m the current CEO
+        of the innovative tech start-up NextSpace. '
+      sentenceChoices: []
+    - Title: Speaker [Riley]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: 'I''m lucky enough to have been invited along to this conference,
+        to talk about how - using my special techniques - I managed to double my PROFITS,
+        employee SATISFACTION, and customer base, in but a few months. I did this
+        by making three executive decisions:'
+      sentenceChoices: []
+    - Title: Speaker [Riley]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: '1: Listening to my employees, and fixing conflict scenarios by
+        making ethical decisions.'
+      sentenceChoices: []
+    - Title: Speaker [Riley]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: '2: Ensuring my hiring of employees is not biased towards any
+        particular demographic, and hiring not purely based on skills, but on cultural
+        fit.'
+      sentenceChoices: []
+    - Title: Speaker [Riley]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: '3: Making sure my employees have a fun time as well, and incentivizing
+        good behaviour with rewards!'
+      sentenceChoices: []
+    - Title: Speaker [Riley]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: '3: Making sure my employees have a fun time as well, and incentivizing
+        good behaviour with rewards! With this in mind... [Continues Talking]'
+      sentenceChoices: []
+    - Title: Speaker [Riley]
+      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
+      sentenceLine: '[Finishes Talking] ... Thanks for listening to my talk! I hope
+        you took a lot out of it. Have a great day!'
+      sentenceChoices: []
+  Jayne: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
 --- !u!1 &357368540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,12 +2050,16 @@ Prefab:
         type: 2}
       propertyPath: executor
       value: 
-      objectReference: {fileID: 1057592312}
+      objectReference: {fileID: 342015026}
     - target: {fileID: 114594606975318916, guid: 456cb6fc644333d45be007488efa07aa,
         type: 2}
       propertyPath: condition
       value: 
-      objectReference: {fileID: 1057592313}
+      objectReference: {fileID: 330614369}
+    - target: {fileID: 1618275603875184, guid: 456cb6fc644333d45be007488efa07aa, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456cb6fc644333d45be007488efa07aa, type: 2}
   m_IsPrefabAsset: 0
@@ -1994,79 +2068,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4414544755753776, guid: 456cb6fc644333d45be007488efa07aa,
     type: 2}
   m_PrefabInternal: {fileID: 1057592309}
---- !u!1 &1057592311 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1618275603875184, guid: 456cb6fc644333d45be007488efa07aa,
-    type: 2}
-  m_PrefabInternal: {fileID: 1057592309}
---- !u!114 &1057592312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1057592311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2dc57fabb4a61e408b97a6984de91cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue2:
-    Sentences:
-    - Title: Conference Receptionist [Martha]
-      icon: {fileID: 21300000, guid: 6120e8e814f2a4a6b9e4bce92e2a0d4f, type: 3}
-      sentenceLine: Hi there! Welcome to the DivDevs Conference! Come on in, the next
-        speaker's interview is just starting!....
-      sentenceChoices: []
-    - Title: Speaker [Riley]
-      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
-      sentenceLine: 'Welcome! Welcome! My name is Riley, and I''m the current CEO
-        of the innovative tech start-up NextSpace. '
-      sentenceChoices: []
-    - Title: Speaker [Riley]
-      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
-      sentenceLine: 'I''m lucky enough to have been invited along to this conference,
-        to talk about how - using my special techniques - I managed to double my PROFITS,
-        employee SATISFACTION, and customer base, in but a few months. I did this
-        by making three executive decisions:'
-      sentenceChoices: []
-    - Title: Speaker [Riley]
-      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
-      sentenceLine: '1: Listening to my employees, and fixing conflict scenarios by
-        making ethical decisions.'
-      sentenceChoices: []
-    - Title: Speaker [Riley]
-      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
-      sentenceLine: '2: Ensuring my hiring of employees is not biased towards any
-        particular demographic, and hiring not purely based on skills, but on cultural
-        fit.'
-      sentenceChoices: []
-    - Title: Speaker [Riley]
-      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
-      sentenceLine: '3: Making sure my employees have a fun time as well, and incentivizing
-        good behaviour with rewards!'
-      sentenceChoices: []
-    - Title: Speaker [Riley]
-      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
-      sentenceLine: '3: Making sure my employees have a fun time as well, and incentivizing
-        good behaviour with rewards! With this in mind... [Continues Talking]'
-      sentenceChoices: []
-    - Title: Speaker [Riley]
-      icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
-      sentenceLine: '[Finishes Talking] ... Thanks for listening to my talk! I hope
-        you took a lot out of it. Have a great day!'
-      sentenceChoices: []
-  Jayne: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
---- !u!114 &1057592313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1057592311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e2f64d3e25dbae47b659e3021903667, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1057592314 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114594606975318916, guid: 456cb6fc644333d45be007488efa07aa,

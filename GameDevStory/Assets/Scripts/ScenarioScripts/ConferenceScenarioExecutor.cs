@@ -60,11 +60,13 @@ public class ConferenceScenarioExecutor : AScenarioExecutor
 	}
 
 	public void Finish() {
+		Debug.Log("UNFADING NOW");
 		GameManager.Instance.Unfade();
 		ProjectManager.Instance.ResumeProject();
 	}
 
 	public IEnumerator WaitThenQueueDialogue(){
+		Debug.Log("FADING NOW");
 		GameManager.Instance.fadeToBlack();
 		yield return new WaitForSeconds(2);
 	}

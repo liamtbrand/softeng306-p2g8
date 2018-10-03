@@ -73,8 +73,9 @@ public class GameManager : Singleton<GameManager> {
 
     public void fadeToBlack(){
         Debug.Log("Fading");
+		Debug.Log(image);
         fadePanel.SetActive(true);
-        image.canvasRenderer.SetAlpha( 0.0f );
+        //image.canvasRenderer.SetAlpha( 0.01f );
         image.CrossFadeAlpha( 1.0f, 2, false );
 
     }
