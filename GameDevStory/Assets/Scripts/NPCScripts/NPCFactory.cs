@@ -21,7 +21,7 @@ public class NPCFactory : Singleton<NPCFactory> {
     // selects a pre-made npc at random from the pool of potential npcs
     public NPCAttributes SelectRandomNPC()
     {
-        return npcs[Random.Range(0,npcs.Count - 1)];
+        return npcs[Random.Range(0,npcs.Count)];
     }
 
     // generates a stats object with all fields randomly initialized
