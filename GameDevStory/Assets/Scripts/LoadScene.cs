@@ -11,7 +11,7 @@ public class LoadScene : MonoBehaviour {
 
 	public void LoadMainMenu()
 	{
-		Destroy(GameManager.Instance.gameObject);
+		//Destroy(GameManager.Instance.gameObject);
 		SceneManager.LoadScene("MainMenu");
 	}
 
