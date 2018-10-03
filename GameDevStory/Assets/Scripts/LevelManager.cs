@@ -64,7 +64,7 @@ public class LevelManager : MonoBehaviour {
 		}
     }
 
-    public void AddEmployeeToLevel(NPCInfo npcInfo) {   
+    public void AddEmployeeToLevel(NPCInfo npcInfo) {
         Vector3 position = GetRandomPosition();
         NPCController.Instance.AddNPCToScene(npcInfo, position);
         // Desk is now taken
