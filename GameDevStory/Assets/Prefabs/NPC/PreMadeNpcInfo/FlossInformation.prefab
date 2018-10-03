@@ -55,4 +55,5 @@ MonoBehaviour:
   age: 35
   gender: 1
   biography: Very hip.
-  animationController: {fileID: 9100000, guid: 2e39051377b3cb64aadc035dcb9a38a8, type: 2}
+  animationController: {fileID: 22100000, guid: 0f1e2d07ddcd8449c9e9da762c7cf8a3,
+    type: 2}
