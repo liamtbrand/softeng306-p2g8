@@ -134,5 +134,9 @@ namespace DialogueScripts{
             }
         }
 
+        public int GetQueueSize(){
+            return _dialogueQueue.Count;
+        }
+
     }
 }
