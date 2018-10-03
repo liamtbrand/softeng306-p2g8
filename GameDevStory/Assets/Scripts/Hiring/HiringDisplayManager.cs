@@ -1,19 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HiringDisplayManager : MonoBehaviour {
 
+    public Button HireButton;
     public GameObject GridViewPanel;
     public GameObject ApplicantViewPanel;
 
+    void Start()
+    {
+        GridViewPanel.SetActive(false);
+    }
+
+    public void DisableHireButton() {
+        HireButton.interactable = false;
+    }
+
+    public void EnableHireButton() {
+        HireButton.interactable = true;
+    }
+
     public void ShowHiringGrid()
     {
+        DisableHireButton();
         GridViewPanel.SetActive(true);
     }
 
     public void CloseHiringGrid()
     {
+        if (LevelManager.DeskAvailable()) {
+            EnableHireButton();
+        }
         GridViewPanel.SetActive(false);
     }
 

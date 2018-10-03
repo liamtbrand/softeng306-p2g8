@@ -3,16 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // singleton that is responsible for all npcs that exist in the current scene
-public class NPCController : Singleton<NPCController> { 
-
-    // for npcs, but where the desk are.
-	public static Vector2[] npcPositions = {
-        new Vector2(0,0),
-        new Vector2(0,4),
-        new Vector2(2.5f,1),
-		new Vector2(2.5f,3),
-        new Vector2(1.5f,1)
-    };
+public class NPCController : Singleton<NPCController> {
 
     public GameObject npcTemplate; // the generic npc template to instantiate
 	public CoordinateSystem coordinateSystem;
@@ -20,13 +11,7 @@ public class NPCController : Singleton<NPCController> {
     private List<GameObject> npcInstances = new List<GameObject>(); // maintain a reference to each npc in the scene
 
 	// Use this for initialization
-	void Start () {
-
-		//for (int i = 0; i < npcPositions.Length; i++)
-  //      {
-		//	AddNPCToScene(NPCFactory.Instance.CreateNPCWithRandomizedStats(), npcPositions[i]);
-  //      }
-    }
+	void Start () {}
 
     // Sends a scenario notification to an npc that the player should click on to start the scenario.
     public void ShowScenarioNotification(Scenario s)
@@ -53,7 +38,6 @@ public class NPCController : Singleton<NPCController> {
     {
         InstantiateNPC(npc.attributes.animationController, position);
     }
-
 
     private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector3 pos)
     {

@@ -16,12 +16,12 @@ public class NPCFactory : Singleton<NPCFactory> {
         public int design;
     }
 
-    public NPCAttributes[] npcs; // a pool of pre-made NPCs that are available for instantiation
+    public List<NPCAttributes> npcs; // a pool of pre-made NPCs that are available for instantiation
 
     // selects a pre-made npc at random from the pool of potential npcs
     public NPCAttributes SelectRandomNPC()
     {
-        return npcs[Random.Range(0,npcs.Length)];
+        return npcs[Random.Range(0,npcs.Count)];
     }
 
     // generates a stats object with all fields randomly initialized
@@ -41,11 +41,14 @@ public class NPCFactory : Singleton<NPCFactory> {
 
     public NPCInfo CreateNPCWithRandomizedStats()
     {
+        NPCAttributes randomNPC = SelectRandomNPC();
         NPCInfo npc = new NPCInfo()
         {
-            attributes = SelectRandomNPC(),
+            attributes = randomNPC,
             stats = GetRandomStats()
         };
+
+        npcs.Remove(randomNPC);
 
         return npc;
     }
