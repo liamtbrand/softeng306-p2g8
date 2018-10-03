@@ -22,7 +22,7 @@ public class NPCFactory : Singleton<NPCFactory> {
         public int design;
     }
 
-    // a pool of pre-made NPCs that are available for instantiation
+    // A pool of pre-made NPCs that are available for instantiation
     public List<NPCAttributes> npcs;
 
     // selects a pre-made npc at random from the pool of potential npcs
