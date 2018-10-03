@@ -29,6 +29,18 @@ public class TileManager : MonoBehaviour {
         costHeader.text = "$" + npcInfo.attributes.cost.ToString();
     }
 
+    private void Update()
+    {
+        if (GameManager.Instance.getBalance() < npcInfo.attributes.cost)
+        {
+            this.gameObject.GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            this.gameObject.GetComponent<Button>().interactable = true;
+        }
+    }
+
     public void Clicked()
     {
         // Set the npc info field in applicant view script to be this applicant.
