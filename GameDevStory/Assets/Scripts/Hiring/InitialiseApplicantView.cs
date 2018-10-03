@@ -6,6 +6,7 @@ public class InitialiseApplicantView : MonoBehaviour
 {
     // Reference to npc to display from previous tile script.
     public static NPCInfo npcInfo;
+    public static Button clickedTile;
 
     // Read only's
     private readonly float SLIDER_MAX_VALUE = 100;
@@ -62,6 +63,7 @@ public class InitialiseApplicantView : MonoBehaviour
 
     public void HireClicked() {
         levelManager.AddEmployeeToLevel(npcInfo);
+        clickedTile.interactable = false;
     }
 
     private void FillSlider(Slider slider, float value)

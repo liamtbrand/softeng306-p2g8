@@ -31,6 +31,8 @@ public class TileManager : MonoBehaviour {
     {
         // Set the npc info field in applicant view script to be this applicant.
         InitialiseApplicantView.npcInfo = npcInfo;
+        InitialiseApplicantView.clickedTile = this.gameObject.GetComponent<Button>();
+
         ApplicantView.GetComponent<InitialiseApplicantView>().Reload();
         ApplicantView.SetActive(true);
         GridView.SetActive(false); // Hide the underlying grid view in case
