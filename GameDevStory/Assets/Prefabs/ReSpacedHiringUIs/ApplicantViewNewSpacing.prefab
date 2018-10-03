@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.44705883}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.76862746}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2999,6 +2999,7 @@ MonoBehaviour:
   ageHeader: {fileID: 114994110523296178}
   genderHeader: {fileID: 114437045772065490}
   bioBox: {fileID: 114899590999686696}
+  costHeader: {fileID: 114481710707099182}
   communicationSlider: {fileID: 114689596987180438}
   testingSlider: {fileID: 114579197985564262}
   technicalSlider: {fileID: 114152263701086872}

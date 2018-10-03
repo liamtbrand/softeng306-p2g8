@@ -20,6 +20,7 @@ public class InitialiseApplicantView : MonoBehaviour
     public TextMeshProUGUI ageHeader;
     public TextMeshProUGUI genderHeader;
     public TextMeshProUGUI bioBox;
+    public TextMeshProUGUI costHeader;
 
     // Skill bars
     public Slider communicationSlider;
@@ -45,6 +46,7 @@ public class InitialiseApplicantView : MonoBehaviour
         ageHeader.text = attributes.age.ToString();
         genderHeader.text = attributes.gender.ToString();
         bioBox.text = attributes.biography;
+        costHeader.text = "$" + attributes.cost.ToString();
 
         animator.runtimeAnimatorController = npcInfo.attributes.animationController;
 

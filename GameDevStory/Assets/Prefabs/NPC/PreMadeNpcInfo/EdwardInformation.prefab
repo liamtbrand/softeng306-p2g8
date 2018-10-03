@@ -57,3 +57,4 @@ MonoBehaviour:
   biography: Come to end of year SESA dinner
   animationController: {fileID: 22100000, guid: 6992cba3f5fd79b4eb117018fd011124,
     type: 2}
+  cost: 100

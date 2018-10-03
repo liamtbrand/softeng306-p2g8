@@ -56,3 +56,4 @@ MonoBehaviour:
   gender: 0
   biography: Just trying his best
   animationController: {fileID: 9100000, guid: 63ba7f5a5c85a4d588e8b229606e1b4c, type: 2}
+  cost: 100

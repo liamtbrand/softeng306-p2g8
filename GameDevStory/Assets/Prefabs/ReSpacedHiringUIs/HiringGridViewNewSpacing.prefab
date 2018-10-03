@@ -923,6 +923,7 @@ MonoBehaviour:
   nameHeader: {fileID: 114522506724576212}
   ageHeader: {fileID: 114002141369790826}
   genderHeader: {fileID: 114773720044264362}
+  costHeader: {fileID: 114109252032751464}
   ApplicantView: {fileID: 0}
   GridView: {fileID: 1553230913281816}
 --- !u!114 &114048288420365982
@@ -1647,6 +1648,7 @@ MonoBehaviour:
   nameHeader: {fileID: 114301418777782656}
   ageHeader: {fileID: 114916562594094854}
   genderHeader: {fileID: 114865543070293506}
+  costHeader: {fileID: 114063277754852676}
   ApplicantView: {fileID: 0}
   GridView: {fileID: 1553230913281816}
 --- !u!114 &114167702777640724
@@ -1664,6 +1666,7 @@ MonoBehaviour:
   nameHeader: {fileID: 114187622645190444}
   ageHeader: {fileID: 114888550291676664}
   genderHeader: {fileID: 114438884634878018}
+  costHeader: {fileID: 114048288420365982}
   ApplicantView: {fileID: 0}
   GridView: {fileID: 1553230913281816}
 --- !u!114 &114187622645190444
@@ -1900,7 +1903,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 2
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -1936,6 +1939,7 @@ MonoBehaviour:
   nameHeader: {fileID: 114355865700011782}
   ageHeader: {fileID: 114289510996551504}
   genderHeader: {fileID: 114576728633870888}
+  costHeader: {fileID: 114745900571509034}
   ApplicantView: {fileID: 0}
   GridView: {fileID: 1553230913281816}
 --- !u!114 &114289510996551504
@@ -2549,6 +2553,7 @@ MonoBehaviour:
   nameHeader: {fileID: 114906817581338802}
   ageHeader: {fileID: 114064906968906900}
   genderHeader: {fileID: 114325755990299584}
+  costHeader: {fileID: 114759371969669240}
   ApplicantView: {fileID: 0}
   GridView: {fileID: 1553230913281816}
 --- !u!114 &114522207226339716
@@ -3087,7 +3092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.44705883}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.76862746}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3483,6 +3488,7 @@ MonoBehaviour:
   nameHeader: {fileID: 114065636091690622}
   ageHeader: {fileID: 114048741480468338}
   genderHeader: {fileID: 114212645861740826}
+  costHeader: {fileID: 114963826822616894}
   ApplicantView: {fileID: 0}
   GridView: {fileID: 1553230913281816}
 --- !u!114 &114800478780938766
@@ -3683,7 +3689,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 2
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0

@@ -10,6 +10,7 @@ public class TileManager : MonoBehaviour {
     public TextMeshProUGUI nameHeader;
     public TextMeshProUGUI ageHeader;
     public TextMeshProUGUI genderHeader;
+    public TextMeshProUGUI costHeader;
     public GameObject ApplicantView;
     public GameObject GridView;
 
@@ -25,6 +26,7 @@ public class TileManager : MonoBehaviour {
         nameHeader.text = npcInfo.attributes.npcName;
         ageHeader.text = npcInfo.attributes.age.ToString();
         genderHeader.text = npcInfo.attributes.gender.ToString();
+        costHeader.text = "$" + npcInfo.attributes.cost.ToString();
     }
 
     public void Clicked()

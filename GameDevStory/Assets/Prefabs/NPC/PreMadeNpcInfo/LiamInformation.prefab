@@ -57,3 +57,4 @@ MonoBehaviour:
   biography: Has international work experience
   animationController: {fileID: 22100000, guid: f809473de6fe3794d9e0215050c93037,
     type: 2}
+  cost: 100

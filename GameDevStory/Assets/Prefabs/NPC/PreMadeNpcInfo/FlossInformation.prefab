@@ -57,3 +57,4 @@ MonoBehaviour:
   biography: Very hip.
   animationController: {fileID: 22100000, guid: 0f1e2d07ddcd8449c9e9da762c7cf8a3,
     type: 2}
+  cost: 90

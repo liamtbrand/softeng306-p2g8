@@ -11,5 +11,6 @@ public class NPCAttributes : MonoBehaviour {
     public Gender gender;
     public string biography;
     public RuntimeAnimatorController animationController;
+    public int cost;
 
 }
