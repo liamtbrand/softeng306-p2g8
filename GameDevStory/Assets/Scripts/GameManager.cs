@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum GameScene
 {
@@ -26,6 +27,10 @@ public class GameManager : Singleton<GameManager> {
     public GameScene gameScene;
 
     public Scenario[] scenarioArray;
+
+    public GameObject fadePanel;
+
+    public Image image;
 
     private LevelManager levelScript;
     private int level = 0; // Hardcoded to first level for now
@@ -58,6 +63,20 @@ public class GameManager : Singleton<GameManager> {
     {
         SceneManager.LoadScene(scene.ToString(), LoadSceneMode.Single);
         gameScene = scene;
+    }
+
+    public void fadeToBlack(){
+        Debug.Log("Fading");
+        fadePanel.SetActive(true);
+        image.canvasRenderer.SetAlpha( 0.0f );
+        image.CrossFadeAlpha( 1.0f, 2, false );
+
+    }
+    
+    public void Unfade(){
+
+		image.CrossFadeAlpha(0f, 2, false);
+        fadePanel.SetActive(false);
     }
 
     public void changeBalance(double inc)
