@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum ProjectDifficulty
 {
-    Easy,Medium,Hard
+    Tutorial,Easy,Medium,Hard
 }
 
 public class Project {
@@ -15,95 +15,88 @@ public class Project {
 	private int length;
 	private ProjectDifficulty difficulty;
 	private bool enabled = false;
-	private bool completed = false;
 
-	public Project ()
+	public Project () { }
+
+	public Project (string title, string company, string description, int length, ProjectDifficulty difficulty)
 	{
-		
+		this.title = title;
+		this.company = company;
+		this.description = description;
+		this.length = length;
+		this.difficulty = difficulty;
 	}
 
-	public Project (string pTitle, string cName, string pDescription, int pLength, ProjectDifficulty level)
+	public void setTitle (string title)
 	{
-		title = pTitle;
-		company = cName;
-		description = pDescription;
-		length = pLength;
-		difficulty = level;
+		this.title = title;
 	}
 
-	public void setTitle (string ptitle)
+	public void setCompany (string company)
 	{
-		title = ptitle;
+		this.company = company;
 	}
 
-	public void setCompany (string comp)
+	public void setDescription (string description)
 	{
-		company = comp;
+		this.description = description;
 	}
 
-	public void setDescription (string desc)
+	public void setLength (int length)
 	{
-		description = desc;
+		this.length = length;
 	}
 
-	public void setLength (int len)
+	public void setDifficulty (ProjectDifficulty difficulty)
 	{
-		length = len;
+		this.difficulty = difficulty;
 	}
 
-	public void setDifficulty (ProjectDifficulty diff)
+	public void setEnabled (bool enabled)
 	{
-		difficulty = diff;
-	}
-
-	public void setEnabled (bool en)
-	{
-		enabled = en;
-	}
-
-	public void setCompleted (bool complete)
-	{
-		completed = complete;
+		this.enabled = enabled;
 	}
 
 	public string getTitle ()
 	{
-		return title;
+		return this.title;
 	}
 
 	public string getCompany ()
 	{
-		return company;
+		return this.company;
 	}
 
 	public string getDescription ()
 	{
-		return description;
+		return this.description;
 	}
 
 	public int getLength ()
 	{
-		return length;
+		return this.length;
 	}
 
 	public ProjectDifficulty getDifficulty ()
 	{
-		return difficulty;
+		return this.difficulty;
 	}
 
 	public bool getEnabled ()
 	{
-		return enabled;
-	}
-
-	public bool getCompleted ()
-	{
-		return completed;
+		return this.enabled;
 	}
 
 	public string getStats()
 	{
-		return "Length: " + length + "\nDifficulty: " + difficulty.ToString();
+		if (this.difficulty == ProjectDifficulty.Tutorial)
+		{
+			return "Length: " + this.length + "\nDifficulty: Easy";
+		}
+		else
+		{
+			return "Length: " + length + "\nDifficulty: " + difficulty.ToString();
+		}
 	}
 	
 }

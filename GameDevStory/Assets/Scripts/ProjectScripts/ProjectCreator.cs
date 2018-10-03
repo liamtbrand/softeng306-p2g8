@@ -14,7 +14,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectOne.setCompany("Bista Entertainment Solutions");
 		projectOne.setDescription("Build a web app to handle the booking of movie tickets. Needs to support the issuance of free tickets to student software engineering clubs.");
 		projectOne.setLength(7);
-		projectOne.setDifficulty(ProjectDifficulty.Easy);
+		projectOne.setDifficulty(ProjectDifficulty.Tutorial);
 		projectOne.setEnabled(true);
 		projects.Add(projectOne.getTitle(),projectOne);
 

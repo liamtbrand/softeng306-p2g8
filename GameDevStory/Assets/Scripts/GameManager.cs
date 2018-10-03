@@ -38,12 +38,12 @@ public class GameManager : Singleton<GameManager> {
     // Initialise game at splash screen
     void Awake()
     {
-        if (!created)
+        /*if (!created)
         {
             DontDestroyOnLoad(this.gameObject);
             created = true;
             Debug.Log("Awake: " + this.gameObject);
-        }
+        }*/
 
         gameScene = GameScene.SPLASH_SCREEN;
         moneyBalance = 1000;

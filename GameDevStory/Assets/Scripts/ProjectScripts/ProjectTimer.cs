@@ -7,28 +7,66 @@ public class ProjectTimer : MonoBehaviour {
 
 	public GameObject progressPanel;
 	public Slider progressBar;
+	public Text progressText;
+	private ProjectManager progressScript;
+	public Scenario[] scenarioArray;
 	private float maxTime = 10f;
 	private float timer;
-	private float progress;
-	public Text progressText;
+	private float currentTime;
+	private bool paused = false;
 
-	// Use this for initialization
-	void OnEnable () {
+	// Set up timer
+	void OnEnable ()
+	{
+		progressScript = GetComponent<ProjectManager> ();
 		progressPanel.SetActive(true);
-		timer = 10f;
+		timer = maxTime;
 		progressBar.value = 0;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		timer -= Time.deltaTime;
-		progress = (maxTime-timer)*10;
-		progressText.text = progress.ToString("f0")+"%";
-		progressBar.value = progress/100;
+	void Update ()
+	{
+		if (!paused)
+		{
+			// Fire scenarios during projects
+			foreach (Scenario scenario in scenarioArray)
+			{
+				if (scenario.getStatus() == ScenarioStatus.INCOMPLETE && 
+				    Scenario.getActive() == false 
+				    && Random.Range(0.0f, 1.0f) < scenario.GetScenarioProbability())
+				{
+					Pause(scenario);
+					scenario.StartScenario();
+				}
+			}
+			
+			// Decrement timer
+			timer -= Time.deltaTime;
+			currentTime = timer;
+		
+			// Update progress bar
+			float progress = (maxTime-timer)/maxTime*100;
+			progressText.text = progress.ToString("f0")+"%";
+			progressBar.value = progress/100;
 
-		if (timer <= 0) {
-			progressText.text = "100%";
-			progressPanel.SetActive(false);
-		}	
+			// Project completed stop timer
+			if (timer <= 0) {
+				progressText.text = "100%";
+				progressPanel.SetActive(false);
+				progressScript.CompletedProject();
+			}	
+		}
+	}
+
+	public void Pause(Scenario scenario)
+	{
+		paused = true;
+		currentTime = timer;
+	}
+
+	public void Resume()
+	{
+		paused = false;
 	}
 }

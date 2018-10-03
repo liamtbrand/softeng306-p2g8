@@ -10,7 +10,7 @@ public class ProjectManager : Singleton<ProjectManager> {
 	private ProjectDisplayManager displayScript;
 	public GameObject projectMenu;
 
-	private Dictionary<string,Project> projects;
+	private static Dictionary<string,Project> projects;
 	private string  selectedProject;
 
 	void Start () {
@@ -53,19 +53,29 @@ public class ProjectManager : Singleton<ProjectManager> {
 		// Start project progress timer
 		timerScript.enabled = true;
 
-		// Wait till a project is completed
-		Invoke("CompletedProject", 10.5f);
+		// If you want to test the pausing functionality (pauses after 3s)
+		//Invoke("PauseProject", 5f);
 	}
 
-	void CompletedProject()
+	public void PauseProject()
+	{
+		//timerScript.Pause();
+		// If you want to test the resume functionality (resumes after 5s)
+		//Invoke("ResumeProject", 5f);
+	}
+	
+	public void ResumeProject()
+	{
+		timerScript.Resume();
+	}
+
+	public void CompletedProject()
  	{
 		// Reset timer
 		timerScript.enabled = false;
-
-		// Change project object to completed
-		Project projectObject = projects[selectedProject];
-		projectObject.setCompleted(true);
-		projects[selectedProject] = projectObject;
+		 
+		// Update project menu
+		UpdateProjectMenu(selectedProject);
 
 		// Calculate project profit
 		double profit = CalculateProjectProfit(selectedProject);
@@ -77,10 +87,10 @@ public class ProjectManager : Singleton<ProjectManager> {
 		displayScript.ProjectCompleted(profit,stars);
 
 		// Add to total profits
-		//gameScript.changeBalance(profit);
- 	}
+		 GameManager.Instance.changeBalance(profit);
+	 }
 
-	int CalculateProjectStars(string project)
+	int CalculateProjectStars (string project)
 	{
 		// TODO: Calculate stars based on diversity
 		return 3;
@@ -90,6 +100,56 @@ public class ProjectManager : Singleton<ProjectManager> {
 	{
 		// TODO: Calculate project profit based on diversity
 		return 100.00;
+	}
+
+	void UpdateProjectMenu(string project)
+	{
+		ProjectDifficulty difficulty = projects[selectedProject].getDifficulty();
+		projects.Remove(project);
+
+		// Check if finished all projects of the same difficulty
+		bool finishedAllDifficulty = true;
+		foreach(KeyValuePair<string, Project> entry in projects)
+		{
+			if (entry.Value.getDifficulty() == difficulty)
+			{
+				finishedAllDifficulty = false;
+			}
+		}
+
+		// Unlock next difficulty level
+		if (finishedAllDifficulty)
+		{
+			List<string> keys = new List<string>(projects.Keys);
+			foreach(var entry in keys)
+			{
+				Project unlockedProject = projects[entry];
+				
+				// Unlock all easy levels
+				if (difficulty == ProjectDifficulty.Tutorial && 
+				    unlockedProject.getDifficulty() == ProjectDifficulty.Easy)
+				{
+					unlockedProject.setEnabled(true);
+					projects[entry] = unlockedProject;
+				}
+				
+				// Unlock all medium levels
+				if (difficulty == ProjectDifficulty.Easy && 
+				    unlockedProject.getDifficulty() == ProjectDifficulty.Medium)
+				{
+					unlockedProject.setEnabled(true);
+					projects[entry] = unlockedProject;
+				}
+
+				// Unlock all hard levels
+				if (difficulty == ProjectDifficulty.Medium &&
+				    unlockedProject.getDifficulty() == ProjectDifficulty.Hard)
+				{
+					unlockedProject.setEnabled(true);
+					projects[entry] = unlockedProject;
+				}
+			}
+		}
 	}
 
 }
