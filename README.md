@@ -1,5 +1,9 @@
-# softeng306-p2g8
-Diverse 306 Gamers
+# Get Real Studios: Little Coders
+Find our releases in the releases tab. This will let you see the state of the repo at the time of generating the release, and also access the binary (.apk file) for installation on your phone.
+
+To install the APK, simply run it on your phone, and click install.
+
+More documentation for each release (i.e. known bugs) are shown with each release.
 
 ### Team Members
 
