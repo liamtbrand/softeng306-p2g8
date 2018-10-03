@@ -61,7 +61,7 @@ public class ConferenceScenarioExecutor : AScenarioExecutor
 
 	public void Finish() {
 		GameManager.Instance.Unfade();
-		//ProjectManager.Instance.ResumeProject();
+		ProjectManager.Instance.ResumeProject();
 	}
 
 	public IEnumerator WaitThenQueueDialogue(){
@@ -70,6 +70,7 @@ public class ConferenceScenarioExecutor : AScenarioExecutor
 	}
 
 	public void NoChoice(){
+		ProjectManager.Instance.ResumeProject();
 	}
 
 }

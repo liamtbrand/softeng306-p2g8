@@ -48,7 +48,7 @@ public class GameManager : Singleton<GameManager> {
         }*/
 
         gameScene = GameScene.SPLASH_SCREEN;
-        moneyBalance = 1000;
+        moneyBalance = 0;
         if (MoneyCounter != null)
         {
             MoneyCounter.Target = moneyBalance;
