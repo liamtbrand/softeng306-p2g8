@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1948360493336984}
+  m_RootGameObject: {fileID: 1511737092077158}
   m_IsPrefabAsset: 1
---- !u!1 &1948360493336984
+--- !u!1 &1511737092077158
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4616262251217954}
-  - component: {fileID: 114909390779702190}
+  - component: {fileID: 4936804623938512}
+  - component: {fileID: 114683502722945580}
   m_Layer: 0
-  m_Name: JessInformation
+  m_Name: CameronInformation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4616262251217954
+--- !u!4 &4936804623938512
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1948360493336984}
+  m_GameObject: {fileID: 1511737092077158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.067181714, y: -0.10184057, z: 339.14532}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,21 +40,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114909390779702190
+--- !u!114 &114683502722945580
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1948360493336984}
+  m_GameObject: {fileID: 1511737092077158}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 190ed0ed956106d4e9c74ad1edfc8101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: Jess
+  npcName: Cameron
   age: 20
-  gender: 1
-  biography: Very cool.
-  animationController: {fileID: 22100000, guid: b6b366127a0904445832ec90cfabb082,
+  gender: 0
+  biography: Serko vibes
+  animationController: {fileID: 22100000, guid: 468bd375ffb03a24cbcc5e6fdddcd4a0,
     type: 2}
-  cost: 90
+  cost: 100

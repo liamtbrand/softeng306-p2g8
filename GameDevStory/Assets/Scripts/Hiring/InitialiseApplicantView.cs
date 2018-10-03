@@ -6,10 +6,13 @@ public class InitialiseApplicantView : MonoBehaviour
 {
     // Reference to npc to display from previous tile script.
     public static NPCInfo npcInfo;
+    public static Button clickedTile;
 
     // Read only's
     private readonly float SLIDER_MAX_VALUE = 100;
     private readonly float VALUE = 60;
+
+    public LevelManager levelManager;
 
     // Misc. character info
     public Animator animator;
@@ -17,6 +20,7 @@ public class InitialiseApplicantView : MonoBehaviour
     public TextMeshProUGUI ageHeader;
     public TextMeshProUGUI genderHeader;
     public TextMeshProUGUI bioBox;
+    public TextMeshProUGUI costHeader;
 
     // Skill bars
     public Slider communicationSlider;
@@ -42,6 +46,7 @@ public class InitialiseApplicantView : MonoBehaviour
         ageHeader.text = attributes.age.ToString();
         genderHeader.text = attributes.gender.ToString();
         bioBox.text = attributes.biography;
+        costHeader.text = "$" + attributes.cost.ToString();
 
         animator.runtimeAnimatorController = npcInfo.attributes.animationController;
 
@@ -56,6 +61,11 @@ public class InitialiseApplicantView : MonoBehaviour
     public void BackClicked()
     {
         GameManager.Instance.switchScene(GameScene.GridView);
+    }
+
+    public void HireClicked() {
+        levelManager.AddEmployeeToLevel(npcInfo);
+        clickedTile.interactable = false;
     }
 
     private void FillSlider(Slider slider, float value)

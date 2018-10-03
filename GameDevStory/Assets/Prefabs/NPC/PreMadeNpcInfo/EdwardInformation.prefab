@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1948360493336984}
+  m_RootGameObject: {fileID: 1968799910473806}
   m_IsPrefabAsset: 1
---- !u!1 &1948360493336984
+--- !u!1 &1968799910473806
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4616262251217954}
-  - component: {fileID: 114909390779702190}
+  - component: {fileID: 4439027968999204}
+  - component: {fileID: 114517197732703172}
   m_Layer: 0
-  m_Name: JessInformation
+  m_Name: EdwardInformation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4616262251217954
+--- !u!4 &4439027968999204
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1948360493336984}
+  m_GameObject: {fileID: 1968799910473806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.067181714, y: -0.10184057, z: 339.14532}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,21 +40,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114909390779702190
+--- !u!114 &114517197732703172
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1948360493336984}
+  m_GameObject: {fileID: 1968799910473806}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 190ed0ed956106d4e9c74ad1edfc8101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: Jess
-  age: 20
-  gender: 1
-  biography: Very cool.
-  animationController: {fileID: 22100000, guid: b6b366127a0904445832ec90cfabb082,
+  npcName: Edward
+  age: 21
+  gender: 0
+  biography: Come to end of year SESA dinner
+  animationController: {fileID: 22100000, guid: 6992cba3f5fd79b4eb117018fd011124,
     type: 2}
-  cost: 90
+  cost: 100
