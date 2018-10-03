@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Creates project objects
 public class ProjectCreator : Singleton<ProjectCreator> {
 
 	Dictionary<string,Project> projects = new Dictionary<string,Project>();

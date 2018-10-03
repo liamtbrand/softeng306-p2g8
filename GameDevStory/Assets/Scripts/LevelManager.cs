@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;       //Allows us to use Lists.
 using Random = UnityEngine.Random;      //Tells Random to use the Unity Engine random number generator.
 
-
+// Instantiates the game level by setting the background, desks and NPC coordinates
 public class LevelManager : MonoBehaviour {
 
 	private float xSpacing = 0.3f;									// Spacing along x axis.
@@ -17,8 +17,8 @@ public class LevelManager : MonoBehaviour {
     public GameObject[] levels;                                 	//Array of level prefabs.
 	public GameObject[] desks;                                 		//Array of desk prefabs.
 
-	private Transform levelHolder;                                  //A variable to store a reference to the transform of our Board object.
-    private static List <Vector3> NPCPositions = new List <Vector3> ();    //A list of possible locations to place NPCs.
+	private Transform levelHolder;                                  		//A variable to store a reference to the transform of our Board object.
+    private static List <Vector3> NPCPositions = new List <Vector3> ();     //A list of possible locations to place NPCs.
     
     //Sets up the desks of the game level.
     private void LevelSetup ()
@@ -64,6 +64,7 @@ public class LevelManager : MonoBehaviour {
 		}
     }
 
+	// Returns whether a desk is available
     public static bool DeskAvailable() {
         if (NPCPositions.Count == 0) {
             return false;
@@ -72,6 +73,7 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
+	// Instantiates an NPC to a desk in the office
     public void AddEmployeeToLevel(NPCInfo npcInfo) {
         Vector3 position = GetRandomPosition();
         NPCController.Instance.AddNPCToScene(npcInfo, position);
@@ -87,6 +89,7 @@ public class LevelManager : MonoBehaviour {
         }
 	}
 
+	// Gets a random desk to add the NPC to
     private Vector3 GetRandomPosition() {
         if (NPCPositions.Count == 0)
         {

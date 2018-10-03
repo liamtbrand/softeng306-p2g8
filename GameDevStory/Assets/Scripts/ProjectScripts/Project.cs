@@ -7,6 +7,7 @@ public enum ProjectDifficulty
     Tutorial,Easy,Medium,Hard
 }
 
+// Object representing a project
 public class Project {
 
 	private string title;
@@ -87,6 +88,7 @@ public class Project {
 		return this.enabled;
 	}
 
+	// Formats strings for stats section of the project menu
 	public string getStats()
 	{
 		if (this.difficulty == ProjectDifficulty.Tutorial)

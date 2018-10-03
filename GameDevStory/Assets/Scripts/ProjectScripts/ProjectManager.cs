@@ -4,6 +4,7 @@ using ProjectScripts;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Handles projects
 public class ProjectManager : Singleton<ProjectManager> {
 
 	private ProjectTimer timerScript;
@@ -14,6 +15,7 @@ public class ProjectManager : Singleton<ProjectManager> {
 	private string  selectedProject;
 
 	void Start () {
+		// Stop the timer from running
 		timerScript = GetComponent<ProjectTimer> ();
 		timerScript.enabled = false; 
 	}
@@ -57,6 +59,7 @@ public class ProjectManager : Singleton<ProjectManager> {
 		//Invoke("PauseProject", 5f);
 	}
 
+	// Pauses the work on a project
 	public void PauseProject()
 	{
 		//timerScript.Pause();
@@ -64,11 +67,13 @@ public class ProjectManager : Singleton<ProjectManager> {
 		//Invoke("ResumeProject", 5f);
 	}
 	
+	// Resumes the work on a project
 	public void ResumeProject()
 	{
 		timerScript.Resume();
 	}
 
+	// Handles the completion of a project
 	public void CompletedProject()
  	{
 		// Reset timer
@@ -90,18 +95,21 @@ public class ProjectManager : Singleton<ProjectManager> {
 		 GameManager.Instance.changeBalance(profit);
 	 }
 
+	// Calculates the performance of a project
 	int CalculateProjectStars (string project)
 	{
 		// TODO: Calculate stars based on diversity
 		return 3;
 	}
 
+	// Calculates the profit from a project
 	double CalculateProjectProfit (string project) 
 	{
 		// TODO: Calculate project profit based on diversity
 		return 100.00;
 	}
 
+	// Updates the project menu
 	void UpdateProjectMenu(string project)
 	{
 		ProjectDifficulty difficulty = projects[selectedProject].getDifficulty();

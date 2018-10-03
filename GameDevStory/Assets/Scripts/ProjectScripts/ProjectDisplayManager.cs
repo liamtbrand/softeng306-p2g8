@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// Handles the Project UI
 namespace ProjectScripts
 {
     public class ProjectDisplayManager : MonoBehaviour
@@ -18,6 +19,7 @@ namespace ProjectScripts
     
         protected ProjectDisplayManager () {} // enforces singleton use
 
+        // Removes all projects from the project container
         public void ClearAllProjects()
         {
             foreach (Transform child in ProjectSelectionContent.transform) {
@@ -26,6 +28,7 @@ namespace ProjectScripts
             Instantiate(ProjectTitlePrefab, Vector3.zero, Quaternion.identity, ProjectSelectionContent.transform);
         }
 
+        // Adds a project to the project menu
         public void AddNewProject(string title, string company, string description, string stats, bool selectable,
             Action<string> callback)
         {
@@ -53,6 +56,7 @@ namespace ProjectScripts
             AddNewProject(title, company, description, stats, selectable, delegate {  });
         }
 
+        // Displays the project completion display
         public void ProjectCompleted(double profit, int stars)
         {
             ProjectCompletePanel.SetActive(true);
@@ -77,6 +81,7 @@ namespace ProjectScripts
             }
         }
 
+        // Closes the project completion display
         public void CloseProjectCompleted()
         {
             ProjectCompletePanel.SetActive(false);
