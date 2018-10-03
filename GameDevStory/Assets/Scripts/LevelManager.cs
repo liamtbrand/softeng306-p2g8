@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject[] desks;                                 		//Array of desk prefabs.
 
 	private Transform levelHolder;                                  //A variable to store a reference to the transform of our Board object.
-    private List <Vector3> NPCPositions = new List <Vector3> ();    //A list of possible locations to place NPCs.
+    private static List <Vector3> NPCPositions = new List <Vector3> ();    //A list of possible locations to place NPCs.
     
     //Sets up the desks of the game level.
     private void LevelSetup ()
@@ -62,6 +62,14 @@ public class LevelManager : MonoBehaviour {
 			xBackPos+=xSpacing;
 			yBackPos-=ySpacing;
 		}
+    }
+
+    public static bool DeskAvailable() {
+        if (NPCPositions.Count == 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public void AddEmployeeToLevel(NPCInfo npcInfo) {

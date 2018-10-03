@@ -14,15 +14,25 @@ public class HiringDisplayManager : MonoBehaviour {
         GridViewPanel.SetActive(false);
     }
 
+    public void DisableHireButton() {
+        HireButton.interactable = false;
+    }
+
+    public void EnableHireButton() {
+        HireButton.interactable = true;
+    }
+
     public void ShowHiringGrid()
     {
-        HireButton.interactable = false;
+        DisableHireButton();
         GridViewPanel.SetActive(true);
     }
 
     public void CloseHiringGrid()
     {
-        HireButton.interactable = true;
+        if (LevelManager.DeskAvailable()) {
+            EnableHireButton();
+        }
         GridViewPanel.SetActive(false);
     }
 
