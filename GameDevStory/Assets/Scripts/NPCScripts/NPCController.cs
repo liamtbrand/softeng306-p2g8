@@ -8,16 +8,21 @@ public class NPCController : Singleton<NPCController> {
     public GameObject npcTemplate; // the generic npc template to instantiate
 	public CoordinateSystem coordinateSystem;
 
-    private List<GameObject> npcInstances = new List<GameObject>(); // maintain a reference to each npc in the scene
+    private readonly Dictionary<GameObject, NPCInfo> _npcInstances = new Dictionary<GameObject, NPCInfo>(); // maintain a reference to each npc in the scene, along with their info
 
-	// Use this for initialization
+    public Dictionary<GameObject, NPCInfo> NpcInstances
+    {
+        get { return _npcInstances; }
+    }
+
+    // Use this for initialization
 	void Start () {}
 
     // Sends a scenario notification to an npc that the player should click on to start the scenario.
     public void ShowScenarioNotification(Scenario s)
     {
         
-        foreach(GameObject npc in npcInstances)
+        foreach(GameObject npc in _npcInstances.Keys)
         {
             NPCBehaviour npcScript = npc.GetComponent<NPCBehaviour>();
             if (!npcScript.HasNotification())
@@ -36,16 +41,16 @@ public class NPCController : Singleton<NPCController> {
 
     public void AddNPCToScene(NPCInfo npc, Vector2 position)
     {
-        InstantiateNPC(npc.attributes.animationController, position);
+        InstantiateNPC(npc.Attributes.animationController, position, npc);
     }
 
-    private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector3 pos)
+    private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector3 pos, NPCInfo info)
     {
         //Vector3 pos = coordinateSystem.getVector3(position); // TODO: Finish coordinate system
         GameObject npcInstance = Instantiate(npcTemplate, pos, Quaternion.identity);
         npcInstance.GetComponent<Animator>().runtimeAnimatorController = animation; // set the animator controller
         npcInstance.transform.SetParent(this.transform); // npcs should show up as a child of the npc controller
-        npcInstances.Add(npcInstance);
+        _npcInstances.Add(npcInstance, info);
         return npcInstance;
     }
 }
