@@ -14,7 +14,7 @@ public class ProjectTimer : MonoBehaviour {
 	private float maxTime = 10f;
 	private float timer;
 	private float currentTime;
-	private bool paused = false;
+	public bool paused = false;
 
 	// Set up timer
 	void OnEnable ()

@@ -100,9 +100,14 @@ namespace NPCScripts.StaffStateScripts
                     }
                     else
                     {
+                        Debug.Log("Throwing dialogue!");
+                        var dialogue = GenerateGenderDialogue(npc.Value);
                         // Pop dialogue
-                        // TODO: Actualy notify!
-                        //npc.Key.GetComponent<NPCBehaviour>().ShowScenarioNotification();
+                        npc.Key.GetComponent<NPCBehaviour>().ShowGenericNotification(delegate
+                        {
+                            ProjectManager.Instance.PauseProject();
+                            DialogueManager.Instance.StartDialogue(dialogue);
+                        });
                     }
                     
                 }
@@ -172,11 +177,13 @@ namespace NPCScripts.StaffStateScripts
                             {
                                 npc.MentalState.GenderDiversityScore = GenderNormalRecovery;
                                 npc.MentalState.StaffState = nextState;
+                                ProjectManager.Instance.ResumeProject();
                             },
                             delegate()
                             {
                                 npc.MentalState.GenderDiversityScore = GenderIgnoreRecovery;
                                 npc.MentalState.StaffState = nextState;
+                                ProjectManager.Instance.ResumeProject();
                             },
                         },
                     }
@@ -187,7 +194,7 @@ namespace NPCScripts.StaffStateScripts
         private void Update()
         {
             _update += Time.deltaTime;
-            if (!(_update > 5.0f)) return;
+            if (!(_update > 5.0f) || ProjectManager.Instance.IsPaused()) return;
             // run every 5 seconds
             _update = 0.0f;
             RecalculateMentalState(NPCController.Instance.NpcInstances);

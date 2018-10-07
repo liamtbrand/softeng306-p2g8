@@ -22,12 +22,12 @@ public class NPCController : Singleton<NPCController> {
     public void ShowScenarioNotification(Scenario s)
     {
         
-        foreach(GameObject npc in _npcInstances.Keys)
+        foreach(var npc in _npcInstances.Keys)
         {
-            NPCBehaviour npcScript = npc.GetComponent<NPCBehaviour>();
+            var npcScript = npc.GetComponent<NPCBehaviour>();
             if (!npcScript.HasNotification())
             {
-                npcScript.ShowScenarioNotification(s);
+                npcScript.ShowGenericNotification(s.ExecuteScenario);
                 return;
             }
             else

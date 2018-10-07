@@ -44,6 +44,11 @@ public class ProjectManager : Singleton<ProjectManager> {
 		}
 	}
 
+	public bool IsPaused()
+	{
+		return timerScript.paused;
+	}
+
 	// Starts a project
 	public void StartProject (string project)
 	{

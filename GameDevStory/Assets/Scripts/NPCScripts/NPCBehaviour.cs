@@ -1,4 +1,5 @@
-﻿    using System.Collections;
+﻿    using System;
+    using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEngine.UI;
@@ -25,7 +26,7 @@
             return this.hasNotification;
         }
 
-        public void ShowScenarioNotification(Scenario s)
+        public void ShowGenericNotification(Action a)
         {
             Debug.Log("Showing Scenario Notification!");
             this.hasNotification = true;
@@ -38,7 +39,7 @@
             // access the button part of the notification component and register the scenario to be executed on click
             Button buttonInstance = buttonInstanceContainer.GetComponentInChildren<Button>();
             buttonInstance.onClick.AddListener(() => {
-                s.ExecuteScenario();
+                a.Invoke();
                 this.hasNotification = false;
                 Debug.Log("Click!");
                 Destroy(buttonInstanceContainer); // could set a delay as second param if desired
