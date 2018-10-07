@@ -78,6 +78,10 @@ public class ProjectManager : Singleton<ProjectManager> {
  	{
 		// Reset timer
 		timerScript.enabled = false;
+
+        // determine bug statistics
+        int bugsSquashed = timerScript.GetBugsSquashed();
+        int bugsMissed = timerScript.GetBugsCreated() - bugsSquashed;
 		 
 		// Update project menu
 		UpdateProjectMenu(selectedProject);
@@ -89,7 +93,7 @@ public class ProjectManager : Singleton<ProjectManager> {
 		int stars = CalculateProjectStars(selectedProject);
 
 		// Show project completion display
-		displayScript.ProjectCompleted(profit,stars);
+		displayScript.ProjectCompleted(profit,stars, bugsSquashed, bugsMissed);
 
 		// Add to total profits
 		 GameManager.Instance.changeBalance(profit);

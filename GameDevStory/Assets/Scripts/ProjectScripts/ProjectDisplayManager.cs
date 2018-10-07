@@ -57,7 +57,7 @@ namespace ProjectScripts
         }
 
         // Displays the project completion display
-        public void ProjectCompleted(double profit, int stars)
+        public void ProjectCompleted(double profit, int stars, int bugsSquashed, int bugsMissed)
         {
             ProjectCompletePanel.SetActive(true);
             ProfitText.text = "$" + profit.ToString("f2");
@@ -79,6 +79,8 @@ namespace ProjectScripts
                 Instantiate(HollowStar, new Vector3(xPos,yPos,0f), Quaternion.identity,ProjectCompleteContent.transform);
                 xPos+=offset;
             }
+
+            //TODO display bug info
         }
 
         // Closes the project completion display
