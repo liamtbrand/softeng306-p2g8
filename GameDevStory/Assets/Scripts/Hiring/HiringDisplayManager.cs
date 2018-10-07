@@ -26,6 +26,7 @@ public class HiringDisplayManager : MonoBehaviour {
     {
         DisableHireButton();
         GridViewPanel.SetActive(true);
+        ProjectManager.Instance.PauseProject();
     }
 
     public void CloseHiringGrid()
@@ -34,6 +35,7 @@ public class HiringDisplayManager : MonoBehaviour {
             EnableHireButton();
         }
         GridViewPanel.SetActive(false);
+        ProjectManager.Instance.ResumeProject();
     }
 
     // The reason display applicant is not found in this script is because it is
@@ -44,5 +46,6 @@ public class HiringDisplayManager : MonoBehaviour {
     {
         ApplicantViewPanel.SetActive(false);
         GridViewPanel.SetActive(true); // Return to the grid view.
+        ProjectManager.Instance.ResumeProject();
     }
 }
