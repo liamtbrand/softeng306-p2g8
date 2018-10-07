@@ -54,6 +54,7 @@ public class ProjectManager : Singleton<ProjectManager> {
 
 		// Start project progress timer
 		timerScript.enabled = true;
+		timerScript.DisplayCurrentProject(selectedProject);
 
 		// If you want to test the pausing functionality (pauses after 3s)
 		//Invoke("PauseProject", 5f);

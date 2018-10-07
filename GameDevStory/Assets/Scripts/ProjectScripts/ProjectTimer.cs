@@ -9,6 +9,7 @@ public class ProjectTimer : MonoBehaviour {
 	public GameObject progressPanel;
 	public Slider progressBar;
 	public Text progressText;
+	public Text projectText;
 	private ProjectManager progressScript;
 	public Scenario[] scenarioArray;
 	private float maxTime = 10f;
@@ -25,6 +26,11 @@ public class ProjectTimer : MonoBehaviour {
 		// Set the timer values
 		timer = maxTime;
 		progressBar.value = 0;
+	}
+
+	public void DisplayCurrentProject(string title)
+	{
+		projectText.text = "Current Project: \n" + title;
 	}
 	
 	// Update is called once per frame
