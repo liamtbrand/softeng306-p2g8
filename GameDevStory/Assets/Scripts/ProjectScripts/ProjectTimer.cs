@@ -13,7 +13,6 @@ public class ProjectTimer : MonoBehaviour {
 	public Scenario[] scenarioArray;
 	private float maxTime = 10f;
 	private float timer;
-	private float currentTime;
 	private bool paused = false;
 
 	// Set up timer
@@ -40,14 +39,13 @@ public class ProjectTimer : MonoBehaviour {
 				    Scenario.getActive() == false 
 				    && Random.Range(0.0f, 1.0f) < scenario.GetScenarioProbability())
 				{
-					Pause(scenario);
+					Pause();
 					scenario.StartScenario();
 				}
 			}
 			
 			// Decrement timer
 			timer -= Time.deltaTime;
-			currentTime = timer;
 		
 			// Update progress bar
 			float progress = (maxTime-timer)/maxTime*100;
@@ -64,10 +62,9 @@ public class ProjectTimer : MonoBehaviour {
 	}
 
 	// Pauses the timer
-	public void Pause(Scenario scenario)
+	public void Pause()
 	{
 		paused = true;
-		currentTime = timer;
 	}
 
 	// Resumes the timer
