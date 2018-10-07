@@ -15,6 +15,10 @@ public class ProjectTimer : MonoBehaviour {
 	private float timer;
 	private float currentTime;
 	public bool paused = false;
+	private bool paused = false;
+    private int bugsCreated = 0;
+    private int bugsSquashed = 0;
+    private float bugProbability = 0.01f; //TODO: link this up with diversity score or some other "quality" attribute
 
 	// Set up timer
 	void OnEnable ()
@@ -44,6 +48,14 @@ public class ProjectTimer : MonoBehaviour {
 					scenario.StartScenario();
 				}
 			}
+
+            // Send out bugs during projects
+            if (Random.Range(0.0f, 1.0f) < bugProbability)
+            {
+                bugsCreated++;
+                NPCController.Instance.ShowBug(IncrementBugsSquashed, DecrementBugsCreated);
+            }
+
 			
 			// Decrement timer
 			timer -= Time.deltaTime;
@@ -75,4 +87,26 @@ public class ProjectTimer : MonoBehaviour {
 	{
 		paused = false;
 	}
+
+    public int GetBugsCreated()
+    {
+        return bugsCreated;
+    }
+
+    public int GetBugsSquashed()
+    {
+        return bugsSquashed;
+    }
+
+    private void IncrementBugsSquashed()
+    {
+        Debug.Log("Bug Squashed!");
+        bugsSquashed++;
+    }
+
+    private void DecrementBugsCreated()
+    {
+        Debug.Log("Failed to send bug!");
+        bugsCreated--;
+    }
 }
