@@ -25,6 +25,14 @@ public class NPCFactory : Singleton<NPCFactory> {
     // A pool of pre-made NPCs that are available for instantiation
     public List<NPCAttributes> npcs;
 
+    // determines how significant the gender pay gap is. 
+    // Could change as the game progresses, eventually achieving equal pay
+    public float femalePayMultiplier = 0.75f;
+
+    // fields defining the range of values for the NPC costs
+    public int minEmployeeCost = 50;
+    public int maxEmployeeCost = 100;
+   
     // selects a pre-made npc at random from the pool of potential npcs
     public NPCAttributes SelectRandomNPC()
     {
@@ -49,17 +57,55 @@ public class NPCFactory : Singleton<NPCFactory> {
     // Creates an NPCInfo object with randomised statistics.
     public NPCInfo CreateNPCWithRandomizedStats()
     {
+        NPCStats randomStats = GetRandomStats();
         NPCAttributes randomNPC = SelectRandomNPC();
+
         NPCInfo npc = new NPCInfo()
         {
             attributes = randomNPC,
-            stats = GetRandomStats()
+            stats = randomStats
         };
+
+        npc.attributes.cost = CalculateEmployeeCost(npc);
 
         // ensure that no npc can be generated twice (npcs are unique).
         // TODO?: improve this to remove only those that hired.
         npcs.Remove(randomNPC);
 
         return npc;
+    }
+
+    // helper method to calculate the cost of employees based on their stats 
+    //TODO: and the player's current balance
+    private int CalculateEmployeeCost(NPCInfo npc)
+    {
+        // work with float until the end where we will round
+        float cost = 0;
+
+        // each of the stats is worth an equal amount, and when added together must be within the
+        // range of potential employee costs
+        float minStatCost = minEmployeeCost / 5;
+        float maxStatCost = maxEmployeeCost / 5;
+
+        NPCStats stats = npc.stats;
+
+        cost += PercentBetween(minStatCost, maxStatCost, stats.communication);
+        cost += PercentBetween(minStatCost, maxStatCost, stats.testing);
+        cost += PercentBetween(minStatCost, maxStatCost, stats.technical);
+        cost += PercentBetween(minStatCost, maxStatCost, stats.creativity);
+        cost += PercentBetween(minStatCost, maxStatCost, stats.design);
+
+        if (npc.attributes.gender.Equals(NPCAttributes.Gender.FEMALE))
+            cost *= femalePayMultiplier;
+
+        return Mathf.RoundToInt(cost);
+    }
+
+    // helper to give the value that is percent between min and max.
+    // e.g PercentBetween(0,10,50) = 5 as 5 is halfway between 0 and 10
+    private float PercentBetween(float min, float max, int percent)
+    {
+        float offset = (max - min) * percent / 100;
+        return min + offset;
     }
 }
