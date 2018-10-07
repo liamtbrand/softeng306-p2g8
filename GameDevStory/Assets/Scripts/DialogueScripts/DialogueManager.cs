@@ -8,8 +8,11 @@ namespace DialogueScripts{
     public class DialogueManager : Singleton<DialogueManager> {
 
         private Queue<Sentence> _dialogueQueue;
+        private Sentence sentence;
+        private Coroutine TypingCoroutine;
 
         public bool DialogueInProgress = false;
+        public bool isTyping = false;
 
         public GameObject DialogueContainer;
 
@@ -66,6 +69,13 @@ namespace DialogueScripts{
         public void DisplayNextSentence()
         {
 
+            if(isTyping){
+                StopCoroutine(TypingCoroutine);
+                DialogueText.text = sentence.sentenceLine;
+                isTyping = false;
+                return;
+            }
+
             if (!DialoguePanel.activeInHierarchy)
             {
                     DialoguePanel.SetActive(true);
@@ -84,7 +94,7 @@ namespace DialogueScripts{
                 return;
             }
 
-            Sentence sentence = _dialogueQueue.Dequeue();
+            sentence = _dialogueQueue.Dequeue();
 
             //DialogueText.text = sentence.sentenceLine;
 
@@ -92,9 +102,12 @@ namespace DialogueScripts{
             NameText.text = sentence.Title;
 
             NPCIcon.sprite = sentence.icon;
-
-            StopAllCoroutines();
-		    StartCoroutine(TypeSentence(sentence.sentenceLine));
+            isTyping = true;
+            if(TypingCoroutine != null){
+                StopCoroutine(TypingCoroutine);
+            }
+            
+		    TypingCoroutine = StartCoroutine(TypeSentence(sentence.sentenceLine));
 
             if(sentence.sentenceChoices != null && sentence.sentenceChoices.Length > 0){
                 Debug.Log("Generating " + sentence.sentenceChoices.Length + " choice buttons");
@@ -114,12 +127,16 @@ namespace DialogueScripts{
         }
 
         private IEnumerator TypeSentence(string sentenceLine){
+            
             DialogueText.text = "";
 		    foreach (char letter in sentenceLine.ToCharArray())
 		    {
 			    DialogueText.text += letter;
 			    yield return null;
 		    }
+
+            isTyping = false;
+
         }
 
         public void EndDialogue()
