@@ -79,21 +79,20 @@ public class ProjectManager : Singleton<ProjectManager> {
 		// Reset timer
 		timerScript.enabled = false;
 
-        // determine bug statistics
-        int bugsSquashed = timerScript.GetBugsSquashed();
-        int bugsMissed = timerScript.GetBugsCreated() - bugsSquashed;
+        // determine bug statistics 
+        int bugsMissed = timerScript.GetBugsCreated() - timerScript.GetBugsSquashed();
 		 
 		// Update project menu
 		UpdateProjectMenu(selectedProject);
 
 		// Calculate project profit
-		double profit = CalculateProjectProfit(selectedProject);
+		double profit = CalculateProjectProfit(selectedProject, bugsMissed);
 
 		// Calculate project stars
 		int stars = CalculateProjectStars(selectedProject);
 
 		// Show project completion display
-		displayScript.ProjectCompleted(profit,stars, bugsSquashed, bugsMissed);
+		displayScript.ProjectCompleted(profit,stars, bugsMissed, bugsMissed * 10);
 
 		// Add to total profits
 		 GameManager.Instance.changeBalance(profit);
@@ -107,10 +106,10 @@ public class ProjectManager : Singleton<ProjectManager> {
 	}
 
 	// Calculates the profit from a project
-	double CalculateProjectProfit (string project) 
+	double CalculateProjectProfit (string project, int bugsMissed) 
 	{
-		// TODO: Calculate project profit based on diversity
-		return 100.00;
+		// TODO: Calculate project profit based on diversity and don't hardcode bug penalty
+		return 100.00 - 10 * bugsMissed;
 	}
 
 	// Updates the project menu
