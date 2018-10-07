@@ -16,6 +16,7 @@ namespace ProjectScripts
         public GameObject Star;
         public GameObject HollowStar;
         public Text ProfitText;
+        public Text FeedbackText;
     
         protected ProjectDisplayManager () {} // enforces singleton use
 
@@ -57,12 +58,13 @@ namespace ProjectScripts
         }
 
         // Displays the project completion display
-        public void ProjectCompleted(double profit, int stars)
+        public void ProjectCompleted(double profit, string feedback)
         {
             ProjectCompletePanel.SetActive(true);
             ProfitText.text = "$" + profit.ToString("f2");
-        
-            float offset = 0.3f;
+            FeedbackText.text = feedback;
+            
+            /*float offset = 0.3f;
             float xPos = -0.3f;
             float yPos = 0.05f;
             int maxStars = 3;
@@ -78,16 +80,16 @@ namespace ProjectScripts
             for (int i=0; i<hollowStars; i++) {
                 Instantiate(HollowStar, new Vector3(xPos,yPos,0f), Quaternion.identity,ProjectCompleteContent.transform);
                 xPos+=offset;
-            }
+            }*/
         }
 
         // Closes the project completion display
         public void CloseProjectCompleted()
         {
             ProjectCompletePanel.SetActive(false);
-            foreach (Transform child in ProjectCompleteContent.transform) {
+            /*foreach (Transform child in ProjectCompleteContent.transform) {
                 GameObject.Destroy(child.gameObject);
-            }
+            }*/
         }
     
     }

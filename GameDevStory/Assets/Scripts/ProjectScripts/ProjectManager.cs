@@ -87,14 +87,24 @@ public class ProjectManager : Singleton<ProjectManager> {
 		double profit = CalculateProjectProfit(selectedProject);
 
 		// Calculate project stars
-		int stars = CalculateProjectStars(selectedProject);
+		//int stars = CalculateProjectStars(selectedProject);
+
+		// Get project feedback
+		string feedback = GetProjectFeedback(selectedProject);
 
 		// Show project completion display
-		displayScript.ProjectCompleted(profit,stars);
+		displayScript.ProjectCompleted(profit,feedback);
 
 		// Add to total profits
 		 GameManager.Instance.changeBalance(profit);
 	 }
+
+	// Calculates the performance of a project
+	string GetProjectFeedback (string project)
+	{
+		// TODO: Get feedback based on diversity
+		return "Your perspective was too narrow. Try...";
+	}
 
 	// Calculates the performance of a project
 	int CalculateProjectStars (string project)
