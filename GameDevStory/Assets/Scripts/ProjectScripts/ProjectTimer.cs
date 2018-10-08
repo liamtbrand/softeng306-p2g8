@@ -87,6 +87,11 @@ public class ProjectTimer : MonoBehaviour {
 		paused = false;
 	}
 
+	public void DisplayCurrentProject(string project)
+	{
+		projectText.text = project;
+	}
+
     public int GetBugsCreated()
     {
         return bugsCreated;
