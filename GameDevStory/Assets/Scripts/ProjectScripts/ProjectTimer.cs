@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,12 +9,16 @@ public class ProjectTimer : MonoBehaviour {
 	public GameObject progressPanel;
 	public Slider progressBar;
 	public Text progressText;
+	public Text projectText;
 	private ProjectManager progressScript;
 	public Scenario[] scenarioArray;
 	private float maxTime = 10f;
 	private float timer;
 	private float currentTime;
-	private bool paused = false;
+	public bool paused = false;
+    private int bugsCreated = 0;
+    private int bugsSquashed = 0;
+    private float bugProbability = 0.01f; //TODO: link this up with diversity score or some other "quality" attribute
 
 	// Set up timer
 	void OnEnable ()
@@ -40,10 +44,18 @@ public class ProjectTimer : MonoBehaviour {
 				    Scenario.getActive() == false 
 				    && Random.Range(0.0f, 1.0f) < scenario.GetScenarioProbability())
 				{
-					Pause(scenario);
+					Pause();
 					scenario.StartScenario();
 				}
 			}
+
+            // Send out bugs during projects
+            if (Random.Range(0.0f, 1.0f) < bugProbability)
+            {
+                bugsCreated++;
+                NPCController.Instance.ShowBug(IncrementBugsSquashed, DecrementBugsCreated);
+            }
+
 			
 			// Decrement timer
 			timer -= Time.deltaTime;
@@ -64,10 +76,9 @@ public class ProjectTimer : MonoBehaviour {
 	}
 
 	// Pauses the timer
-	public void Pause(Scenario scenario)
+	public void Pause()
 	{
 		paused = true;
-		currentTime = timer;
 	}
 
 	// Resumes the timer
@@ -75,4 +86,31 @@ public class ProjectTimer : MonoBehaviour {
 	{
 		paused = false;
 	}
+
+	public void DisplayCurrentProject(string project)
+	{
+		projectText.text = "Current Project:\n" + project;
+	}
+
+    public int GetBugsCreated()
+    {
+        return bugsCreated;
+    }
+
+    public int GetBugsSquashed()
+    {
+        return bugsSquashed;
+    }
+
+    private void IncrementBugsSquashed()
+    {
+        Debug.Log("Bug Squashed!");
+        bugsSquashed++;
+    }
+
+    private void DecrementBugsCreated()
+    {
+        Debug.Log("Failed to send bug!");
+        bugsCreated--;
+    }
 }
