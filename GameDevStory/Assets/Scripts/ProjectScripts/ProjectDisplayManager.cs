@@ -63,7 +63,7 @@ namespace ProjectScripts
         {
             ProjectCompletePanel.SetActive(true);
             ProfitText.text = "$" + profit.ToString("f2");
-            //FeedbackText.text = feedback;
+            FeedbackText.text = feedback;
             
             /*float offset = 0.3f;
             float xPos = -0.3f;
