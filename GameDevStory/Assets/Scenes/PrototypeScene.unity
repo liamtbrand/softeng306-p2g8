@@ -1351,7 +1351,7 @@ MonoBehaviour:
   progressPanel: {fileID: 849164178}
   progressBar: {fileID: 849164177}
   progressText: {fileID: 849164176}
-  projectText: {fileID: 0}
+  projectText: {fileID: 1809432594}
   scenarioArray:
   - {fileID: 1057592314}
   paused: 0
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   Star: {fileID: 1319501843777500, guid: a27fad4795778472e8f1110b5d786556, type: 2}
   HollowStar: {fileID: 1217609854770992, guid: 735fb1c2c0d974309af70790f665b0b6, type: 2}
   ProfitText: {fileID: 811561469}
-  FeedbackText: {fileID: 0}
+  FeedbackText: {fileID: 450386241}
   BugStatsText: {fileID: 0}
 --- !u!114 &357368543
 MonoBehaviour:

@@ -24,13 +24,15 @@ namespace NPCScripts.StaffStateScripts
         private const double GenderNormalRecovery = -2;
         private const double GenderIgnoreRecovery = -5;
 
+        private bool _currentlyDisplaying = false;
+
         private float _update = 0.0f;
 
         private void RecalculateMentalState(Dictionary<GameObject, NPCInfo> npcs)
         {
             var femaleProportion = npcs.Where(npc => npc.Value.Attributes.gender == NPCAttributes.Gender.FEMALE)
                 .Sum(npc => (1.0 / npcs.Count));
-            
+
             // now update each NPC
             foreach (var npc in npcs)
             {
@@ -56,13 +58,14 @@ namespace NPCScripts.StaffStateScripts
                     }
                     else
                     {
-                        npc.Value.MentalState.StaffState = StaffMentalState.State.NORMAL;
+                        npc.Value.MentalState.StaffStateGender = StaffMentalState.State.NORMAL;
                     }
                 }
 
                 // Update AgeDiversity
                 var similarAge = from n in npcs.Values
-                    where n.Attributes.age > (npc.Value.Attributes.age - 15) && n.Attributes.age < (npc.Value.Attributes.age + 15)
+                    where n.Attributes.age > (npc.Value.Attributes.age - 15) &&
+                          n.Attributes.age < (npc.Value.Attributes.age + 15)
                     select n;
 
                 var similarAgeProportion = similarAge.Count() / (double) npcs.Count;
@@ -81,35 +84,41 @@ namespace NPCScripts.StaffStateScripts
                     }
                     else
                     {
-                        npc.Value.MentalState.StaffState = StaffMentalState.State.NORMAL;
+                        npc.Value.MentalState.StaffStateAge = StaffMentalState.State.NORMAL;
                     }
                 }
 
                 Debug.Log("Updated NPC " + npc.Value.Attributes.npcName + " genderDiversity = " +
                           npc.Value.MentalState.GenderDiversityScore + ", ageDiversity = " +
-                          npc.Value.MentalState.AgeDiversityScore + ", state = "+npc.Value.MentalState.StaffState);
+                          npc.Value.MentalState.AgeDiversityScore + ", stateGender = " +
+                          npc.Value.MentalState.StaffStateGender + ", stateAge = " +
+                          npc.Value.MentalState.StaffStateAge);
 
                 // Check if we need to take action
-                if (npc.Value.MentalState.GenderDiversityScore < GenderDialogueThreshold)
+                if (npc.Value.MentalState.GenderDiversityScore < GenderDialogueThreshold && !_currentlyDisplaying)
                 {
-                    if (npc.Value.MentalState.StaffState == StaffMentalState.State.READY_TO_LEAVE ||
-                        npc.Value.MentalState.GenderDiversityScore < GenderDialogueThreshold*3) // special case if dialogue ignored?
+                    if (npc.Value.MentalState.StaffStateGender == StaffMentalState.State.READY_TO_LEAVE ||
+                        npc.Value.MentalState.GenderDiversityScore < GenderDialogueThreshold * 2
+                    ) // special case if last dialogue ignored?
                     {
-                        // TODO: Leave company!
-                        
+                        // Leave company!
+                        _currentlyDisplaying = true;
+                        NPCController.Instance.RemoveNPC(npc.Key);
+                        ProjectManager.Instance.PauseProject();
+                        DialogueManager.Instance.StartDialogue(GenerateLeaveDialogue(npc.Value));
                     }
                     else
                     {
                         Debug.Log("Throwing dialogue!");
                         var dialogue = GenerateGenderDialogue(npc.Value);
                         // Pop dialogue
+                        _currentlyDisplaying = true;
                         NPCController.Instance.ShowNotification(delegate
                         {
                             ProjectManager.Instance.PauseProject();
                             DialogueManager.Instance.StartDialogue(dialogue);
                         }, npc.Key);
                     }
-                    
                 }
                 else if (npc.Value.MentalState.AgeDiversityScore < AgeDialogueThreshold)
                 {
@@ -123,16 +132,46 @@ namespace NPCScripts.StaffStateScripts
             }
         }
 
+        private Dialogue GenerateLeaveDialogue(NPCInfo npc)
+        {
+            return new Dialogue
+            {
+                Sentences = new Sentence[]
+                {
+                    new Sentence()
+                    {
+                        // icon = TODO: Get Icon somehow!
+                        Title = npc.Attributes.npcName,
+                        sentenceLine = npc.Attributes.npcName + " has resigned. " + GetPronoun(npc, true) +
+                                       " has moved on to a more inclusive workplace. " +
+                                       "Maintaining a diverse workforce helps improve employee satisfaction and productivity. " +
+                                       "You have paid a $500 penalty",
+                        sentenceChoices = new[] {"OK"},
+                        sentenceChoiceActions = new UnityAction[]
+                        {
+                            delegate
+                            {
+                                GameManager.Instance.changeBalance(-500);
+                                ProjectManager.Instance.ResumeProject();
+                                _currentlyDisplaying = false;
+                            }, 
+                        }
+                    }
+                }
+            };
+        }
+
         private Dialogue GenerateGenderDialogue(NPCInfo npc)
         {
             string sentence;
             StaffMentalState.State nextState;
             string[] choices;
-            switch (npc.MentalState.StaffState)
+            switch (npc.MentalState.StaffStateGender)
             {
                 case StaffMentalState.State.NORMAL:
-                    sentence = npc.Attributes.npcName + " thinks the office is boring. "+GetPronoun(npc)+" feels out of place.\n" +
-                               "Hire some like-minded coworkers to improve "+GetPronoun(npc).ToLower()+" mood.";
+                    sentence = npc.Attributes.npcName + " thinks the office is boring. " + GetPronoun(npc, true) +
+                               " feels out of place.\n" +
+                               "Hire some like-minded coworkers to improve their mood.";
                     nextState = StaffMentalState.State.ANNOYED;
                     choices = new string[]
                     {
@@ -140,9 +179,9 @@ namespace NPCScripts.StaffStateScripts
                     };
                     break;
                 case StaffMentalState.State.ANNOYED:
-                    sentence = npc.Attributes.npcName + " doesn't know many people here. " + GetPronoun(npc) +
+                    sentence = npc.Attributes.npcName + " doesn't know many people here. " + GetPronoun(npc, true) +
                                " feels lonely.\n" +
-                               "Encourage your employees to get to know " + GetPronoun(npc).ToLower() +
+                               "Encourage your employees to get to know " + GetPronoun(npc, false).ToLower() +
                                " by hosting a pizza party.";
                     nextState = StaffMentalState.State.ABOUT_TO_LEAVE;
                     choices = new string[]
@@ -152,7 +191,8 @@ namespace NPCScripts.StaffStateScripts
                     };
                     break;
                 case StaffMentalState.State.ABOUT_TO_LEAVE:
-                    sentence = npc.Attributes.npcName + " feels excluded by her coworkers.\n" +
+                    sentence = npc.Attributes.npcName + " feels excluded by " + GetPronoun(npc, false).ToLower() +
+                               " coworkers.\n" +
                                "Host a team-building event to improve workspace culture.";
                     nextState = StaffMentalState.State.READY_TO_LEAVE;
                     choices = new string[]
@@ -162,53 +202,64 @@ namespace NPCScripts.StaffStateScripts
                     };
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException("state", npc.MentalState.StaffState, null);
+                    throw new ArgumentOutOfRangeException("state", npc.MentalState.StaffStateGender, null);
             }
+
             return new Dialogue
             {
-                Sentences = new Sentence[]{
-                    new Sentence(){
+                Sentences = new Sentence[]
+                {
+                    new Sentence()
+                    {
                         // icon = TODO: Get Icon somehow!
                         Title = npc.Attributes.npcName,
                         sentenceLine = sentence,
                         sentenceChoices = choices,
-                        sentenceChoiceActions = new UnityAction[]{
+                        sentenceChoiceActions = new UnityAction[]
+                        {
                             delegate()
                             {
+                                Debug.Log("Normal option picked");
                                 npc.MentalState.GenderDiversityScore = GenderNormalRecovery;
-                                npc.MentalState.StaffState = nextState;
+                                npc.MentalState.StaffStateGender = nextState;
+                                Debug.Log("Setting state to " + npc.MentalState.StaffStateGender);
                                 ProjectManager.Instance.ResumeProject();
+                                _currentlyDisplaying = false;
                             },
                             delegate()
                             {
+                                Debug.Log("Ignore option picked");
                                 npc.MentalState.GenderDiversityScore = GenderIgnoreRecovery;
-                                npc.MentalState.StaffState = nextState;
+                                npc.MentalState.StaffStateGender = nextState;
+                                Debug.Log("Setting state to " + npc.MentalState.StaffStateGender);
                                 ProjectManager.Instance.ResumeProject();
+                                _currentlyDisplaying = false;
                             },
                         },
                     }
-                }	
+                }
             };
         }
 
         private void Update()
         {
             _update += Time.deltaTime;
-            if (!(_update > 5.0f) || ProjectManager.Instance.IsPaused()) return;
+            // TODO: tick increased to 1s for testing!!!
+            if (!(_update > 1.0f) || ProjectManager.Instance.IsPaused()) return;
             // run every 5 seconds
             _update = 0.0f;
             RecalculateMentalState(NPCController.Instance.NpcInstances);
             Debug.Log("Update");
         }
 
-        private static string GetPronoun(NPCInfo npc)
+        private static string GetPronoun(NPCInfo npc, bool type)
         {
             switch (npc.Attributes.gender)
             {
                 case NPCAttributes.Gender.MALE:
-                    return "He";
+                    return type ? "He" : "Him";
                 case NPCAttributes.Gender.FEMALE:
-                    return "She";
+                    return type ? "She" : "Her";
                 default:
                     throw new ArgumentOutOfRangeException();
             }
