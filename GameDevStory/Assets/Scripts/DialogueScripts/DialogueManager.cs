@@ -69,7 +69,7 @@ namespace DialogueScripts{
         public void DisplayNextSentence()
         {
 
-            if(isTyping){
+            if(isTyping && sentence.sentenceChoices.Length == 0){
                 StopCoroutine(TypingCoroutine);
                 DialogueText.text = sentence.sentenceLine;
                 isTyping = false;

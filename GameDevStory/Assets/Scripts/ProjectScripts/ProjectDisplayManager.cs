@@ -59,8 +59,11 @@ namespace ProjectScripts
         }
 
         // Displays the project completion display
-        public void ProjectCompleted(double profit, string feedback, int bugsMissed, int bugPenalty)
+        public void ProjectCompleted(double profit, string feedback, int bugsMissed, int bugPenalty, float diversityScore)
         {
+
+            // todo: add diversity score in feedback
+
             ProjectCompletePanel.SetActive(true);
             ProfitText.text = "$" + profit.ToString("f2");
             FeedbackText.text = feedback;
