@@ -51,11 +51,11 @@ public class InitialiseApplicantView : MonoBehaviour
         animator.runtimeAnimatorController = npcInfo.Attributes.animationController;
 
         // Initialise sliders
-        FillSlider(communicationSlider, stats.communication);
-        FillSlider(testingSlider, stats.testing);
-        FillSlider(technicalSlider, stats.technical);
-        FillSlider(creativitySlider, stats.creativity);
-        FillSlider(designSlider, stats.design);
+        FillSlider(communicationSlider, stats.Communication);
+        FillSlider(testingSlider, stats.Testing);
+        FillSlider(technicalSlider, stats.Technical);
+        FillSlider(creativitySlider, stats.Creativity);
+        FillSlider(designSlider, stats.Design);
     }
 
     public void BackClicked()
