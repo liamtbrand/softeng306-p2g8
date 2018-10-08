@@ -17,6 +17,7 @@ namespace ProjectScripts
         public GameObject HollowStar;
         public Text ProfitText;
         public Text FeedbackText;
+        public Text BugStatsText;
     
         protected ProjectDisplayManager () {} // enforces singleton use
 
@@ -58,11 +59,11 @@ namespace ProjectScripts
         }
 
         // Displays the project completion display
-        public void ProjectCompleted(double profit, string feedback)
+        public void ProjectCompleted(double profit, string feedback, int bugsMissed, int bugPenalty)
         {
             ProjectCompletePanel.SetActive(true);
             ProfitText.text = "$" + profit.ToString("f2");
-            FeedbackText.text = feedback;
+            //FeedbackText.text = feedback;
             
             /*float offset = 0.3f;
             float xPos = -0.3f;
@@ -81,6 +82,8 @@ namespace ProjectScripts
                 Instantiate(HollowStar, new Vector3(xPos,yPos,0f), Quaternion.identity,ProjectCompleteContent.transform);
                 xPos+=offset;
             }*/
+
+            //BugStatsText.text = "Bugs Missed: " + bugsMissed + " (-$" + bugPenalty + ")";
         }
 
         // Closes the project completion display

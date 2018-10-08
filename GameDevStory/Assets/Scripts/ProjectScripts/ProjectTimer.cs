@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +14,11 @@ public class ProjectTimer : MonoBehaviour {
 	public Scenario[] scenarioArray;
 	private float maxTime = 10f;
 	private float timer;
-	private bool paused = false;
+	private float currentTime;
+	public bool paused = false;
+    private int bugsCreated = 0;
+    private int bugsSquashed = 0;
+    private float bugProbability = 0.01f; //TODO: link this up with diversity score or some other "quality" attribute
 
 	// Set up timer
 	void OnEnable ()
@@ -26,11 +30,6 @@ public class ProjectTimer : MonoBehaviour {
 		// Set the timer values
 		timer = maxTime;
 		progressBar.value = 0;
-	}
-
-	public void DisplayCurrentProject(string title)
-	{
-		projectText.text = "Current Project: \n" + title;
 	}
 	
 	// Update is called once per frame
@@ -49,9 +48,18 @@ public class ProjectTimer : MonoBehaviour {
 					scenario.StartScenario();
 				}
 			}
+
+            // Send out bugs during projects
+            if (Random.Range(0.0f, 1.0f) < bugProbability)
+            {
+                bugsCreated++;
+                NPCController.Instance.ShowBug(IncrementBugsSquashed, DecrementBugsCreated);
+            }
+
 			
 			// Decrement timer
 			timer -= Time.deltaTime;
+			currentTime = timer;
 		
 			// Update progress bar
 			float progress = (maxTime-timer)/maxTime*100;
@@ -78,4 +86,26 @@ public class ProjectTimer : MonoBehaviour {
 	{
 		paused = false;
 	}
+
+    public int GetBugsCreated()
+    {
+        return bugsCreated;
+    }
+
+    public int GetBugsSquashed()
+    {
+        return bugsSquashed;
+    }
+
+    private void IncrementBugsSquashed()
+    {
+        Debug.Log("Bug Squashed!");
+        bugsSquashed++;
+    }
+
+    private void DecrementBugsCreated()
+    {
+        Debug.Log("Failed to send bug!");
+        bugsCreated--;
+    }
 }

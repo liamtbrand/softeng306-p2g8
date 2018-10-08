@@ -34,8 +34,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1094414918154218}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.011146087, y: -0.035591237, z: 32.771156}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.20802678, y: 0.14616722, z: 32.69313}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,6 +55,10 @@ MonoBehaviour:
   npcTemplate: {fileID: 1278780124481134, guid: 0dccc0e54ae3e84468bea5e1c7bdfc23,
     type: 2}
   coordinateSystem: {fileID: 0}
+  notificationButton: {fileID: 1622929734638966, guid: dfee0ee29b0defd4aaef4e8b77b8e441,
+    type: 2}
+  bugButtons:
+  - {fileID: 1933166712537676, guid: 17ad26ccee5398b43999f38332fb833f, type: 2}
 --- !u!114 &114663150369885586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,3 +75,8 @@ MonoBehaviour:
   - {fileID: 114654778114926638, guid: d3e9ed63c06144244a527d81adfb3a58, type: 2}
   - {fileID: 114632937985454658, guid: e959739796a3f5c45901701cb6200b23, type: 2}
   - {fileID: 114909390779702190, guid: a1ee1ebb8018bc8459ef427c2c485910, type: 2}
+  - {fileID: 114683502722945580, guid: 5882f1396f59445c28a861074b3d13d2, type: 2}
+  - {fileID: 114517197732703172, guid: c1988c9d70dd243a89b09a6d3bf4e6a2, type: 2}
+  - {fileID: 114976380290896440, guid: d5ab188ec4cac47799e82093ee71d58e, type: 2}
+  - {fileID: 114372876575392388, guid: b29ceb9dd04ce4f7a8737888e246f6ed, type: 2}
+  - {fileID: 114033147040880196, guid: 9914730bf41904bf89d6b8325ebcc443, type: 2}
