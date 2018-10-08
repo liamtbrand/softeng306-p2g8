@@ -15,7 +15,6 @@ public class ProjectTimer : MonoBehaviour {
 	private float timer;
 	private float currentTime;
 	public bool paused = false;
-	private bool paused = false;
     private int bugsCreated = 0;
     private int bugsSquashed = 0;
     private float bugProbability = 0.01f; //TODO: link this up with diversity score or some other "quality" attribute

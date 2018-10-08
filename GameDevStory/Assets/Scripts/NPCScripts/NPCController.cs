@@ -25,10 +25,9 @@ public class NPCController : Singleton<NPCController> {
     void Start () {}
 
     // Sends a scenario notification to an npc that the player should click on to start the scenario.
-    public void ShowScenarioNotification(Scenario s)
+    public void ShowNotification(Action a, GameObject npc)
     {
 
-        GameObject npc = GetNPCWithoutNotification();
         if (npc == null)
             Debug.Log("No NPCs can accept a notification"); //TODO: add to a queue of notifications?
 
@@ -39,12 +38,18 @@ public class NPCController : Singleton<NPCController> {
         Button buttonInstance = buttonInstanceContainer.GetComponentInChildren<Button>();
         buttonInstance.onClick.AddListener(() =>
         {
-            s.ExecuteScenario();
+            a.Invoke();
             npc.GetComponent<NPCBehaviour>().SetHasNotification(false);
             Debug.Log("Click!");
             Destroy(buttonInstanceContainer); // could set a delay as second param if desired
         });
-              
+    }
+
+    
+    // Overload to use Random NPC with Scenario
+    public void ShowScenarioNotification(Scenario s)
+    {
+        ShowNotification(s.ExecuteScenario, GetNpcWithoutNotification());
     }
 
     // shows a random bug button and registers the "success" callback to be called when the button is pressed
@@ -52,7 +57,7 @@ public class NPCController : Singleton<NPCController> {
     // so that the bug isn't counted as a missed bug
     public void ShowBug(Action success, Action failure)
     {
-        GameObject npc = GetNPCWithoutNotification();
+        GameObject npc = GetNpcWithoutNotification();
         if (npc == null)
         {
             failure();
@@ -76,16 +81,16 @@ public class NPCController : Singleton<NPCController> {
 
     public void AddNPCToScene(NPCInfo npc, Vector2 position)
     {
-        InstantiateNPC(npc.attributes.animationController, position);
+        InstantiateNPC(npc.Attributes.animationController, position, npc);
     }
 
-    private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector3 pos)
+    private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector3 pos, NPCInfo info)
     {
         //Vector3 pos = coordinateSystem.getVector3(position); // TODO: Finish coordinate system
         GameObject npcInstance = Instantiate(npcTemplate, pos, Quaternion.identity);
         npcInstance.GetComponent<Animator>().runtimeAnimatorController = animation; // set the animator controller
         npcInstance.transform.SetParent(this.transform); // npcs should show up as a child of the npc controller
-        npcInstances.Add(npcInstance);
+        _npcInstances.Add(npcInstance, info);
         return npcInstance;
     }
 
@@ -106,7 +111,7 @@ public class NPCController : Singleton<NPCController> {
     // finds one of the NPCs in the scene that is free to accept a notification
     // returns null if none are free
     // TODO: add randomness into the selection
-    private GameObject GetNPCWithoutNotification()
+    private GameObject GetNpcWithoutNotification()
     {
         foreach (GameObject npc in _npcInstances.Keys)
         {

@@ -81,9 +81,7 @@ namespace ProjectScripts
                 xPos+=offset;
             }
 
-
-
-            BugStatsText.text = "Bugs Missed: " + bugsMissed + " (-$" + bugPenalty + ")";
+            //BugStatsText.text = "Bugs Missed: " + bugsMissed + " (-$" + bugPenalty + ")";
         }
 
         // Closes the project completion display

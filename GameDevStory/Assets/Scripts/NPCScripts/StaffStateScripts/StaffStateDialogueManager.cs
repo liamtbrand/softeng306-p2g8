@@ -103,11 +103,11 @@ namespace NPCScripts.StaffStateScripts
                         Debug.Log("Throwing dialogue!");
                         var dialogue = GenerateGenderDialogue(npc.Value);
                         // Pop dialogue
-                        npc.Key.GetComponent<NPCBehaviour>().ShowGenericNotification(delegate
+                        NPCController.Instance.ShowNotification(delegate
                         {
                             ProjectManager.Instance.PauseProject();
                             DialogueManager.Instance.StartDialogue(dialogue);
-                        });
+                        }, npc.Key);
                     }
                     
                 }

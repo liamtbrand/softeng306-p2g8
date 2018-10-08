@@ -1236,6 +1236,7 @@ MonoBehaviour:
   progressText: {fileID: 849164176}
   scenarioArray:
   - {fileID: 1057592314}
+  paused: 0
 --- !u!114 &357368542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,6 +1259,7 @@ MonoBehaviour:
   Star: {fileID: 1319501843777500, guid: a27fad4795778472e8f1110b5d786556, type: 2}
   HollowStar: {fileID: 1217609854770992, guid: 735fb1c2c0d974309af70790f665b0b6, type: 2}
   ProfitText: {fileID: 811561469}
+  BugStatsText: {fileID: 0}
 --- !u!114 &357368543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,6 +1592,11 @@ Prefab:
       propertyPath: npcs.Array.size
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114546460764383994, guid: 16040cbaa3e1b6c438069e07665a84d5,
+        type: 2}
+      propertyPath: bugButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4305423118477896, guid: 16040cbaa3e1b6c438069e07665a84d5, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.20802678
@@ -1651,6 +1658,18 @@ Prefab:
       propertyPath: npcs.Array.data[8]
       value: 
       objectReference: {fileID: 114033147040880196, guid: 9914730bf41904bf89d6b8325ebcc443,
+        type: 2}
+    - target: {fileID: 114546460764383994, guid: 16040cbaa3e1b6c438069e07665a84d5,
+        type: 2}
+      propertyPath: notificationButton
+      value: 
+      objectReference: {fileID: 1622929734638966, guid: dfee0ee29b0defd4aaef4e8b77b8e441,
+        type: 2}
+    - target: {fileID: 114546460764383994, guid: 16040cbaa3e1b6c438069e07665a84d5,
+        type: 2}
+      propertyPath: bugButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1933166712537676, guid: 17ad26ccee5398b43999f38332fb833f,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16040cbaa3e1b6c438069e07665a84d5, type: 2}
