@@ -18,7 +18,7 @@ public class NPCController : Singleton<NPCController> {
         get { return _npcInstances; }
     }
 
-    private const float NOTIFICATION_HEIGHT_OFFSET = 0.22f; //todo adjust the scale of the world so we don't need to deal in tiny numbers
+    private const float NOTIFICATION_HEIGHT_OFFSET = 0.22f;
 
     private static int npcsToAdd = 2;										// TODO: Don't hardcode this
 
@@ -100,7 +100,7 @@ public class NPCController : Singleton<NPCController> {
 
     private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector2 position, NPCInfo info)
     {
-        Vector3 pos = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().coordinateSystem.getVector3(position); // TODO: Finish coordinate system
+        Vector3 pos = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().coordinateSystem.getVector3(position);
         GameObject npcInstance = Instantiate(npcTemplate, pos, Quaternion.identity);
         npcInstance.GetComponent<Animator>().runtimeAnimatorController = animation; // set the animator controller
         npcInstance.transform.SetParent(this.transform); // npcs should show up as a child of the npc controller
@@ -131,12 +131,19 @@ public class NPCController : Singleton<NPCController> {
     // TODO: add randomness into the selection
     private GameObject GetNpcWithoutNotification()
     {
+        // get all npcs who are free to accept a notification
+        var npcsWithoutNotification = new List<GameObject>();
         foreach (GameObject npc in _npcInstances.Keys)
         {
             NPCBehaviour npcScript = npc.GetComponent<NPCBehaviour>();
             if (!npcScript.GetHasNotification())
-                return npc;
+                npcsWithoutNotification.Add(npc);
         }
-        return null;
+
+        if (npcsWithoutNotification.Count == 0)
+            return null;    // no npc is available to accept notification
+
+        // return random npc who has no notification
+        return npcsWithoutNotification[UnityEngine.Random.Range(0, npcsWithoutNotification.Count)];
     }
 }
