@@ -31,7 +31,7 @@ public class HiringDisplayManager : MonoBehaviour {
 
     public void CloseHiringGrid()
     {
-        if (LevelManager.DeskAvailable()) {
+        if (LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().DeskAvailable()) {
             EnableHireButton();
         }
         GridViewPanel.SetActive(false);
