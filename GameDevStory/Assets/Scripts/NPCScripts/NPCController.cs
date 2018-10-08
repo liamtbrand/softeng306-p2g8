@@ -83,7 +83,13 @@ public class NPCController : Singleton<NPCController> {
 
             success();
         });
+
+        //// register bug to disappear after one second if not clicked
+        IEnumerator coroutine = TearDownButtonAfterDelay(npc.GetComponent<NPCBehaviour>(), buttonInstanceContainer, 2);
+        StartCoroutine(coroutine);
+
     }
+
 
     public void AddNPCToScene(NPCInfo npc, Vector2 position)
     {
@@ -145,5 +151,12 @@ public class NPCController : Singleton<NPCController> {
 
         // return random npc who has no notification
         return npcsWithoutNotification[UnityEngine.Random.Range(0, npcsWithoutNotification.Count)];
+    }
+
+    private IEnumerator TearDownButtonAfterDelay(NPCBehaviour npc, GameObject button, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        npc.SetHasNotification(false);
+        Destroy(button);
     }
 }
