@@ -64,7 +64,7 @@ public class InitialiseApplicantView : MonoBehaviour
     }
 
     public void HireClicked() {
-        levelManager.AddEmployeeToLevel(npcInfo);
+        NPCController.Instance.HireEmployee(npcInfo);
         GameManager.Instance.changeBalance(npcInfo.Attributes.cost*-1);
         clickedTile.interactable = false;
     }
