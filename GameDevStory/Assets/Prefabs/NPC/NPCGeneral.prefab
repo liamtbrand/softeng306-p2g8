@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212959334721484564}
   - component: {fileID: 95811121726528536}
   - component: {fileID: 114879344290091358}
+  - component: {fileID: 114219817961792300}
   m_Layer: 0
   m_Name: NPCGeneral
   m_TagString: Untagged
@@ -60,6 +61,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114219817961792300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1278780124481134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0550116dcfc9c04c9c649573a4ad56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114879344290091358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,8 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd510830d6c7694c94b3c42c81f325a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notificationButton: {fileID: 1622929734638966, guid: dfee0ee29b0defd4aaef4e8b77b8e441,
-    type: 2}
+  npcs: []
 --- !u!212 &212959334721484564
 SpriteRenderer:
   m_ObjectHideFlags: 1

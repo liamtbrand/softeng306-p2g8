@@ -52,8 +52,8 @@ public class NPCFactory : Singleton<NPCFactory> {
         NPCAttributes randomNPC = SelectRandomNPC();
         NPCInfo npc = new NPCInfo()
         {
-            attributes = randomNPC,
-            stats = GetRandomStats()
+            Attributes = randomNPC,
+            Stats = GetRandomStats()
         };
 
         // ensure that no npc can be generated twice (npcs are unique).

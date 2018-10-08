@@ -1236,6 +1236,7 @@ MonoBehaviour:
   progressText: {fileID: 849164176}
   scenarioArray:
   - {fileID: 1057592314}
+  paused: 0
 --- !u!114 &357368542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,6 +1259,7 @@ MonoBehaviour:
   Star: {fileID: 1319501843777500, guid: a27fad4795778472e8f1110b5d786556, type: 2}
   HollowStar: {fileID: 1217609854770992, guid: 735fb1c2c0d974309af70790f665b0b6, type: 2}
   ProfitText: {fileID: 811561469}
+  BugStatsText: {fileID: 0}
 --- !u!114 &357368543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1341,6 +1343,7 @@ Transform:
   - {fileID: 2016083709}
   - {fileID: 1537260591}
   - {fileID: 845432884}
+  - {fileID: 1160174414}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1589,6 +1592,11 @@ Prefab:
       propertyPath: npcs.Array.size
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114546460764383994, guid: 16040cbaa3e1b6c438069e07665a84d5,
+        type: 2}
+      propertyPath: bugButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4305423118477896, guid: 16040cbaa3e1b6c438069e07665a84d5, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.20802678
@@ -1650,6 +1658,18 @@ Prefab:
       propertyPath: npcs.Array.data[8]
       value: 
       objectReference: {fileID: 114033147040880196, guid: 9914730bf41904bf89d6b8325ebcc443,
+        type: 2}
+    - target: {fileID: 114546460764383994, guid: 16040cbaa3e1b6c438069e07665a84d5,
+        type: 2}
+      propertyPath: notificationButton
+      value: 
+      objectReference: {fileID: 1622929734638966, guid: dfee0ee29b0defd4aaef4e8b77b8e441,
+        type: 2}
+    - target: {fileID: 114546460764383994, guid: 16040cbaa3e1b6c438069e07665a84d5,
+        type: 2}
+      propertyPath: bugButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1933166712537676, guid: 17ad26ccee5398b43999f38332fb833f,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16040cbaa3e1b6c438069e07665a84d5, type: 2}
@@ -2607,6 +2627,46 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1124902372}
   m_CullTransparentMesh: 0
+--- !u!1 &1160174413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160174414}
+  - component: {fileID: 1160174415}
+  m_Layer: 0
+  m_Name: StaffStateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1160174414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1160174413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 385111997}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1160174415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1160174413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48bf3949d0764ad6b45f38b54a6b7481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1161148280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1553230913281816, guid: 20415f7021cf34243a40d92f52449cc5,
