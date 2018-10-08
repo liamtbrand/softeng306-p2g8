@@ -38,8 +38,8 @@ public class InitialiseApplicantView : MonoBehaviour
     public void Reload()
     {
         // Get the npc's stat from their stats script
-        var stats = npcInfo.stats; // the randomly generated stats
-        var attributes = npcInfo.attributes; // the pre-made NPC attributes
+        var stats = npcInfo.Stats; // the randomly generated stats
+        var attributes = npcInfo.Attributes; // the pre-made NPC attributes
 
         //spriteImage.sprite = stats.sprite;
         nameHeader.text = attributes.npcName;
@@ -48,14 +48,14 @@ public class InitialiseApplicantView : MonoBehaviour
         bioBox.text = attributes.biography;
         costHeader.text = "$" + attributes.cost.ToString();
 
-        animator.runtimeAnimatorController = npcInfo.attributes.animationController;
+        animator.runtimeAnimatorController = npcInfo.Attributes.animationController;
 
         // Initialise sliders
-        FillSlider(communicationSlider, stats.communication);
-        FillSlider(testingSlider, stats.testing);
-        FillSlider(technicalSlider, stats.technical);
-        FillSlider(creativitySlider, stats.creativity);
-        FillSlider(designSlider, stats.design);
+        FillSlider(communicationSlider, stats.Communication);
+        FillSlider(testingSlider, stats.Testing);
+        FillSlider(technicalSlider, stats.Technical);
+        FillSlider(creativitySlider, stats.Creativity);
+        FillSlider(designSlider, stats.Design);
     }
 
     public void BackClicked()
@@ -64,8 +64,8 @@ public class InitialiseApplicantView : MonoBehaviour
     }
 
     public void HireClicked() {
-        levelManager.AddEmployeeToLevel(npcInfo);
-        GameManager.Instance.changeBalance(npcInfo.attributes.cost*-1);
+        NPCController.Instance.HireEmployee(npcInfo);
+        GameManager.Instance.changeBalance(npcInfo.Attributes.cost*-1);
         clickedTile.interactable = false;
     }
 

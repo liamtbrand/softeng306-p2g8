@@ -9,7 +9,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 
 	public Dictionary<string,Project> InitialiseProjects ()
 	{
-		// Project One
+		/* TUTORIAL PROJECT */
 		Project projectOne = new Project();
 		projectOne.setTitle("Movie Theater Booking System");
 		projectOne.setCompany("Bista Entertainment Solutions");
@@ -19,7 +19,15 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectOne.setEnabled(true);
 		projects.Add(projectOne.getTitle(),projectOne);
 
-		// Project Two
+		/* EASY PROJECTS */
+		Project projectEight = new Project();
+		projectEight.setTitle("Analysing Dependencies");
+		projectEight.setCompany("NZ Game Developers Association");
+		projectEight.setDescription("Create a Java application for extracting statistics from csv files containing information about dependencies.");
+		projectEight.setLength(8);
+		projectEight.setDifficulty(ProjectDifficulty.Easy);
+		projects.Add(projectEight.getTitle(),projectEight);
+
 		Project projectTwo = new Project();
 		projectTwo.setTitle("High-performance Meeting-threading Library");
 		projectTwo.setCompany("Sheehan Software");
@@ -28,7 +36,15 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectTwo.setDifficulty(ProjectDifficulty.Easy);
 		projects.Add(projectTwo.getTitle(),projectTwo);
 
-		// Project Three
+		Project projectSix = new Project();
+		projectSix.setTitle("Parolee System");
+		projectSix.setCompany("Ian Law Enforcement Services");
+		projectSix.setDescription("Build a web service for the New Zealand police to track parolees and their movements.");
+		projectSix.setLength(12);
+		projectSix.setDifficulty(ProjectDifficulty.Easy);
+		projects.Add(projectSix.getTitle(),projectSix);
+
+		/* MEDIUM PROJECTS */
 		Project projectThree = new Project();
 		projectThree.setTitle("Rail Freight Software");
 		projectThree.setCompany("ERail");
@@ -37,7 +53,14 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectThree.setDifficulty(ProjectDifficulty.Medium);
 		projects.Add(projectThree.getTitle(),projectThree);
 
-		// Project Four
+		Project projectNine = new Project();
+		projectNine.setTitle("Smimpsons Facial Recognition");
+		projectNine.setCompany("Fax Studios");
+		projectNine.setDescription("Develop facial tracking software for identifying Smimpsons faces within the cartoon environment. The software should track when unrealistic faces are drawn into production.");
+		projectNine.setLength(18);
+		projectNine.setDifficulty(ProjectDifficulty.Medium);
+		projects.Add(projectNine.getTitle(),projectNine);
+
 		Project projectFour = new Project();
 		projectFour.setTitle("Accounting Accountants");
 		projectFour.setCompany("Zeroe");
@@ -46,7 +69,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectFour.setDifficulty(ProjectDifficulty.Medium);
 		projects.Add(projectFour.getTitle(),projectFour);
 
-		// Project Five
+		/* HARD PROJECTS */
 		Project projectFive = new Project();
 		projectFive.setTitle("Investment Software");
 		projectFive.setCompany("Optimar");
@@ -54,6 +77,22 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectFive.setLength(30);
 		projectFive.setDifficulty(ProjectDifficulty.Hard);
 		projects.Add(projectFive.getTitle(),projectFive);
+
+		Project projectSeven = new Project();
+		projectSeven.setTitle("Serious Coders");
+		projectSeven.setCompany("NZ Game Developers Association");
+		projectSeven.setDescription("Create a serious game promoting diversity and inclusion within software engineering.");
+		projectSeven.setLength(36);
+		projectSeven.setDifficulty(ProjectDifficulty.Hard);
+		projects.Add(projectSeven.getTitle(),projectSeven);
+
+		Project projectTen = new Project();
+		projectTen.setTitle("Surveillance Software");
+		projectTen.setCompany("Palanco");
+		projectTen.setDescription("Build a surveillance system that provides continual video recording and detects movements during closing hours.");
+		projectTen.setLength(40);
+		projectTen.setDifficulty(ProjectDifficulty.Hard);
+		projects.Add(projectTen.getTitle(),projectTen);
 
 		return projects;
 	}

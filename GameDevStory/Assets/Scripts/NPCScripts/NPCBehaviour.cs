@@ -1,4 +1,5 @@
-﻿using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +24,7 @@ public class NPCBehaviour : MonoBehaviour
     {
         return this.hasNotification;
     }
-
+       
     public void SetHasNotification(bool hasNotification)
     {
         this.hasNotification = hasNotification;

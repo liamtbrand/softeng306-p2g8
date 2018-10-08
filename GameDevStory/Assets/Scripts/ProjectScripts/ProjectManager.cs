@@ -44,6 +44,11 @@ public class ProjectManager : Singleton<ProjectManager> {
 		}
 	}
 
+	public bool IsPaused()
+	{
+		return timerScript.paused;
+	}
+
 	// Starts a project
 	public void StartProject (string project)
 	{
@@ -54,6 +59,7 @@ public class ProjectManager : Singleton<ProjectManager> {
 
 		// Start project progress timer
 		timerScript.enabled = true;
+		timerScript.DisplayCurrentProject(selectedProject);
 
 		// If you want to test the pausing functionality (pauses after 3s)
 		//Invoke("PauseProject", 5f);
@@ -62,7 +68,7 @@ public class ProjectManager : Singleton<ProjectManager> {
 	// Pauses the work on a project
 	public void PauseProject()
 	{
-		//timerScript.Pause();
+		timerScript.Pause();
 		// If you want to test the resume functionality (resumes after 5s)
 		//Invoke("ResumeProject", 5f);
 	}
@@ -89,14 +95,24 @@ public class ProjectManager : Singleton<ProjectManager> {
 		double profit = CalculateProjectProfit(selectedProject, bugsMissed);
 
 		// Calculate project stars
-		int stars = CalculateProjectStars(selectedProject);
+		//int stars = CalculateProjectStars(selectedProject);
+
+		// Get project feedback
+		string feedback = GetProjectFeedback(selectedProject);
 
 		// Show project completion display
-		displayScript.ProjectCompleted(profit,stars, bugsMissed, bugsMissed * 10);
+		displayScript.ProjectCompleted(profit,feedback, bugsMissed, bugsMissed * 10);
 
 		// Add to total profits
 		 GameManager.Instance.changeBalance(profit);
 	 }
+
+	// Calculates the performance of a project
+	string GetProjectFeedback (string project)
+	{
+		// TODO: Get feedback based on diversity
+		return "Your perspective was too narrow. Try...";
+	}
 
 	// Calculates the performance of a project
 	int CalculateProjectStars (string project)

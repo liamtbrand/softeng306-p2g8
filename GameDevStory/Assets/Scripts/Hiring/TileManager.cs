@@ -21,17 +21,17 @@ public class TileManager : MonoBehaviour {
     {
         // Get the npc's stat from their stats script
         npcInfo = NPCFactory.Instance.CreateNPCWithRandomizedStats();
-        image.GetComponent<Animator>().runtimeAnimatorController = npcInfo.attributes.animationController;
+        image.GetComponent<Animator>().runtimeAnimatorController = npcInfo.Attributes.animationController;
 
-        nameHeader.text = npcInfo.attributes.npcName;
-        ageHeader.text = npcInfo.attributes.age.ToString();
-        genderHeader.text = npcInfo.attributes.gender.ToString();
-        costHeader.text = "$" + npcInfo.attributes.cost.ToString();
+        nameHeader.text = npcInfo.Attributes.npcName;
+        ageHeader.text = npcInfo.Attributes.age.ToString();
+        genderHeader.text = npcInfo.Attributes.gender.ToString();
+        costHeader.text = "$" + npcInfo.Attributes.cost.ToString();
     }
 
     private void Update()
     {
-        if (GameManager.Instance.getBalance() < npcInfo.attributes.cost)
+        if (GameManager.Instance.getBalance() < npcInfo.Attributes.cost)
         {
             this.gameObject.GetComponent<Button>().interactable = false;
         }
