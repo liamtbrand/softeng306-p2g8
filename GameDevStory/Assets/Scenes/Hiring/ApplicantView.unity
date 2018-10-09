@@ -349,6 +349,11 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224335223269675538, guid: 01e9292bcf325954c92c5211527bf0c9,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00001444121
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01e9292bcf325954c92c5211527bf0c9, type: 2}
   m_IsPrefabAsset: 0
@@ -536,7 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 2
+  m_AspectRatio: 1.7777778
 --- !u!21 &1045259092
 Material:
   serializedVersion: 6
