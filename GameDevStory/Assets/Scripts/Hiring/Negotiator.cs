@@ -12,9 +12,24 @@ public class Negotiator : MonoBehaviour
     public Slider PaySlider;
     public TextMeshProUGUI CostDisplay;
 
+    // NPC info
+    public TextMeshProUGUI nameHeader;
+    public TextMeshProUGUI ageHeader;
+    public TextMeshProUGUI genderHeader;
+    public TextMeshProUGUI bioBox;
+    public TextMeshProUGUI costHeader;
+
+    // Skill bars
+    public Slider communicationSlider;
+    public Slider testingSlider;
+    public Slider technicalSlider;
+    public Slider creativitySlider;
+    public Slider designSlider;
+
     public void Start()
     {
-        // Initialise slider, image and dialogue.
+        // Offer slider starts out at npc's optimum value.
+        PaySlider.value = npc.Attributes.cost;
     }
 
     public void Update()
