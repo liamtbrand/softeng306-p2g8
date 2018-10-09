@@ -8,6 +8,8 @@ public class HiringDisplayManager : MonoBehaviour {
     public Button HireButton;
     public GameObject GridViewPanel;
     public GameObject ApplicantViewPanel;
+    public GameObject NegotiatingPanel;
+
 
     void Start()
     {
@@ -36,6 +38,18 @@ public class HiringDisplayManager : MonoBehaviour {
         }
         GridViewPanel.SetActive(false);
         ProjectManager.Instance.ResumeProject();
+    }
+
+    public void ShowNegotiating()
+    {
+        ApplicantViewPanel.SetActive(false);
+        NegotiatingPanel.SetActive(true);
+    }
+
+    public void HideNegotiating()
+    {
+        NegotiatingPanel.SetActive(false);
+        ApplicantViewPanel.SetActive(true);
     }
 
     // The reason display applicant is not found in this script is because it is
