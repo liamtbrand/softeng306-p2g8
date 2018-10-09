@@ -55,7 +55,7 @@ public class OfficeLayout : MonoBehaviour
     }
 
     // Use this for initialization
-    void Start()
+    void Awake()
 	{
 
 		for (int i = 0; i < desks.Length; i++)
