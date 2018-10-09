@@ -67,6 +67,8 @@ public class NPCFactory : Singleton<NPCFactory> {
         };
 
         npc.Attributes.cost = CalculateEmployeeCost(npc);
+        npc.Attributes.costThreshold = CalculateCostThreshold(npc);
+
 
         // ensure that no npc can be generated twice (npcs are unique).
         // TODO?: improve this to remove only those that hired.
@@ -99,6 +101,35 @@ public class NPCFactory : Singleton<NPCFactory> {
             cost *= FemalePayMultiplier;
 
         return Mathf.RoundToInt(cost);
+    }
+
+    // Here we want to set the threshold to be a random number slightly lower than or equal to the 
+    // applicant's advertised cost. We subtract the absolute value generated from a gaussian 
+    // distribution scaled by 10% of the applicant's advertised cost. For example if we have an
+    // applicant that advertises at $90, then their threshold will be:
+    //
+    //                  90 - 9 * [abs. of rand. gaussian value]
+    //
+    // This allows for very unlikely cases where the threshold for the applicant is incredibly low,
+    // however their threshold is more likely to be very slightly under their advertised cost.
+    private int CalculateCostThreshold(NPCInfo npc)
+    {
+        // Using the Marsaglia polar method to generate gaussian distributed numbers. Taken from 
+        // https://www.alanzucconi.com/2015/09/16/how-to-sample-from-a-gaussian-distribution/
+        float v1, v2, s;
+        do
+        {
+            v1 = 2.0f * Random.Range(0f, 1f) - 1.0f;
+            v2 = 2.0f * Random.Range(0f, 1f) - 1.0f;
+            s = v1 * v1 + v2 * v2;
+        } while (s >= 1.0f || s == 0f);
+
+        s = Mathf.Sqrt((-2.0f * Mathf.Log(s)) / s);
+        var gaussianVar = v1 * s;
+
+        // Get the cost of the npc and calculate their threshold using formula above
+        var NpcCost = npc.Attributes.cost; 
+        return Mathf.CeilToInt(NpcCost - (NpcCost * 0.1f * Mathf.Abs(gaussianVar)));
     }
 
     // helper to give the value that is percent between min and max.
