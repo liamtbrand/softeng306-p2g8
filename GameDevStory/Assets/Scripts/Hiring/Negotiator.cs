@@ -19,7 +19,14 @@ public class Negotiator : MonoBehaviour
 
     public void Update()
     {
-        CostDisplay.text = PaySlider.value.ToString();
+        try
+        {
+            CostDisplay.text = PaySlider.value.ToString();
+        } catch (NullReferenceException e)
+        {
+            // Not sure why but CostDisply is set to null here, despite the fact that it works.
+        }
+        
     }
 
     /**
@@ -29,12 +36,26 @@ public class Negotiator : MonoBehaviour
     public void Negotiate()
     {
         var offer = PaySlider.value; // Get the user's offer from the pay slider
-        int cost = 90;
+        var cost = 90;
 
-        for (int i = 0; i < 20; i++)
+        // Here we want to set the threshold to be a random number slightly lower than or equal to the 
+        // applicant's advertised cost. We subtract the absolute value generated from a gaussian 
+        // distribution scaled by 10% of the applicant's advertised cost. For example if we have an
+        // applicant that advertises at $90, then their threshold will be:
+        //
+        //                  90 - 9 * [abs. of rand. gaussian value]
+        //
+        // This allows for very unlikely cases where the threshold for the applicant is incredibly low,
+        // however their threshold is more likely to be very slightly under their advertised cost.
+        var threshold = Math.Ceiling(cost - (cost * 0.1 * Math.Abs(NextGaussian())));
+
+        if (offer >= threshold)
         {
-            var NewCost = Math.Ceiling(cost - (cost * 0.1 * Math.Abs(NextGaussian())));
-            Debug.Log(NewCost);
+            Debug.Log("Accepted");
+        }
+        else
+        {
+            Debug.Log("Denied");
         }
     }
 
