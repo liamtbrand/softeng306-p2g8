@@ -17,5 +17,6 @@ public class NPCAttributes : MonoBehaviour {
     public string biography;
     public RuntimeAnimatorController animationController;
     public int cost;
+    public int costThreshold;
 
 }
