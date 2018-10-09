@@ -1,19 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class Negotiator : MonoBehaviour
 {
     public static NPCInfo npc;
 
-    private void Start()
+    public Slider PaySlider;
+    public TextMeshProUGUI CostDisplay;
+
+    public void Start()
     {
-        Negotiate();
+        // Initialise slider, image and dialogue.
     }
 
+    public void Update()
+    {
+        CostDisplay.text = PaySlider.value.ToString();
+    }
+
+    /**
+     * To be called when the user has chosen a value to offer to the applicant, compare with npc's threshold
+     * and decuise whether employee will join the company.
+     */
     public void Negotiate()
     {
+        var offer = PaySlider.value; // Get the user's offer from the pay slider
         int cost = 90;
 
         for (int i = 0; i < 20; i++)
