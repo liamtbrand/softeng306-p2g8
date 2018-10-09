@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
@@ -11,25 +9,14 @@ public class Negotiator : MonoBehaviour
 
     public Slider PaySlider;
     public TextMeshProUGUI CostDisplay;
+    public TextMeshProUGUI NameHeader;
 
-    // NPC info
-    public TextMeshProUGUI nameHeader;
-    public TextMeshProUGUI ageHeader;
-    public TextMeshProUGUI genderHeader;
-    public TextMeshProUGUI bioBox;
-    public TextMeshProUGUI costHeader;
-
-    // Skill bars
-    public Slider communicationSlider;
-    public Slider testingSlider;
-    public Slider technicalSlider;
-    public Slider creativitySlider;
-    public Slider designSlider;
 
     public void Start()
     {
         // Offer slider starts out at npc's optimum value.
         PaySlider.value = npc.Attributes.cost;
+        NameHeader.text = npc.Attributes.npcName;
     }
 
     public void Update()
