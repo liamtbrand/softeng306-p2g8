@@ -24,7 +24,7 @@ public class Negotiator : MonoBehaviour
             CostDisplay.text = PaySlider.value.ToString();
         } catch (NullReferenceException e)
         {
-            // Not sure why but CostDisply is set to null here, despite the fact that it works.
+            // Not sure why but CostDisply is set to null here despite this it works.
         }
         
     }
