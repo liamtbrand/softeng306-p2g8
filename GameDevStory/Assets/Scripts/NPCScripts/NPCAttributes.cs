@@ -18,5 +18,6 @@ public class NPCAttributes : MonoBehaviour {
     public RuntimeAnimatorController animationController;
     public int cost;
     public int costThreshold;
+    public Sprite headshot;     // for when this npc has dialogue
 
 }
