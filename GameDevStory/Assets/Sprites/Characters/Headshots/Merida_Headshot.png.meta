@@ -1,12 +1,7 @@
 fileFormatVersion: 2
-guid: 587d4f63b43ce4162801ac8d1bc72034
+guid: 3b5e060cedc14cc4ca10d9e85bcec6f3
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Tiana_Coding_0
-    21300002: Tiana_Coding_1
-    21300004: Tiana_Coding_2
-    21300006: Tiana_Coding_3
-    21300008: Tiana_Coding_4
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -45,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,111 +104,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Tiana_Coding_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 28
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b5515623256d9b48978c8a7071f4944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiana_Coding_1
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 28
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb1c2c08889265d4181fa8d01b707d25
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiana_Coding_2
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 28
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36dcd8c84be062f429fafe7657c77b9b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiana_Coding_3
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 2
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65d6c78d3fddb314e8012403dabed756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiana_Coding_4
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 2
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b0441f3b9fcc504ea979f636d9a3b2a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 17396bd1ec4584a558dec60e6a6f8da7
+    spriteID: 9c378e8fde945624c834d3bb77987fdc
     vertices: []
     indices: 
     edges: []
