@@ -54,9 +54,14 @@ MonoBehaviour:
   npcName: Jess
   age: 20
   gender: 1
-  biography: Very cool.
+  biography: "During my work experience I have gained skills and experience with programming
+    languages Java, JavaScript, and C, and have developed an understanding of data
+    structures and algorithms. This has been demonstrated through my projects such
+    as Tatai, a Maori pronunciation application, and a project where I created an
+    API and performed bug fixes.\r\n\r\nAs a budding software engineer with a passion
+    for solving problems through code, I love a challenge and am eager to learn. "
   animationController: {fileID: 22100000, guid: b6b366127a0904445832ec90cfabb082,
     type: 2}
-  cost: 54
-  costThreshold: 52
+  cost: 56
+  costThreshold: 48
   headshot: {fileID: 21300000, guid: 4518101680b40a84aa53a11c912c75a1, type: 3}

@@ -54,9 +54,14 @@ MonoBehaviour:
   npcName: Buster
   age: 23
   gender: 0
-  biography: Great guy
+  biography: "I am a recent Software Engineering graduate from the University of Auckland.
+    My knowledge and enthusiasm for the industry is constantly growing and I'm always
+    looking to apply myself in new and exciting ways.\r\n\r\nMy recent experience
+    includes C#, .Net and the Unity game engine, REST API development with Java, Algorithmic
+    optimization with Java, Low-level parallelization with C, network implementation
+    with Python and machine learning with WEKA. "
   animationController: {fileID: 22100000, guid: 3200dbb6d3a421e479b80471405a30e8,
     type: 2}
-  cost: 100
-  costThreshold: 0
+  cost: 79
+  costThreshold: 73
   headshot: {fileID: 21300000, guid: 8c748e3899ef94645b19c97f95b0a2cf, type: 3}

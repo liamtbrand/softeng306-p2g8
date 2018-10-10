@@ -54,9 +54,17 @@ MonoBehaviour:
   npcName: Darcy
   age: 21
   gender: 0
-  biography: Very nice.
+  biography: 'I thrive in a fast-paced team environment and am always open to new
+    ideas. The fast-growing software industry is very exciting to me, and I will make
+    the most of any opportunities presented to me that give me a chance to be a part
+    of it.
+
+
+    I have previously worked as a Software Developer Intern at Datacom, where I completed
+    several projects in Web Development. I have also worked in the hospitality industry
+    and was a manager at Fatima''s Takapuna for the past 3 years. '
   animationController: {fileID: 22100000, guid: ef02e43de55acf545ab7e54ebf14dab2,
     type: 2}
-  cost: 78
-  costThreshold: 72
+  cost: 86
+  costThreshold: 74
   headshot: {fileID: 21300000, guid: d5f01d404e7585541ab9430dd69db172, type: 3}
