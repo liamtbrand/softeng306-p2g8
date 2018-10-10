@@ -7,7 +7,7 @@ public class ConferenceScenarioCondition : AScenarioCondition
 {
     public override double getProbability()
     {
-        if(Scenario.getActive() == false && DialogueManager.Instance.GetQueueSize() == 0){
+        if(Scenario.getActive() == false && DialogueManager.Instance.GetQueueSize() == 0 && !ProjectManager.Instance.IsPaused()){
 			return 0.01;
 		}else{
 			return 0;
