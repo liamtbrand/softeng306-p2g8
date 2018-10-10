@@ -58,6 +58,8 @@ MonoBehaviour:
     type: 2}
   bugButtons:
   - {fileID: 1933166712537676, guid: 17ad26ccee5398b43999f38332fb833f, type: 2}
+  - {fileID: 1872797251368558, guid: 3e0de8e6ed0cda243b2898ad65637b15, type: 2}
+  - {fileID: 1890902263276142, guid: 870056e00d2f8664ea1a7e4153a56c3a, type: 2}
 --- !u!114 &114663150369885586
 MonoBehaviour:
   m_ObjectHideFlags: 1
