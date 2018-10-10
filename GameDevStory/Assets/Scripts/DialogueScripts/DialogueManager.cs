@@ -107,9 +107,14 @@ namespace DialogueScripts{
                 StopCoroutine(TypingCoroutine);
             }
             
-		    TypingCoroutine = StartCoroutine(TypeSentence(sentence.sentenceLine));
-
+            if(sentence.sentenceChoices.Length != 0){
+                DialogueText.text = sentence.sentenceLine;
+            }else{
+                TypingCoroutine = StartCoroutine(TypeSentence(sentence.sentenceLine));
+            }
+		    
             if(sentence.sentenceChoices != null && sentence.sentenceChoices.Length > 0){
+
                 Debug.Log("Generating " + sentence.sentenceChoices.Length + " choice buttons");
                 for(int i = 0; i < sentence.sentenceChoices.Length && i < OptionButtonArray.Length && i < OptionTextArray.Length; i++){
                     OptionButtonArray[i].gameObject.SetActive(true);
