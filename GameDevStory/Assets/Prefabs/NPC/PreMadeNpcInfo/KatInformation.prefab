@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1080750307983866}
+  m_RootGameObject: {fileID: 1254153860023652}
   m_IsPrefabAsset: 1
---- !u!1 &1080750307983866
+--- !u!1 &1254153860023652
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4707337686694494}
-  - component: {fileID: 114632937985454658}
+  - component: {fileID: 4915630711868052}
+  - component: {fileID: 114562034039819814}
   m_Layer: 0
-  m_Name: DarcyInformation
+  m_Name: KatInformation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4707337686694494
+--- !u!4 &4915630711868052
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1080750307983866}
+  m_GameObject: {fileID: 1254153860023652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.067181714, y: -0.10184057, z: 339.14532}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,31 +40,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114632937985454658
+--- !u!114 &114562034039819814
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1080750307983866}
+  m_GameObject: {fileID: 1254153860023652}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 190ed0ed956106d4e9c74ad1edfc8101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: Darcy
-  age: 21
-  gender: 0
-  biography: 'I thrive in a fast-paced team environment and am always open to new
-    ideas. The fast-growing software industry is very exciting to me, and I will make
-    the most of any opportunities presented to me that give me a chance to be a part
-    of it.
-
-
-    I have previously worked as a Software Developer Intern at Datacom, where I completed
-    several projects in Web Development. I have also worked in the hospitality industry
-    and was a manager at Fatima''s Takapuna for the past 3 years. '
-  animationController: {fileID: 22100000, guid: ef02e43de55acf545ab7e54ebf14dab2,
+  npcName: Kat
+  age: 25
+  gender: 1
+  biography: I am an expert in Speech Processing and Acoustic Phonetics. My main research
+    interests are in speech production for both humans and machines. I have a multidisciplined
+    approach to the field, with skills in phonetics, phonology, acoustics, and signal
+    processing.
+  animationController: {fileID: 22100000, guid: 2090c79fdce663347ab02c0b19ba799e,
     type: 2}
-  cost: 86
-  costThreshold: 74
-  headshot: {fileID: 21300000, guid: d5f01d404e7585541ab9430dd69db172, type: 3}
+  cost: 55
+  costThreshold: 50
+  headshot: {fileID: 21300000, guid: 3a35c038bbd07f747a4b3da6d610e3e0, type: 3}

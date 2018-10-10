@@ -5,10 +5,8 @@ AnimatorOverrideController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Edward
+  m_Name: Baz
   m_Controller: {fileID: 9100000, guid: 63ba7f5a5c85a4d588e8b229606e1b4c, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: a9f20a5d34d3a4d60969319a278b5d41, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: fc578f5a6df0bb44bb20f079b3067720, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 6ad275af9a1624790aaebac9d2811b0c, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: bad3bac87b8400c449d1cc8c48258f20, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fd2a7069ed74c944087984dd896508e2, type: 2}

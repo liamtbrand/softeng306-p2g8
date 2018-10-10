@@ -54,8 +54,19 @@ MonoBehaviour:
   npcName: Cyrus
   age: 23
   gender: 0
-  biography: Just trying his best
+  biography: "I have previous experience coding primarily in Java, but also in Matlab
+    and C++, and am constantly working on broadening my knowledge in languages pertaining
+    to Mobile (iOS), and Web Development.\r\n\r\nOutside of my technical skills, I
+    pride myself in being a 'people-person': having held leadership positions in both
+    the contexts of secondary-school and a professional working environment, I really
+    enjoy understanding different people's perspectives, and leveraging their skills
+    to achieve common goals.\r\n\r\nBeing Fijian/Dutch/Indian/Chinese, I also have
+    an immense appreciation for diversity, and love putting effort behind causes that
+    help provide opportunities to those less fortunate, both inside and outside the
+    industry. I'd love to see an increase in the number of Pacific Islander Software
+    Engineers!\r\n\r\nPersonal hobbies include socialising, working on personal projects,
+    and slowly learning non-software languages such as French and Italian. "
   animationController: {fileID: 9100000, guid: 63ba7f5a5c85a4d588e8b229606e1b4c, type: 2}
-  cost: 75
-  costThreshold: 72
+  cost: 87
+  costThreshold: 77
   headshot: {fileID: 21300000, guid: c2148e4f0d46ee34cbfda57a3c5ccbfc, type: 3}
