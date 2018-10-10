@@ -9,6 +9,7 @@ using System.Linq;
 using DialogueScripts;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = System.Random;
 
 namespace NPCScripts.StaffStateScripts
 {
@@ -126,9 +127,20 @@ namespace NPCScripts.StaffStateScripts
                 }
             }
 
-            if (femaleProportion < 0.001 || femaleProportion > 0.999) // getting around float accuracy errors
+            if ((femaleProportion < 0.001 || femaleProportion > 0.999) && npcs.Count > 2) // getting around float accuracy errors
             {
-                // TODO: Special Case for 0 of each gender
+                // randomly pick a NPC to throw the dialogue onto
+                var rand = new Random();
+                var npc = npcs.ElementAt(rand.Next(0, npcs.Count));
+                Debug.Log("Throwing dialogue! (EveryoneIsSameGender)");
+                var dialogue = GenerateSameGenderDialogue(npc.Value);
+                // Pop dialogue
+                _currentlyDisplaying = true;
+                NPCController.Instance.ShowNotification(delegate
+                {
+                    ProjectManager.Instance.PauseProject();
+                    DialogueManager.Instance.StartDialogue(dialogue);
+                }, npc.Key);
             }
         }
 
@@ -145,13 +157,39 @@ namespace NPCScripts.StaffStateScripts
                         sentenceLine = npc.Attributes.npcName + " has resigned. " + GetPronoun(npc, true) +
                                        " has moved on to a more inclusive workplace. " +
                                        "Maintaining a diverse workforce helps improve employee satisfaction and productivity. " +
-                                       "You have paid a $500 penalty",
+                                       "$500 penalty",
                         sentenceChoices = new[] {"OK"},
                         sentenceChoiceActions = new UnityAction[]
                         {
                             delegate
                             {
                                 GameManager.Instance.changeBalance(-500);
+                                ProjectManager.Instance.ResumeProject();
+                                _currentlyDisplaying = false;
+                            }, 
+                        }
+                    }
+                }
+            };
+        }
+        
+        private Dialogue GenerateSameGenderDialogue(NPCInfo npc)
+        {
+            return new Dialogue
+            {
+                Sentences = new Sentence[]
+                {
+                    new Sentence()
+                    {
+                        icon = npc.Attributes.headshot,
+                        Title = npc.Attributes.npcName,
+                        sentenceLine = npc.Attributes.npcName + " finds the office boring. Hire a bigger variety of" +
+                                       " people to make the office more interesting for " + GetPronoun(npc, false).ToLower() + ".",
+                        sentenceChoices = new[] {"OK"},
+                        sentenceChoiceActions = new UnityAction[]
+                        {
+                            delegate
+                            {
                                 ProjectManager.Instance.ResumeProject();
                                 _currentlyDisplaying = false;
                             }, 
