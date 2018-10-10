@@ -36,6 +36,7 @@ public class JobAdManager : MonoBehaviour {
     // Display the job advertisement editor
     public void ShowEditor()
     {
+        
         jobAdEditor.SetActive(true);
     }
 
@@ -48,13 +49,14 @@ public class JobAdManager : MonoBehaviour {
     public void Advertise() {
         List<String> values = GetDropdownValues();
         double proportion = GetFemaleApplicantProportion(values);
+        Debug.Log("Proportion is: " + proportion);
         // TODO: Link this to percentage of female / male applicants in hiring grid
     }
 
     public List<string> GetDropdownValues() 
     {
         List<string> selectedItems = new List<string>();
-        Dropdown[] dropdownList = this.gameObject.GetComponents<Dropdown>();
+        Dropdown[] dropdownList = jobAdEditor.gameObject.GetComponentsInChildren<Dropdown>();
 
         foreach (Dropdown d in dropdownList) {
             int menuIndex = d.value;
