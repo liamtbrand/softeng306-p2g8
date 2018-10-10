@@ -15,12 +15,18 @@ public class ProjectManager : Singleton<ProjectManager>
 
     private static Dictionary<string, Project> projects;
     private string selectedProject;
+    public Button DisplayButton;
+    public Button DescriptionCloseButton;
 
     void Start()
     {
         // Stop the timer from running
         timerScript = GetComponent<ProjectTimer>();
         timerScript.enabled = false;
+
+        displayScript = GetComponent<ProjectDisplayManager>();
+        DisplayButton.onClick.AddListener(DisplayProjectDescription);
+        DescriptionCloseButton.onClick.AddListener(CloseProjectDescription);
     }
 
     // Handle project selection
@@ -30,7 +36,6 @@ public class ProjectManager : Singleton<ProjectManager>
         projectMenu.SetActive(true);
 
         // Initialise list of projects
-        displayScript = GetComponent<ProjectDisplayManager>();
         if (projects == null)
         {
             projects = ProjectCreator.Instance.InitialiseProjects();
@@ -88,6 +93,24 @@ public class ProjectManager : Singleton<ProjectManager>
     public Project GetCurrentProject()
     {
         return projects[selectedProject];
+    }
+
+    public void DisplayProjectDescription()
+    {
+        Project current = projects[selectedProject];
+        displayScript.ProjectDescription(
+            current.getTitle(),
+            current.getCompany(),
+            current.getDescription(),
+            current.getStats()
+        );
+        PauseProject();
+    }
+
+    public void CloseProjectDescription()
+    {
+        displayScript.CloseProjectDescription();
+        ResumeProject();
     }
 
     // Handles the completion of a project
