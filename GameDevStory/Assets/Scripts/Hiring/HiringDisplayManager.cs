@@ -26,10 +26,6 @@ public class HiringDisplayManager : MonoBehaviour {
 
     public void ShowHiringGrid()
     {
-        Button[] buttons = GridViewPanel.gameObject.GetComponents<Button>();
-        foreach (Button b in buttons) {
-            b.gameObject.GetComponent<TileManager>().enabled = true;
-        }
         DisableHireButton();
         GridViewPanel.SetActive(true);
         ProjectManager.Instance.PauseProject();
@@ -37,11 +33,6 @@ public class HiringDisplayManager : MonoBehaviour {
 
     public void CloseHiringGrid()
     {
-        Button[] buttons = GridViewPanel.gameObject.GetComponents<Button>();
-        foreach (Button b in buttons)
-        {
-            b.gameObject.GetComponent<TileManager>().enabled = true;
-        }
         if (LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().DeskAvailable()) {
             EnableHireButton();
         }
