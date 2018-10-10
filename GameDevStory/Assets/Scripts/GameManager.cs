@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public enum GameScene
 {
@@ -94,10 +96,10 @@ public class GameManager : Singleton<GameManager> {
         return moneyBalance;
     }
 
+    [Obsolete("Please see StaffDiversityManager.getDiversityScore() instead", true)]
     public float getDiversityScore(){
         
         int maleCount = 0;
-
         foreach( KeyValuePair<GameObject, NPCInfo> npcPair in NPCController.Instance.NpcInstances){
             
             NPCInfo npcInfo = npcPair.Value;
@@ -106,10 +108,8 @@ public class GameManager : Singleton<GameManager> {
                 maleCount++;
             }
         }
-
         float ratio = ((float)maleCount)/((float)NPCController.Instance.NpcInstances.Count);
         float deltaFromBalance = Mathf.Abs(ratio - 0.5f);
-
         float deltaThreshold;
         if(NPCController.Instance.NpcInstances.Count < 5){
             deltaThreshold = 0.5f;
@@ -120,7 +120,6 @@ public class GameManager : Singleton<GameManager> {
         }else{
             deltaThreshold = 0.15f;
         }
-
         float scalarScore = deltaFromBalance - deltaThreshold;
 
         if(scalarScore < 0){

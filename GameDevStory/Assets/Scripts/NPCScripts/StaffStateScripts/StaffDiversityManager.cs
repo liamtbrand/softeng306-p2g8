@@ -13,7 +13,7 @@ using Random = System.Random;
 
 namespace NPCScripts.StaffStateScripts
 {
-    public class StaffStateDialogueManager : Singleton<StaffStateDialogueManager>
+    public class StaffDiversityManager : Singleton<StaffDiversityManager>
     {
         private const double ProportionBeforePenaltyGender = 0.4;
         private const double ProportionBeforePenaltyAge = 0.25;
@@ -29,10 +29,19 @@ namespace NPCScripts.StaffStateScripts
 
         private float _update = 0.0f;
 
+        private double _diversityScore;
+
+        public double DiversityScore
+        {
+            get { return _diversityScore; }
+        }
+
         private void RecalculateMentalState(Dictionary<GameObject, NPCInfo> npcs)
         {
             var femaleProportion = npcs.Where(npc => npc.Value.Attributes.gender == NPCAttributes.Gender.FEMALE)
                 .Sum(npc => (1.0 / npcs.Count));
+
+            UpdateDiversityScore(femaleProportion, npcs.Count);
 
             // now update each NPC
             foreach (var npc in npcs)
@@ -97,7 +106,7 @@ namespace NPCScripts.StaffStateScripts
 
                 // Check if we need to take action
                 if ((npc.Value.MentalState.GenderDiversityScore < GenderDialogueThreshold && !_currentlyDisplaying) ||
-                (npc.Value.MentalState.AgeDiversityScore < AgeDialogueThreshold && !_currentlyDisplaying))
+                    (npc.Value.MentalState.AgeDiversityScore < AgeDialogueThreshold && !_currentlyDisplaying))
                 {
                     var isAgeDialogue = npc.Value.MentalState.AgeDiversityScore < AgeDialogueThreshold;
                     if ((npc.Value.MentalState.StaffStateGender == StaffMentalState.State.READY_TO_LEAVE ||
@@ -127,7 +136,8 @@ namespace NPCScripts.StaffStateScripts
                 }
             }
 
-            if ((femaleProportion < 0.001 || femaleProportion > 0.999) && npcs.Count > 2) // getting around float accuracy errors
+            if ((femaleProportion < 0.001 || femaleProportion > 0.999) && npcs.Count > 2
+            ) // getting around float accuracy errors
             {
                 // randomly pick a NPC to throw the dialogue onto
                 var rand = new Random();
@@ -142,6 +152,15 @@ namespace NPCScripts.StaffStateScripts
                     DialogueManager.Instance.StartDialogue(dialogue);
                 }, npc.Key);
             }
+        }
+
+        private void UpdateDiversityScore(double femaleProportion, int numberNPCs)
+        {
+            var deltaFromBalance = Math.Abs(femaleProportion - 0.5); // max = 0.5
+            numberNPCs = (numberNPCs > 10) ? 10 : numberNPCs; // cap at 10
+            var weightedScore = deltaFromBalance * numberNPCs; // max = 5
+            _diversityScore = weightedScore / 5.0; // more magic numbers!!!
+            // DiversityScore should be between 0 and 1.
         }
 
         private Dialogue GenerateLeaveDialogue(NPCInfo npc)
@@ -166,13 +185,13 @@ namespace NPCScripts.StaffStateScripts
                                 GameManager.Instance.changeBalance(-500);
                                 ProjectManager.Instance.ResumeProject();
                                 _currentlyDisplaying = false;
-                            }, 
+                            },
                         }
                     }
                 }
             };
         }
-        
+
         private Dialogue GenerateSameGenderDialogue(NPCInfo npc)
         {
             return new Dialogue
@@ -184,7 +203,8 @@ namespace NPCScripts.StaffStateScripts
                         icon = npc.Attributes.headshot,
                         Title = npc.Attributes.npcName,
                         sentenceLine = npc.Attributes.npcName + " finds the office boring. Hire a bigger variety of" +
-                                       " people to make the office more interesting for " + GetPronoun(npc, false).ToLower() + ".",
+                                       " people to make the office more interesting for " +
+                                       GetPronoun(npc, false).ToLower() + ".",
                         sentenceChoices = new[] {"OK"},
                         sentenceChoiceActions = new UnityAction[]
                         {
@@ -192,7 +212,7 @@ namespace NPCScripts.StaffStateScripts
                             {
                                 ProjectManager.Instance.ResumeProject();
                                 _currentlyDisplaying = false;
-                            }, 
+                            },
                         }
                     }
                 }
