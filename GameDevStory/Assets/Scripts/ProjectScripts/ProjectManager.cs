@@ -37,7 +37,7 @@ public class ProjectManager : Singleton<ProjectManager>
         }
 
         // Display projects
-        foreach (KeyValuePair<string, Project> entry in projects)
+        foreach (var entry in projects)
         {
             displayScript.AddNewProject(
                 entry.Value.getTitle(),
@@ -120,17 +120,33 @@ public class ProjectManager : Singleton<ProjectManager>
         var builder = new StringBuilder();
 
         // TODO: Change these strings
-        if (StaffDiversityManager.Instance.DiversityScore >= 0.2)
+        if (StaffDiversityManager.Instance.DiversityScore >= 0.5)
         {
-            builder.Append("ur not really that diverse which is bad\n");
+            builder.Append("The customer found that your team's perspective was very narrow. You could improve this in" +
+                           " the future by making sure your team has a diverse range of perspectives and people.\n");
+        } else if (StaffDiversityManager.Instance.DiversityScore >= 0.2)
+        {
+            builder.Append("The customer found that your team's perspective was narrow. Maybe a change in the composition" +
+                           "of your team could improve this?\n");
+        }
+        else
+        {
+            builder.Append("The customer found that your team's perspective was spot on, and helped deliver a very relevant product!\n");
         }
 
-        if ((timerScript.GetBugsCreated() - timerScript.GetBugsSquashed()) > 2)
+        if (timerScript.GetBugsCreated() - timerScript.GetBugsSquashed() > 3)
         {
-            builder.Append("oh no your software was really buggy\n");
+            builder.Append("The customer was very disappointed in the amount of bugs they found in your product after they tested it internally.\n");
+        } else if (timerScript.GetBugsCreated() - timerScript.GetBugsSquashed() > 0)
+        {
+            builder.Append("The customer found a few bugs in your product, and was disappointed in this.\n");
+        }
+        else
+        {
+            builder.Append("The customer is happy with the functionality of your product, and wasn't able to find any major bugs.\n");
         }
 
-        builder.Append("otherwise it was aight");
+        //builder.Append("Otherwise, the customer was happy with your work on "+project);
 
         return builder.ToString();
     }
@@ -157,8 +173,8 @@ public class ProjectManager : Singleton<ProjectManager>
         projects.Remove(project);
 
         // Check if finished all projects of the same difficulty
-        bool finishedAllDifficulty = true;
-        foreach (KeyValuePair<string, Project> entry in projects)
+        var finishedAllDifficulty = true;
+        foreach (var entry in projects)
         {
             if (entry.Value.getDifficulty() == difficulty)
             {
@@ -169,10 +185,10 @@ public class ProjectManager : Singleton<ProjectManager>
         // Unlock next difficulty level
         if (finishedAllDifficulty)
         {
-            List<string> keys = new List<string>(projects.Keys);
+            var keys = new List<string>(projects.Keys);
             foreach (var entry in keys)
             {
-                Project unlockedProject = projects[entry];
+                var unlockedProject = projects[entry];
 
                 // Unlock all easy levels
                 if (difficulty == ProjectDifficulty.Tutorial &&
