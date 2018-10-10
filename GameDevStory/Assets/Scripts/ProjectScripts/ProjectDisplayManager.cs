@@ -19,6 +19,12 @@ namespace ProjectScripts
         public Text ProfitText;
         public Text FeedbackText;
         public Text BugStatsText;
+
+        public GameObject DescriptionPanel;
+        public Text DescriptionTitle;
+        public Text DescriptionCompany;
+        public Text DescriptionContent;
+        public Text DescriptionStats;
     
         protected ProjectDisplayManager () {} // enforces singleton use
 
@@ -51,6 +57,20 @@ namespace ProjectScripts
             {
                 button[0].interactable = false;
             }
+        }
+
+        public void ProjectDescription(string title, string company, string description, string stats)
+        {
+            DescriptionPanel.SetActive(true);
+            DescriptionTitle.text = title;
+            DescriptionCompany.text = company;
+            DescriptionContent.text = description;
+            DescriptionStats.text = stats;
+        }
+
+        public void CloseProjectDescription()
+        {
+            DescriptionPanel.SetActive(false);
         }
 
         // overload for unselectable
