@@ -4,6 +4,9 @@ using TMPro;
 
 public class InitialiseApplicantView : MonoBehaviour
 {
+    // Next negotiator window
+    public GameObject NegotiatorView;
+
     // Reference to npc to display from previous tile script.
     public static NPCInfo npcInfo;
     public static Button clickedTile;
@@ -51,11 +54,11 @@ public class InitialiseApplicantView : MonoBehaviour
         animator.runtimeAnimatorController = npcInfo.Attributes.animationController;
 
         // Initialise sliders
-        FillSlider(communicationSlider, stats.communication);
-        FillSlider(testingSlider, stats.testing);
-        FillSlider(technicalSlider, stats.technical);
-        FillSlider(creativitySlider, stats.creativity);
-        FillSlider(designSlider, stats.design);
+        FillSlider(communicationSlider, stats.Communication);
+        FillSlider(testingSlider, stats.Testing);
+        FillSlider(technicalSlider, stats.Technical);
+        FillSlider(creativitySlider, stats.Creativity);
+        FillSlider(designSlider, stats.Design);
     }
 
     public void BackClicked()
@@ -64,9 +67,9 @@ public class InitialiseApplicantView : MonoBehaviour
     }
 
     public void HireClicked() {
-        NPCController.Instance.HireEmployee(npcInfo);
-        GameManager.Instance.changeBalance(npcInfo.Attributes.cost*-1);
-        clickedTile.interactable = false;
+        Negotiator.npc = npcInfo;
+        Negotiator.ClickedTile = clickedTile;
+        NegotiatorView.GetComponent<Negotiator>().Reload();
     }
 
     private void FillSlider(Slider slider, float value)
