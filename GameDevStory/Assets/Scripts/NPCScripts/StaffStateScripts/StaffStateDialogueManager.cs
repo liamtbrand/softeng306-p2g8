@@ -168,7 +168,7 @@ namespace NPCScripts.StaffStateScripts
             {
                 Sentences = new Sentence[]{
                     new Sentence(){
-                        // icon = TODO: Get Icon somehow!
+                        icon = npc.Attributes.headshot,
                         Title = npc.Attributes.npcName,
                         sentenceLine = sentence,
                         sentenceChoices = choices,

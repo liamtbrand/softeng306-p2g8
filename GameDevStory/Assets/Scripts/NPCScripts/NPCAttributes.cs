@@ -14,9 +14,11 @@ public class NPCAttributes : MonoBehaviour {
     public string npcName;
     public int age;
     public Gender gender;
+    [TextArea]
     public string biography;
     public RuntimeAnimatorController animationController;
     public int cost;
     public int costThreshold;
+    public Sprite headshot;     // for when this npc has dialogue
 
 }

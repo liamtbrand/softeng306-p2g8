@@ -54,7 +54,14 @@ MonoBehaviour:
   npcName: Cameron
   age: 20
   gender: 0
-  biography: Serko vibes
+  biography: 'Hello! I am a recent Software Engineering grad and am looking for a
+    role in Quality Assurance.
+
+
+    In my career so far, I have never let a bug get past my test suites. I live life
+    by one simple rule: "if the client is not satisfied, then neither am I!"'
   animationController: {fileID: 22100000, guid: 468bd375ffb03a24cbcc5e6fdddcd4a0,
     type: 2}
-  cost: 100
+  cost: 70
+  costThreshold: 66
+  headshot: {fileID: 21300000, guid: 8c07cf0ef5fd966488b79e3715576a7e, type: 3}

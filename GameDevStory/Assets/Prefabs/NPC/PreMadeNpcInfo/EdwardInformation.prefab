@@ -54,7 +54,10 @@ MonoBehaviour:
   npcName: Edward
   age: 21
   gender: 0
-  biography: Come to end of year SESA dinner
+  biography: 'Hi! I''m a Software Engineering and technology enthusiast. I''m after
+    opportunities in Software and Computer Systems engineering. '
   animationController: {fileID: 22100000, guid: 6992cba3f5fd79b4eb117018fd011124,
     type: 2}
-  cost: 100
+  cost: 72
+  costThreshold: 61
+  headshot: {fileID: 21300000, guid: 21a3410471464a348801e406d702f93e, type: 3}

@@ -91,8 +91,9 @@ public class ProjectManager : Singleton<ProjectManager> {
 		// Update project menu
 		UpdateProjectMenu(selectedProject);
 
+		float diversityScore = GameManager.Instance.getDiversityScore();
 		// Calculate project profit
-		double profit = CalculateProjectProfit(selectedProject, bugsMissed);
+		double profit = CalculateProjectProfit(selectedProject, bugsMissed, diversityScore);
 
 		// Calculate project stars
 		//int stars = CalculateProjectStars(selectedProject);
@@ -101,7 +102,7 @@ public class ProjectManager : Singleton<ProjectManager> {
 		string feedback = GetProjectFeedback(selectedProject);
 
 		// Show project completion display
-		displayScript.ProjectCompleted(profit,feedback, bugsMissed, bugsMissed * 10);
+		displayScript.ProjectCompleted(profit,feedback, bugsMissed, bugsMissed * 10, diversityScore);
 
 		// Add to total profits
 		 GameManager.Instance.changeBalance(profit);
@@ -122,10 +123,10 @@ public class ProjectManager : Singleton<ProjectManager> {
 	}
 
 	// Calculates the profit from a project
-	double CalculateProjectProfit (string project, int bugsMissed) 
+	double CalculateProjectProfit (string project, int bugsMissed, double diversityScore) 
 	{
 		// TODO: Calculate project profit based on diversity and don't hardcode bug penalty
-		return 100.00 - 10 * bugsMissed;
+		return (100.00 - 10 * bugsMissed) * diversityScore;
 	}
 
 	// Updates the project menu

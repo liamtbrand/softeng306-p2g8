@@ -18,7 +18,7 @@ public class NPCController : Singleton<NPCController> {
         get { return _npcInstances; }
     }
 
-    private const float NOTIFICATION_HEIGHT_OFFSET = 0.22f; //todo adjust the scale of the world so we don't need to deal in tiny numbers
+    private const float NOTIFICATION_HEIGHT_OFFSET = 0.22f;
 
     private static int npcsToAdd = 2;										// TODO: Don't hardcode this
 
@@ -51,7 +51,7 @@ public class NPCController : Singleton<NPCController> {
             Destroy(buttonInstanceContainer); // could set a delay as second param if desired
         });
     }
-    
+
     // Overload to use Random NPC with Scenario
     public void ShowScenarioNotification(Scenario s)
     {
@@ -68,7 +68,7 @@ public class NPCController : Singleton<NPCController> {
         {
             failure();
             return;
-        }       
+        }
 
         // select a random bug button and show it in the scene
         GameObject bugToShow = bugButtons[UnityEngine.Random.Range(0, bugButtons.Length)];
@@ -83,7 +83,13 @@ public class NPCController : Singleton<NPCController> {
 
             success();
         });
+
+        //// register bug to disappear after one second if not clicked
+        IEnumerator coroutine = TearDownButtonAfterDelay(npc.GetComponent<NPCBehaviour>(), buttonInstanceContainer, 2);
+        StartCoroutine(coroutine);
+
     }
+
 
     public void AddNPCToScene(NPCInfo npc, Vector2 position)
     {
@@ -91,16 +97,20 @@ public class NPCController : Singleton<NPCController> {
     }
 
     // Method to be called to hire an employee.
-    // This will take care of randomly placing the NPC into the level.
+    // Notifies the npcfactory we have hired the npc.
+    // This will also take care of randomly placing the NPC into the level.
     public void HireEmployee(NPCInfo npcInfo)
     {
+        // Need to notify the npcfactory so we can't reproduce this npc.
+        NPCFactory.Instance.RemoveNPCFromPool(npcInfo);
+        // Place the npc on screen
         Vector2 position = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetRandomFreeDeskPosition();
         AddNPCToScene(npcInfo, LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetDeskNPCPosition(position));
     }
 
     private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector2 position, NPCInfo info)
     {
-        Vector3 pos = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().coordinateSystem.getVector3(position); // TODO: Finish coordinate system
+        Vector3 pos = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().coordinateSystem.getVector3(position);
         GameObject npcInstance = Instantiate(npcTemplate, pos, Quaternion.identity);
         npcInstance.GetComponent<Animator>().runtimeAnimatorController = animation; // set the animator controller
         npcInstance.transform.SetParent(this.transform); // npcs should show up as a child of the npc controller
@@ -131,12 +141,26 @@ public class NPCController : Singleton<NPCController> {
     // TODO: add randomness into the selection
     private GameObject GetNpcWithoutNotification()
     {
+        // get all npcs who are free to accept a notification
+        var npcsWithoutNotification = new List<GameObject>();
         foreach (GameObject npc in _npcInstances.Keys)
         {
             NPCBehaviour npcScript = npc.GetComponent<NPCBehaviour>();
             if (!npcScript.GetHasNotification())
-                return npc;
+                npcsWithoutNotification.Add(npc);
         }
-        return null;
+
+        if (npcsWithoutNotification.Count == 0)
+            return null;    // no npc is available to accept notification
+
+        // return random npc who has no notification
+        return npcsWithoutNotification[UnityEngine.Random.Range(0, npcsWithoutNotification.Count)];
+    }
+
+    private IEnumerator TearDownButtonAfterDelay(NPCBehaviour npc, GameObject button, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        npc.SetHasNotification(false);
+        Destroy(button);
     }
 }

@@ -54,7 +54,11 @@ MonoBehaviour:
   npcName: Liam
   age: 43
   gender: 0
-  biography: Has international work experience
+  biography: "I am passionate about Machine Learning, and Natural Language Processing.\r\n\r\nRecently
+    I travelled to Germany for a job in software development at SAP, where I gained
+    a lot of experience in C/C++. "
   animationController: {fileID: 22100000, guid: f809473de6fe3794d9e0215050c93037,
     type: 2}
-  cost: 100
+  cost: 85
+  costThreshold: 66
+  headshot: {fileID: 21300000, guid: 272710d0499c3d4439b1fa7142e259e1, type: 3}
