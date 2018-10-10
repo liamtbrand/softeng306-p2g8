@@ -58,3 +58,5 @@ MonoBehaviour:
   animationController: {fileID: 22100000, guid: ef02e43de55acf545ab7e54ebf14dab2,
     type: 2}
   cost: 100
+  costThreshold: 0
+  headshot: {fileID: 21300000, guid: 8c748e3899ef94645b19c97f95b0a2cf, type: 3}
