@@ -9,7 +9,9 @@ public class NPCBehaviour : MonoBehaviour
 {
 
     // Enum for animation states of the NPC Controllers
-    public enum State { IDLE, WALKING, CODING };
+    public enum State { IDLE = 0, WALKING = 1, CODING = 2, DANCING = 3};
+
+	public State state;
 
     private const float NOTIFICATION_HEIGHT_OFFSET = 0.22f; //todo adjust the scale of the world so we don't need to deal in tiny numbers
     private bool hasNotification = false; // so we know when this NPC is available to show a notification
@@ -30,21 +32,22 @@ public class NPCBehaviour : MonoBehaviour
         this.hasNotification = hasNotification;
     }
 
-    /*
-     * WIP!!! Still needs to be indented and coded (well), most of the coding wrt the changing of animations is fine,
-     * it's the state diagrams of the animation override controller that needs to be fucked around with
-     */
-
-    // Action to trigger state change of a given NPC (or randomly chosen, if index is < 0)
-    public void Action(State state)
+    // Action to trigger state change the NPC in question
+    public void SetState(State state)
     {
         // Get the animator for the specified NPC
         Animator animator = this.GetComponent<Animator>();
 
-        if (state == State.IDLE)
-        {
-            animator.SetInteger("State", 1);
-        }
+		this.state = state;
 
+        // Set the state of the animator, in accordance with the animator
+        // overridden controller finite state machine
+		animator.SetInteger("State", (int)state);
     }
+
+    // Getter method for NPC animation state
+    public State GetState()
+	{
+		return this.state;
+	}
 }
