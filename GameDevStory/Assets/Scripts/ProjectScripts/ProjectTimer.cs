@@ -62,9 +62,10 @@ public class ProjectTimer : MonoBehaviour {
 			currentTime = timer;
 		
 			// Update progress bar
-			float progress = (maxTime-timer)/maxTime*100;
-			progressText.text = progress.ToString("f0")+"%";
-			progressBar.value = progress/100;
+			Project currentProject = progressScript.GetCurrentProject();
+			float progress = currentProject.getLength()*(maxTime-timer)/maxTime;
+			progressText.text = "Day: " + progress.ToString("f0") + "/" + currentProject.getLength();
+			progressBar.value = (maxTime-timer)/maxTime;
 
 			// Project completed stop timer
 			if (timer <= 0) {
@@ -89,7 +90,7 @@ public class ProjectTimer : MonoBehaviour {
 
 	public void DisplayCurrentProject(string project)
 	{
-		projectText.text = "Current Project:\n" + project;
+		projectText.text = project;
 	}
 
     public int GetBugsCreated()

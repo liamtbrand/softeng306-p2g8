@@ -84,6 +84,12 @@ public class ProjectManager : Singleton<ProjectManager>
         timerScript.Resume();
     }
 
+    // Returns current project object
+    public Project GetCurrentProject()
+    {
+        return projects[selectedProject];
+    }
+
     // Handles the completion of a project
     public void CompletedProject()
     {
