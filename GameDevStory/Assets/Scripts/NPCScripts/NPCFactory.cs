@@ -25,14 +25,14 @@ public class NPCFactory : Singleton<NPCFactory> {
     // A pool of pre-made NPCs that are available for instantiation
     public List<NPCAttributes> Npcs;
 
-    // determines how significant the gender pay gap is. 
+    // determines how significant the gender pay gap is.
     // Could change as the game progresses, eventually achieving equal pay
     public float FemalePayMultiplier = 0.75f;
 
     // fields defining the range of values for the NPC costs
     public int MinEmployeeCost = 50;
     public int MaxEmployeeCost = 100;
-   
+
     // selects a pre-made npc at random from the pool of potential npcs
     public NPCAttributes SelectRandomNPC()
     {
@@ -69,15 +69,21 @@ public class NPCFactory : Singleton<NPCFactory> {
         npc.Attributes.cost = CalculateEmployeeCost(npc);
         npc.Attributes.costThreshold = CalculateCostThreshold(npc);
 
-
-        // ensure that no npc can be generated twice (npcs are unique).
-        // TODO?: improve this to remove only those that hired.
-        Npcs.Remove(randomNPC);
-
         return npc;
     }
 
-    // helper method to calculate the cost of employees based on their stats 
+    // This was created so that the NPCController can notify the NPCFactory
+    // that an npc was hired. When we hire an npc, we never want them
+    // to reappear as an applicant. We do however want to reuse applicants
+    // so that we do not need to create too many npcprefabs.
+    public void RemoveNPCFromPool(NPCInfo npcInfo)
+    {
+        // Ensure that this npc cannot be generated again (npcs are unique).
+        Npcs.Remove(npcInfo.Attributes);
+        // This also implies that if an npc ever left, the leave would be final.
+    }
+
+    // helper method to calculate the cost of employees based on their stats
     //TODO: and the player's current balance
     private int CalculateEmployeeCost(NPCInfo npc)
     {
@@ -103,8 +109,8 @@ public class NPCFactory : Singleton<NPCFactory> {
         return Mathf.RoundToInt(cost);
     }
 
-    // Here we want to set the threshold to be a random number slightly lower than or equal to the 
-    // applicant's advertised cost. We subtract the absolute value generated from a gaussian 
+    // Here we want to set the threshold to be a random number slightly lower than or equal to the
+    // applicant's advertised cost. We subtract the absolute value generated from a gaussian
     // distribution scaled by 10% of the applicant's advertised cost. For example if we have an
     // applicant that advertises at $90, then their threshold will be:
     //
@@ -114,7 +120,7 @@ public class NPCFactory : Singleton<NPCFactory> {
     // however their threshold is more likely to be very slightly under their advertised cost.
     private int CalculateCostThreshold(NPCInfo npc)
     {
-        // Using the Marsaglia polar method to generate gaussian distributed numbers. Taken from 
+        // Using the Marsaglia polar method to generate gaussian distributed numbers. Taken from
         // https://www.alanzucconi.com/2015/09/16/how-to-sample-from-a-gaussian-distribution/
         float v1, v2, s;
         do
@@ -128,7 +134,7 @@ public class NPCFactory : Singleton<NPCFactory> {
         var gaussianVar = v1 * s;
 
         // Get the cost of the npc and calculate their threshold using formula above
-        var NpcCost = npc.Attributes.cost; 
+        var NpcCost = npc.Attributes.cost;
         return Mathf.CeilToInt(NpcCost - (NpcCost * 0.1f * Mathf.Abs(gaussianVar)));
     }
 
