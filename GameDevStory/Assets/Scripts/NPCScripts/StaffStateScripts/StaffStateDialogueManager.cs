@@ -95,11 +95,15 @@ namespace NPCScripts.StaffStateScripts
                           npc.Value.MentalState.StaffStateAge);
 
                 // Check if we need to take action
-                if (npc.Value.MentalState.GenderDiversityScore < GenderDialogueThreshold && !_currentlyDisplaying)
+                if ((npc.Value.MentalState.GenderDiversityScore < GenderDialogueThreshold && !_currentlyDisplaying) ||
+                (npc.Value.MentalState.AgeDiversityScore < AgeDialogueThreshold && !_currentlyDisplaying))
                 {
-                    if (npc.Value.MentalState.StaffStateGender == StaffMentalState.State.READY_TO_LEAVE ||
-                        npc.Value.MentalState.GenderDiversityScore < GenderDialogueThreshold * 2
-                    ) // special case if last dialogue ignored?
+                    var isAgeDialogue = npc.Value.MentalState.AgeDiversityScore < AgeDialogueThreshold;
+                    if ((npc.Value.MentalState.StaffStateGender == StaffMentalState.State.READY_TO_LEAVE ||
+                         npc.Value.MentalState.GenderDiversityScore < GenderDialogueThreshold * 2) ||
+                        (npc.Value.MentalState.StaffStateAge == StaffMentalState.State.READY_TO_LEAVE ||
+                         npc.Value.MentalState.AgeDiversityScore < AgeDialogueThreshold * 2)
+                    ) // special case if last dialogue ignored?                    
                     {
                         // Leave company!
                         _currentlyDisplaying = true;
@@ -109,8 +113,8 @@ namespace NPCScripts.StaffStateScripts
                     }
                     else
                     {
-                        Debug.Log("Throwing dialogue!");
-                        var dialogue = GenerateGenderDialogue(npc.Value);
+                        Debug.Log("Throwing dialogue! (Gender)");
+                        var dialogue = GenerateDialogue(npc.Value, isAgeDialogue);
                         // Pop dialogue
                         _currentlyDisplaying = true;
                         NPCController.Instance.ShowNotification(delegate
@@ -119,10 +123,6 @@ namespace NPCScripts.StaffStateScripts
                             DialogueManager.Instance.StartDialogue(dialogue);
                         }, npc.Key);
                     }
-                }
-                else if (npc.Value.MentalState.AgeDiversityScore < AgeDialogueThreshold)
-                {
-                    // TODO!
                 }
             }
 
@@ -161,12 +161,13 @@ namespace NPCScripts.StaffStateScripts
             };
         }
 
-        private Dialogue GenerateGenderDialogue(NPCInfo npc)
+        private Dialogue GenerateDialogue(NPCInfo npc, bool isAgeDialogue)
         {
             string sentence;
             StaffMentalState.State nextState;
             string[] choices;
-            switch (npc.MentalState.StaffStateGender)
+            var currentState = isAgeDialogue ? npc.MentalState.StaffStateAge : npc.MentalState.StaffStateGender;
+            switch (currentState)
             {
                 case StaffMentalState.State.NORMAL:
                     sentence = npc.Attributes.npcName + " thinks the office is boring. " + GetPronoun(npc, true) +
@@ -191,8 +192,9 @@ namespace NPCScripts.StaffStateScripts
                     };
                     break;
                 case StaffMentalState.State.ABOUT_TO_LEAVE:
+                    var similar = isAgeDialogue ? "a similar age" : "the same gender";
                     sentence = npc.Attributes.npcName + " feels excluded by " + GetPronoun(npc, false).ToLower() +
-                               " coworkers.\n" +
+                               " coworkers. You should hire more people with " + similar + "." +
                                "Host a team-building event to improve workspace culture.";
                     nextState = StaffMentalState.State.READY_TO_LEAVE;
                     choices = new string[]
