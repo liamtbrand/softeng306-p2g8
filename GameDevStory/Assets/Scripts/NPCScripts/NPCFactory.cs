@@ -93,8 +93,14 @@ public class NPCFactory : Singleton<NPCFactory> {
         AttributePool.Remove(npcInfo.Attributes);
         // This also implies that if an npc ever left, the leave would be final.
 
+        ResetPool();
+    }
+
+    // Called to reset the pool of possible npcs.
+    public void ResetPool()
+    {
         // Restore all the attributes to the main pool.
-        foreach(NPCAttribute attribute in AttributePool)
+        foreach(NPCAttributes attribute in AttributePool)
         {
             Npcs.Add(attribute);
         }
