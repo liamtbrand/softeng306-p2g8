@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -93,6 +92,45 @@ public class GameManager : Singleton<GameManager> {
     public double getBalance()
     {
         return moneyBalance;
+    }
+
+    public float getDiversityScore(){
+        
+        int maleCount = 0;
+
+        foreach( KeyValuePair<GameObject, NPCInfo> npcPair in NPCController.Instance.NpcInstances){
+            
+            NPCInfo npcInfo = npcPair.Value;
+
+            if(npcInfo.Attributes.gender.Equals(NPCAttributes.Gender.MALE)){
+                maleCount++;
+            }
+        }
+
+        float ratio = ((float)maleCount)/((float)NPCController.Instance.NpcInstances.Count);
+        float deltaFromBalance = Mathf.Abs(ratio - 0.5f);
+
+        float deltaThreshold;
+        if(NPCController.Instance.NpcInstances.Count < 5){
+            deltaThreshold = 0.5f;
+        }else if(NPCController.Instance.NpcInstances.Count < 7){
+            deltaThreshold = 0.3f;
+        }else if(NPCController.Instance.NpcInstances.Count < 11){
+            deltaThreshold = 0.2f;
+        }else{
+            deltaThreshold = 0.15f;
+        }
+
+        float scalarScore = deltaFromBalance - deltaThreshold;
+
+        if(scalarScore < 0){
+            scalarScore = 0;
+        }
+
+        Debug.Log("Diversity score is: " + (1 - scalarScore));
+
+        return 1 - scalarScore;
+
     }
 
 
