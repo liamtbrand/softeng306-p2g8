@@ -17,6 +17,7 @@ public class ProjectManager : Singleton<ProjectManager>
     private string selectedProject;
     public Button DisplayButton;
     public Button DescriptionCloseButton;
+    public Button ProjectCompletedButton;
 
     void Start()
     {
@@ -27,11 +28,15 @@ public class ProjectManager : Singleton<ProjectManager>
         displayScript = GetComponent<ProjectDisplayManager>();
         DisplayButton.onClick.AddListener(DisplayProjectDescription);
         DescriptionCloseButton.onClick.AddListener(CloseProjectDescription);
+        ProjectCompletedButton.onClick.AddListener(PickProject);
     }
 
     // Handle project selection
     public void PickProject()
     {
+        // Close project completed panel
+        displayScript.CloseProjectCompleted();
+
         // Show project menu
         projectMenu.SetActive(true);
 

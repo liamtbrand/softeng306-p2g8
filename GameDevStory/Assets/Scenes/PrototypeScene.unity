@@ -3434,6 +3434,11 @@ Prefab:
       propertyPath: DescriptionCloseButton
       value: 
       objectReference: {fileID: 1992469458}
+    - target: {fileID: 114417077771737382, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: ProjectCompletedButton
+      value: 
+      objectReference: {fileID: 913224114}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
   m_IsPrefabAsset: 0
