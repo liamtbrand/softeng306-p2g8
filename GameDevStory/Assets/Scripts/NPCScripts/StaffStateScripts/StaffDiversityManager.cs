@@ -176,7 +176,7 @@ namespace NPCScripts.StaffStateScripts
                         sentenceLine = npc.Attributes.npcName + " has resigned. " + GetPronoun(npc, true) +
                                        " has moved on to a more inclusive workplace. " +
                                        "Maintaining a diverse workforce helps improve employee satisfaction and productivity. " +
-                                       "$500 penalty",
+                                       "You have paid a $500 penalty for lost productivity.",
                         sentenceChoices = new[] {"OK"},
                         sentenceChoiceActions = new UnityAction[]
                         {
@@ -238,8 +238,7 @@ namespace NPCScripts.StaffStateScripts
                     };
                     break;
                 case StaffMentalState.State.ANNOYED:
-                    sentence = npc.Attributes.npcName + " doesn't know many people here. " + GetPronoun(npc, true) +
-                               " feels lonely.\n" +
+                    sentence = npc.Attributes.npcName + " doesn't know many people here and feels lonely.\n" +
                                "Encourage your employees to get to know " + GetPronoun(npc, false).ToLower() +
                                " by hosting a pizza party.";
                     nextState = StaffMentalState.State.ABOUT_TO_LEAVE;
@@ -252,8 +251,8 @@ namespace NPCScripts.StaffStateScripts
                 case StaffMentalState.State.ABOUT_TO_LEAVE:
                     var similar = isAgeDialogue ? "a similar age" : "the same gender";
                     sentence = npc.Attributes.npcName + " feels excluded by " + GetPronoun(npc, false).ToLower() +
-                               " coworkers. You should hire more people with " + similar + "." +
-                               "Host a team-building event to improve workspace culture.";
+                               " coworkers. You could help "+ GetPronoun(npc, false).ToLower() +" feel included by hiring others with " + similar + "." +
+                               " Host a team-building event to improve workspace culture.";
                     nextState = StaffMentalState.State.READY_TO_LEAVE;
                     choices = new string[]
                     {
@@ -267,8 +266,10 @@ namespace NPCScripts.StaffStateScripts
 
             return new Dialogue
             {
-                Sentences = new Sentence[]{
-                    new Sentence(){
+                Sentences = new Sentence[]
+                {
+                    new Sentence()
+                    {
                         icon = npc.Attributes.headshot,
                         Title = npc.Attributes.npcName,
                         sentenceLine = sentence,
