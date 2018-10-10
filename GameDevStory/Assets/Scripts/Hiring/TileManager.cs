@@ -17,7 +17,7 @@ public class TileManager : MonoBehaviour {
     private NPCInfo npcInfo;
 
     // Use this for initialization
-    void Start()
+    void OnEnable()
     {
         // Get the npc's stat from their stats script
         npcInfo = NPCFactory.Instance.CreateNPCWithRandomizedStats();
