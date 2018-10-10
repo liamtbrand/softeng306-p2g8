@@ -10,6 +10,8 @@ public class Level : MonoBehaviour {
     public OfficeLayout officeLayout;
     public GameObject background;
 
+    public BaseLevelSetupScript setupScript;
+
     // private Transform levelHolder;                                          //A variable to store a reference to the transform of our Board object.
 
     public OfficeLayout GetOfficeLayout()
@@ -24,6 +26,11 @@ public class Level : MonoBehaviour {
     {
         // Instantiate the level background
         bg = Instantiate(background, new Vector3(0, 0, 1f), Quaternion.identity);
+
+        if(setupScript != null){
+            setupScript.setup();
+        }
+
     }
 
     public void TearDownLevel()

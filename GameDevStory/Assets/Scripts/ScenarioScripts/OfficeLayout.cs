@@ -14,6 +14,8 @@ public class OfficeLayout : MonoBehaviour
 
     public Vector2[] desks;                          // Default to having three desks in these positions.
 
+    public List<GameObject> instantiatedDeskList = new List<GameObject>();
+
     public List<Vector2> freeDesks;
 
     /*
@@ -21,11 +23,6 @@ public class OfficeLayout : MonoBehaviour
      */
 	public Vector3 deskOffset;
 	public GameObject desk;
-
-    public void SetupLevel()
-    {
-
-    }
 
     public Vector2 GetDeskNPCPosition(Vector2 deskPosition)
     {
@@ -54,14 +51,17 @@ public class OfficeLayout : MonoBehaviour
         }
     }
 
-    // Use this for initialization
-    void Awake()
-	{
+    public void DeskTeardown(){
+        foreach(GameObject desk in instantiatedDeskList){
+            Destroy(desk);
+        }
+    }
 
-		for (int i = 0; i < desks.Length; i++)
+    public void DeskSetup(){
+        for (int i = 0; i < desks.Length; i++)
         {
             Vector3 pos = coordinateSystem.getVector3(desks[i]);
-			Instantiate(desk, deskOffset + pos, Quaternion.identity);
+			instantiatedDeskList.Add(Instantiate(desk, deskOffset + pos, Quaternion.identity));
         }
 
         // create a list to store all the free desks.
@@ -71,6 +71,14 @@ public class OfficeLayout : MonoBehaviour
             freeDesks.Add(desk);
         }
     }
+
+    // Use this for initialization
+    void Awake()
+	{
+
+    }
+    
+
 
     // Update is called once per frame
     void Update()

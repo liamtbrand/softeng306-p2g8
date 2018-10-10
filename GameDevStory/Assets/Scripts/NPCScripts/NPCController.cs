@@ -100,8 +100,29 @@ public class NPCController : Singleton<NPCController> {
     // This will take care of randomly placing the NPC into the level.
     public void HireEmployee(NPCInfo npcInfo)
     {
+        Debug.Log("Hiring an employee");
         Vector2 position = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetRandomFreeDeskPosition();
         AddNPCToScene(npcInfo, LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetDeskNPCPosition(position));
+    }
+
+    public List<NPCInfo> TeardownNpcs(){
+        
+        var npcList = new List<NPCInfo>();
+        var destroyList = new List<KeyValuePair<GameObject,NPCInfo>>();
+        // Destroying npcs and returning their info for rehiring/reinstantion on new level
+        Debug.Log("Destroying NPCS");
+        foreach(KeyValuePair<GameObject, NPCInfo> npcPair in _npcInstances){
+            destroyList.Add(npcPair); // destroy list used to avoid invalid operation exceptions
+            npcList.Add(npcPair.Value);
+            
+        }
+
+        foreach(var pair in destroyList){
+            _npcInstances.Remove(pair.Key);
+            Destroy(pair.Key);
+        }
+
+        return npcList;
     }
 
     private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector2 position, NPCInfo info)
