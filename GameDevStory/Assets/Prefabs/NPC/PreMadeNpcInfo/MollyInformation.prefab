@@ -54,9 +54,17 @@ MonoBehaviour:
   npcName: Molly
   age: 21
   gender: 1
-  biography: Biography things :)
+  biography: 'I have recently graduated from university with a conjoint degree in
+    Commerce / Software Engineering.
+
+
+    Software Engineering is my passion and there is nothing else I would rather be
+    doing in a job than writing code.
+
+
+    "If you love what you do, you''ll never work another day in your life."'
   animationController: {fileID: 22100000, guid: 53983b9e0b6f482438ec8be070fbeee7,
     type: 2}
-  cost: 64
-  costThreshold: 52
+  cost: 59
+  costThreshold: 56
   headshot: {fileID: 21300000, guid: 7e108b9ede5063644aeb33cf20a97f38, type: 3}
