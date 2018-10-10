@@ -15731,12 +15731,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21300002, guid: 194e4d7544272b842a1cee4f94b216bb, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 1895863558}
+        m_MethodName: Advertise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -16282,7 +16282,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: an expert
       m_Image: {fileID: 0}
-    - m_Text: confident
+    - m_Text: adept
       m_Image: {fileID: 0}
     - m_Text: experienced
       m_Image: {fileID: 0}
