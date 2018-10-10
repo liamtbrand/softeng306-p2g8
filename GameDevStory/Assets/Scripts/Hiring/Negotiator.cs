@@ -11,6 +11,7 @@ public class Negotiator : MonoBehaviour
     public Slider PaySlider;
     public TextMeshProUGUI CostDisplay;
     public TextMeshProUGUI NameHeader;
+    public Button OfferButton;
 
 
     public void Start()
@@ -55,6 +56,7 @@ public class Negotiator : MonoBehaviour
             NPCController.Instance.HireEmployee(npc);
             GameManager.Instance.changeBalance(npc.Attributes.cost * -1);
             ClickedTile.interactable = false;
+            OfferButton.interactable = false;
         }
         else
         {

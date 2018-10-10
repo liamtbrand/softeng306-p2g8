@@ -68,7 +68,6 @@ public class HiringDisplayManager : MonoBehaviour {
     public void CloseApplicant()
     {
         ApplicantViewPanel.SetActive(false);
-        GridViewPanel.SetActive(true); // Return to the grid view.
         ProjectManager.Instance.ResumeProject();
     }
 }
