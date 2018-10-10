@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using System;
 using TMPro;
+using DialogueScripts;
+using UnityEngine.Events;
 
 public class Negotiator : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class Negotiator : MonoBehaviour
     public Slider PaySlider;
     public TextMeshProUGUI CostDisplay;
     public TextMeshProUGUI NameHeader;
+    public Button OfferButton;
 
 
     public void Start()
@@ -22,6 +25,7 @@ public class Negotiator : MonoBehaviour
     {
         // Offer slider starts out at npc's optimum value.
         PaySlider.value = npc.Attributes.cost;
+        PaySlider.maxValue = 2 * npc.Attributes.cost; // Dynamically assign max. offer
         NameHeader.text = npc.Attributes.npcName;
     }
 
@@ -30,7 +34,7 @@ public class Negotiator : MonoBehaviour
         try
         {
             CostDisplay.text = PaySlider.value.ToString();
-        } catch (NullReferenceException e)
+        } catch (NullReferenceException)
         {
             // Not sure why but CostDisply is set to null here despite this it works.
         }
@@ -48,17 +52,52 @@ public class Negotiator : MonoBehaviour
         var offerThreshold = npc.Attributes.costThreshold;
 
         if (offer >= offerThreshold)
-        { 
+        {
+            // Debugging
             Debug.Log(string.Format("Offer of {0} is sufficient, threshold was {1}", offer.ToString(), offerThreshold.ToString()));
 
             // Offer is sufficient, applicant can be hired.
             NPCController.Instance.HireEmployee(npc);
             GameManager.Instance.changeBalance(npc.Attributes.cost * -1);
             ClickedTile.interactable = false;
+            OfferButton.interactable = false;
+
+            AcceptOfferDialogue();
         }
         else
         {
+            // Debugging
             Debug.Log(string.Format("Offer of {0} is NOT sufficient, threshold was {1}", offer.ToString(), offerThreshold.ToString()));
         }
+    }
+
+    private void AcceptOfferDialogue()
+    {
+        var Dialogue = new Dialogue()
+        {
+            Sentences = new Sentence[]
+            {
+                new Sentence()
+                {
+                    icon = npc.Attributes.headshot,
+                    Title = npc.Attributes.npcName,
+                    sentenceLine = "<<THIS IS A MEME RESPONSE DO NOT LET THIS GET THROUGH TO THE FINAL SUBMISSION. IT SHOULDN'T BECAUSE I'M STILL WORKING ON THIS PART BUT IF IT SNEAKS THROUGH BLAME BUSTER",
+                    sentenceChoices = new string[]
+                    {
+                        "OK"
+                    },
+                    sentenceChoiceActions = new UnityAction[]
+                    {
+                        FinishNegotiatingAndHire
+                    }
+                }
+            }
+        };
+        DialogueManager.Instance.StartDialogue(Dialogue);
+    }
+
+    public void FinishNegotiatingAndHire()
+    {
+        Debug.Log(string.Format("{0} has accepted your offer, they have now joined the team!", npc.Attributes.npcName));
     }
 }

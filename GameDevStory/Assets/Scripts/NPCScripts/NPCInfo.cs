@@ -10,5 +10,4 @@ public class NPCInfo {
     public NPCFactory.NPCStats Stats;
     public bool IsStaff = true;
     public StaffMentalState MentalState = new StaffMentalState();
-
 }
