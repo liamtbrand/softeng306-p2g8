@@ -57,6 +57,6 @@ MonoBehaviour:
   biography: Very nice.
   animationController: {fileID: 22100000, guid: ef02e43de55acf545ab7e54ebf14dab2,
     type: 2}
-  cost: 100
-  costThreshold: 0
-  headshot: {fileID: 21300000, guid: 8c748e3899ef94645b19c97f95b0a2cf, type: 3}
+  cost: 78
+  costThreshold: 72
+  headshot: {fileID: 21300000, guid: d5f01d404e7585541ab9430dd69db172, type: 3}
