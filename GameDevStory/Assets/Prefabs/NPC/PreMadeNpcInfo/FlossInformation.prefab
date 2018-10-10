@@ -54,9 +54,10 @@ MonoBehaviour:
   npcName: Floss
   age: 35
   gender: 1
-  biography: Very hip.
+  biography: Hello! I am a highly motivated individual with excellent problem solving
+    skills. Hiring me could be the best decision of your life!
   animationController: {fileID: 22100000, guid: 0f1e2d07ddcd8449c9e9da762c7cf8a3,
     type: 2}
-  cost: 59
-  costThreshold: 51
+  cost: 62
+  costThreshold: 61
   headshot: {fileID: 21300000, guid: fd665c9223f2cee40a8f001d2dd9f284, type: 3}

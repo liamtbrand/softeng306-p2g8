@@ -81,6 +81,11 @@ MonoBehaviour:
   - {fileID: 114909390779702190, guid: a1ee1ebb8018bc8459ef427c2c485910, type: 2}
   - {fileID: 114372876575392388, guid: b29ceb9dd04ce4f7a8737888e246f6ed, type: 2}
   - {fileID: 114976380290896440, guid: d5ab188ec4cac47799e82093ee71d58e, type: 2}
+  - {fileID: 114391280088417942, guid: e6b70d5ee61dc974da7e078a71883f1e, type: 2}
+  - {fileID: 114434809892330198, guid: 72ce1fc13d87a984fab4ed65366ae47a, type: 2}
+  - {fileID: 114562034039819814, guid: 3eb983793be5493499eca8026e2629c3, type: 2}
+  - {fileID: 114084557987146152, guid: edb678d4574e171479367cdbb929b08c, type: 2}
+  - {fileID: 114625926627291948, guid: 7213d4d88122f9b498ca603d00df206f, type: 2}
   FemalePayMultiplier: 0.75
   MinEmployeeCost: 50
   MaxEmployeeCost: 100

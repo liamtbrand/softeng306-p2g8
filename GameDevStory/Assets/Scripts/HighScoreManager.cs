@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManager : Singleton<ScoreManager> {
+public class HighScoreManager : Singleton<HighScoreManager> {
     public InputField NameField;
     public GameObject ScoreListParent;
     public GameObject ScoreEntryPrefab;
@@ -14,7 +14,7 @@ public class ScoreManager : Singleton<ScoreManager> {
     
     private Dictionary<string, double> _scores = new Dictionary<string, double>();
 
-    protected ScoreManager () {} // enforces singleton use
+    protected HighScoreManager () {} // enforces singleton use
     
     private void Start()
     {
