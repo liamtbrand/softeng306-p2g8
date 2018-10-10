@@ -57,4 +57,6 @@ MonoBehaviour:
   biography: Serko vibes
   animationController: {fileID: 22100000, guid: 468bd375ffb03a24cbcc5e6fdddcd4a0,
     type: 2}
-  cost: 100
+  cost: 77
+  costThreshold: 71
+  headshot: {fileID: 21300000, guid: 8c07cf0ef5fd966488b79e3715576a7e, type: 3}

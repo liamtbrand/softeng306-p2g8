@@ -33,9 +33,6 @@ public class GameManager : Singleton<GameManager> {
 
     public Image image;
 
-    private LevelManager levelScript;
-    private int level = 0; // Hardcoded to first level for now
-
     // Initialise game at splash screen
     void Awake()
     {
@@ -52,15 +49,13 @@ public class GameManager : Singleton<GameManager> {
         {
             MoneyCounter.Target = moneyBalance;
         }
-
-        levelScript = GetComponent <LevelManager>();
-        levelScript.SetupScene(level);
+        
+        LevelManager.Instance.SwitchToFirstLevel();
     }
 
     void StartLevel(int level)
     {
-        levelScript = GetComponent <LevelManager>();
-        levelScript.SetupScene(level);
+        LevelManager.Instance.SwitchToLevel(level);
         gameScene = GameScene.OFFICE;
     }
 

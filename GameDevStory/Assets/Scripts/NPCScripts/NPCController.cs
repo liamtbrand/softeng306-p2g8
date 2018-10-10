@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// singleton that is responsible for all npcs that exist in the current scene
+// singleton that is responsible for all npcs that exist in the game
 public class NPCController : Singleton<NPCController> {
 
     public GameObject npcTemplate; // the generic npc template to instantiate
-	public CoordinateSystem coordinateSystem;
     public GameObject notificationButton;
     public GameObject[] bugButtons;
 
@@ -19,10 +18,18 @@ public class NPCController : Singleton<NPCController> {
         get { return _npcInstances; }
     }
 
-    private const float NOTIFICATION_HEIGHT_OFFSET = 0.22f; //todo adjust the scale of the world so we don't need to deal in tiny numbers
+    private const float NOTIFICATION_HEIGHT_OFFSET = 0.22f;
+
+    private static int npcsToAdd = 2;										// TODO: Don't hardcode this
 
     // Use this for initialization
-    void Start () {}
+    void Start ()
+    {
+        for (int i = 0; i < npcsToAdd; i++)
+        {
+            HireEmployee(NPCFactory.Instance.CreateNPCWithRandomizedStats());
+        }
+    }
 
     // Sends a scenario notification to an npc that the player should click on to start the scenario.
     public void ShowNotification(Action a, GameObject npc)
@@ -44,7 +51,6 @@ public class NPCController : Singleton<NPCController> {
             Destroy(buttonInstanceContainer); // could set a delay as second param if desired
         });
     }
-
     
     // Overload to use Random NPC with Scenario
     public void ShowScenarioNotification(Scenario s)
@@ -77,16 +83,30 @@ public class NPCController : Singleton<NPCController> {
 
             success();
         });
+
+        //// register bug to disappear after one second if not clicked
+        IEnumerator coroutine = TearDownButtonAfterDelay(npc.GetComponent<NPCBehaviour>(), buttonInstanceContainer, 2);
+        StartCoroutine(coroutine);
+
     }
+
 
     public void AddNPCToScene(NPCInfo npc, Vector2 position)
     {
         InstantiateNPC(npc.Attributes.animationController, position, npc);
     }
 
-    private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector3 pos, NPCInfo info)
+    // Method to be called to hire an employee.
+    // This will take care of randomly placing the NPC into the level.
+    public void HireEmployee(NPCInfo npcInfo)
     {
-        //Vector3 pos = coordinateSystem.getVector3(position); // TODO: Finish coordinate system
+        Vector2 position = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetRandomFreeDeskPosition();
+        AddNPCToScene(npcInfo, LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetDeskNPCPosition(position));
+    }
+
+    private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector2 position, NPCInfo info)
+    {
+        Vector3 pos = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().coordinateSystem.getVector3(position);
         GameObject npcInstance = Instantiate(npcTemplate, pos, Quaternion.identity);
         npcInstance.GetComponent<Animator>().runtimeAnimatorController = animation; // set the animator controller
         npcInstance.transform.SetParent(this.transform); // npcs should show up as a child of the npc controller
@@ -100,7 +120,11 @@ public class NPCController : Singleton<NPCController> {
     private GameObject ShowButtonAboveNPC(GameObject npc, GameObject button)
     {
         Vector3 npcCurrentPosition = npc.transform.position;
-        GameObject instance = Instantiate(button, new Vector3(npcCurrentPosition.x, npcCurrentPosition.y + NOTIFICATION_HEIGHT_OFFSET, npcCurrentPosition.z), Quaternion.identity);
+        Vector3 pos = new Vector3(0, 0, 0);
+        pos.x = npcCurrentPosition.x;                                 // Default x position of npc
+        pos.y = npcCurrentPosition.y + NOTIFICATION_HEIGHT_OFFSET;    // Add offset to shift notification up on screen
+        pos.z = npcCurrentPosition.z + 1;                             // Add 1 to bring the popup forwards
+        GameObject instance = Instantiate(button, pos, Quaternion.identity);
         instance.transform.SetParent(npc.transform);
 
         npc.GetComponent<NPCBehaviour>().SetHasNotification(true);
@@ -113,12 +137,26 @@ public class NPCController : Singleton<NPCController> {
     // TODO: add randomness into the selection
     private GameObject GetNpcWithoutNotification()
     {
+        // get all npcs who are free to accept a notification
+        var npcsWithoutNotification = new List<GameObject>();
         foreach (GameObject npc in _npcInstances.Keys)
         {
             NPCBehaviour npcScript = npc.GetComponent<NPCBehaviour>();
             if (!npcScript.GetHasNotification())
-                return npc;
+                npcsWithoutNotification.Add(npc);
         }
-        return null;
+
+        if (npcsWithoutNotification.Count == 0)
+            return null;    // no npc is available to accept notification
+
+        // return random npc who has no notification
+        return npcsWithoutNotification[UnityEngine.Random.Range(0, npcsWithoutNotification.Count)];
+    }
+
+    private IEnumerator TearDownButtonAfterDelay(NPCBehaviour npc, GameObject button, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        npc.SetHasNotification(false);
+        Destroy(button);
     }
 }
