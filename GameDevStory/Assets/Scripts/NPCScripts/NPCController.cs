@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,6 +58,12 @@ public class NPCController : Singleton<NPCController> {
         ShowNotification(s.ExecuteScenario, GetNpcWithoutNotification());
     }
 
+    public void RemoveNPC(GameObject npc)
+    {
+        _npcInstances.Remove(npc);
+        Destroy(npc);
+    }
+
     // shows a random bug button and registers the "success" callback to be called when the button is pressed
     // if an npc is available to accept the bug. Otherwise the "failure" callback will be called straight away
     // so that the bug isn't counted as a missed bug
@@ -106,6 +112,26 @@ public class NPCController : Singleton<NPCController> {
         // Place the npc on screen
         Vector2 position = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetRandomFreeDeskPosition();
         AddNPCToScene(npcInfo, LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetDeskNPCPosition(position));
+    }
+
+    public List<NPCInfo> TeardownNpcs(){
+        
+        var npcList = new List<NPCInfo>();
+        var destroyList = new List<KeyValuePair<GameObject,NPCInfo>>();
+        // Destroying npcs and returning their info for rehiring/reinstantion on new level
+        Debug.Log("Destroying NPCS");
+        foreach(KeyValuePair<GameObject, NPCInfo> npcPair in _npcInstances){
+            destroyList.Add(npcPair); // destroy list used to avoid invalid operation exceptions
+            npcList.Add(npcPair.Value);
+            
+        }
+
+        foreach(var pair in destroyList){
+            _npcInstances.Remove(pair.Key);
+            Destroy(pair.Key);
+        }
+
+        return npcList;
     }
 
     private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector2 position, NPCInfo info)

@@ -25,6 +25,12 @@ public class NPCFactory : Singleton<NPCFactory> {
     // A pool of pre-made NPCs that are available for instantiation
     public List<NPCAttributes> Npcs;
 
+    // Temporary pool to store attributes that have been removed from the main
+    // pool. This is used to prevent the same npc from showing twice on the
+    // hiring screen. The contents of the pool will be restored to the main
+    // pool when an npc has been hired.
+    private List<NPCAttributes> AttributePool = new List<NPCAttributes>();
+
     // determines how significant the gender pay gap is.
     // Could change as the game progresses, eventually achieving equal pay
     public float FemalePayMultiplier = 0.75f;
@@ -66,6 +72,11 @@ public class NPCFactory : Singleton<NPCFactory> {
             Stats = GetRandomStats()
         };
 
+        // Here we remove the npc from the available ones and stick it into
+        // the temporary pool for hiring from.
+        Npcs.Remove(randomNPC);
+        AttributePool.Add(randomNPC);
+
         npc.Attributes.cost = CalculateEmployeeCost(npc);
         npc.Attributes.costThreshold = CalculateCostThreshold(npc);
 
@@ -79,8 +90,23 @@ public class NPCFactory : Singleton<NPCFactory> {
     public void RemoveNPCFromPool(NPCInfo npcInfo)
     {
         // Ensure that this npc cannot be generated again (npcs are unique).
-        Npcs.Remove(npcInfo.Attributes);
+        AttributePool.Remove(npcInfo.Attributes);
         // This also implies that if an npc ever left, the leave would be final.
+
+        ResetPool();
+    }
+
+    // Called to reset the pool of possible npcs.
+    public void ResetPool()
+    {
+        // Restore all the attributes to the main pool.
+        foreach(NPCAttributes attribute in AttributePool)
+        {
+            Npcs.Add(attribute);
+        }
+
+        // Clean up the temporary pool
+        AttributePool.Clear();
     }
 
     // helper method to calculate the cost of employees based on their stats

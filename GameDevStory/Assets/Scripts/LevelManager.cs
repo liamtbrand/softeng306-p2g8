@@ -26,13 +26,29 @@ public class LevelManager : Singleton<LevelManager> {
     // Initialises the new level, shuts down the old level if there was one.
     public void SwitchToLevel(int newlevel)
     {
+        Debug.Log("Switching to level " + newlevel);
         Level currentLevel = GetCurrentLevel();
+        List<NPCInfo> npcInfoList = null;
+
         if(currentLevel != null)
         {
             currentLevel.TearDownLevel();
+            npcInfoList = NPCController.Instance.TeardownNpcs();
+            currentLevel.officeLayout.DeskTeardown();
         }
+
+    
         // set the new level
         level = newlevel;
+
         GetCurrentLevel().SetupLevel();
+        GetCurrentLevel().officeLayout.DeskSetup();
+
+        if(npcInfoList != null){
+            foreach(NPCInfo npc in npcInfoList){
+                NPCController.Instance.HireEmployee(npc);
+            }
+        }
+
     }
 }

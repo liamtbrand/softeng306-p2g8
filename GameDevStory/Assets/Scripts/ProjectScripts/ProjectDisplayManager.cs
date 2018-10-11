@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,12 @@ namespace ProjectScripts
         public Text ProfitText;
         public Text FeedbackText;
         public Text BugStatsText;
+
+        public GameObject DescriptionPanel;
+        public Text DescriptionTitle;
+        public Text DescriptionCompany;
+        public Text DescriptionContent;
+        public Text DescriptionStats;
     
         protected ProjectDisplayManager () {} // enforces singleton use
 
@@ -52,6 +59,20 @@ namespace ProjectScripts
             }
         }
 
+        public void ProjectDescription(string title, string company, string description, string stats)
+        {
+            DescriptionPanel.SetActive(true);
+            DescriptionTitle.text = title;
+            DescriptionCompany.text = company;
+            DescriptionContent.text = description;
+            DescriptionStats.text = stats;
+        }
+
+        public void CloseProjectDescription()
+        {
+            DescriptionPanel.SetActive(false);
+        }
+
         // overload for unselectable
         public void AddNewProject(string title, string company, string description, string stats, bool selectable)
         {
@@ -59,15 +80,14 @@ namespace ProjectScripts
         }
 
         // Displays the project completion display
-        public void ProjectCompleted(double profit, string feedback, int bugsMissed, int bugPenalty, float diversityScore)
+        public void ProjectCompleted(double profit, string feedback, int bugsMissed, int bugPenalty, double diversityScore)
         {
-
             // todo: add diversity score in feedback
-
             ProjectCompletePanel.SetActive(true);
             ProfitText.text = "$" + profit.ToString("f2");
-            //FeedbackText.text = feedback;
-            
+
+            FeedbackText.text = feedback;
+
             /*float offset = 0.3f;
             float xPos = -0.3f;
             float yPos = 0.05f;
