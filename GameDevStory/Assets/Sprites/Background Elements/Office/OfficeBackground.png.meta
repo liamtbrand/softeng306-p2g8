@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 10d7c13d275a042ca9d3c08e34d840c5
+guid: a58f10a40a1496a4d8aeef531eb36c3b
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -91,24 +91,13 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 793aaa30f875b4e3e973f9d7d4fef37e
+    spriteID: 7f189eb2f4aa6a94da815ee382770444
     vertices: []
     indices: 
     edges: []

@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using NPCScripts.StaffStateScripts;
 using ProjectScripts;
@@ -15,22 +17,32 @@ public class ProjectManager : Singleton<ProjectManager>
 
     private static Dictionary<string, Project> projects;
     private string selectedProject;
+    public Button DisplayButton;
+    public Button DescriptionCloseButton;
+    public Button ProjectCompletedButton;
 
     void Start()
     {
         // Stop the timer from running
         timerScript = GetComponent<ProjectTimer>();
         timerScript.enabled = false;
+
+        displayScript = GetComponent<ProjectDisplayManager>();
+        DisplayButton.onClick.AddListener(DisplayProjectDescription);
+        DescriptionCloseButton.onClick.AddListener(CloseProjectDescription);
+        ProjectCompletedButton.onClick.AddListener(PickProject);
     }
 
     // Handle project selection
     public void PickProject()
     {
+        // Close project completed panel
+        displayScript.CloseProjectCompleted();
+
         // Show project menu
         projectMenu.SetActive(true);
 
         // Initialise list of projects
-        displayScript = GetComponent<ProjectDisplayManager>();
         if (projects == null)
         {
             projects = ProjectCreator.Instance.InitialiseProjects();
@@ -84,6 +96,30 @@ public class ProjectManager : Singleton<ProjectManager>
         timerScript.Resume();
     }
 
+    // Returns current project object
+    public Project GetCurrentProject()
+    {
+        return projects[selectedProject];
+    }
+
+    public void DisplayProjectDescription()
+    {
+        Project current = projects[selectedProject];
+        displayScript.ProjectDescription(
+            current.getTitle(),
+            current.getCompany(),
+            current.getDescription(),
+            current.getStats()
+        );
+        PauseProject();
+    }
+
+    public void CloseProjectDescription()
+    {
+        displayScript.CloseProjectDescription();
+        ResumeProject();
+    }
+
     // Handles the completion of a project
     public void CompletedProject()
     {
@@ -93,12 +129,14 @@ public class ProjectManager : Singleton<ProjectManager>
         // determine bug statistics 
         var bugsMissed = timerScript.GetBugsCreated() - timerScript.GetBugsSquashed();
 
+        var completedProject = projects[selectedProject];
+
         // Update project menu
         UpdateProjectMenu(selectedProject);
 
         var diversityScore = StaffDiversityManager.Instance.DiversityScore;
         // Calculate project profit
-        var profit = CalculateProjectProfit(selectedProject, bugsMissed, diversityScore);
+        var profit = CalculateProjectProfit(completedProject, bugsMissed, diversityScore);
 
         // Calculate project stars
         //int stars = CalculateProjectStars(selectedProject);
@@ -126,7 +164,7 @@ public class ProjectManager : Singleton<ProjectManager>
                            " the future by making sure your team has a diverse range of perspectives and people.\n");
         } else if (StaffDiversityManager.Instance.DiversityScore >= 0.2)
         {
-            builder.Append("The customer found that your team's perspective was narrow. Maybe a change in the composition" +
+            builder.Append("The customer found that your team's perspective was narrow. Maybe a change in the composition " +
                            "of your team could improve this?\n");
         }
         else
@@ -146,24 +184,57 @@ public class ProjectManager : Singleton<ProjectManager>
             builder.Append("The customer is happy with the functionality of your product, and wasn't able to find any major bugs.\n");
         }
 
+        if (NPCAverageStat() > 75)
+        {
+            builder.Append("Overall, the customer was happy with the quality of your product.");
+        } else if (NPCAverageStat() > 50)
+        {
+            builder.Append("The customer found the quality of your product to be acceptable");
+        } else if (NPCAverageStat() > 25)
+        {
+            builder.Append(
+                "The customer found the quality of your product to be lacking. Perhaps you need to hire more highly skilled staff?");
+        }
+        else
+        {
+            builder.Append(
+                "The customer found the quality of your product to be poor. You need to hire more highly skilled staff to improve future product quality.");
+        }
+
         //builder.Append("Otherwise, the customer was happy with your work on "+project);
 
         return builder.ToString();
     }
-
-    // Calculates the performance of a project
-    int CalculateProjectStars(string project)
-    {
-        // TODO: Calculate stars based on diversity
-        return 3;
-    }
-
+    
     // Calculates the profit from a project
-    double CalculateProjectProfit(string project, int bugsMissed, double diversityScore)
+    double CalculateProjectProfit(Project project, int bugsMissed, double diversityScore)
     {
-        // TODO: Don't hardcode bug penalty
+        // Get base amount based on difficulty
+        var baseValue = 0.0;
+
+        var npcStatPenalty = (1 - (NPCAverageStat() / NPCController.Instance.NpcInstances.Count()) / 100);
+        
+        switch (project.getDifficulty())
+        {
+            case ProjectDifficulty.Tutorial:
+                baseValue = 100.0;
+                break;
+            case ProjectDifficulty.Easy:
+                baseValue = 150.0;
+                break;
+            case ProjectDifficulty.Medium:
+                baseValue = 250.0;
+                break;
+            case ProjectDifficulty.Hard:
+                baseValue = 325.0;
+                break;
+        }
+
+        var bugPenalty = (bugsMissed > 10) ? 1 : (bugsMissed / 10.0);
+        
         // DiversityStore DECREASES with INCREASED diversity
-        return (100.00 - 10 * bugsMissed) * (1 - (diversityScore*0.2));
+        // BugPenalty INCREASES with more bugs
+        return (baseValue) * (1 - (diversityScore*0.2)) * (1 - bugPenalty*0.2) * (1 - npcStatPenalty*0.3);
     }
 
     // Updates the project menu
@@ -215,5 +286,19 @@ public class ProjectManager : Singleton<ProjectManager>
                 }
             }
         }
+    }
+
+    double NPCAverageStat()
+    {
+        var npcsAverageStat = 0.0;
+        
+        // Calculate staff ability
+        foreach (var npcInfo in NPCController.Instance.NpcInstances.Values)
+        {
+            npcsAverageStat += (npcInfo.Stats.Communication + npcInfo.Stats.Creativity + npcInfo.Stats.Design +
+                                npcInfo.Stats.Technical + npcInfo.Stats.Testing)/5.0;
+        }
+
+        return npcsAverageStat;
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,7 +51,7 @@ public class NPCController : Singleton<NPCController> {
             Destroy(buttonInstanceContainer); // could set a delay as second param if desired
         });
     }
-    
+
     // Overload to use Random NPC with Scenario
     public void ShowScenarioNotification(Scenario s)
     {
@@ -74,7 +74,7 @@ public class NPCController : Singleton<NPCController> {
         {
             failure();
             return;
-        }       
+        }
 
         // select a random bug button and show it in the scene
         GameObject bugToShow = bugButtons[UnityEngine.Random.Range(0, bugButtons.Length)];
@@ -103,11 +103,35 @@ public class NPCController : Singleton<NPCController> {
     }
 
     // Method to be called to hire an employee.
-    // This will take care of randomly placing the NPC into the level.
+    // Notifies the npcfactory we have hired the npc.
+    // This will also take care of randomly placing the NPC into the level.
     public void HireEmployee(NPCInfo npcInfo)
     {
+        // Need to notify the npcfactory so we can't reproduce this npc.
+        NPCFactory.Instance.RemoveNPCFromPool(npcInfo);
+        // Place the npc on screen
         Vector2 position = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetRandomFreeDeskPosition();
         AddNPCToScene(npcInfo, LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetDeskNPCPosition(position));
+    }
+
+    public List<NPCInfo> TeardownNpcs(){
+        
+        var npcList = new List<NPCInfo>();
+        var destroyList = new List<KeyValuePair<GameObject,NPCInfo>>();
+        // Destroying npcs and returning their info for rehiring/reinstantion on new level
+        Debug.Log("Destroying NPCS");
+        foreach(KeyValuePair<GameObject, NPCInfo> npcPair in _npcInstances){
+            destroyList.Add(npcPair); // destroy list used to avoid invalid operation exceptions
+            npcList.Add(npcPair.Value);
+            
+        }
+
+        foreach(var pair in destroyList){
+            _npcInstances.Remove(pair.Key);
+            Destroy(pair.Key);
+        }
+
+        return npcList;
     }
 
     private GameObject InstantiateNPC(RuntimeAnimatorController animation, Vector2 position, NPCInfo info)

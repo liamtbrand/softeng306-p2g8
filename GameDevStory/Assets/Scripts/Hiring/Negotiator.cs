@@ -17,6 +17,7 @@ public class Negotiator : MonoBehaviour
     public TextMeshProUGUI CostDisplay;
     public TextMeshProUGUI NameHeader;
     public Button OfferButton;
+    public GameObject HiringDisplayManager;
 
     private int ChancesLeftToHire = 5;
 
@@ -64,7 +65,6 @@ public class Negotiator : MonoBehaviour
             NPCController.Instance.HireEmployee(npc);
             GameManager.Instance.changeBalance(npc.Attributes.cost * -1);
             ClickedTile.interactable = false;
-            OfferButton.interactable = false;
 
             AcceptOfferDialogue();
         }
