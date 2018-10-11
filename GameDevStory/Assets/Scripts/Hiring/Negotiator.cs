@@ -145,7 +145,7 @@ public class Negotiator : MonoBehaviour
                 {
                     icon = npc.Attributes.headshot,
                     Title = npc.Attributes.npcName,
-                    sentenceLine = RandomDecliningSentence((int) PaySlider.value, npc.Attributes.costThreshold, OfferIsVeryLow),
+                    sentenceLine = RandomDecliningSentence((int) PaySlider.value, OfferIsVeryLow),
                     sentenceChoices = new string[]
                     {
                         "Okay, let's talk."
@@ -214,7 +214,7 @@ public class Negotiator : MonoBehaviour
      * Returns a random sentence for the npc to say declining the offer of paymemnt. Chooses from sets of responses determined by
      * the ammount offered to look as if they are responding to the ammounts like a real person would.
      */
-    private string RandomDecliningSentence(int Offer, int ThresholdCost, bool OfferIsVeryLow)
+    private string RandomDecliningSentence(int Offer, bool OfferIsVeryLow)
     {
         // Sentences to display if the offer is reasonable but too low
         string[] CloseSentences = 
