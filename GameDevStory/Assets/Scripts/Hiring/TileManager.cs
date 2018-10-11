@@ -16,9 +16,7 @@ public class TileManager : MonoBehaviour {
 
     private NPCInfo npcInfo;
 
-    // Use this for initialization
-    void OnEnable()
-    {
+    public void Refresh() {
         // Get the npc's stat from their stats script
         npcInfo = NPCFactory.Instance.CreateNPCWithRandomizedStats();
         image.GetComponent<Animator>().runtimeAnimatorController = npcInfo.Attributes.animationController;

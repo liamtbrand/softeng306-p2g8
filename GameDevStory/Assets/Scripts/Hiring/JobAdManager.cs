@@ -36,7 +36,6 @@ public class JobAdManager : MonoBehaviour {
     // Display the job advertisement editor
     public void ShowEditor()
     {
-        
         jobAdEditor.SetActive(true);
     }
 
