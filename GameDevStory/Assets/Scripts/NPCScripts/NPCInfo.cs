@@ -9,5 +9,6 @@ public class NPCInfo {
     public NPCAttributes Attributes;
     public NPCFactory.NPCStats Stats;
     public bool IsStaff = true;
+    public bool IsAvailableForHire = true;
     public StaffMentalState MentalState = new StaffMentalState();
 }

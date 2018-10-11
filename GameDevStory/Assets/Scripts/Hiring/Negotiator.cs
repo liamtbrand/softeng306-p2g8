@@ -6,11 +6,13 @@ using DialogueScripts;
 using UnityEngine.Events;
 
 public class Negotiator : MonoBehaviour
-{
-    public GameObject HiringDisplay;
-    // TODO: disable grid entry of npc after hire.
+{    
+    // TODO: make max slider value not exceed max bank account value
+
     public static NPCInfo npc;
     public static Button ClickedTile;
+
+    public GameObject HiringDisplay;
 
     public Slider PaySlider;
     public TextMeshProUGUI CostDisplay;
@@ -121,6 +123,7 @@ public class Negotiator : MonoBehaviour
                     {
                         () => {
                             Debug.Log(string.Format("{0} has accepted your offer, they have now joined the team!", npc.Attributes.npcName));
+                            npc.IsAvailableForHire = false;
                             HiringDisplay.GetComponent<HiringDisplayManager>().ShowHiringGrid();
                         }
                     }
@@ -180,6 +183,7 @@ public class Negotiator : MonoBehaviour
                     {
                         () => {
                             Debug.Log(string.Format("{0} has ended negotiations, their frustration is {1}/{2}.", npc.Attributes.npcName, npc.Attributes.negotiationFrustration, EMPLOYEE_FRUSTRATION_THRESHOLD));
+                            npc.IsAvailableForHire = false;
                             HiringDisplay.GetComponent<HiringDisplayManager>().ShowHiringGrid();
                         }
                     }
