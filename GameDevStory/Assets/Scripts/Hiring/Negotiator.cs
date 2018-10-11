@@ -6,12 +6,13 @@ using DialogueScripts;
 using UnityEngine.Events;
 
 public class Negotiator : MonoBehaviour
-{
-    // TODO: deduct actuall offered ammount of money when purchasing
-    // TODO: re-enable hire button after hire.
-    // TODO: disable grid entry of npc after hire.
+{    
+    // TODO: make max slider value not exceed max bank account value
+
     public static NPCInfo npc;
     public static Button ClickedTile;
+
+    public GameObject HiringDisplay;
 
     public Slider PaySlider;
     public TextMeshProUGUI CostDisplay;
@@ -19,7 +20,10 @@ public class Negotiator : MonoBehaviour
     public Button OfferButton;
     public GameObject HiringDisplayManager;
 
-    private int ChancesLeftToHire = 5;
+    // This value represents the frustrationg of the employee when negotiating. The more offers that
+    // are too low the higher the value will become. If offers are significantly too low the value will
+    // increase faster.
+    private const int EMPLOYEE_FRUSTRATION_THRESHOLD = 2; // starting at 0, users get '3 chances' bar extraordinarily low offers, in which case less.
 
     public void Start()
     {
@@ -30,7 +34,7 @@ public class Negotiator : MonoBehaviour
     {
         // Offer slider starts out at npc's optimum value.
         PaySlider.value = npc.Attributes.cost;
-        PaySlider.maxValue = 2 * npc.Attributes.cost; // Dynamically assign max. offer
+        PaySlider.maxValue = Math.Min(2 * npc.Attributes.cost, (int)GameManager.Instance.getBalance()); // Dynamically assign max. offer and ensure not more than player can afford
         NameHeader.text = npc.Attributes.npcName;
     }
 
@@ -48,7 +52,9 @@ public class Negotiator : MonoBehaviour
 
     /**
      * To be called when the user has chosen a value to offer to the applicant, compare with npc's threshold
-     * and decide whether employee will join the company.
+     * and decide whether employee will join the company. If the offer is lower than the applicants threshold,
+     * the user may offer once again but the applicant's frustration level will have risen. If the frustration
+     * is too high then the negotiations will end.
      */
     public void Negotiate()
     {
@@ -56,27 +62,48 @@ public class Negotiator : MonoBehaviour
         var offer = PaySlider.value; // Get the user's offer from the pay slider
         var offerThreshold = npc.Attributes.costThreshold;
 
-        if (offer >= offerThreshold)
+        if (offer >= offerThreshold) // Offer is greater or equal to threshold
         {
             // Debugging
             Debug.Log(string.Format("Offer of {0} is sufficient, threshold was {1}", offer.ToString(), offerThreshold.ToString()));
 
             // Offer is sufficient, applicant can be hired.
             NPCController.Instance.HireEmployee(npc);
-            GameManager.Instance.changeBalance(npc.Attributes.cost * -1);
+            GameManager.Instance.changeBalance(offer * -1);
             ClickedTile.interactable = false;
 
             AcceptOfferDialogue();
         }
-        else
+        else // Offer is less that threshold
         {
-            // Debugging
-            Debug.Log(string.Format("Offer of {0} is NOT sufficient, threshold was {1}", offer.ToString(), offerThreshold.ToString()));
+            // Check whether frustration threshold has been met
+            if (npc.Attributes.negotiationFrustration < EMPLOYEE_FRUSTRATION_THRESHOLD) 
+            {
+                // If threshold has not been met continue negotiating
+                if (offer < 0.7 * offerThreshold)
+                {
+                    npc.Attributes.negotiationFrustration += 2;
+                    Debug.Log(string.Format("Offer of {0} is FAR BELOW sufficient, threshold was {1}", offer.ToString(), offerThreshold.ToString()));
+                }
+                else
+                {
+                    npc.Attributes.negotiationFrustration += 1;
+                    Debug.Log(string.Format("Offer of {0} is NOT QUITE sufficient, threshold was {1}", offer.ToString(), offerThreshold.ToString()));
+                }
 
-            DeclineOfferDialogue();
+                DeclineOfferDialogue();
+            }
+            else // Applicant frustration threshold has been met
+            {
+                EndNegotiationDialogue();
+            }
+            
         }
     }
 
+    /**
+     * Display dialogue that shows applicants accepting.
+     */
     private void AcceptOfferDialogue()
     {
         var Dialogue = new Dialogue()
@@ -87,7 +114,7 @@ public class Negotiator : MonoBehaviour
                 {
                     icon = npc.Attributes.headshot,
                     Title = npc.Attributes.npcName,
-                    sentenceLine = "I've decided, I'm going to accept! I'm looking forward to joining the team.",
+                    sentenceLine = RandomAcceptingSentence((int) PaySlider.value),
                     sentenceChoices = new string[]
                     {
                         "Great to have you on board!"
@@ -96,6 +123,8 @@ public class Negotiator : MonoBehaviour
                     {
                         () => {
                             Debug.Log(string.Format("{0} has accepted your offer, they have now joined the team!", npc.Attributes.npcName));
+                            npc.IsAvailableForHire = false;
+                            HiringDisplay.GetComponent<HiringDisplayManager>().ShowHiringGrid();
                         }
                     }
                 }
@@ -104,6 +133,9 @@ public class Negotiator : MonoBehaviour
         DialogueManager.Instance.StartDialogue(Dialogue);
     }
 
+    /**
+     * Display dialogue that show applicants declining
+     */
     private void DeclineOfferDialogue()
     {
         var Dialogue = new Dialogue()
@@ -121,8 +153,38 @@ public class Negotiator : MonoBehaviour
                     },
                     sentenceChoiceActions = new UnityAction[]
                     {
+                        () => { Debug.Log(string.Format("{0} has rejected your offer, their frustration is {1}/{2}.", npc.Attributes.npcName, npc.Attributes.negotiationFrustration, EMPLOYEE_FRUSTRATION_THRESHOLD)); }
+                    }
+                }
+            }
+        };
+        DialogueManager.Instance.StartDialogue(Dialogue);
+    }
+
+    /**
+     * Display dialogue that show applicants ending negotiations
+     */
+    private void EndNegotiationDialogue()
+    {
+        var Dialogue = new Dialogue()
+        {
+            Sentences = new Sentence[]
+            {
+                new Sentence()
+                {
+                    icon = npc.Attributes.headshot,
+                    Title = npc.Attributes.npcName,
+                    sentenceLine = "I'm sorry, But I've decided to persur other career options. Have a good day.",
+                    sentenceChoices = new string[]
+                    {
+                        "Thank you for your time."
+                    },
+                    sentenceChoiceActions = new UnityAction[]
+                    {
                         () => {
-                            Debug.Log(string.Format("{0} has rejected your offer, you have {1} chances left.", npc.Attributes.npcName, ChancesLeftToHire));
+                            Debug.Log(string.Format("{0} has ended negotiations, their frustration is {1}/{2}.", npc.Attributes.npcName, npc.Attributes.negotiationFrustration, EMPLOYEE_FRUSTRATION_THRESHOLD));
+                            npc.IsAvailableForHire = false;
+                            HiringDisplay.GetComponent<HiringDisplayManager>().ShowHiringGrid();
                         }
                     }
                 }
@@ -131,6 +193,28 @@ public class Negotiator : MonoBehaviour
         DialogueManager.Instance.StartDialogue(Dialogue);
     }
 
+    /**
+     * Returns a random sentence that the npc would say regarding the offer of acceptance.
+     */
+    private string RandomAcceptingSentence(int Offer)
+    {
+        System.Random rnd = new System.Random();
+        string[] Sentences =
+        {
+            string.Format("I think I can come to terms with ${0}. I will accept!", Offer),
+            string.Format("${0}? We have a deal! Super excited to get going!", Offer),
+            string.Format("Finally, I have a job! Can't wait to tell mum! ${0} big ones woohoo!", Offer),
+            string.Format("I'd be very happy with ${0}. I'm willing to accept, thank you for your time.", Offer),
+            string.Format("${0} is just wonderful! I'll start on Monday.", Offer)
+        };
+
+        return Sentences[rnd.Next(Sentences.Length)];
+    }
+
+    /**
+     * Returns a random sentence for the npc to say declining the offer of paymemnt. Chooses from sets of responses determined by
+     * the ammount offered to look as if they are responding to the ammounts like a real person would.
+     */
     private string RandomDecliningSentence(int Offer, int ThresholdCost)
     {
         // Sentences to display if the offer is reasonable bu too low
@@ -154,7 +238,7 @@ public class Negotiator : MonoBehaviour
         {
             return NotCloseSentences[rnd.Next(NotCloseSentences.Length)];
         }
-        else
+        else // Offer is reasonable
         {
             return CloseSentences[rnd.Next(CloseSentences.Length)];
         }

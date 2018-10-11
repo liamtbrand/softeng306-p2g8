@@ -29,7 +29,7 @@ public class TileManager : MonoBehaviour {
 
     private void Update()
     {
-        if (GameManager.Instance.getBalance() < npcInfo.Attributes.cost)
+        if (GameManager.Instance.getBalance() < npcInfo.Attributes.cost || !npcInfo.IsAvailableForHire)
         {
             this.gameObject.GetComponent<Button>().interactable = false;
         }

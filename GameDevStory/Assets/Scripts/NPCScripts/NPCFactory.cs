@@ -110,6 +110,7 @@ public class NPCFactory : Singleton<NPCFactory> {
 
         npc.Attributes.cost = CalculateEmployeeCost(npc);
         npc.Attributes.costThreshold = CalculateCostThreshold(npc);
+        npc.Attributes.negotiationFrustration = 0;
 
         return npc;
     }
