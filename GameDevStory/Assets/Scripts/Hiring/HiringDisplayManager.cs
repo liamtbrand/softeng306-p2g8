@@ -27,6 +27,8 @@ public class HiringDisplayManager : MonoBehaviour {
     public void ShowHiringGrid()
     {
         DisableHireButton();
+        ApplicantViewPanel.SetActive(false);
+        NegotiatingPanel.SetActive(false);
         GridViewPanel.SetActive(true);
         ProjectManager.Instance.PauseProject();
     }
