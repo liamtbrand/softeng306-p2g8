@@ -7,6 +7,9 @@ using UnityEngine.Events;
 
 public class Negotiator : MonoBehaviour
 {
+    // TODO: deduct actuall offered ammount of money when purchasing
+    // TODO: re-enable hire button after hire.
+    // TODO: disable grid entry of npc after hire.
     public static NPCInfo npc;
     public static Button ClickedTile;
 
