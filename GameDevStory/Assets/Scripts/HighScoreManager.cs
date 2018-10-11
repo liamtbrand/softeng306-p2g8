@@ -19,13 +19,13 @@ public class HighScoreManager : Singleton<HighScoreManager> {
     private void Start()
     {
         _score = GameManager.Instance.getBalance();
+        Destroy(GameManager.Instance);
         ScoreDisplay.text = "$" + _score.ToString("f2");
         var sorted = from entry in _scores orderby entry.Value ascending select entry;
         foreach (var entry in sorted)
         {
             DisplayScore(name, _score);
         }
-        Destroy(GameManager.Instance);
     }
 
     public void AddNewScore()

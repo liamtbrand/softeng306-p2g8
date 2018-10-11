@@ -11,10 +11,11 @@ public class ProjectTimer : MonoBehaviour {
 	public Text progressText;
 	public Text projectText;
 	private ProjectManager progressScript;
+	private Project currentProject;
 	public Scenario[] scenarioArray;
-	private float maxTime = 10f;
+	private float timeMultiplier = 1.5f;
+	private float maxTime;
 	private float timer;
-	private float currentTime;
 	public bool paused = false;
     private int bugsCreated = 0;
     private int bugsSquashed = 0;
@@ -25,9 +26,11 @@ public class ProjectTimer : MonoBehaviour {
 	{
 		// Show the progress bar
 		progressScript = GetComponent<ProjectManager> ();
+		currentProject = progressScript.GetCurrentProject();
 		progressPanel.SetActive(true);
 
-		// Set the timer values
+		// Set the timer length depending on project length
+		maxTime = currentProject.getLength()*timeMultiplier;
 		timer = maxTime;
 		progressBar.value = 0;
 	}
@@ -59,10 +62,8 @@ public class ProjectTimer : MonoBehaviour {
 			
 			// Decrement timer
 			timer -= Time.deltaTime;
-			currentTime = timer;
 		
 			// Update progress bar
-			Project currentProject = progressScript.GetCurrentProject();
 			float progress = currentProject.getLength()*(maxTime-timer)/maxTime;
 			progressText.text = "Day: " + progress.ToString("f0") + "/" + currentProject.getLength();
 			progressBar.value = (maxTime-timer)/maxTime;
