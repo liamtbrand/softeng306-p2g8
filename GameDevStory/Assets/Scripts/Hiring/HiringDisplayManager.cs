@@ -33,6 +33,7 @@ public class HiringDisplayManager : MonoBehaviour {
 
     public void CloseHiringGrid()
     {
+        Debug.Log(LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().DeskAvailable());
         if (LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().DeskAvailable()) {
             EnableHireButton();
         }

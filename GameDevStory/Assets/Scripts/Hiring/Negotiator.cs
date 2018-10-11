@@ -14,7 +14,9 @@ public class Negotiator : MonoBehaviour
     public TextMeshProUGUI CostDisplay;
     public TextMeshProUGUI NameHeader;
     public Button OfferButton;
+    public GameObject HiringDisplayManager;
 
+    private int ChancesLeftToHire = 5;
 
     public void Start()
     {
@@ -60,7 +62,6 @@ public class Negotiator : MonoBehaviour
             NPCController.Instance.HireEmployee(npc);
             GameManager.Instance.changeBalance(npc.Attributes.cost * -1);
             ClickedTile.interactable = false;
-            OfferButton.interactable = false;
 
             AcceptOfferDialogue();
         }
@@ -68,6 +69,8 @@ public class Negotiator : MonoBehaviour
         {
             // Debugging
             Debug.Log(string.Format("Offer of {0} is NOT sufficient, threshold was {1}", offer.ToString(), offerThreshold.ToString()));
+
+            DeclineOfferDialogue();
         }
     }
 
@@ -81,14 +84,16 @@ public class Negotiator : MonoBehaviour
                 {
                     icon = npc.Attributes.headshot,
                     Title = npc.Attributes.npcName,
-                    sentenceLine = "<<THIS IS A MEME RESPONSE DO NOT LET THIS GET THROUGH TO THE FINAL SUBMISSION. IT SHOULDN'T BECAUSE I'M STILL WORKING ON THIS PART BUT IF IT SNEAKS THROUGH BLAME BUSTER",
+                    sentenceLine = "I've decided, I'm going to accept! I'm looking forward to joining the team.",
                     sentenceChoices = new string[]
                     {
-                        "OK"
+                        "Great to have you on board!"
                     },
                     sentenceChoiceActions = new UnityAction[]
                     {
-                        FinishNegotiatingAndHire
+                        () => {
+                            Debug.Log(string.Format("{0} has accepted your offer, they have now joined the team!", npc.Attributes.npcName));
+                        }
                     }
                 }
             }
@@ -96,8 +101,30 @@ public class Negotiator : MonoBehaviour
         DialogueManager.Instance.StartDialogue(Dialogue);
     }
 
-    public void FinishNegotiatingAndHire()
+    private void DeclineOfferDialogue()
     {
-        Debug.Log(string.Format("{0} has accepted your offer, they have now joined the team!", npc.Attributes.npcName));
+        var Dialogue = new Dialogue()
+        {
+            Sentences = new Sentence[]
+            {
+                new Sentence()
+                {
+                    icon = npc.Attributes.headshot,
+                    Title = npc.Attributes.npcName,
+                    sentenceLine = "I'm sorry, but I expect to be paid a bit more than that!",
+                    sentenceChoices = new string[]
+                    {
+                        "Okay, let's talk."
+                    },
+                    sentenceChoiceActions = new UnityAction[]
+                    {
+                        () => {
+                            Debug.Log(string.Format("{0} has rejected your offer, you have {1} chances left.", npc.Attributes.npcName, ChancesLeftToHire));
+                        }
+                    }
+                }
+            }
+        };
+        DialogueManager.Instance.StartDialogue(Dialogue);
     }
 }
