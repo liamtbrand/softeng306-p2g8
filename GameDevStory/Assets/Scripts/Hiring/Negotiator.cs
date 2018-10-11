@@ -7,8 +7,6 @@ using UnityEngine.Events;
 
 public class Negotiator : MonoBehaviour
 {    
-    // TODO: make max slider value not exceed max bank account value
-
     public static NPCInfo npc;
     public static Button ClickedTile;
 
@@ -77,15 +75,15 @@ public class Negotiator : MonoBehaviour
         else // Offer is less that threshold
         {
             // Check whether frustration threshold has been met
-            if (npc.Attributes.negotiationFrustration < EMPLOYEE_FRUSTRATION_THRESHOLD) 
-            {
-                // If threshold has not been met continue negotiating
-                if (offer < 0.7 * offerThreshold)
+            if (npc.Attributes.negotiationFrustration < EMPLOYEE_FRUSTRATION_THRESHOLD)
+            {// If threshold has not been met continue negotiating
+
+                if (offer < 0.7 * offerThreshold) // If offer is far below their threshold
                 {
                     npc.Attributes.negotiationFrustration += 2;
                     Debug.Log(string.Format("Offer of {0} is FAR BELOW sufficient, threshold was {1}", offer.ToString(), offerThreshold.ToString()));
                 }
-                else
+                else // Offer is reasonable close to their threshold
                 {
                     npc.Attributes.negotiationFrustration += 1;
                     Debug.Log(string.Format("Offer of {0} is NOT QUITE sufficient, threshold was {1}", offer.ToString(), offerThreshold.ToString()));
@@ -217,7 +215,7 @@ public class Negotiator : MonoBehaviour
      */
     private string RandomDecliningSentence(int Offer, int ThresholdCost)
     {
-        // Sentences to display if the offer is reasonable bu too low
+        // Sentences to display if the offer is reasonable but too low
         string[] CloseSentences = 
         {
             string.Format("${0}? I'm sorry, but I expect to be paid a bit more than that!", Offer),
