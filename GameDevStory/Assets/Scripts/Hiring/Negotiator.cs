@@ -7,10 +7,8 @@ using UnityEngine.Events;
 
 public class Negotiator : MonoBehaviour
 {
-    // TODO: deduct actuall offered ammount of money when purchasing
     // TODO: re-enable hire button after hire.
     // TODO: disable grid entry of npc after hire.
-    // TODO: make negotiation frustration an npc field
     public static NPCInfo npc;
     public static Button ClickedTile;
 
@@ -69,7 +67,7 @@ public class Negotiator : MonoBehaviour
 
             // Offer is sufficient, applicant can be hired.
             NPCController.Instance.HireEmployee(npc);
-            GameManager.Instance.changeBalance(npc.Attributes.cost * -1);
+            GameManager.Instance.changeBalance(offer * -1);
             ClickedTile.interactable = false;
 
             AcceptOfferDialogue();
