@@ -129,12 +129,14 @@ public class ProjectManager : Singleton<ProjectManager>
         // determine bug statistics 
         var bugsMissed = timerScript.GetBugsCreated() - timerScript.GetBugsSquashed();
 
+        var completedProject = projects[selectedProject];
+
         // Update project menu
         UpdateProjectMenu(selectedProject);
 
         var diversityScore = StaffDiversityManager.Instance.DiversityScore;
         // Calculate project profit
-        var profit = CalculateProjectProfit(selectedProject, bugsMissed, diversityScore);
+        var profit = CalculateProjectProfit(completedProject, bugsMissed, diversityScore);
 
         // Calculate project stars
         //int stars = CalculateProjectStars(selectedProject);
@@ -162,7 +164,7 @@ public class ProjectManager : Singleton<ProjectManager>
                            " the future by making sure your team has a diverse range of perspectives and people.\n");
         } else if (StaffDiversityManager.Instance.DiversityScore >= 0.2)
         {
-            builder.Append("The customer found that your team's perspective was narrow. Maybe a change in the composition" +
+            builder.Append("The customer found that your team's perspective was narrow. Maybe a change in the composition " +
                            "of your team could improve this?\n");
         }
         else
@@ -205,10 +207,9 @@ public class ProjectManager : Singleton<ProjectManager>
     }
     
     // Calculates the profit from a project
-    double CalculateProjectProfit(string projectName, int bugsMissed, double diversityScore)
+    double CalculateProjectProfit(Project project, int bugsMissed, double diversityScore)
     {
         // Get base amount based on difficulty
-        var project = projects[projectName];
         var baseValue = 0.0;
 
         var npcStatPenalty = (1 - (NPCAverageStat() / NPCController.Instance.NpcInstances.Count()) / 100);
