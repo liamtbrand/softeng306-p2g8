@@ -13,6 +13,7 @@ public class ProjectManager : Singleton<ProjectManager>
 {
     private ProjectTimer timerScript;
     private ProjectDisplayManager displayScript;
+    private LoadScene loadScript;
     public GameObject projectMenu;
 
     private static Dictionary<string, Project> projects;
@@ -46,6 +47,19 @@ public class ProjectManager : Singleton<ProjectManager>
         if (projects == null)
         {
             projects = ProjectCreator.Instance.InitialiseProjects();
+        }
+
+        // Load end of game
+        if (projects.Count == 0)
+        {
+            // TODO: change to cutscene
+            /* if (GameManager.Instance.getBalance() > 0) {
+                // Bought out cut scene
+            } else {
+                // Bankrupt cut scene
+            }*/
+            loadScript = GetComponent<LoadScene>();
+            loadScript.LoadHighScoreScene();
         }
 
         // Display projects
