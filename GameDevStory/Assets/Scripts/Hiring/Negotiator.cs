@@ -233,13 +233,8 @@ public class Negotiator : MonoBehaviour
         };
 
         System.Random rnd = new System.Random(); ;
-        if (OfferIsVeryLow) // Offer is not even close to threshold
-        {
-            return NotCloseSentences[rnd.Next(NotCloseSentences.Length)];
-        }
-        else // Offer is reasonable
-        {
-            return CloseSentences[rnd.Next(CloseSentences.Length)];
-        }
+        return OfferIsVeryLow 
+            ? NotCloseSentences[rnd.Next(NotCloseSentences.Length)] 
+            : CloseSentences[rnd.Next(CloseSentences.Length)];
     }
 }
