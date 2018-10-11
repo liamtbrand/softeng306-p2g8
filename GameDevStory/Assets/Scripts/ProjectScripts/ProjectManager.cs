@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using NPCScripts.StaffStateScripts;
 using ProjectScripts;
@@ -146,24 +148,58 @@ public class ProjectManager : Singleton<ProjectManager>
             builder.Append("The customer is happy with the functionality of your product, and wasn't able to find any major bugs.\n");
         }
 
+        if (NPCAverageStat() > 75)
+        {
+            builder.Append("Overall, the customer was happy with the quality of your product.");
+        } else if (NPCAverageStat() > 50)
+        {
+            builder.Append("The customer found the quality of your product to be acceptable");
+        } else if (NPCAverageStat() > 25)
+        {
+            builder.Append(
+                "The customer found the quality of your product to be lacking. Perhaps you need to hire more highly skilled staff?");
+        }
+        else
+        {
+            builder.Append(
+                "The customer found the quality of your product to be poor. You need to hire more highly skilled staff to improve future product quality.");
+        }
+
         //builder.Append("Otherwise, the customer was happy with your work on "+project);
 
         return builder.ToString();
     }
-
-    // Calculates the performance of a project
-    int CalculateProjectStars(string project)
-    {
-        // TODO: Calculate stars based on diversity
-        return 3;
-    }
-
+    
     // Calculates the profit from a project
-    double CalculateProjectProfit(string project, int bugsMissed, double diversityScore)
+    double CalculateProjectProfit(string projectName, int bugsMissed, double diversityScore)
     {
-        // TODO: Don't hardcode bug penalty
+        // Get base amount based on difficulty
+        var project = projects[projectName];
+        var baseValue = 0.0;
+
+        var npcStatPenalty = (1 - (NPCAverageStat() / NPCController.Instance.NpcInstances.Count()) / 100);
+        
+        switch (project.getDifficulty())
+        {
+            case ProjectDifficulty.Tutorial:
+                baseValue = 100.0;
+                break;
+            case ProjectDifficulty.Easy:
+                baseValue = 150.0;
+                break;
+            case ProjectDifficulty.Medium:
+                baseValue = 250.0;
+                break;
+            case ProjectDifficulty.Hard:
+                baseValue = 325.0;
+                break;
+        }
+
+        var bugPenalty = (bugsMissed > 10) ? 1 : (bugsMissed / 10.0);
+        
         // DiversityStore DECREASES with INCREASED diversity
-        return (100.00 - 10 * bugsMissed) * (1 - (diversityScore*0.2));
+        // BugPenalty INCREASES with more bugs
+        return (baseValue) * (1 - (diversityScore*0.2)) * (1 - bugPenalty*0.2) * (1 - npcStatPenalty*0.3);
     }
 
     // Updates the project menu
@@ -215,5 +251,19 @@ public class ProjectManager : Singleton<ProjectManager>
                 }
             }
         }
+    }
+
+    double NPCAverageStat()
+    {
+        var npcsAverageStat = 0.0;
+        
+        // Calculate staff ability
+        foreach (var npcInfo in NPCController.Instance.NpcInstances.Values)
+        {
+            npcsAverageStat += (npcInfo.Stats.Communication + npcInfo.Stats.Creativity + npcInfo.Stats.Design +
+                                npcInfo.Stats.Technical + npcInfo.Stats.Testing)/5.0;
+        }
+
+        return npcsAverageStat;
     }
 }

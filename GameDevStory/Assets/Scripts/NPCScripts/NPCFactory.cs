@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 /// Because NPCs need to be hired, they are not initially instantiated in
 /// the game world. To hire an NPC the NPC's attributes and statistics need
