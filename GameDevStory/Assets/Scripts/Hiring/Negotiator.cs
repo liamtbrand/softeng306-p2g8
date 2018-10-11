@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class Negotiator : MonoBehaviour
 {
-    // TODO: re-enable hire button after hire.
+    public GameObject HiringDisplay;
     // TODO: disable grid entry of npc after hire.
     public static NPCInfo npc;
     public static Button ClickedTile;
@@ -94,7 +94,6 @@ public class Negotiator : MonoBehaviour
             else // Applicant frustration threshold has been met
             {
                 EndNegotiationDialogue();
-                // TODO: end negotiating screen.
             }
             
         }
@@ -120,7 +119,10 @@ public class Negotiator : MonoBehaviour
                     },
                     sentenceChoiceActions = new UnityAction[]
                     {
-                        () => { Debug.Log(string.Format("{0} has accepted your offer, they have now joined the team!", npc.Attributes.npcName)); }
+                        () => {
+                            Debug.Log(string.Format("{0} has accepted your offer, they have now joined the team!", npc.Attributes.npcName));
+                            HiringDisplay.GetComponent<HiringDisplayManager>().ShowHiringGrid();
+                        }
                     }
                 }
             }
@@ -156,6 +158,9 @@ public class Negotiator : MonoBehaviour
         DialogueManager.Instance.StartDialogue(Dialogue);
     }
 
+    /**
+     * Display dialogue that show applicants ending negotiations
+     */
     private void EndNegotiationDialogue()
     {
         var Dialogue = new Dialogue()
@@ -173,7 +178,10 @@ public class Negotiator : MonoBehaviour
                     },
                     sentenceChoiceActions = new UnityAction[]
                     {
-                        () => { Debug.Log(string.Format("{0} has ended negotiations, their frustration is {1}/{2}.", npc.Attributes.npcName, npc.Attributes.negotiationFrustration, EMPLOYEE_FRUSTRATION_THRESHOLD)); }
+                        () => {
+                            Debug.Log(string.Format("{0} has ended negotiations, their frustration is {1}/{2}.", npc.Attributes.npcName, npc.Attributes.negotiationFrustration, EMPLOYEE_FRUSTRATION_THRESHOLD));
+                            HiringDisplay.GetComponent<HiringDisplayManager>().ShowHiringGrid();
+                        }
                     }
                 }
             }
