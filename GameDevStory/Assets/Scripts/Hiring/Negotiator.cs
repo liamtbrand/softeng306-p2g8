@@ -7,6 +7,9 @@ using UnityEngine.Events;
 
 public class Negotiator : MonoBehaviour
 {
+    // TODO: deduct actuall offered ammount of money when purchasing
+    // TODO: re-enable hire button after hire.
+    // TODO: disable grid entry of npc after hire.
     public static NPCInfo npc;
     public static Button ClickedTile;
 
@@ -111,7 +114,7 @@ public class Negotiator : MonoBehaviour
                 {
                     icon = npc.Attributes.headshot,
                     Title = npc.Attributes.npcName,
-                    sentenceLine = "I'm sorry, but I expect to be paid a bit more than that!",
+                    sentenceLine = RandomDecliningSentence((int) PaySlider.value, npc.Attributes.costThreshold),
                     sentenceChoices = new string[]
                     {
                         "Okay, let's talk."
@@ -126,5 +129,34 @@ public class Negotiator : MonoBehaviour
             }
         };
         DialogueManager.Instance.StartDialogue(Dialogue);
+    }
+
+    private string RandomDecliningSentence(int Offer, int ThresholdCost)
+    {
+        // Sentences to display if the offer is reasonable bu too low
+        string[] CloseSentences = 
+        {
+            string.Format("${0}? I'm sorry, but I expect to be paid a bit more than that!", Offer),
+            string.Format("Hmm... I'm not sure ${0} will be quite enough to support me, sorry.", Offer),
+            string.Format("May we continue negotiating? I'd like to push for a little higher than ${0}.", Offer)
+        };
+
+        // Sentences to display if the offer is unreasonably low.
+        string[] NotCloseSentences =
+        {
+            string.Format("${0}?? Thats insulting! I'm sorry but I'll have to ask for a lot more.", Offer),
+            string.Format("Not even close I'm afraid. I'll beed a lot more than ${0} to consider.", Offer),
+            string.Format("I'm not joking around! I'm serious about this opportunity but ${0} as an offer makes me worry.", Offer)
+        };
+
+        System.Random rnd = new System.Random(); ;
+        if (Offer < 0.7 * ThresholdCost) // Offer is not even close to threshold
+        {
+            return NotCloseSentences[rnd.Next(NotCloseSentences.Length)];
+        }
+        else
+        {
+            return CloseSentences[rnd.Next(CloseSentences.Length)];
+        }
     }
 }
