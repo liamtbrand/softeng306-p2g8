@@ -47,9 +47,37 @@ public class JobAdManager : MonoBehaviour {
 
     public void Advertise() {
         List<String> values = GetDropdownValues();
-        double proportion = GetFemaleApplicantProportion(values);
+        int proportion = (int)(GetFemaleApplicantProportion(values)*10);
+
+        int numberOfFemales = 0;
+        if (proportion <= 3)
+        {
+            numberOfFemales = 1;
+        }
+        else if (proportion == 4)
+        {
+            numberOfFemales = 2;
+        }
+        else if (proportion == 5)
+        {
+            numberOfFemales = 3;
+        }
+        else if (proportion == 6)
+        {
+            numberOfFemales = 3;
+        }
+        else if (proportion == 7)
+        {
+            numberOfFemales = 4;
+        }
+        else if (proportion >= 8)
+        {
+            numberOfFemales = 5;
+        }
+
+        NPCFactory.Instance.SetNumberOfFemales(numberOfFemales);
+
         Debug.Log("Proportion is: " + proportion);
-        // TODO: Link this to percentage of female / male applicants in hiring grid
     }
 
     public List<string> GetDropdownValues() 
