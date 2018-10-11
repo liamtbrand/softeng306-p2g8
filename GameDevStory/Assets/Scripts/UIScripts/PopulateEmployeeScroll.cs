@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
+using TMPro;
 
 public class PopulateEmployeeScroll : MonoBehaviour {
 
@@ -12,9 +14,10 @@ public class PopulateEmployeeScroll : MonoBehaviour {
 
     public void Reload()
     {
-        for (int i = 0; i < 10; i++)
+        foreach(KeyValuePair<GameObject, NPCInfo> NpcPair in NPCController.Instance.NpcInstances)
         {
             var copy = Instantiate(EmployeeItemTemplate);
+            copy.GetComponent<TextMeshProUGUI>().text = NpcPair.Value.Attributes.npcName;
             copy.transform.parent = Content.transform;
         }
     }
