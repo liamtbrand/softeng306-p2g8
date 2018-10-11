@@ -14,6 +14,7 @@ public class Negotiator : MonoBehaviour
     public TextMeshProUGUI CostDisplay;
     public TextMeshProUGUI NameHeader;
     public Button OfferButton;
+    public GameObject HiringDisplayManager;
 
     private int ChancesLeftToHire = 5;
 

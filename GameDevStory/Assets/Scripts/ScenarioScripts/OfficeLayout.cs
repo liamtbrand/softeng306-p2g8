@@ -12,7 +12,7 @@ public class OfficeLayout : MonoBehaviour
 {
 	public CoordinateSystem coordinateSystem;
 
-    public Vector2[] desks;                          // Default to having three desks in these positions.
+    public Vector2[] desks;                          // Default to having four desks in these positions.
 
     public List<GameObject> instantiatedDeskList = new List<GameObject>();
 
