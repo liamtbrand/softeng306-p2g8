@@ -62,7 +62,6 @@ public class Negotiator : MonoBehaviour
             NPCController.Instance.HireEmployee(npc);
             GameManager.Instance.changeBalance(npc.Attributes.cost * -1);
             ClickedTile.interactable = false;
-            OfferButton.interactable = false;
 
             AcceptOfferDialogue();
         }
