@@ -41,10 +41,35 @@ public class NPCFactory : Singleton<NPCFactory> {
     public int MinEmployeeCost = 50;
     public int MaxEmployeeCost = 100;
 
+    public double NumberOfFemales = 0;
+    public int FemaleCount = 0;                 // Remember how many females we
+                                                // have produces since the last
+                                                // hiring advertisement
+
+    public void SetNumberOfFemales(int Females)
+    {
+        FemaleCount = 0;
+        NumberOfFemales = Females;
+    }
+
     // selects a pre-made npc at random from the pool of potential npcs
     public NPCAttributes SelectRandomNPC()
     {
         return Npcs[Random.Range(0,Npcs.Count)];
+    }
+
+    // selects a pre-made npc at random from the pool of potential npcs
+    // such that the npc is of the given gender.
+    public NPCAttributes SelectRandomNPC(NPCAttributes.Gender gender)
+    {
+        List<NPCAttributes> subSelection = new List<NPCAttributes>();
+        foreach(NPCAttributes attr in Npcs)
+        {
+            if(attr.gender == gender) {
+                subSelection.Add(attr);
+            }
+        }
+        return subSelection[Random.Range(0, subSelection.Count)];
     }
 
     // generates a stats object with all fields randomly initialized
@@ -66,7 +91,11 @@ public class NPCFactory : Singleton<NPCFactory> {
     public NPCInfo CreateNPCWithRandomizedStats()
     {
         NPCStats randomStats = GetRandomStats();
-        NPCAttributes randomNPC = SelectRandomNPC();
+        NPCAttributes randomNPC = SelectRandomNPC(
+            FemaleCount++ > NumberOfFemales
+            ? NPCAttributes.Gender.MALE
+            : NPCAttributes.Gender.FEMALE
+        );
 
         NPCInfo npc = new NPCInfo()
         {
