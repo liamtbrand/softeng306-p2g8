@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1779643079124980}
+  m_IsPrefabAsset: 1
+--- !u!1 &1779643079124980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4617458224645656}
+  - component: {fileID: 114893646334644754}
+  m_Layer: 0
+  m_Name: MulanInformation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4617458224645656
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1779643079124980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.067181714, y: -0.10184057, z: 339.14532}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114893646334644754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1779643079124980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190ed0ed956106d4e9c74ad1edfc8101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Mulan
+  age: 19
+  gender: 1
+  biography: I am young, but I am capable. I have recently graduated with a bdegree
+    in computer science and believe I have what it takes to make it in the software
+    industry. I dream of owning a unicorn - my very own billion-dolar company. But
+    this is a good stepping stone for me, I guess.
+  animationController: {fileID: 22100000, guid: 659f68c357d684857bc344349f1eebc4,
+    type: 2}
+  cost: 72
+  costThreshold: 66
+  negotiationFrustration: 0
+  headshot: {fileID: 21300000, guid: b76cbd7d13a7648418652279b303231f, type: 3}

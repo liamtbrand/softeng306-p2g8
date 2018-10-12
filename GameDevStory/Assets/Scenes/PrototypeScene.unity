@@ -658,6 +658,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224333707988064256, guid: a7e5294496f2a9e4f92f1d898a6584d4,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7e5294496f2a9e4f92f1d898a6584d4, type: 2}
   m_IsPrefabAsset: 0
@@ -2625,6 +2630,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 224490243670471716, guid: 3fc95124b82cc47c68f6020b0ccc2d59,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.500107
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fc95124b82cc47c68f6020b0ccc2d59, type: 2}
   m_IsPrefabAsset: 0
@@ -2906,7 +2916,7 @@ Prefab:
     - target: {fileID: 114940626066277388, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
         type: 2}
       propertyPath: Npcs.Array.size
-      value: 15
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 114653190065410948, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
         type: 2}
@@ -3137,6 +3147,48 @@ Prefab:
       propertyPath: Npcs.Array.data[14]
       value: 
       objectReference: {fileID: 114554595374636294, guid: 9c0b5cfdb775f49468814a5a526d3154,
+        type: 2}
+    - target: {fileID: 114940626066277388, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: Npcs.Array.data[15]
+      value: 
+      objectReference: {fileID: 114656098337962246, guid: 4330c2c1bc55c4cba9ae3d244b8e0133,
+        type: 2}
+    - target: {fileID: 114940626066277388, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: Npcs.Array.data[16]
+      value: 
+      objectReference: {fileID: 114961288448309874, guid: 1774614923c514f909e82a1dc6d2aa96,
+        type: 2}
+    - target: {fileID: 114940626066277388, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: Npcs.Array.data[17]
+      value: 
+      objectReference: {fileID: 114998429189228360, guid: 973165da3617e4a4d85f963d9db3a513,
+        type: 2}
+    - target: {fileID: 114940626066277388, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: Npcs.Array.data[18]
+      value: 
+      objectReference: {fileID: 114757813346260658, guid: f6ab2839169924a31ad93d79f827e459,
+        type: 2}
+    - target: {fileID: 114940626066277388, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: Npcs.Array.data[19]
+      value: 
+      objectReference: {fileID: 114893646334644754, guid: d922d0c27581347c49855295fa5394c4,
+        type: 2}
+    - target: {fileID: 114940626066277388, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: Npcs.Array.data[20]
+      value: 
+      objectReference: {fileID: 114547648921168520, guid: b24e6ff44ad6d4153890f12db2a4bdf7,
+        type: 2}
+    - target: {fileID: 114940626066277388, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: Npcs.Array.data[21]
+      value: 
+      objectReference: {fileID: 114257566186894286, guid: efbc405d3f5da429fbf9bd2d57c17f26,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}

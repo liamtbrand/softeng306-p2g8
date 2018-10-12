@@ -1,9 +1,7 @@
 fileFormatVersion: 2
-guid: 19f4c14081dec4df5b6e047bc6457cc6
+guid: 0a470d8243a984c5b99f1d75234f4135
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Katrina Whatson_Coding_0
-    21300002: Katrina Whatson_Coding_1
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -42,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,51 +104,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Katrina Whatson_Coding_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 2
-        width: 17
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: feb4bedb6c58e46b1bddc4160f7f4dd0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Katrina Whatson_Coding_1
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 2
-        width: 17
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6369348efa8749758b58eabb5afa26d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8b4116322660e444bbf2607ae8a9e658
+    spriteID: 4ed7e519f7ac14bc181d1944a53620e8
     vertices: []
     indices: 
     edges: []

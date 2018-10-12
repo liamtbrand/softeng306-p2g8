@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 19f4c14081dec4df5b6e047bc6457cc6
+guid: cff86a32e9e54426ea39a2b7b2e3f817
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Katrina Whatson_Coding_0
-    21300002: Katrina Whatson_Coding_1
+    21300000: Belle_Coding_0
+    21300002: Belle_Coding_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -108,12 +108,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Katrina Whatson_Coding_0
+      name: Belle_Coding_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 2
         y: 2
-        width: 17
+        width: 15
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -122,18 +122,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: feb4bedb6c58e46b1bddc4160f7f4dd0
+      spriteID: 18d70832f1bfa433594bbe9d0216d6b1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Katrina Whatson_Coding_1
+      name: Belle_Coding_1
       rect:
         serializedVersion: 2
-        x: 21
+        x: 22
         y: 2
-        width: 17
+        width: 15
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6369348efa8749758b58eabb5afa26d
+      spriteID: 2865c162f772244ae88b71ffaed3269f
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8b4116322660e444bbf2607ae8a9e658
+    spriteID: d742e41409e7844cda3d2a16bfb1b638
     vertices: []
     indices: 
     edges: []

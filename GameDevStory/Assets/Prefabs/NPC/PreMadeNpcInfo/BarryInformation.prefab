@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1635889954632838}
+  m_IsPrefabAsset: 1
+--- !u!1 &1635889954632838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4124142584918786}
+  - component: {fileID: 114656098337962246}
+  m_Layer: 0
+  m_Name: BarryInformation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4124142584918786
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635889954632838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.067181714, y: -0.10184057, z: 339.14532}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114656098337962246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635889954632838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190ed0ed956106d4e9c74ad1edfc8101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Barry
+  age: 65
+  gender: 0
+  biography: Computers are useless if they do not provide a great user experience.
+    I am expert in how humand interact with computers and vice versa, specialising
+    in UX design. For the past 20 years I have been teaching and I am eager to get
+    back into the industry.
+  animationController: {fileID: 22100000, guid: 4ed0000ef4f124a7ea75d6263888fb68,
+    type: 2}
+  cost: 65
+  costThreshold: 63
+  negotiationFrustration: 0
+  headshot: {fileID: 21300000, guid: efc822f5d59034b9a8b8704179181f69, type: 3}
