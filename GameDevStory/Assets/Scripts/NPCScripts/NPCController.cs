@@ -68,9 +68,9 @@ public class NPCController : Singleton<NPCController> {
 
         GameObject buttonContainer = ShowNotification(onBugSquashed, npc, bugToShow);
 
-        // register bug to disappear after two second if not clicked
-        StartCoroutine(TearDownButtonAfterDelay(npc.GetComponent<NPCBehaviour>(), buttonContainer, 2));
-
+        // register bug to disappear after two seconds if not clicked. If project is paused (i.e. a menu is shown over the scene),
+        // these destroyed bugs won't be counted as missed
+        StartCoroutine(TearDownButtonAfterDelay(npc.GetComponent<NPCBehaviour>(), buttonContainer, 2, onBugSquashed));
     }
 
 
@@ -185,9 +185,13 @@ public class NPCController : Singleton<NPCController> {
     }
 
     // to be launched as a coroutine when we want a button to disappear after a certain time
-    private IEnumerator TearDownButtonAfterDelay(NPCBehaviour npc, GameObject button, float delayInSeconds)
+    private IEnumerator TearDownButtonAfterDelay(NPCBehaviour npc, GameObject button, float delayInSeconds, Action isPausedCallback)
     {
         yield return new WaitForSeconds(delayInSeconds);
+
+        if (ProjectManager.Instance.IsPaused())
+            isPausedCallback.Invoke();
+       
         npc.SetHasNotification(false);
         Destroy(button);
     }
