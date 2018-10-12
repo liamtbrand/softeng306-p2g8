@@ -24,7 +24,12 @@ public class GameManager : Singleton<GameManager> {
 
     private static bool created = false;
     private double moneyBalance;
-    
+
+    public double MoneyBalance
+    {
+        get { return moneyBalance; }
+    }
+
     public GameScene gameScene;
 
     public MoneyCounterAnimator MoneyCounter;

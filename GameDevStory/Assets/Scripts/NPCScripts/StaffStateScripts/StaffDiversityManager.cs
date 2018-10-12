@@ -22,8 +22,8 @@ namespace NPCScripts.StaffStateScripts
         private const double GenderDialogueThreshold = -10;
         private const double AgeDialogueThreshold = -15;
 
-        private const double GenderNormalRecovery = -2;
-        private const double GenderIgnoreRecovery = -5;
+        private const double NormalRecovery = -2;
+        private const double IgnoreRecovery = -5;
 
         private bool _currentlyDisplaying = false;
 
@@ -279,8 +279,16 @@ namespace NPCScripts.StaffStateScripts
                             delegate()
                             {
                                 Debug.Log("Normal option picked");
-                                npc.MentalState.GenderDiversityScore = GenderNormalRecovery;
-                                npc.MentalState.StaffStateGender = nextState;
+                                if (isAgeDialogue)
+                                {
+                                    npc.MentalState.StaffStateAge = nextState;
+                                    npc.MentalState.AgeDiversityScore = NormalRecovery;
+                                }
+                                else
+                                {
+                                    npc.MentalState.StaffStateGender = nextState;
+                                    npc.MentalState.GenderDiversityScore = NormalRecovery;
+                                }
                                 Debug.Log("Setting state to " + npc.MentalState.StaffStateGender);
                                 ProjectManager.Instance.ResumeProject();
                                 _currentlyDisplaying = false;
@@ -288,9 +296,16 @@ namespace NPCScripts.StaffStateScripts
                             delegate()
                             {
                                 Debug.Log("Ignore option picked");
-                                npc.MentalState.GenderDiversityScore = GenderIgnoreRecovery;
-                                npc.MentalState.StaffStateGender = nextState;
-                                Debug.Log("Setting state to " + npc.MentalState.StaffStateGender);
+                                if (isAgeDialogue)
+                                {
+                                    npc.MentalState.StaffStateAge = nextState;
+                                    npc.MentalState.AgeDiversityScore = IgnoreRecovery;
+                                }
+                                else
+                                {
+                                    npc.MentalState.StaffStateGender = nextState;
+                                    npc.MentalState.GenderDiversityScore = IgnoreRecovery;
+                                }                                Debug.Log("Setting state to " + npc.MentalState.StaffStateGender);
                                 ProjectManager.Instance.ResumeProject();
                                 _currentlyDisplaying = false;
                             },
