@@ -24,9 +24,12 @@ public class MoneyCounterAnimator : MonoBehaviour {
 		} else if (Math.Abs(currentValue - Target) < 10)
 		{
 			stepSize = 0.1;
+		} else if (Math.Abs(currentValue - Target) <= 0.1)
+		{
+			MoneyCounter.text = "$"+(Target).ToString();
+			return;
 		}
 		
-		// TODO: This breaks if you use cents, as it will just oscillate
 		if (currentValue < Target)
 		{
 			MoneyCounter.text = "$"+(currentValue + stepSize);

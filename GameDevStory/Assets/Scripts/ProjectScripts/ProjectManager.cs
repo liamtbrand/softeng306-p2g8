@@ -168,10 +168,8 @@ public class ProjectManager : Singleton<ProjectManager>
     // Calculates the performance of a project
     private string GetProjectFeedback(string project)
     {
-        // TODO: Get feedback based on diversity
         var builder = new StringBuilder();
 
-        // TODO: Change these strings
         if (StaffDiversityManager.Instance.DiversityScore >= 0.5)
         {
             builder.Append("The customer found that your team's perspective was very narrow. You could improve this in" +
