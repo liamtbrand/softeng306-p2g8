@@ -1499,7 +1499,7 @@ Prefab:
     - target: {fileID: 224935326972726722, guid: e4079cbbcc5773145a09a9a978e9fa0a,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 10.716982
+      value: 4.6159267
       objectReference: {fileID: 0}
     - target: {fileID: 224935326972726722, guid: e4079cbbcc5773145a09a9a978e9fa0a,
         type: 2}
@@ -2903,6 +2903,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114940626066277388, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: Npcs.Array.size
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 114653190065410948, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
         type: 2}
       propertyPath: desks.Array.size
@@ -3127,6 +3132,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114940626066277388, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+        type: 2}
+      propertyPath: Npcs.Array.data[14]
+      value: 
+      objectReference: {fileID: 114554595374636294, guid: 9c0b5cfdb775f49468814a5a526d3154,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dbe0fee322f3c743966ee1d83a7fc06, type: 2}
   m_IsPrefabAsset: 0
