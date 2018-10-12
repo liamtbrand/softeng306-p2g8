@@ -5367,7 +5367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1199bde4a9e35a54b85ae111a6ec2d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HireButton: {fileID: 529573815}
+  HireButton: {fileID: 1764335403}
   HiringMainMenu: {fileID: 1394559177}
   GridViewPanel: {fileID: 2133209319}
   ApplicantViewPanel: {fileID: 238724954}
@@ -5739,6 +5739,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224842607578555216, guid: 322eeb28967b1433c8d6f68c3d0d5f4c,
     type: 2}
   m_PrefabInternal: {fileID: 1634849593}
+--- !u!114 &1764335403 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114748354844819420, guid: fa7c16f81aa53ad4894cf092327d4d36,
+    type: 2}
+  m_PrefabInternal: {fileID: 1251366924}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1766892870 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1433498927077146, guid: 991eeb235c6ab4cc8a13e210ca28254d,

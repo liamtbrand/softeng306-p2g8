@@ -31,6 +31,11 @@ public class HiringDisplayManager : MonoBehaviour {
 
     public void ShowHiringMenu()
     {
+        // whenever hiring menu is shown, check if we have space for another employee
+        if (LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().DeskAvailable())
+            EnableHireButton();
+        else
+            DisableHireButton();
         HiringMainMenu.SetActive(true);
         ProjectManager.Instance.PauseProject();
     }
