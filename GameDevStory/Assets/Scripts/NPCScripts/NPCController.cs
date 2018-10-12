@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class NPCController : Singleton<NPCController> {
 
     public GameObject npcTemplate; // the generic npc template to instantiate
-    public GameObject notificationButton;
+    public GameObject scenarioButton;
     public GameObject[] bugButtons;
 
     private readonly Dictionary<GameObject, NPCInfo> _npcInstances = new Dictionary<GameObject, NPCInfo>(); // maintain a reference to each npc in the scene, along with their info
@@ -21,6 +21,7 @@ public class NPCController : Singleton<NPCController> {
     private const float NOTIFICATION_HEIGHT_OFFSET = 0.22f;
 
     private static int npcsToAdd = 2;										// TODO: Don't hardcode this
+    private bool dialogueIsActive = false; // TODO
 
     // Use this for initialization
     void Start ()
@@ -31,33 +32,17 @@ public class NPCController : Singleton<NPCController> {
         }
     }
 
-    // Sends a notification to an npc that the player should click on. On click,
-    // the notification will be hidden and the provided action will be invoked
-    //TODO Generalise to accept any button sprite and provide bug behaviour
-    public void ShowNotification(Action a, GameObject npc)
+    // shows a scenario notification above a specific npc
+    public void ShowScenarioNotification(Action a, GameObject npc)
     {
-
-        if (npc == null)
-            Debug.Log("Could not show notification, npc not specified");
-
-        // show the notification button in the scene
-        GameObject buttonInstanceContainer = ShowButtonAboveNPC(npc, notificationButton);
-
-        // access the button part of the notification component and register the scenario to be executed on click
-        Button buttonInstance = buttonInstanceContainer.GetComponentInChildren<Button>();
-        buttonInstance.onClick.AddListener(() =>
-        {
-            a.Invoke();
-            npc.GetComponent<NPCBehaviour>().SetHasNotification(false);
-            Debug.Log("Click!");
-            Destroy(buttonInstanceContainer); // could set a delay as second param if desired
-        });
+        Button button = ShowNotification(a, npc, scenarioButton).GetComponentInChildren<Button>();
     }
 
     // Overload to use Random NPC with Scenario
     public void ShowScenarioNotification(Scenario s)
     {
-        ShowNotification(s.ExecuteScenario, GetNpcWithoutNotification());
+        GameObject npc = GetNpcWithoutNotification();
+        Button button = ShowNotification(s.ExecuteScenario, npc, scenarioButton).GetComponentInChildren<Button>();
     }
 
     public void RemoveNPC(GameObject npc)
@@ -81,20 +66,10 @@ public class NPCController : Singleton<NPCController> {
         // select a random bug button and show it in the scene
         GameObject bugToShow = bugButtons[UnityEngine.Random.Range(0, bugButtons.Length)];
 
-        // TODO replace this chunk with ShowNotification(onBugSquashed, npc, bugToShow)
-        GameObject buttonInstanceContainer = ShowButtonAboveNPC(npc, bugToShow);
+        GameObject buttonContainer = ShowNotification(onBugSquashed, npc, bugToShow);
 
-        Button buttonInstance = buttonInstanceContainer.GetComponentInChildren<Button>();
-        buttonInstance.onClick.AddListener(() =>
-        {
-            npc.GetComponent<NPCBehaviour>().SetHasNotification(false);
-            Destroy(buttonInstanceContainer);
-            onBugSquashed.Invoke();
-        });
-        // chunk to replace ends here
-
-        // register bug to disappear after one second if not clicked
-        StartCoroutine(TearDownButtonAfterDelay(npc.GetComponent<NPCBehaviour>(), buttonInstanceContainer, 2));
+        // register bug to disappear after two second if not clicked
+        StartCoroutine(TearDownButtonAfterDelay(npc.GetComponent<NPCBehaviour>(), buttonContainer, 2));
 
     }
 
@@ -183,6 +158,30 @@ public class NPCController : Singleton<NPCController> {
 
         // return random npc who has no notification
         return npcsWithoutNotification[UnityEngine.Random.Range(0, npcsWithoutNotification.Count)];
+    }
+
+    // Sends a notification to an npc that the player should click on. On click,
+    // the notification will be hidden and the provided action will be invoked.
+    // The instantiated button is returned in case caller code wants to modify behaviour
+    private GameObject ShowNotification(Action a, GameObject npc, GameObject button)
+    {
+
+        if (npc == null)
+            Debug.Log("Could not show notification, npc not specified");
+
+        // show the notification button in the scene
+        GameObject buttonInstanceContainer = ShowButtonAboveNPC(npc, button);
+
+        // access the button part of the notification component and register the action to be executed on click
+        Button buttonInstance = buttonInstanceContainer.GetComponentInChildren<Button>();
+        buttonInstance.onClick.AddListener(() =>
+        {
+            a.Invoke();
+            npc.GetComponent<NPCBehaviour>().SetHasNotification(false);
+            Destroy(buttonInstanceContainer); // could set a delay as second param if desired
+        });
+
+        return buttonInstanceContainer;
     }
 
     // to be launched as a coroutine when we want a button to disappear after a certain time

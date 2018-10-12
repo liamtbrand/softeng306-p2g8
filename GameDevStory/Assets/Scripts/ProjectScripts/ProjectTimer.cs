@@ -19,7 +19,7 @@ public class ProjectTimer : MonoBehaviour {
 	public bool paused = false;
     private int bugsCreated;
     private int bugsSquashed;
-    private float bugProbability = 0.005f; //TODO: link this up with project difficulty
+    private float bugProbability;
 
 	// Set up timer
 	void OnEnable ()
@@ -37,6 +37,18 @@ public class ProjectTimer : MonoBehaviour {
         // initialise bug variables
         bugsSquashed = 0;
         bugsCreated = 0;
+
+        // adjust number of bugs that will show based on difficulty of project
+        ProjectDifficulty difficulty = currentProject.getDifficulty();
+        if (difficulty == ProjectDifficulty.Tutorial)
+            bugProbability = 0; // no bugs on first level
+        else if (difficulty == ProjectDifficulty.Easy)
+            bugProbability = 0.005f;
+        else if (difficulty == ProjectDifficulty.Medium)
+            bugProbability = 0.0075f;
+        else
+            bugProbability = 0.01f;
+            
 	}
 	
 	// Update is called once per frame
