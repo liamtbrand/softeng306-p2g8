@@ -98,11 +98,11 @@ namespace NPCScripts.StaffStateScripts
                     }
                 }
 
-                Debug.Log("Updated NPC " + npc.Value.Attributes.npcName + " genderDiversity = " +
-                          npc.Value.MentalState.GenderDiversityScore + ", ageDiversity = " +
-                          npc.Value.MentalState.AgeDiversityScore + ", stateGender = " +
-                          npc.Value.MentalState.StaffStateGender + ", stateAge = " +
-                          npc.Value.MentalState.StaffStateAge);
+                //Debug.Log("Updated NPC " + npc.Value.Attributes.npcName + " genderDiversity = " +
+                //          npc.Value.MentalState.GenderDiversityScore + ", ageDiversity = " +
+                //          npc.Value.MentalState.AgeDiversityScore + ", stateGender = " +
+                //          npc.Value.MentalState.StaffStateGender + ", stateAge = " +
+                //          npc.Value.MentalState.StaffStateAge);
 
                 // Check if we need to take action
                 if ((npc.Value.MentalState.GenderDiversityScore < GenderDialogueThreshold && !_currentlyDisplaying) ||
@@ -127,7 +127,7 @@ namespace NPCScripts.StaffStateScripts
                         var dialogue = GenerateDialogue(npc.Value, isAgeDialogue);
                         // Pop dialogue
                         _currentlyDisplaying = true;
-                        NPCController.Instance.ShowNotification(delegate
+                        NPCController.Instance.ShowScenarioNotification(delegate
                         {
                             ProjectManager.Instance.PauseProject();
                             DialogueManager.Instance.StartDialogue(dialogue);
@@ -146,7 +146,7 @@ namespace NPCScripts.StaffStateScripts
                 var dialogue = GenerateSameGenderDialogue(npc.Value);
                 // Pop dialogue
                 _currentlyDisplaying = true;
-                NPCController.Instance.ShowNotification(delegate
+                NPCController.Instance.ShowScenarioNotification(delegate
                 {
                     ProjectManager.Instance.PauseProject();
                     DialogueManager.Instance.StartDialogue(dialogue);
@@ -323,7 +323,6 @@ namespace NPCScripts.StaffStateScripts
             // run every 5 seconds
             _update = 0.0f;
             RecalculateMentalState(NPCController.Instance.NpcInstances);
-            Debug.Log("Update");
         }
 
         private static string GetPronoun(NPCInfo npc, bool type)
