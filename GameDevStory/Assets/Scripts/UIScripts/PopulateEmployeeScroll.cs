@@ -4,17 +4,28 @@ using TMPro;
 
 public class PopulateEmployeeScroll : MonoBehaviour {
 
-    public GameObject Content;
+    // TODO: Average age, average employee rating, total spent, average spent, total employees
+    public TextMeshProUGUI TotalLabel;
+    public TextMeshProUGUI TotalSpentLabel;
+    public TextMeshProUGUI AverageAgeLabel;
+    public TextMeshProUGUI AverageRatingLabel;
+
+    public GameObject ScrollViewContent;
     public GameObject EmployeeItemTemplate;
 
     public void Start()
-    {
- 
+    { 
         Reload();
     }
 
     public void Reload()
     {
+        // Populate statistics
+        TotalLabel.text = "69";
+        TotalSpentLabel.text = "$" + "4000";
+        AverageAgeLabel.text = "69";
+        AverageRatingLabel.text = "4.5";
+
         // For actually loopig through the game's npcs.
         //foreach(KeyValuePair<GameObject, NPCInfo> NpcPair in NPCController.Instance.NpcInstances)
         //{
@@ -28,7 +39,7 @@ public class PopulateEmployeeScroll : MonoBehaviour {
         for (int i = 0; i < 10; i++)
         {
             var copy = Instantiate(EmployeeItemTemplate);
-            copy.transform.parent = Content.transform;
+            copy.transform.parent = ScrollViewContent.transform;
 
             var npc = new NPCInfo();
             npc.Attributes = new NPCAttributes();
