@@ -17,9 +17,9 @@ public class ProjectTimer : MonoBehaviour {
 	private float maxTime;
 	private float timer;
 	public bool paused = false;
-    private int bugsCreated = 0;
-    private int bugsSquashed = 0;
-    private float bugProbability = 0.005f; //TODO: link this up with diversity score or some other "quality" attribute
+    private int bugsCreated;
+    private int bugsSquashed;
+    private float bugProbability = 0.005f; //TODO: link this up with project difficulty
 
 	// Set up timer
 	void OnEnable ()
@@ -33,6 +33,10 @@ public class ProjectTimer : MonoBehaviour {
 		maxTime = currentProject.getLength()*timeMultiplier;
 		timer = maxTime;
 		progressBar.value = 0;
+
+        // initialise bug variables
+        bugsSquashed = 0;
+        bugsCreated = 0;
 	}
 	
 	// Update is called once per frame
@@ -40,28 +44,28 @@ public class ProjectTimer : MonoBehaviour {
 	{
 		if (!paused)
 		{
-			// Fire scenarios during projects
-			foreach (Scenario scenario in scenarioArray)
-			{
-				if (scenario.getStatus() == ScenarioStatus.INCOMPLETE && 
-				    Scenario.getActive() == false 
-				    && Random.Range(0.0f, 1.0f) < scenario.GetScenarioProbability())
-				{
-					Pause();
-					scenario.StartScenario();
-				}
-			}
 
-            // Send out bugs during projects
-            if (Random.Range(0.0f, 1.0f) < bugProbability)
+            // Fire scenarios during projects
+            foreach (Scenario scenario in scenarioArray)
             {
-                bugsCreated++;
-                NPCController.Instance.ShowBug(IncrementBugsSquashed, DecrementBugsCreated);
+                if (scenario.getStatus() == ScenarioStatus.INCOMPLETE &&
+                    Scenario.getActive() == false
+                    && Random.Range(0.0f, 1.0f) < scenario.GetScenarioProbability())
+                {
+                    Pause();
+                    scenario.StartScenario();
+                }
             }
 
-			
-			// Decrement timer
-			timer -= Time.deltaTime;
+            // Send out bugs during projects unless there are less than 3 seconds remaining
+            if (Random.Range(0.0f, 1.0f) < bugProbability && timer >= 3)
+            {
+                bugsCreated++;
+                NPCController.Instance.ShowBug(() => bugsSquashed++);
+            }
+
+            // Decrement timer
+            timer -= Time.deltaTime;
 		
 			// Update progress bar
 			float progress = currentProject.getLength()*(maxTime-timer)/maxTime;
@@ -73,8 +77,8 @@ public class ProjectTimer : MonoBehaviour {
 				progressText.text = "100%";
 				progressPanel.SetActive(false);
 				progressScript.CompletedProject();
-			}	
-		}
+			}
+        }
 	}
 
 	// Pauses the timer
@@ -94,25 +98,8 @@ public class ProjectTimer : MonoBehaviour {
 		projectText.text = project;
 	}
 
-    public int GetBugsCreated()
+    public int GetBugsMissed()
     {
-        return bugsCreated;
-    }
-
-    public int GetBugsSquashed()
-    {
-        return bugsSquashed;
-    }
-
-    private void IncrementBugsSquashed()
-    {
-        Debug.Log("Bug Squashed!");
-        bugsSquashed++;
-    }
-
-    private void DecrementBugsCreated()
-    {
-        Debug.Log("Failed to send bug!");
-        bugsCreated--;
+        return bugsCreated - bugsSquashed;
     }
 }

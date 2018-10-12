@@ -80,33 +80,13 @@ namespace ProjectScripts
         }
 
         // Displays the project completion display
-        public void ProjectCompleted(double profit, string feedback, int bugsMissed, int bugPenalty, double diversityScore)
+        public void ProjectCompleted(double profit, string feedback)
         {
             // todo: add diversity score in feedback
             ProjectCompletePanel.SetActive(true);
             ProfitText.text = "$" + profit.ToString("f2");
 
             FeedbackText.text = feedback;
-
-            /*float offset = 0.3f;
-            float xPos = -0.3f;
-            float yPos = 0.05f;
-            int maxStars = 3;
-            int hollowStars = maxStars - stars;
-
-            // Instantiate stars
-            for (int j=0; j<stars; j++) {
-                Instantiate(Star, new Vector3(xPos,yPos,0f), Quaternion.identity,ProjectCompleteContent.transform);
-                xPos+=offset;
-            }
-
-            // Instantiate hollow stars
-            for (int i=0; i<hollowStars; i++) {
-                Instantiate(HollowStar, new Vector3(xPos,yPos,0f), Quaternion.identity,ProjectCompleteContent.transform);
-                xPos+=offset;
-            }*/
-
-            //BugStatsText.text = "Bugs Missed: " + bugsMissed + " (-$" + bugPenalty + ")";
         }
 
         // Closes the project completion display

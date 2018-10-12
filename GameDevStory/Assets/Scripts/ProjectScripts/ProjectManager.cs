@@ -141,7 +141,8 @@ public class ProjectManager : Singleton<ProjectManager>
         timerScript.enabled = false;
 
         // determine bug statistics 
-        var bugsMissed = timerScript.GetBugsCreated() - timerScript.GetBugsSquashed();
+        var bugsMissed = timerScript.GetBugsMissed();
+        Debug.Log("Bugs Missed: " + bugsMissed);
 
         var completedProject = projects[selectedProject];
 
@@ -152,14 +153,11 @@ public class ProjectManager : Singleton<ProjectManager>
         // Calculate project profit
         var profit = CalculateProjectProfit(completedProject, bugsMissed, diversityScore);
 
-        // Calculate project stars
-        //int stars = CalculateProjectStars(selectedProject);
-
         // Get project feedback
         var feedback = GetProjectFeedback(selectedProject);
 
         // Show project completion display
-        displayScript.ProjectCompleted(profit, feedback, bugsMissed, bugsMissed * 10, diversityScore);
+        displayScript.ProjectCompleted(profit, feedback);
 
         // Add to total profits
         GameManager.Instance.changeBalance(profit);
@@ -186,10 +184,10 @@ public class ProjectManager : Singleton<ProjectManager>
             builder.Append("The customer found that your team's perspective was spot on, and helped deliver a very relevant product!\n");
         }
 
-        if (timerScript.GetBugsCreated() - timerScript.GetBugsSquashed() > 3)
+        if (timerScript.GetBugsMissed() > 3)
         {
             builder.Append("The customer was very disappointed in the amount of bugs they found in your product after they tested it internally.\n");
-        } else if (timerScript.GetBugsCreated() - timerScript.GetBugsSquashed() > 0)
+        } else if (timerScript.GetBugsMissed() > 0)
         {
             builder.Append("The customer found a few bugs in your product, and was disappointed in this.\n");
         }

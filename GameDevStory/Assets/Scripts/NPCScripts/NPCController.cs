@@ -31,12 +31,14 @@ public class NPCController : Singleton<NPCController> {
         }
     }
 
-    // Sends a scenario notification to an npc that the player should click on to start the scenario.
+    // Sends a notification to an npc that the player should click on. On click,
+    // the notification will be hidden and the provided action will be invoked
+    //TODO Generalise to accept any button sprite and provide bug behaviour
     public void ShowNotification(Action a, GameObject npc)
     {
 
         if (npc == null)
-            Debug.Log("No NPCs can accept a notification"); //TODO: add to a queue of notifications?
+            Debug.Log("Could not show notification, npc not specified");
 
         // show the notification button in the scene
         GameObject buttonInstanceContainer = ShowButtonAboveNPC(npc, notificationButton);
@@ -64,35 +66,35 @@ public class NPCController : Singleton<NPCController> {
         Destroy(npc);
     }
 
-    // shows a random bug button and registers the "success" callback to be called when the button is pressed
-    // if an npc is available to accept the bug. Otherwise the "failure" callback will be called straight away
-    // so that the bug isn't counted as a missed bug
-    public void ShowBug(Action success, Action failure)
+    // shows a random bug button and registers the provided action to be called when the bug is pressed
+    // or when the bug cannot be shown and should still be counted as squashed to avoid incorrect 
+    // profit calculations.
+    public void ShowBug(Action onBugSquashed)
     {
         GameObject npc = GetNpcWithoutNotification();
         if (npc == null)
         {
-            failure();
+            onBugSquashed.Invoke();     // no npcs available but bug was not missed so still count as squashed
             return;
-        }
-
+        }  
+        
         // select a random bug button and show it in the scene
         GameObject bugToShow = bugButtons[UnityEngine.Random.Range(0, bugButtons.Length)];
+
+        // TODO replace this chunk with ShowNotification(onBugSquashed, npc, bugToShow)
         GameObject buttonInstanceContainer = ShowButtonAboveNPC(npc, bugToShow);
 
         Button buttonInstance = buttonInstanceContainer.GetComponentInChildren<Button>();
         buttonInstance.onClick.AddListener(() =>
         {
-            //TODO make this behaviour common to any button (bug or notification) by adding a separate listener on startup
             npc.GetComponent<NPCBehaviour>().SetHasNotification(false);
             Destroy(buttonInstanceContainer);
-
-            success();
+            onBugSquashed.Invoke();
         });
+        // chunk to replace ends here
 
-        //// register bug to disappear after one second if not clicked
-        IEnumerator coroutine = TearDownButtonAfterDelay(npc.GetComponent<NPCBehaviour>(), buttonInstanceContainer, 2);
-        StartCoroutine(coroutine);
+        // register bug to disappear after one second if not clicked
+        StartCoroutine(TearDownButtonAfterDelay(npc.GetComponent<NPCBehaviour>(), buttonInstanceContainer, 2));
 
     }
 
@@ -183,9 +185,10 @@ public class NPCController : Singleton<NPCController> {
         return npcsWithoutNotification[UnityEngine.Random.Range(0, npcsWithoutNotification.Count)];
     }
 
-    private IEnumerator TearDownButtonAfterDelay(NPCBehaviour npc, GameObject button, float delay)
+    // to be launched as a coroutine when we want a button to disappear after a certain time
+    private IEnumerator TearDownButtonAfterDelay(NPCBehaviour npc, GameObject button, float delayInSeconds)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(delayInSeconds);
         npc.SetHasNotification(false);
         Destroy(button);
     }
