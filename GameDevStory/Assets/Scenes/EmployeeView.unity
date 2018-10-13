@@ -1666,6 +1666,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 663770817}
   m_CullTransparentMesh: 0
+--- !u!1 &881400009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1162664840225512, guid: dadccb6ec53b67f49b474b3e7a8d471c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1608415715}
 --- !u!1 &899564093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2908,6 +2913,46 @@ Prefab:
     - target: {fileID: 114606434106347710, guid: dadccb6ec53b67f49b474b3e7a8d471c,
         type: 2}
       propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114236308507660520, guid: dadccb6ec53b67f49b474b3e7a8d471c,
+        type: 2}
+      propertyPath: TotalLabel
+      value: 
+      objectReference: {fileID: 1537971185}
+    - target: {fileID: 114236308507660520, guid: dadccb6ec53b67f49b474b3e7a8d471c,
+        type: 2}
+      propertyPath: TotalSpentLabel
+      value: 
+      objectReference: {fileID: 1800960393}
+    - target: {fileID: 114236308507660520, guid: dadccb6ec53b67f49b474b3e7a8d471c,
+        type: 2}
+      propertyPath: AverageAgeLabel
+      value: 
+      objectReference: {fileID: 71236772}
+    - target: {fileID: 114236308507660520, guid: dadccb6ec53b67f49b474b3e7a8d471c,
+        type: 2}
+      propertyPath: AverageRatingLabel
+      value: 
+      objectReference: {fileID: 2073672817}
+    - target: {fileID: 114236308507660520, guid: dadccb6ec53b67f49b474b3e7a8d471c,
+        type: 2}
+      propertyPath: ScrollViewContent
+      value: 
+      objectReference: {fileID: 881400009}
+    - target: {fileID: 114799044711722620, guid: dadccb6ec53b67f49b474b3e7a8d471c,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799044711722620, guid: dadccb6ec53b67f49b474b3e7a8d471c,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799044711722620, guid: dadccb6ec53b67f49b474b3e7a8d471c,
+        type: 2}
+      propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
