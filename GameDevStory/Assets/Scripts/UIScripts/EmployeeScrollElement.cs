@@ -14,6 +14,9 @@ public class EmployeeScrollElement : MonoBehaviour {
 
     public NPCInfo Npc { get; set; }
 
+    /**
+     * Populate value of a list item from an npc object
+     */
     public void Populate()
     {
         HeadShot.sprite = Npc.Attributes.headshot;
