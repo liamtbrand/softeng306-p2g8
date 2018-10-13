@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcTemplate: {fileID: 1278780124481134, guid: 0dccc0e54ae3e84468bea5e1c7bdfc23,
     type: 2}
-  notificationButton: {fileID: 1622929734638966, guid: dfee0ee29b0defd4aaef4e8b77b8e441,
+  scenarioButton: {fileID: 1622929734638966, guid: dfee0ee29b0defd4aaef4e8b77b8e441,
     type: 2}
   bugButtons:
   - {fileID: 1933166712537676, guid: 17ad26ccee5398b43999f38332fb833f, type: 2}
@@ -89,3 +89,5 @@ MonoBehaviour:
   FemalePayMultiplier: 0.75
   MinEmployeeCost: 50
   MaxEmployeeCost: 100
+  NumberOfFemales: 0
+  FemaleCount: 0

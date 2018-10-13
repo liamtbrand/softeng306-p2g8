@@ -22,8 +22,8 @@ namespace NPCScripts.StaffStateScripts
         private const double GenderDialogueThreshold = -10;
         private const double AgeDialogueThreshold = -15;
 
-        private const double GenderNormalRecovery = -2;
-        private const double GenderIgnoreRecovery = -5;
+        private const double NormalRecovery = -2;
+        private const double IgnoreRecovery = -5;
 
         private bool _currentlyDisplaying = false;
 
@@ -98,11 +98,11 @@ namespace NPCScripts.StaffStateScripts
                     }
                 }
 
-                Debug.Log("Updated NPC " + npc.Value.Attributes.npcName + " genderDiversity = " +
-                          npc.Value.MentalState.GenderDiversityScore + ", ageDiversity = " +
-                          npc.Value.MentalState.AgeDiversityScore + ", stateGender = " +
-                          npc.Value.MentalState.StaffStateGender + ", stateAge = " +
-                          npc.Value.MentalState.StaffStateAge);
+                //Debug.Log("Updated NPC " + npc.Value.Attributes.npcName + " genderDiversity = " +
+                //          npc.Value.MentalState.GenderDiversityScore + ", ageDiversity = " +
+                //          npc.Value.MentalState.AgeDiversityScore + ", stateGender = " +
+                //          npc.Value.MentalState.StaffStateGender + ", stateAge = " +
+                //          npc.Value.MentalState.StaffStateAge);
 
                 // Check if we need to take action
                 if ((npc.Value.MentalState.GenderDiversityScore < GenderDialogueThreshold && !_currentlyDisplaying) ||
@@ -127,7 +127,7 @@ namespace NPCScripts.StaffStateScripts
                         var dialogue = GenerateDialogue(npc.Value, isAgeDialogue);
                         // Pop dialogue
                         _currentlyDisplaying = true;
-                        NPCController.Instance.ShowNotification(delegate
+                        NPCController.Instance.ShowScenarioNotification(delegate
                         {
                             ProjectManager.Instance.PauseProject();
                             DialogueManager.Instance.StartDialogue(dialogue);
@@ -146,7 +146,7 @@ namespace NPCScripts.StaffStateScripts
                 var dialogue = GenerateSameGenderDialogue(npc.Value);
                 // Pop dialogue
                 _currentlyDisplaying = true;
-                NPCController.Instance.ShowNotification(delegate
+                NPCController.Instance.ShowScenarioNotification(delegate
                 {
                     ProjectManager.Instance.PauseProject();
                     DialogueManager.Instance.StartDialogue(dialogue);
@@ -279,8 +279,16 @@ namespace NPCScripts.StaffStateScripts
                             delegate()
                             {
                                 Debug.Log("Normal option picked");
-                                npc.MentalState.GenderDiversityScore = GenderNormalRecovery;
-                                npc.MentalState.StaffStateGender = nextState;
+                                if (isAgeDialogue)
+                                {
+                                    npc.MentalState.StaffStateAge = nextState;
+                                    npc.MentalState.AgeDiversityScore = NormalRecovery;
+                                }
+                                else
+                                {
+                                    npc.MentalState.StaffStateGender = nextState;
+                                    npc.MentalState.GenderDiversityScore = NormalRecovery;
+                                }
                                 Debug.Log("Setting state to " + npc.MentalState.StaffStateGender);
                                 ProjectManager.Instance.ResumeProject();
                                 _currentlyDisplaying = false;
@@ -288,9 +296,16 @@ namespace NPCScripts.StaffStateScripts
                             delegate()
                             {
                                 Debug.Log("Ignore option picked");
-                                npc.MentalState.GenderDiversityScore = GenderIgnoreRecovery;
-                                npc.MentalState.StaffStateGender = nextState;
-                                Debug.Log("Setting state to " + npc.MentalState.StaffStateGender);
+                                if (isAgeDialogue)
+                                {
+                                    npc.MentalState.StaffStateAge = nextState;
+                                    npc.MentalState.AgeDiversityScore = IgnoreRecovery;
+                                }
+                                else
+                                {
+                                    npc.MentalState.StaffStateGender = nextState;
+                                    npc.MentalState.GenderDiversityScore = IgnoreRecovery;
+                                }                                Debug.Log("Setting state to " + npc.MentalState.StaffStateGender);
                                 ProjectManager.Instance.ResumeProject();
                                 _currentlyDisplaying = false;
                             },
@@ -308,7 +323,6 @@ namespace NPCScripts.StaffStateScripts
             // run every 5 seconds
             _update = 0.0f;
             RecalculateMentalState(NPCController.Instance.NpcInstances);
-            Debug.Log("Update");
         }
 
         private static string GetPronoun(NPCInfo npc, bool type)

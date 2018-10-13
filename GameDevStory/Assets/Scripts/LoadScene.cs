@@ -20,4 +20,10 @@ public class LoadScene : MonoBehaviour {
 		SceneManager.LoadScene("PrototypeScene");
 	}
 
+	public void LoadHighScoreScene()
+	{
+		DontDestroyOnLoad(GameManager.Instance);
+		SceneManager.LoadScene("HighScoreTestScene");
+	}
+
 }
