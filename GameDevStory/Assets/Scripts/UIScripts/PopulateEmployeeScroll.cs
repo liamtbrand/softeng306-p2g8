@@ -6,7 +6,6 @@ using System;
 
 public class PopulateEmployeeScroll : MonoBehaviour {
 
-    // TODO: Average age, average employee rating, total spent, average spent, total employees
     public TextMeshProUGUI TotalLabel;
     public TextMeshProUGUI TotalSpentLabel;
     public TextMeshProUGUI AverageAgeLabel;
