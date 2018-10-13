@@ -39,7 +39,7 @@ public class PopulateEmployeeScroll : MonoBehaviour {
         for (int i = 0; i < 10; i++)
         {
             var copy = Instantiate(EmployeeItemTemplate);
-            copy.transform.parent = ScrollViewContent.transform;
+            copy.transform.SetParent(ScrollViewContent.transform, false);
 
             var npc = new NPCInfo();
             npc.Attributes = new NPCAttributes();
