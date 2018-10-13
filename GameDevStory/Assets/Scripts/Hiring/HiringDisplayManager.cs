@@ -78,6 +78,7 @@ public class HiringDisplayManager : MonoBehaviour {
 
     public void ShowCurrentEmployees()
     {
+        CurrentEmployeesPanel.GetComponent<PopulateEmployeeScroll>().Reload();
         HiringMainMenu.SetActive(false);
         CurrentEmployeesPanel.SetActive(true);
     }
