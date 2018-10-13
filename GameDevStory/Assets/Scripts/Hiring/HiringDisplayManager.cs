@@ -10,7 +10,7 @@ public class HiringDisplayManager : MonoBehaviour {
     public GameObject GridViewPanel;
     public GameObject ApplicantViewPanel;
     public GameObject NegotiatingPanel;
-    // public GameObject CurrentEmployeesPanel; //TODO!
+    public GameObject CurrentEmployeesPanel;
 
 
     void Start()
@@ -78,12 +78,15 @@ public class HiringDisplayManager : MonoBehaviour {
 
     public void ShowCurrentEmployees()
     {
-        //TODO
+        CurrentEmployeesPanel.GetComponent<PopulateEmployeeScroll>().Reload();
+        HiringMainMenu.SetActive(false);
+        CurrentEmployeesPanel.SetActive(true);
     }
 
     public void HideCurrentEmployees()
     {
-        //TODO
+        CurrentEmployeesPanel.SetActive(false);
+        HiringMainMenu.SetActive(true);
     }
 
     // The reason display applicant is not found in this script is because it is
