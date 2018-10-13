@@ -20,6 +20,8 @@ public class EmployeeScrollElement : MonoBehaviour {
         NameLabel.text = Npc.Attributes.npcName;
         AgeLabel.text = Npc.Attributes.age.ToString();
         GenderLabel.text = Npc.Attributes.gender.ToString();
-        // TODO: FIll in aid for element
+        PaidLabel.text = Npc.Attributes.ammountPaidFor != 0 
+            ? "$" + Npc.Attributes.ammountPaidFor
+            : "N/A";
     }
 }

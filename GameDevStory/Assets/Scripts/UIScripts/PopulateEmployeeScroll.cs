@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using System;
 
 public class PopulateEmployeeScroll : MonoBehaviour {
 
@@ -20,6 +22,8 @@ public class PopulateEmployeeScroll : MonoBehaviour {
 
     public void Reload()
     {
+        ClearElements(ScrollViewContent);
+
         // Populate statistics
         TotalLabel.text = "69";
         TotalSpentLabel.text = "$" + "4000";
@@ -30,40 +34,19 @@ public class PopulateEmployeeScroll : MonoBehaviour {
         foreach (KeyValuePair<GameObject, NPCInfo> NpcPair in NPCController.Instance.NpcInstances)
         {
             var copy = Instantiate(EmployeeItemTemplate);
-            //copy.GetComponent<TextMeshProUGUI>().text = NpcPair.Value.Attributes.npcName;
             copy.transform.SetParent(ScrollViewContent.transform, false);
 
             var Element = copy.GetComponent<EmployeeScrollElement>();
             Element.Npc = NpcPair.Value;
             Element.Populate();
         }
-
-
-
-
-        //var name = "a";
-        //var cost = 0;
-        //var age = 50;
-        //for (int i = 0; i < 10; i++)
-        //{
-        //    var copy = Instantiate(EmployeeItemTemplate);
-        //    copy.transform.SetParent(ScrollViewContent.transform, false);
-
-        //    var npc = new NPCInfo();
-        //    npc.Attributes = new NPCAttributes();
-        //    npc.Attributes.npcName = name;
-        //    npc.Attributes.gender = NPCAttributes.Gender.FEMALE;
-        //    npc.Attributes.cost = cost;
-        //    npc.Attributes.age = age;
-
-        //    var Element = copy.GetComponent<EmployeeScrollElement>();
-        //    Element.Npc = npc;
-        //    Element.Populate();
-
-        //    name += "a";
-        //    cost++;
-        //    age++;
-        //}
     }
 
+    private void ClearElements(GameObject scrollViewContent)
+    {
+        foreach (Transform child in scrollViewContent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
 }

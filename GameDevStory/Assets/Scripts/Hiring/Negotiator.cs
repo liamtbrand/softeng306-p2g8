@@ -68,6 +68,7 @@ public class Negotiator : MonoBehaviour
             // Offer is sufficient, applicant can be hired.
             NPCController.Instance.HireEmployee(npc);
             GameManager.Instance.changeBalance(offer * -1);
+            npc.Attributes.ammountPaidFor = (int) offer;
             ClickedTile.interactable = false;
 
             AcceptOfferDialogue();
