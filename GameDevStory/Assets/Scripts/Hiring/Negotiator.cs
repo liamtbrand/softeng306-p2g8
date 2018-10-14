@@ -7,8 +7,6 @@ using UnityEngine.Events;
 
 public class Negotiator : MonoBehaviour
 {    
-    // TODO: make max slider value not exceed max bank account value
-
     public static NPCInfo npc;
     public static Button ClickedTile;
 
@@ -70,6 +68,7 @@ public class Negotiator : MonoBehaviour
             // Offer is sufficient, applicant can be hired.
             NPCController.Instance.HireEmployee(npc);
             GameManager.Instance.changeBalance(offer * -1);
+            npc.Attributes.ammountPaidFor = (int) offer;
             ClickedTile.interactable = false;
 
             AcceptOfferDialogue();
@@ -77,21 +76,22 @@ public class Negotiator : MonoBehaviour
         else // Offer is less that threshold
         {
             // Check whether frustration threshold has been met
-            if (npc.Attributes.negotiationFrustration < EMPLOYEE_FRUSTRATION_THRESHOLD) 
-            {
-                // If threshold has not been met continue negotiating
-                if (offer < 0.7 * offerThreshold)
+            if (npc.Attributes.negotiationFrustration < EMPLOYEE_FRUSTRATION_THRESHOLD)
+            {// If threshold has not been met continue negotiating
+
+                var OfferIsVeryLow = offer < 0.7 * offerThreshold;
+                if (OfferIsVeryLow) // If offer is far below their threshold
                 {
                     npc.Attributes.negotiationFrustration += 2;
                     Debug.Log(string.Format("Offer of {0} is FAR BELOW sufficient, threshold was {1}", offer.ToString(), offerThreshold.ToString()));
                 }
-                else
+                else // Offer is reasonable close to their threshold
                 {
                     npc.Attributes.negotiationFrustration += 1;
                     Debug.Log(string.Format("Offer of {0} is NOT QUITE sufficient, threshold was {1}", offer.ToString(), offerThreshold.ToString()));
                 }
 
-                DeclineOfferDialogue();
+                DeclineOfferDialogue(OfferIsVeryLow);
             }
             else // Applicant frustration threshold has been met
             {
@@ -136,7 +136,7 @@ public class Negotiator : MonoBehaviour
     /**
      * Display dialogue that show applicants declining
      */
-    private void DeclineOfferDialogue()
+    private void DeclineOfferDialogue(bool OfferIsVeryLow)
     {
         var Dialogue = new Dialogue()
         {
@@ -146,7 +146,7 @@ public class Negotiator : MonoBehaviour
                 {
                     icon = npc.Attributes.headshot,
                     Title = npc.Attributes.npcName,
-                    sentenceLine = RandomDecliningSentence((int) PaySlider.value, npc.Attributes.costThreshold),
+                    sentenceLine = RandomDecliningSentence((int) PaySlider.value, OfferIsVeryLow),
                     sentenceChoices = new string[]
                     {
                         "Okay, let's talk."
@@ -174,7 +174,7 @@ public class Negotiator : MonoBehaviour
                 {
                     icon = npc.Attributes.headshot,
                     Title = npc.Attributes.npcName,
-                    sentenceLine = "I'm sorry, But I've decided to persur other career options. Have a good day.",
+                    sentenceLine = "I'm sorry, But I've decided to persue other career options. Have a good day.",
                     sentenceChoices = new string[]
                     {
                         "Thank you for your time."
@@ -215,9 +215,9 @@ public class Negotiator : MonoBehaviour
      * Returns a random sentence for the npc to say declining the offer of paymemnt. Chooses from sets of responses determined by
      * the ammount offered to look as if they are responding to the ammounts like a real person would.
      */
-    private string RandomDecliningSentence(int Offer, int ThresholdCost)
+    private string RandomDecliningSentence(int Offer, bool OfferIsVeryLow)
     {
-        // Sentences to display if the offer is reasonable bu too low
+        // Sentences to display if the offer is reasonable but too low
         string[] CloseSentences = 
         {
             string.Format("${0}? I'm sorry, but I expect to be paid a bit more than that!", Offer),
@@ -234,13 +234,8 @@ public class Negotiator : MonoBehaviour
         };
 
         System.Random rnd = new System.Random(); ;
-        if (Offer < 0.7 * ThresholdCost) // Offer is not even close to threshold
-        {
-            return NotCloseSentences[rnd.Next(NotCloseSentences.Length)];
-        }
-        else // Offer is reasonable
-        {
-            return CloseSentences[rnd.Next(CloseSentences.Length)];
-        }
+        return OfferIsVeryLow 
+            ? NotCloseSentences[rnd.Next(NotCloseSentences.Length)] 
+            : CloseSentences[rnd.Next(CloseSentences.Length)];
     }
 }

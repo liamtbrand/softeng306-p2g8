@@ -19,7 +19,8 @@ public class HighScoreManager : Singleton<HighScoreManager> {
     private void Start()
     {
         _score = GameManager.Instance.getBalance();
-        ScoreDisplay.text = "$" + _score;
+        Destroy(GameManager.Instance);
+        ScoreDisplay.text = "$" + _score.ToString("f2");
         var sorted = from entry in _scores orderby entry.Value ascending select entry;
         foreach (var entry in sorted)
         {
@@ -38,6 +39,6 @@ public class HighScoreManager : Singleton<HighScoreManager> {
         var scorePrefab = Instantiate(ScoreEntryPrefab, Vector3.zero, Quaternion.identity, ScoreListParent.transform);
         var text = scorePrefab.GetComponentsInChildren<Text>();
         text[0].text = name;
-        text[1].text = "$" + score;
+        text[1].text = "$" + score.ToString("f2");
     }
 }

@@ -6,14 +6,20 @@ using UnityEngine.UI;
 public class HiringDisplayManager : MonoBehaviour {
 
     public Button HireButton;
+    public GameObject HiringMainMenu;
     public GameObject GridViewPanel;
     public GameObject ApplicantViewPanel;
     public GameObject NegotiatingPanel;
+    public GameObject CurrentEmployeesPanel;
+    public GameObject EmployeePanel;
 
 
     void Start()
     {
+        HiringMainMenu.SetActive(false);
         GridViewPanel.SetActive(false);
+        ApplicantViewPanel.SetActive(false);
+        NegotiatingPanel.SetActive(false);
     }
 
     public void DisableHireButton() {
@@ -24,23 +30,39 @@ public class HiringDisplayManager : MonoBehaviour {
         HireButton.interactable = true;
     }
 
+    public void ShowHiringMenu()
+    {
+        // whenever hiring menu is shown, check if we have space for another employee
+        if (LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().DeskAvailable())
+            EnableHireButton();
+        else
+            DisableHireButton();
+        HiringMainMenu.SetActive(true);
+        ProjectManager.Instance.PauseProject();
+    }
+
+    public void HideHiringMenu()
+    {
+        HiringMainMenu.SetActive(false);
+    }
+
+    public void HideHiringMenuAndResumeProject()
+    {
+        HideHiringMenu();
+        ProjectManager.Instance.ResumeProject();
+    }
+
     public void ShowHiringGrid()
     {
-        DisableHireButton();
+        HideHiringMenu();
         ApplicantViewPanel.SetActive(false);
         NegotiatingPanel.SetActive(false);
         GridViewPanel.SetActive(true);
-        ProjectManager.Instance.PauseProject();
     }
 
     public void CloseHiringGrid()
     {
-        Debug.Log(LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().DeskAvailable());
-        if (LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().DeskAvailable()) {
-            EnableHireButton();
-        }
         GridViewPanel.SetActive(false);
-        ProjectManager.Instance.ResumeProject();
     }
 
     public void ShowNegotiating()
@@ -55,6 +77,19 @@ public class HiringDisplayManager : MonoBehaviour {
         ApplicantViewPanel.SetActive(true);
     }
 
+    public void ShowCurrentEmployees()
+    {
+        CurrentEmployeesPanel.GetComponent<PopulateEmployeeScroll>().Reload();
+        HiringMainMenu.SetActive(false);
+        CurrentEmployeesPanel.SetActive(true);
+    }
+
+    public void HideCurrentEmployees()
+    {
+        CurrentEmployeesPanel.SetActive(false);
+        HiringMainMenu.SetActive(true);
+    }
+
     // The reason display applicant is not found in this script is because it is
     // located in TileManager.cs under Clicked(). This is because switching to an
     // applicant's view requires more information which is provided in the script.
@@ -62,6 +97,17 @@ public class HiringDisplayManager : MonoBehaviour {
     public void CloseApplicant()
     {
         ApplicantViewPanel.SetActive(false);
-        ProjectManager.Instance.ResumeProject();
+    }
+
+    public void ShowEmployee()
+    {
+        CurrentEmployeesPanel.SetActive(false);
+        EmployeePanel.SetActive(true);
+    }
+
+    public void HideEmployee()
+    {
+        EmployeePanel.SetActive(false);
+        CurrentEmployeesPanel.SetActive(true);
     }
 }
