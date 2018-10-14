@@ -14,6 +14,8 @@ public class MoneyCounterAnimator : MonoBehaviour {
 	{
 		var currentValue = Convert.ToDouble(MoneyCounter.text.Replace("$", ""));
 
+		//Debug.Log("Difference: "+Math.Abs(currentValue - Target));
+		
 		var stepSize = 1.0;
 		if (Math.Abs(currentValue - Target) > 500)
 		{
@@ -21,13 +23,12 @@ public class MoneyCounterAnimator : MonoBehaviour {
 		} else if (Math.Abs(currentValue - Target) > 100)
 		{
 			stepSize = 2;
-		} else if (Math.Abs(currentValue - Target) < 10)
+		} else if (Math.Abs(currentValue - Target) > 0.1)
 		{
 			stepSize = 0.1;
-		} else if (Math.Abs(currentValue - Target) <= 0.1)
+		} else
 		{
-			MoneyCounter.text = "$"+(Target).ToString();
-			return;
+			stepSize = 0.005;
 		}
 		
 		if (currentValue < Target)
