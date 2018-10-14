@@ -118,6 +118,7 @@ namespace NPCScripts.StaffStateScripts
                         // Leave company!
                         _currentlyDisplaying = true;
                         NPCController.Instance.RemoveNPC(npc.Key);
+                        GameManager.Instance.changeBalance(-500);
                         ProjectManager.Instance.PauseProject();
                         DialogueManager.Instance.StartDialogue(GenerateLeaveDialogue(npc.Value));
                     }
@@ -182,7 +183,6 @@ namespace NPCScripts.StaffStateScripts
                         {
                             delegate
                             {
-                                GameManager.Instance.changeBalance(-500);
                                 ProjectManager.Instance.ResumeProject();
                                 _currentlyDisplaying = false;
                             },
@@ -244,7 +244,7 @@ namespace NPCScripts.StaffStateScripts
                     nextState = StaffMentalState.State.ABOUT_TO_LEAVE;
                     choices = new string[]
                     {
-                        "Throw Party",
+                        "Throw Party ($80)",
                         "Ignore"
                     };
                     break;
@@ -256,7 +256,7 @@ namespace NPCScripts.StaffStateScripts
                     nextState = StaffMentalState.State.READY_TO_LEAVE;
                     choices = new string[]
                     {
-                        "Host team-building event",
+                        "Host team-building event ($80)",
                         "Ignore"
                     };
                     break;
@@ -279,6 +279,7 @@ namespace NPCScripts.StaffStateScripts
                             delegate()
                             {
                                 Debug.Log("Normal option picked");
+                                GameManager.Instance.changeBalance(-80);
                                 if (isAgeDialogue)
                                 {
                                     npc.MentalState.StaffStateAge = nextState;
