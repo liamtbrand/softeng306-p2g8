@@ -1,19 +1,15 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InitialiseApplicantView : MonoBehaviour
-{
-    // Next negotiator window
-    public GameObject NegotiatorView;
+public class InitialiseEmployeeView : MonoBehaviour {
 
-    // Reference to npc to display from previous tile script.
-    public static NPCInfo npcInfo;
-    public static Button clickedTile;
+    public NPCInfo npcInfo { get; set; }
 
     // Read only's
     private readonly float SLIDER_MAX_VALUE = 100;
-    private readonly float VALUE = 60;
 
     // Misc. character info
     public Animator animator;
@@ -57,17 +53,6 @@ public class InitialiseApplicantView : MonoBehaviour
         FillSlider(technicalSlider, stats.Technical);
         FillSlider(creativitySlider, stats.Creativity);
         FillSlider(designSlider, stats.Design);
-    }
-
-    public void BackClicked()
-    {
-        GameManager.Instance.switchScene(GameScene.GridView);
-    }
-
-    public void HireClicked() {
-        Negotiator.npc = npcInfo;
-        Negotiator.ClickedTile = clickedTile;
-        NegotiatorView.GetComponent<Negotiator>().Reload();
     }
 
     private void FillSlider(Slider slider, float value)

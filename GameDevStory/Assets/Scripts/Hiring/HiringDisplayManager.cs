@@ -11,6 +11,7 @@ public class HiringDisplayManager : MonoBehaviour {
     public GameObject ApplicantViewPanel;
     public GameObject NegotiatingPanel;
     public GameObject CurrentEmployeesPanel;
+    public GameObject EmployeePanel;
 
 
     void Start()
@@ -96,5 +97,17 @@ public class HiringDisplayManager : MonoBehaviour {
     public void CloseApplicant()
     {
         ApplicantViewPanel.SetActive(false);
+    }
+
+    public void ShowEmployee()
+    {
+        CurrentEmployeesPanel.SetActive(false);
+        EmployeePanel.SetActive(true);
+    }
+
+    public void HideEmployee()
+    {
+        EmployeePanel.SetActive(false);
+        CurrentEmployeesPanel.SetActive(true);
     }
 }
