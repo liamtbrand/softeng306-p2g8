@@ -23,6 +23,7 @@ public class OfficeUpgradeManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Start UpgradeManager");
         OfficeUpgradeWindow.SetActive(false);
         UpdateButtonStates();
         NormalOfficeButton.onClick.AddListener(delegate
@@ -46,6 +47,7 @@ public class OfficeUpgradeManager : MonoBehaviour
                 GameManager.Instance.changeBalance(5000);
             }
         });
+        ClickShowUpgrade();
     }
 
     private void Update()
@@ -58,6 +60,7 @@ public class OfficeUpgradeManager : MonoBehaviour
 
     public void ClickShowUpgrade()
     {
+        Debug.Log("Show UpgradeManager");
         OfficeUpgradeWindow.SetActive(true);
         ProjectManager.Instance.PauseProject();
         UpdateButtonStates();
