@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
+using DialogueScripts;
 
 public class InitialiseEmployeeView : MonoBehaviour {
 
@@ -10,6 +10,7 @@ public class InitialiseEmployeeView : MonoBehaviour {
 
     // Read only's
     private readonly float SLIDER_MAX_VALUE = 100;
+    private readonly int FIRING_PENALTY = 100;
 
     // Misc. character info
     public Animator animator;
@@ -43,7 +44,7 @@ public class InitialiseEmployeeView : MonoBehaviour {
         ageHeader.text = attributes.age.ToString();
         genderHeader.text = attributes.gender.ToString();
         bioBox.text = attributes.biography;
-        costHeader.text = "$" + attributes.cost.ToString();
+        costHeader.text = attributes.ammountPaidFor != 0 ? "$" + attributes.ammountPaidFor : "N/A";
 
         animator.runtimeAnimatorController = npcInfo.Attributes.animationController;
 
@@ -64,5 +65,43 @@ public class InitialiseEmployeeView : MonoBehaviour {
         // red - yellow - green.
         var fillArea = slider.fillRect.GetComponent<Image>();
         fillArea.color = new Color(0.01f * (100 - value), 0.01f * value, 0);
+    }
+
+    public void FireClicked()
+    {
+        FireEmployeeDialogue();
+    }
+
+    private void FireEmployeeDialogue()
+    {
+        var Dialogue = new Dialogue()
+        {
+            Sentences = new Sentence[]
+            {
+                new Sentence()
+                {
+                    icon = npcInfo.Attributes.headshot,
+                    Title = npcInfo.Attributes.npcName,
+                    sentenceLine = string.Format("Wait, you're firing me? Are you sure? If you fire me I'm going to demand ${0} in reparations.", FIRING_PENALTY),
+                    sentenceChoices = new string[]
+                    {
+                        "Actualy, don't worry about it.",
+                        "Sorry, but we're going to have to let you go."
+                    },
+                    sentenceChoiceActions = new UnityAction[]
+                    {
+                        () => 
+                        {
+                            Debug.Log(string.Format("You chose not to fire {0}.", npcInfo.Attributes.npcName));
+                        },
+                        () =>
+                        {
+                            // TODO: Fire the employee :(
+                        }
+                    }
+                }
+            }
+        };
+        DialogueManager.Instance.StartDialogue(Dialogue);
     }
 }
