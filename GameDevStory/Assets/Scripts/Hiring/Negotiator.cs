@@ -174,7 +174,7 @@ public class Negotiator : MonoBehaviour
                 {
                     icon = npc.Attributes.headshot,
                     Title = npc.Attributes.npcName,
-                    sentenceLine = "I'm sorry, But I've decided to persur other career options. Have a good day.",
+                    sentenceLine = "I'm sorry, But I've decided to persue other career options. Have a good day.",
                     sentenceChoices = new string[]
                     {
                         "Thank you for your time."
