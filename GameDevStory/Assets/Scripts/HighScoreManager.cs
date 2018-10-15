@@ -12,6 +12,7 @@ public class HighScoreManager : Singleton<HighScoreManager> {
     
     private double _score = 420; // temp value
     
+    [SerializeField]
     private Dictionary<string, double> _scores = new Dictionary<string, double>();
 
     protected HighScoreManager () {} // enforces singleton use
@@ -32,6 +33,11 @@ public class HighScoreManager : Singleton<HighScoreManager> {
     {
         _scores.Add(NameField.text, _score);
         DisplayScore(NameField.text, _score);
+    }
+
+    private void SaveHighScore()
+    {
+        
     }
 
     private void DisplayScore(string name, double score)
