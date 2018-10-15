@@ -1,19 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
+using DialogueScripts;
 
-public class InitialiseApplicantView : MonoBehaviour
-{
-    // Next negotiator window
-    public GameObject NegotiatorView;
+public class InitialiseEmployeeView : MonoBehaviour {
 
-    // Reference to npc to display from previous tile script.
-    public static NPCInfo npcInfo;
-    public static Button clickedTile;
+    public NPCInfo npcInfo { get; set; }
 
     // Read only's
     private readonly float SLIDER_MAX_VALUE = 100;
-    private readonly float VALUE = 60;
+    private readonly int FIRING_PENALTY = 100;
 
     // Misc. character info
     public Animator animator;
@@ -47,7 +44,7 @@ public class InitialiseApplicantView : MonoBehaviour
         ageHeader.text = attributes.age.ToString();
         genderHeader.text = attributes.gender.ToString();
         bioBox.text = attributes.biography;
-        costHeader.text = "$" + attributes.cost.ToString();
+        costHeader.text = attributes.ammountPaidFor != 0 ? "$" + attributes.ammountPaidFor : "N/A";
 
         animator.runtimeAnimatorController = npcInfo.Attributes.animationController;
 
@@ -59,17 +56,6 @@ public class InitialiseApplicantView : MonoBehaviour
         FillSlider(designSlider, stats.Design);
     }
 
-    public void BackClicked()
-    {
-        GameManager.Instance.switchScene(GameScene.GridView);
-    }
-
-    public void HireClicked() {
-        Negotiator.npc = npcInfo;
-        Negotiator.ClickedTile = clickedTile;
-        NegotiatorView.GetComponent<Negotiator>().Reload();
-    }
-
     private void FillSlider(Slider slider, float value)
     {
         slider.maxValue = SLIDER_MAX_VALUE;
@@ -79,5 +65,43 @@ public class InitialiseApplicantView : MonoBehaviour
         // red - yellow - green.
         var fillArea = slider.fillRect.GetComponent<Image>();
         fillArea.color = new Color(0.01f * (100 - value), 0.01f * value, 0);
+    }
+
+    public void FireClicked()
+    {
+        FireEmployeeDialogue();
+    }
+
+    private void FireEmployeeDialogue()
+    {
+        var Dialogue = new Dialogue()
+        {
+            Sentences = new Sentence[]
+            {
+                new Sentence()
+                {
+                    icon = npcInfo.Attributes.headshot,
+                    Title = npcInfo.Attributes.npcName,
+                    sentenceLine = string.Format("Wait, you're firing me? Are you sure? If you fire me I'm going to demand ${0} in reparations.", FIRING_PENALTY),
+                    sentenceChoices = new string[]
+                    {
+                        "Actualy, don't worry about it.",
+                        "Sorry, but we're going to have to let you go."
+                    },
+                    sentenceChoiceActions = new UnityAction[]
+                    {
+                        () => 
+                        {
+                            Debug.Log(string.Format("You chose not to fire {0}.", npcInfo.Attributes.npcName));
+                        },
+                        () =>
+                        {
+                            // TODO: Fire the employee :(
+                        }
+                    }
+                }
+            }
+        };
+        DialogueManager.Instance.StartDialogue(Dialogue);
     }
 }

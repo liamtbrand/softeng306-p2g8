@@ -59,7 +59,7 @@ public class PopulateEmployeeScroll : MonoBehaviour {
         // Populate statistics
         TotalLabel.text = totalEmployees.ToString();
         TotalSpentLabel.text = "$" + totalSpent.ToString();
-        AverageAgeLabel.text = (totalAge / (float) totalEmployees).ToString();
+        AverageAgeLabel.text = (totalAge / (float) totalEmployees).ToString("n2");
         AverageRatingLabel.text = (totalRating / totalEmployees).ToString("n2");
     }
 

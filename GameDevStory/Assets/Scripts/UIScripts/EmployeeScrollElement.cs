@@ -6,6 +6,9 @@ using TMPro;
 
 public class EmployeeScrollElement : MonoBehaviour {
 
+    // Game object representing a form of the "applicant view" only now it shows an employee.
+    public GameObject EmployeeView;
+
     public Image HeadShot;
     public TextMeshProUGUI NameLabel;
     public TextMeshProUGUI AgeLabel;
@@ -26,5 +29,11 @@ public class EmployeeScrollElement : MonoBehaviour {
         PaidLabel.text = Npc.Attributes.ammountPaidFor != 0 
             ? "$" + Npc.Attributes.ammountPaidFor
             : "N/A";
+    }
+
+    public void clicked()
+    {
+        EmployeeView.GetComponent<InitialiseEmployeeView>().npcInfo = Npc;
+        EmployeeView.GetComponent<InitialiseEmployeeView>().Reload();
     }
 }
