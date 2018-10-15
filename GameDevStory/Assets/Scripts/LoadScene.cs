@@ -27,4 +27,10 @@ public class LoadScene : MonoBehaviour {
 		SceneManager.LoadScene("HighScoreTestScene");
 	}
 
+	public void LoadEndingCutscene()
+	{
+		DontDestroyOnLoad(GameManager.Instance);
+		SceneManager.LoadScene("BoughtOut");
+	}
+
 }
