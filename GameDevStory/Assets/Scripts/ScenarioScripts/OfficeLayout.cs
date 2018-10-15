@@ -13,8 +13,12 @@ public class OfficeLayout : MonoBehaviour
 	public CoordinateSystem coordinateSystem;
 
     public Vector2[] desks;                          // Default to having four desks in these positions.
+    public Vector2 suggestionBoxPos;
+
+    public GameObject suggestionBox;
 
     public List<GameObject> instantiatedDeskList = new List<GameObject>();
+    public GameObject instantiatedSuggestionBox;
 
     public List<Vector2> freeDesks;
 
@@ -62,6 +66,9 @@ public class OfficeLayout : MonoBehaviour
         {
             Vector3 pos = coordinateSystem.getVector3(desks[i]);
 			instantiatedDeskList.Add(Instantiate(desk, deskOffset + pos, Quaternion.identity));
+
+            // also instantiate the suggestion box
+            instantiatedSuggestionBox = Instantiate(suggestionBox, deskOffset + coordinateSystem.getVector3(suggestionBoxPos), Quaternion.identity);
         }
 
         // create a list to store all the free desks.

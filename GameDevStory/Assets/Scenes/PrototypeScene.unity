@@ -417,7 +417,11 @@ MonoBehaviour:
   - {x: 3, y: 1}
   - {x: 3, y: 3}
   - {x: 1, y: 3}
+  suggestionBoxPos: {x: 4, y: 2.2}
+  suggestionBox: {fileID: 1268805483322930, guid: 0ff72211cf0079b49b26652f6607a860,
+    type: 2}
   instantiatedDeskList: []
+  instantiatedSuggestionBox: {fileID: 0}
   freeDesks: []
   deskOffset: {x: 0, y: -0.04, z: 0}
   desk: {fileID: 1822675527662198, guid: db9f56b1283e64f508809c3a92597054, type: 2}
@@ -4972,6 +4976,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 224974124282640674, guid: 3fc95124b82cc47c68f6020b0ccc2d59,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.5000305
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fc95124b82cc47c68f6020b0ccc2d59, type: 2}
   m_IsPrefabAsset: 0
@@ -7870,6 +7879,22 @@ Prefab:
     - target: {fileID: 4122153594223966, guid: 5b41bb94f8225094da01848cd11de088, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114316642721059690, guid: 5b41bb94f8225094da01848cd11de088,
+        type: 2}
+      propertyPath: suggestionBox
+      value: 
+      objectReference: {fileID: 1268805483322930, guid: 0ff72211cf0079b49b26652f6607a860,
+        type: 2}
+    - target: {fileID: 114316642721059690, guid: 5b41bb94f8225094da01848cd11de088,
+        type: 2}
+      propertyPath: suggestionBoxPos.x
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114316642721059690, guid: 5b41bb94f8225094da01848cd11de088,
+        type: 2}
+      propertyPath: suggestionBoxPos.y
+      value: 5.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b41bb94f8225094da01848cd11de088, type: 2}
