@@ -46,7 +46,7 @@ public class ConferenceScenarioExecutor : AScenarioExecutor
 				new Sentence(){
 					icon = Jayne,
                     Title = "Jayne Hustleson",
-                    sentenceLine = "Thanks for going along to the conference! I really appreciate it, hope it went well.",
+                    sentenceLine = "Thanks for going along to the conference! I really appreciate it, hope it went well. Make sure to get your workers working, and get rid of bugs in your code, by TAPPING THEM QUICKLY in projects!",
                     sentenceChoices = new string[]{
                         "Finish Conference"
                     },

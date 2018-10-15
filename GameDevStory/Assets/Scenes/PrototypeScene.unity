@@ -1443,9 +1443,8 @@ MonoBehaviour:
       sentenceChoices: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
-      sentenceLine: '2: Ensuring my hiring of employees is not biased towards any
-        particular demographic, and hiring not purely based on skills, but on cultural
-        fit.'
+      sentenceLine: '2: Being careful in how I ADVERTISE job positions, and what words
+        I use to attract people into my company.'
       sentenceChoices: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
