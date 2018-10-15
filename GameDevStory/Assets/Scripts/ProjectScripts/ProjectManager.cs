@@ -59,7 +59,7 @@ public class ProjectManager : Singleton<ProjectManager>
                 // Bankrupt cut scene
             }*/
             loadScript = GetComponent<LoadScene>();
-            loadScript.LoadHighScoreScene();
+            loadScript.LoadEndingCutscene();
         }
 
         // Display projects

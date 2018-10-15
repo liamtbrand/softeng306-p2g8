@@ -319,8 +319,7 @@ namespace NPCScripts.StaffStateScripts
         private void Update()
         {
             _update += Time.deltaTime;
-            // TODO: tick increased to 1s for testing!!!
-            if (!(_update > 1.0f) || ProjectManager.Instance.IsPaused()) return;
+            if (!(_update > 5.0f) || ProjectManager.Instance.IsPaused()) return;
             // run every 5 seconds
             _update = 0.0f;
             RecalculateMentalState(NPCController.Instance.NpcInstances);
