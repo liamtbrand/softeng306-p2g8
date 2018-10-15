@@ -16,7 +16,7 @@ public class ProjectManager : Singleton<ProjectManager>
     private LoadScene loadScript;
     public GameObject projectMenu;
 
-    private static Dictionary<string, Project> projects;
+    private Dictionary<string, Project> projects; // Making non static to fix replayability issues
     private string selectedProject;
     public Button DisplayButton;
     public Button DescriptionCloseButton;

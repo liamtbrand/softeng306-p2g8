@@ -50,29 +50,29 @@ public class JobAdManager : MonoBehaviour {
         int proportion = (int)(GetFemaleApplicantProportion(values)*10);
 
         int numberOfFemales = 0;
-        if (proportion <= 3)
+        if (proportion == 3 || proportion == 2)
         {
             numberOfFemales = 1;
         }
         else if (proportion == 4)
         {
-            numberOfFemales = 2;
+            numberOfFemales = 1;
         }
         else if (proportion == 5)
         {
-            numberOfFemales = 3;
+            numberOfFemales = 2;
         }
         else if (proportion == 6)
         {
-            numberOfFemales = 3;
+            numberOfFemales = 2;
         }
         else if (proportion == 7)
         {
-            numberOfFemales = 4;
+            numberOfFemales = 3;
         }
         else if (proportion >= 8)
         {
-            numberOfFemales = 5;
+            numberOfFemales = 4;
         }
 
         NPCFactory.Instance.SetNumberOfFemales(numberOfFemales);
