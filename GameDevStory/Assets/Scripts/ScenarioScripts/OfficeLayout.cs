@@ -59,6 +59,8 @@ public class OfficeLayout : MonoBehaviour
         foreach(GameObject desk in instantiatedDeskList){
             Destroy(desk);
         }
+
+        Destroy(instantiatedSuggestionBox);
     }
 
     public void DeskSetup(){
@@ -66,10 +68,10 @@ public class OfficeLayout : MonoBehaviour
         {
             Vector3 pos = coordinateSystem.getVector3(desks[i]);
 			instantiatedDeskList.Add(Instantiate(desk, deskOffset + pos, Quaternion.identity));
-
-            // also instantiate the suggestion box
-            instantiatedSuggestionBox = Instantiate(suggestionBox, deskOffset + coordinateSystem.getVector3(suggestionBoxPos), Quaternion.identity);
         }
+
+        // also instantiate the suggestion box
+        instantiatedSuggestionBox = Instantiate(suggestionBox, deskOffset + coordinateSystem.getVector3(suggestionBoxPos), Quaternion.identity);
 
         // create a list to store all the free desks.
         freeDesks = new List<Vector2>();
