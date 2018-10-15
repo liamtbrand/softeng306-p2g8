@@ -55,6 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   officeLayout: {fileID: 114361950001309050}
   background: {fileID: 1647582877699224, guid: 56c3fdcc627984132bfa3d7ee86dddfb, type: 2}
+  setupScript: {fileID: 0}
 --- !u!114 &114325097623760530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,6 +84,14 @@ MonoBehaviour:
   coordinateSystem: {fileID: 114325097623760530}
   desks:
   - {x: 1, y: 1}
+  - {x: 3, y: 1}
+  - {x: 3, y: 3}
+  - {x: 1, y: 3}
+  suggestionBoxPos: {x: 4, y: 2.2}
+  suggestionBox: {fileID: 1268805483322930, guid: 0ff72211cf0079b49b26652f6607a860,
+    type: 2}
+  instantiatedDeskList: []
+  instantiatedSuggestionBox: {fileID: 0}
   freeDesks: []
   deskOffset: {x: 0, y: -0.04, z: 0}
   desk: {fileID: 1822675527662198, guid: db9f56b1283e64f508809c3a92597054, type: 2}
