@@ -241,7 +241,7 @@ RectTransform:
   m_AnchorMin: {x: 0.05, y: 0.05}
   m_AnchorMax: {x: 0.95, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 19.241943, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &263399523
 MonoBehaviour:
@@ -999,7 +999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000008546746, y: -0.0000043750856}
+  m_AnchoredPosition: {x: -0.000008546746, y: 0.00001809164}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1274288930
@@ -2182,7 +2182,10 @@ MonoBehaviour:
   ScoreListParent: {fileID: 1274288928}
   ScoreEntryPrefab: {fileID: 1784579872120170, guid: fcbd37bbfdd6000449152d68b3665217,
     type: 2}
+  SaveScoreBtn: {fileID: 951768548}
   ScoreDisplay: {fileID: 1982039702}
+  _score: 420
+  _scores: []
 --- !u!4 &2013432660
 Transform:
   m_ObjectHideFlags: 0

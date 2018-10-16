@@ -11,6 +11,7 @@ public class HighScoreManager : Singleton<HighScoreManager> {
     public InputField NameField;
     public GameObject ScoreListParent;
     public GameObject ScoreEntryPrefab;
+    public GameObject SaveScoreBtn;
     public Text ScoreDisplay;
     
     private string savePath;
@@ -22,17 +23,25 @@ public class HighScoreManager : Singleton<HighScoreManager> {
     private List<HighScore> _scores;
 
     protected HighScoreManager () {} // enforces singleton use
-    
+
     private void Start()
     {
         savePath = Application.persistentDataPath + "/highscores.save";
         LoadHighScores();
-        _score = GameManager.Instance.getBalance();
-        Destroy(GameManager.Instance);
-        ScoreDisplay.text = "$" + _score.ToString("f2");
+        if (GameManager.IsInstantiated())
+        {
+            _score = GameManager.Instance.getBalance();
+            Destroy(GameManager.Instance);
+            ScoreDisplay.text = "$" + _score.ToString("f2");
+        }
+        else
+        {
+            ScoreDisplay.text = "";
+            NameField.gameObject.SetActive(false);
+            SaveScoreBtn.SetActive(false);
+        }
 
-        var sorted = from entry in _scores orderby entry.Score ascending select entry;
-
+    var sorted = from entry in _scores orderby entry.Score ascending select entry;
         foreach (var entry in sorted)
         {
             DisplayScore(entry.Name, entry.Score);

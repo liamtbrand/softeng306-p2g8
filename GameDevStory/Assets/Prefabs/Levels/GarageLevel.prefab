@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114290652548369286}
   - component: {fileID: 114325097623760530}
   - component: {fileID: 114361950001309050}
+  - component: {fileID: 114273874990887104}
   m_Layer: 0
   m_Name: GarageLevel
   m_TagString: Untagged
@@ -42,6 +43,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114273874990887104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1052776412150478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247311adc924d1648b42abd6b5c0c92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnonymousHeadShot: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
+  DialoguePool:
+  - Sentences:
+    - Title: Testy test
+      icon: {fileID: 0}
+      sentenceLine: YEEEEEEEEEEEET
+      sentenceChoices: []
+  RewardAmount: 400
+  PenaltyAmount: 200
+  notificationButton: {fileID: 1620553512249654, guid: 56107d701350da349af1b138d0348e36,
+    type: 2}
 --- !u!114 &114290652548369286
 MonoBehaviour:
   m_ObjectHideFlags: 1

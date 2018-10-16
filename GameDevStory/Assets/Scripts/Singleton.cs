@@ -63,6 +63,11 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 
+    public static bool IsInstantiated()
+    {
+        return _instance != null;
+    }
+
     private static bool applicationIsQuitting = false;
     /// <summary>
     /// When Unity quits, it destroys objects in a random order.
