@@ -16,16 +16,19 @@ public class Project {
 	private int length;
 	private ProjectDifficulty difficulty;
 	private bool enabled = false;
+	private int minWorkers;
 
 	public Project () { }
 
-	public Project (string title, string company, string description, int length, ProjectDifficulty difficulty)
+	public Project (string title, string company, string description, int length, 
+		ProjectDifficulty difficulty, int minWorkers)
 	{
 		this.title = title;
 		this.company = company;
 		this.description = description;
 		this.length = length;
 		this.difficulty = difficulty;
+		this.minWorkers = minWorkers;
 	}
 
 	public void setTitle (string title)
@@ -58,6 +61,11 @@ public class Project {
 		this.enabled = enabled;
 	}
 
+	public void setMinWorkers (int minWorkers)
+	{
+		this.minWorkers = minWorkers;
+	}
+
 	public string getTitle ()
 	{
 		return this.title;
@@ -88,16 +96,21 @@ public class Project {
 		return this.enabled;
 	}
 
+	public int getMinWorkers ()
+	{
+		return this.minWorkers;
+	}
+
 	// Formats strings for stats section of the project menu
 	public string getStats()
 	{
 		if (this.difficulty == ProjectDifficulty.Tutorial)
 		{
-			return "Length: " + this.length + "\nDifficulty: Easy";
+			return "Length: " + this.length + "\nDifficulty: Easy \nMinimum workers: " + this.minWorkers.ToString();
 		}
 		else
 		{
-			return "Length: " + length + "\nDifficulty: " + difficulty.ToString();
+			return "Length: " + length + "\nDifficulty: " + difficulty.ToString() + "\nMinimum workers: " + this.minWorkers.ToString();
 		}
 	}
 	
