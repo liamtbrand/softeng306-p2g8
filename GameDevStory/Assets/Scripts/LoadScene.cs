@@ -29,6 +29,7 @@ public class LoadScene : MonoBehaviour {
 
 	public void LoadEndingCutscene()
 	{
+		NPCController.Instance.TeardownNpcs();
 		DontDestroyOnLoad(GameManager.Instance);
 		SceneManager.LoadScene("BoughtOut");
 	}

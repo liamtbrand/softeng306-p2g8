@@ -1329,6 +1329,7 @@ GameObject:
   - component: {fileID: 185995402}
   - component: {fileID: 185995401}
   - component: {fileID: 185995400}
+  - component: {fileID: 185995404}
   m_Layer: 0
   m_Name: ScenarioExecutorContainer
   m_TagString: Untagged
@@ -1494,6 +1495,19 @@ Transform:
   m_Father: {fileID: 39933072}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &185995404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 185995399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832a4c7d857d49146a326a803bc9ed1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anonSprite: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
+  lawyerSprite: {fileID: 21300000, guid: 0ed724e314f1b104e9d348754586706a, type: 3}
 --- !u!1 &189199156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +1867,7 @@ GameObject:
   - component: {fileID: 290394553}
   - component: {fileID: 290394552}
   - component: {fileID: 290394551}
+  - component: {fileID: 290394555}
   m_Layer: 0
   m_Name: ScenarioConditionContainer
   m_TagString: Untagged
@@ -1910,6 +1925,17 @@ Transform:
   m_Father: {fileID: 39933072}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &290394555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 290394550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19f3e3bd4b26d142afc0fc9da7c337e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &301949765
 GameObject:
   m_ObjectHideFlags: 0
@@ -5417,6 +5443,7 @@ Transform:
   m_Children:
   - {fileID: 121931237}
   - {fileID: 1358367935}
+  - {fileID: 2003297331}
   m_Father: {fileID: 39933072}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6374,6 +6401,8 @@ MonoBehaviour:
   MoneyCounter: {fileID: 570726260}
   scenarioArray:
   - {fileID: 1358367936}
+  - {fileID: 121931236}
+  - {fileID: 2003297332}
   fadePanel: {fileID: 238674011}
   image: {fileID: 238674013}
 --- !u!1001 &1251366924
@@ -7633,6 +7662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectMenu: {fileID: 2039450369}
+  selectedProject: 
   DisplayButton: {fileID: 69273504}
   DescriptionCloseButton: {fileID: 1908992281}
   ProjectCompletedButton: {fileID: 913224114}
@@ -10107,6 +10137,52 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1986342498}
   m_CullTransparentMesh: 1
+--- !u!1 &2003297330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1953070077805226, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003297331}
+  - component: {fileID: 2003297332}
+  m_Layer: 0
+  m_Name: InequalPayScenarioContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &2003297331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4828842780277370, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2003297330}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 962360760}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003297332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114340553277335978, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2003297330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbda0cde868cd148b46fe3f0b0a91a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executor: {fileID: 185995404}
+  condition: {fileID: 290394555}
+  type: 0
 --- !u!1 &2011038502 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1622508170869804, guid: 991eeb235c6ab4cc8a13e210ca28254d,

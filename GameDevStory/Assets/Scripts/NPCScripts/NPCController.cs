@@ -18,6 +18,9 @@ public class NPCController : Singleton<NPCController> {
         get { return _npcInstances; }
     }
 
+    // stores a mapping from npc game object to the desk that npc is occupying.
+    private Dictionary<GameObject, Vector2> acquiredDesks = new Dictionary<GameObject, Vector2>();
+
     private const float NOTIFICATION_HEIGHT_OFFSET = 0.22f;
 
     private static int npcsToAdd = 2;										// TODO: Don't hardcode this
@@ -48,11 +51,13 @@ public class NPCController : Singleton<NPCController> {
     public void RemoveNPC(GameObject npc)
     {
         _npcInstances.Remove(npc);
+        LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().FreeDesk(acquiredDesks[npc]);
+        acquiredDesks.Remove(npc);
         Destroy(npc);
     }
 
     // shows a random bug button and registers the provided action to be called when the bug is pressed
-    // or when the bug cannot be shown and should still be counted as squashed to avoid incorrect 
+    // or when the bug cannot be shown and should still be counted as squashed to avoid incorrect
     // profit calculations.
     public void ShowBug(Action onBugSquashed)
     {
@@ -61,8 +66,8 @@ public class NPCController : Singleton<NPCController> {
         {
             onBugSquashed.Invoke();     // no npcs available but bug was not missed so still count as squashed
             return;
-        }  
-        
+        }
+
         // select a random bug button and show it in the scene
         GameObject bugToShow = bugButtons[UnityEngine.Random.Range(0, bugButtons.Length)];
 
@@ -74,9 +79,17 @@ public class NPCController : Singleton<NPCController> {
     }
 
 
-    public void AddNPCToScene(NPCInfo npc, Vector2 position)
+    public void AddNPCToScene(NPCInfo npc)
     {
-        InstantiateNPC(npc.Attributes.animationController, position, npc);
+        // Place the npc on screen
+        Vector2 position = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetRandomFreeDeskPosition();
+        LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().AcquireDesk(position);
+        GameObject npcGO = InstantiateNPC(
+            npc.Attributes.animationController,
+            LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetDeskNPCPosition(position),
+            npc
+        );
+        acquiredDesks.Add(npcGO,position);
     }
 
     // Method to be called to hire an employee.
@@ -86,13 +99,11 @@ public class NPCController : Singleton<NPCController> {
     {
         // Need to notify the npcfactory so we can't reproduce this npc.
         NPCFactory.Instance.RemoveNPCFromPool(npcInfo);
-        // Place the npc on screen
-        Vector2 position = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetRandomFreeDeskPosition();
-        AddNPCToScene(npcInfo, LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().GetDeskNPCPosition(position));
+        AddNPCToScene(npcInfo);
     }
 
     public List<NPCInfo> TeardownNpcs(){
-        
+
         var npcList = new List<NPCInfo>();
         var destroyList = new List<KeyValuePair<GameObject,NPCInfo>>();
         // Destroying npcs and returning their info for rehiring/reinstantion on new level
@@ -100,7 +111,7 @@ public class NPCController : Singleton<NPCController> {
         foreach(KeyValuePair<GameObject, NPCInfo> npcPair in _npcInstances){
             destroyList.Add(npcPair); // destroy list used to avoid invalid operation exceptions
             npcList.Add(npcPair.Value);
-            
+
         }
 
         foreach(var pair in destroyList){
@@ -191,7 +202,7 @@ public class NPCController : Singleton<NPCController> {
 
         if (ProjectManager.Instance.IsPaused())
             isPausedCallback.Invoke();
-       
+
         npc.SetHasNotification(false);
         Destroy(button);
     }

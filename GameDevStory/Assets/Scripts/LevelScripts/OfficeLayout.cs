@@ -38,7 +38,7 @@ public class OfficeLayout : MonoBehaviour
     {
         return freeDesks.Count > 0;
     }
-    
+
     // TODO: update this here to something better.
     public Vector2 GetRandomFreeDeskPosition()
     {
@@ -50,10 +50,21 @@ public class OfficeLayout : MonoBehaviour
         else
         {
             Vector2 pos = freeDesks[Random.Range(0, freeDesks.Count)];
-            freeDesks.Remove(pos);
             return pos;
         }
     }
+
+	// This should be called when an employee is sitting at the desk.
+	public void AcquireDesk(Vector2 deskPosition)
+	{
+		freeDesks.Remove(deskPosition);
+	}
+
+	// This should be called when an employee leaves the desk.
+	public void FreeDesk(Vector2 deskPosition)
+	{
+        freeDesks.Add(deskPosition);
+	}
 
     public void DeskTeardown(){
         foreach(GameObject desk in instantiatedDeskList){
@@ -86,7 +97,7 @@ public class OfficeLayout : MonoBehaviour
 	{
 
     }
-    
+
 
 
     // Update is called once per frame
