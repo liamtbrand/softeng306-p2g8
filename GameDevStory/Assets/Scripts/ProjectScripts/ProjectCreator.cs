@@ -17,6 +17,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectOne.setLength(7);
 		projectOne.setDifficulty(ProjectDifficulty.Tutorial);
 		projectOne.setEnabled(true);
+		projectOne.setMinWorkers(2);
 		projects.Add(projectOne.getTitle(),projectOne);
 
 		/* EASY PROJECTS */
@@ -27,6 +28,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectEight.setDescription("Create a Java application for extracting statistics from csv files containing information about dependencies.");
 		projectEight.setLength(8);
 		projectEight.setDifficulty(ProjectDifficulty.Easy);
+		projectEight.setMinWorkers(2);
 		projects.Add(projectEight.getTitle(),projectEight);
 
 		Project projectTwo = new Project();
@@ -35,6 +37,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectTwo.setDescription("Build a C library to assist the CEO in planning their day. Should support both Sequential and Concurrent meetings. ");
 		projectTwo.setLength(10);
 		projectTwo.setDifficulty(ProjectDifficulty.Easy);
+		projectTwo.setMinWorkers(2);
 		projects.Add(projectTwo.getTitle(),projectTwo);
 
 		Project projectSix = new Project();
@@ -43,6 +46,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectSix.setDescription("Build a web service for the New Zealand police to track parolees and their movements.");
 		projectSix.setLength(12);
 		projectSix.setDifficulty(ProjectDifficulty.Easy);
+		projectSix.setMinWorkers(3);
 		projects.Add(projectSix.getTitle(),projectSix);
 
 		/* MEDIUM PROJECTS */
@@ -53,6 +57,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectThree.setDescription("Build software to support the tracking & management of rail assets throughout New Zealand.");
 		projectThree.setLength(14);
 		projectThree.setDifficulty(ProjectDifficulty.Medium);
+		projectThree.setMinWorkers(3);
 		projects.Add(projectThree.getTitle(),projectThree);
 
 		Project projectNine = new Project();
@@ -61,6 +66,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectNine.setDescription("Develop facial tracking software for identifying Smimpsons faces within the cartoon environment. The software should track when unrealistic faces are drawn into production.");
 		projectNine.setLength(18);
 		projectNine.setDifficulty(ProjectDifficulty.Medium);
+		projectNine.setMinWorkers(4);
 		projects.Add(projectNine.getTitle(),projectNine);
 
 		Project projectFour = new Project();
@@ -69,6 +75,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectFour.setDescription("Help provide consultancy services to Zeroe, to aid them in holding their accountants accountable. ");
 		projectFour.setLength(21);
 		projectFour.setDifficulty(ProjectDifficulty.Medium);
+		projectFour.setMinWorkers(6);
 		projects.Add(projectFour.getTitle(),projectFour);
 
 		/* HARD PROJECTS */
@@ -79,6 +86,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectFive.setDescription("Build software to help Robert at Optimar calculate the WACC based on publicly available accounting information for various companies.");
 		projectFive.setLength(30);
 		projectFive.setDifficulty(ProjectDifficulty.Hard);
+		projectFive.setMinWorkers(6);
 		projects.Add(projectFive.getTitle(),projectFive);
 
 		Project projectSeven = new Project();
@@ -87,6 +95,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectSeven.setDescription("Create a serious game promoting diversity and inclusion within software engineering.");
 		projectSeven.setLength(36);
 		projectSeven.setDifficulty(ProjectDifficulty.Hard);
+		projectSeven.setMinWorkers(8);
 		projects.Add(projectSeven.getTitle(),projectSeven);
 
 		Project projectTen = new Project();
@@ -95,6 +104,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectTen.setDescription("Build a surveillance system that provides continual video recording and detects movements during closing hours.");
 		projectTen.setLength(40);
 		projectTen.setDifficulty(ProjectDifficulty.Hard);
+		projectTen.setMinWorkers(10);
 		projects.Add(projectTen.getTitle(),projectTen);
 
 		return projects;

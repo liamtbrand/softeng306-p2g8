@@ -279,7 +279,11 @@ namespace NPCScripts.StaffStateScripts
                             delegate()
                             {
                                 Debug.Log("Normal option picked");
-                                GameManager.Instance.changeBalance(-80);
+                                if (nextState != StaffMentalState.State.ANNOYED)
+                                {
+                                    GameManager.Instance.changeBalance(-80);
+                                }
+
                                 if (isAgeDialogue)
                                 {
                                     npc.MentalState.StaffStateAge = nextState;

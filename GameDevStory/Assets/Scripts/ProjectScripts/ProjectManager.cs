@@ -62,17 +62,40 @@ public class ProjectManager : Singleton<ProjectManager>
             loadScript.LoadEndingCutscene();
         }
 
+        // Current number of workers
+        int numberOfWorkers = NPCController.Instance.NpcInstances.Count;
+        Debug.Log("Number of employees: " + numberOfWorkers);
+
         // Display projects
+        displayScript.ClearAllProjects();
         foreach (var entry in projects)
         {
-            displayScript.AddNewProject(
+            if (entry.Value.getMinWorkers() > numberOfWorkers) 
+            {
+                displayScript.AddNewProject(
+                entry.Value.getTitle(),
+                entry.Value.getCompany(),
+                entry.Value.getDescription(),
+                entry.Value.getStats(),
+                false,
+                StartProject);
+            } else 
+            {
+                displayScript.AddNewProject(
                 entry.Value.getTitle(),
                 entry.Value.getCompany(),
                 entry.Value.getDescription(),
                 entry.Value.getStats(),
                 entry.Value.getEnabled(),
                 StartProject);
+            }
         }
+    }
+
+    // Hides the project menu
+    public void HideProjectMenu()
+    {
+        projectMenu.SetActive(false);
     }
 
     public bool IsPaused()
@@ -90,6 +113,7 @@ public class ProjectManager : Singleton<ProjectManager>
 
         // Start project progress timer
         timerScript.enabled = true;
+        Debug.Log("Timer script enabled");
         timerScript.DisplayCurrentProject(selectedProject);
 
         // If you want to test the pausing functionality (pauses after 3s)
@@ -113,7 +137,8 @@ public class ProjectManager : Singleton<ProjectManager>
     // Returns current project object
     public Project GetCurrentProject()
     {
-        return projects[selectedProject];
+        return projects != null && projects.ContainsKey(selectedProject) ? projects[selectedProject] : null;
+
     }
 
     public void DisplayProjectDescription()

@@ -12,6 +12,7 @@ public class HiringDisplayManager : MonoBehaviour {
     public GameObject NegotiatingPanel;
     public GameObject CurrentEmployeesPanel;
     public GameObject EmployeePanel;
+    private bool fromProjectMenu;
 
 
     void Start()
@@ -38,7 +39,12 @@ public class HiringDisplayManager : MonoBehaviour {
         else
             DisableHireButton();
         HiringMainMenu.SetActive(true);
-        ProjectManager.Instance.PauseProject();
+        if (ProjectManager.Instance.projectMenu.activeSelf) {
+            ProjectManager.Instance.HideProjectMenu();
+            fromProjectMenu = true;
+        } else {
+            ProjectManager.Instance.PauseProject(); 
+        }
     }
 
     public void HideHiringMenu()
@@ -49,7 +55,11 @@ public class HiringDisplayManager : MonoBehaviour {
     public void HideHiringMenuAndResumeProject()
     {
         HideHiringMenu();
-        ProjectManager.Instance.ResumeProject();
+        if (fromProjectMenu) {
+            ProjectManager.Instance.PickProject();
+        } else {
+            ProjectManager.Instance.ResumeProject();    
+        }
     }
 
     public void ShowHiringGrid()
