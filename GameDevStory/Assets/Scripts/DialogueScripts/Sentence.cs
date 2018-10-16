@@ -16,6 +16,9 @@ namespace DialogueScripts{
 
         public string[] sentenceChoices;
 
+        // an alternative way of providing sentence choices for when there is a right and a wrong answer
+        public BooleanSentenceChoice[] booleanChoices;
+
         public UnityAction[] sentenceChoiceActions;
 
     }
