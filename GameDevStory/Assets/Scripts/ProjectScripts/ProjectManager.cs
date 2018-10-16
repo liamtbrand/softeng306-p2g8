@@ -64,8 +64,10 @@ public class ProjectManager : Singleton<ProjectManager>
 
         // Current number of workers
         int numberOfWorkers = NPCController.Instance.NpcInstances.Count;
+        Debug.Log("Number of employees: " + numberOfWorkers);
 
         // Display projects
+        displayScript.ClearAllProjects();
         foreach (var entry in projects)
         {
             if (entry.Value.getMinWorkers() > numberOfWorkers) 
@@ -88,6 +90,12 @@ public class ProjectManager : Singleton<ProjectManager>
                 StartProject);
             }
         }
+    }
+
+    // Hides the project menu
+    public void HideProjectMenu()
+    {
+        projectMenu.SetActive(false);
     }
 
     public bool IsPaused()
