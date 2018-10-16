@@ -28,9 +28,11 @@ public class ProjectTimer : MonoBehaviour {
 		progressScript = GetComponent<ProjectManager> ();
 		currentProject = progressScript.GetCurrentProject();
 		progressPanel.SetActive(true);
+		paused = false;
 
 		// Set the timer length depending on project length
 		maxTime = currentProject.getLength()*timeMultiplier;
+		Debug.Log("Max Time: " + maxTime);
 		timer = maxTime;
 		progressBar.value = 0;
 
