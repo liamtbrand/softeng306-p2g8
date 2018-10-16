@@ -12179,7 +12179,7 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12189,12 +12189,12 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[1].Sentences.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[2].Sentences.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12214,6 +12214,16 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].results.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].results.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[3].results.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
@@ -12259,6 +12269,16 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].booleanChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].booleanChoices.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[3].booleanChoices.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
@@ -12496,23 +12516,18 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].Title
-      value: Anonymous New Employee
+      value: Outcome
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].icon
       value: 
-      objectReference: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4,
+      objectReference: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef,
         type: 3}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].sentenceLine
-      value: "Hi there! I\u2019m really really glad you\u2019ve decided to give me
-        a position, I only have one concern. The last company I came from, didn\u2019t
-        have much diversity, and I was constantly subject to sexist/racist (CHOOSE
-        DEPENDING ON EMPLOYEE TYPE) remarks from my managers. This made me really
-        unhappy, and I decided I had to leave. Does your company also have a problem
-        with incorporation of diversity?"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12628,17 +12643,17 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[2].booleanChoices.Array.data[0].sentenceChoice
-      value: I will keep the profit, for the company's sake.
+      value: I will pledge some money to charity.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[2].booleanChoices.Array.data[1].isCorrectChoice
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[2].booleanChoices.Array.data[1].sentenceChoice
-      value: I will give some money to charity.
+      value: I will keep the profit, for the company's sake.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12654,7 +12669,7 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].sentenceLine
-      value: hi
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12755,13 +12770,93 @@ Prefab:
         type: 2}
       propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].results.Array.data[0]
       value: Great choice! And because you decided to (correctly) look after your
-        employees, you get an extra $300 from additional productivity.
+        employees, you get an extra $150 from additional productivity.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].results.Array.data[1]
       value: Unfortunately that was a bad decision. The employee in question became
-        upset, and because of a loss in productivity, you have lost $300.
+        upset, and because of a loss in productivity, you have lost $150.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].booleanChoices.Array.data[0].isCorrectChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].booleanChoices.Array.data[0].sentenceChoice
+      value: Yes, but we'll fix it with hard work!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].booleanChoices.Array.data[1].sentenceChoice
+      value: There is a problem, but my hands are tied.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].results.Array.data[0]
+      value: Because of your positive attitude, and great amount of honesty with your
+        new employee, they doubled down on their first week of work, and earnt you
+        heaps of money! Nice!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].results.Array.data[1]
+      value: Your decision to acknowledge but not address the problem, has negatively
+        affected the performance of your company, and gave you a temporary bad look.
+        You've lost a little money because of this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[3].Title
+      value: Outcome
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[3].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[3].sentenceLine
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[3].booleanChoices.Array.data[0].sentenceChoice
+      value: I will pledge some money to charity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[3].booleanChoices.Array.data[1].sentenceChoice
+      value: I will keep the profit, for the company's sake.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[3].results.Array.data[0]
+      value: Great work! Your kindness has been appreciated, as - although you lost
+        some money from giving it away - your employees loved your generosity, and
+        were even happier this week, and thus completed more work! Happy days are
+        here again!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[3].results.Array.data[1]
+      value: Your choice was very business-minded, unfortunately your employees didn't
+        really like it. Due to a sense of unease in the company, productivity has
+        dropped slightly, and you've lost some revenue as a result.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: RewardAmount
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: PenaltyAmount
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
