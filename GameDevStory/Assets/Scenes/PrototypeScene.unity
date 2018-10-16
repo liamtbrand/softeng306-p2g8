@@ -2787,7 +2787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectSelectionContent: {fileID: 177728965}
-  ProjectEntryPrefab: {fileID: 1071460055584414, guid: a5cd47e953423df4497f527fe34638a3,
+  ProjectEntryPrefab: {fileID: 1450807872209386, guid: c4f746042bec942e1bde946f920a670f,
     type: 2}
   ProjectTitlePrefab: {fileID: 1398228172357924, guid: f4078c73f6128d744a03d472104c6057,
     type: 2}
