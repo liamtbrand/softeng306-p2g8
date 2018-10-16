@@ -2,17 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MoneyCounterAnimator : MonoBehaviour {
 	
 	public Text MoneyCounter;
 	public double Target { private get; set; }
+	private const double BankruptcyLimit = -250;
 
 	// Update is called once per frame
 	void Update ()
 	{
 		var currentValue = Convert.ToDouble(MoneyCounter.text.Replace("$", ""));
+
+		if (currentValue < BankruptcyLimit)
+		{
+			Destroy(GameManager.Instance);
+			SceneManager.LoadScene("Loss");
+		}
 
 		//Debug.Log("Difference: "+Math.Abs(currentValue - Target));
 		

@@ -94,6 +94,8 @@ public class GameManager : Singleton<GameManager> {
         {
             MoneyCounter.Target = moneyBalance;
         }
+        // Counterintuitively, loss isn't handled here. It's handled in MoneyCounter as we want the balance to count down
+        // BEFORE the user loses.
     }
 
     public double getBalance()
