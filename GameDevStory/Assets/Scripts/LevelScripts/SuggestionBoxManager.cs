@@ -32,11 +32,15 @@ public class SuggestionBoxManager : MonoBehaviour {
         // get reference to the in-game suggestion box
         suggestionBox = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().instantiatedSuggestionBox;
 
+		// set the first element in the dialogue pool, to be the head of queue (it MUST come first)
+		dialogueQueue.Enqueue(DialoguePool[0]);
+		DialoguePool.RemoveAt(0);
+
         // fill up the queue in random order
         int N = DialoguePool.Count;
-        for (int i = 0; i < N; i++)
+        for (int i = 1; i < N; i++)
         {
-            int randomIndex = Random.Range(0, DialoguePool.Count);
+            int randomIndex = Random.Range(1, DialoguePool.Count);
             dialogueQueue.Enqueue(DialoguePool[randomIndex]);
             DialoguePool.RemoveAt(randomIndex);
         }
@@ -79,17 +83,18 @@ public class SuggestionBoxManager : MonoBehaviour {
                             s.sentenceChoiceActions[i] = delegate ()
                             {
                                 GameManager.Instance.changeBalance(RewardAmount);
+							    dialogue.Sentences[dialogue.Sentences.Length - 1].sentenceLine = dialogue.Sentences[dialogue.Sentences.Length - 1].results[0];
                                 ProjectManager.Instance.ResumeProject();
                             };
                         else
                             s.sentenceChoiceActions[i] = delegate ()
                             {
                                 GameManager.Instance.changeBalance(-1 * PenaltyAmount);
+							    dialogue.Sentences[dialogue.Sentences.Length - 1].sentenceLine = dialogue.Sentences[dialogue.Sentences.Length - 1].results[1];
                                 ProjectManager.Instance.ResumeProject();
                             };
                     }
                 }
-
 
                 // if no icon is specified assume anonymous
                 if (s.icon == null)

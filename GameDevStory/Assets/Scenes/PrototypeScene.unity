@@ -1564,12 +1564,14 @@ MonoBehaviour:
         speaker's interview is just starting!....
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
       sentenceLine: 'Welcome! Welcome! My name is Riley, and I''m the current CEO
         of the innovative tech start-up NextSpace. '
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
       sentenceLine: 'I''m lucky enough to have been invited along to this conference,
@@ -1578,30 +1580,35 @@ MonoBehaviour:
         by making three executive decisions:'
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
       sentenceLine: '1: Listening to my employees, and fixing conflict scenarios by
         making ethical decisions.'
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
       sentenceLine: '2: Being careful in how I ADVERTISE job positions, and what words
         I use to attract people into my company.'
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
       sentenceLine: '3: Making sure my employees have a fun time as well, and incentivizing
         good behaviour with rewards! With this in mind... [Continues Talking]'
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
       sentenceLine: '[Finishes Talking] ... Thanks for listening to my talk! I hope
         you took a lot out of it. Have a great day!'
       sentenceChoices: []
       booleanChoices: []
+      results: []
   Jayne: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
 --- !u!114 &185995401
 MonoBehaviour:
@@ -1623,6 +1630,7 @@ MonoBehaviour:
         start-up idea of yours.
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: Wilson MoneyBags
       icon: {fileID: 21300000, guid: df3adebd31486494d8483a82b80faf12, type: 3}
       sentenceLine: "Making it in the Software Industry isn\u2019t easy, but with
@@ -1630,12 +1638,14 @@ MonoBehaviour:
         far."
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: Wilson MoneyBags
       icon: {fileID: 21300000, guid: df3adebd31486494d8483a82b80faf12, type: 3}
       sentenceLine: Jane and I are more than happy to invest in your company, you
         just have to make sure you hold up on your end of the bargain!
       sentenceChoices: []
       booleanChoices: []
+      results: []
   dialogue2:
     Sentences:
     - Title: Jayne Hustleson
@@ -1644,6 +1654,7 @@ MonoBehaviour:
         there\u2019s heaps of potential to grow."
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: Jayne Hustleson
       icon: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
       sentenceLine: Growing from your garage, to a building complex, then a multinational,
@@ -1651,11 +1662,13 @@ MonoBehaviour:
         or Microsoft, or be the CEO of a Unicorn eventually.
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: Jayne Hustleson
       icon: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
       sentenceLine: Your success is limitless, as long as you make the RIGHT decisions.
       sentenceChoices: []
       booleanChoices: []
+      results: []
   dialogue3:
     Sentences:
     - Title: Wilson MoneyBags
@@ -1665,6 +1678,7 @@ MonoBehaviour:
         in no time."
       sentenceChoices: []
       booleanChoices: []
+      results: []
   dialogue4:
     Sentences:
     - Title: Jayne Hustleson
@@ -1673,6 +1687,7 @@ MonoBehaviour:
         you might find you learn a thing or two.
       sentenceChoices: []
       booleanChoices: []
+      results: []
   dialogue5:
     Sentences:
     - Title: 'Jayne Hustleson & Wilson MoneyBags '
@@ -1680,6 +1695,7 @@ MonoBehaviour:
       sentenceLine: Here are some people we thought could be great first employees.
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: 'Jayne Hustleson & Wilson MoneyBags '
       icon: {fileID: 21300000, guid: 1af1646638d404d33ad787e48b4f7403, type: 3}
       sentenceLine: Remember the aim of the game is to earn enough money and status
@@ -1687,12 +1703,14 @@ MonoBehaviour:
         or sell your business out!
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: 'Jayne Hustleson & Wilson MoneyBags '
       icon: {fileID: 21300000, guid: 1af1646638d404d33ad787e48b4f7403, type: 3}
       sentenceLine: 'Hire employees, complete projects, earn money, upgrade your amenities,
         and rinse and repeat until success. Bon Voyage! '
       sentenceChoices: []
       booleanChoices: []
+      results: []
 --- !u!114 &185995402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2529,16 +2547,19 @@ MonoBehaviour:
       sentenceLine: Hello my name is Cameron
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: 
       icon: {fileID: 0}
       sentenceLine: And I have changed the dialogue manager
       sentenceChoices: []
       booleanChoices: []
+      results: []
     - Title: 
       icon: {fileID: 0}
       sentenceLine: Hope you like it :^)
       sentenceChoices: []
       booleanChoices: []
+      results: []
 --- !u!114 &313343584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12157,8 +12178,13 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
+      propertyPath: DialoguePool.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
       propertyPath: DialoguePool.Array.data[0].Sentences.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12169,6 +12195,26 @@ Prefab:
         type: 2}
       propertyPath: DialoguePool.Array.data[2].Sentences.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[0].results.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[5].results.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].results.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12203,6 +12249,16 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[2].booleanChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].booleanChoices.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].booleanChoices.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
@@ -12583,6 +12639,129 @@ Prefab:
         type: 2}
       propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[2].booleanChoices.Array.data[1].sentenceChoice
       value: I will give some money to charity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].Title
+      value: Outcome
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].sentenceLine
+      value: hi
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].booleanChoices.Array.data[0].isCorrectChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].booleanChoices.Array.data[0].sentenceChoice
+      value: Compulsory day off to talk about Women's Suffrage.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].booleanChoices.Array.data[1].sentenceChoice
+      value: Ignore the problem.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[0].Title
+      value: Anonymous Employee
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[0].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[0].sentenceLine
+      value: 'As an employee of yours, I''ve been thinking a little bit about our
+        company, about our employees, and about the amounts of money we''re making.
+        I feel like we should donate some of our money to a charity; there have been
+        plenty that have been approaching us. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[1].Title
+      value: Anonymous Employee
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[1].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[1].sentenceLine
+      value: I think it would be a good usage of extra profit, and show that we care
+        about our social responsibility, as a software firm.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].Title
+      value: Your Response
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].sentenceLine
+      value: How will you respond? Will you choose to donate some of your hard-earnt
+        profits to charity, or keep them and invest them in your own company?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].booleanChoices.Array.data[0].sentenceChoice
+      value: I will keep the profit, for the company's sake.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].booleanChoices.Array.data[1].isCorrectChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].booleanChoices.Array.data[1].sentenceChoice
+      value: I will give some money to charity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[5].results.Array.data[0]
+      value: Great choice! And because you decided to (correctly) look after your
+        employees, you get an extra $300 from additional productivity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[5].results.Array.data[1]
+      value: Unfortunately that was a bad decision. The employee in question became
+        upset, and because of a loss in productivity, you have lost $300.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].results.Array.data[0]
+      value: Great choice! And because you decided to (correctly) look after your
+        employees, you get an extra $300 from additional productivity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].results.Array.data[1]
+      value: Unfortunately that was a bad decision. The employee in question became
+        upset, and because of a loss in productivity, you have lost $300.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
