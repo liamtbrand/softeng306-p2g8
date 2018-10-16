@@ -59,7 +59,7 @@ public class OfficeLayout : MonoBehaviour
 	// This should be called when an employee leaves the desk.
 	public void FreeDesk(Vector2 deskPosition)
 	{
-		freeDesks.Add(deskPosition)
+        freeDesks.Add(deskPosition);
 	}
 
     public void DeskTeardown(){

@@ -51,7 +51,7 @@ public class NPCController : Singleton<NPCController> {
     public void RemoveNPC(GameObject npc)
     {
         _npcInstances.Remove(npc);
-        LevelManager.GetCurrentLevel().GetOfficeLayout().FreeDesk(acquiredDesks.Get(npc));
+        LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().FreeDesk(acquiredDesks[npc]);
         acquiredDesks.Remove(npc);
         Destroy(npc);
     }
