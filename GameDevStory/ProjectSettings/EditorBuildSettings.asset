@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HighScoreTestScene.unity
     guid: 2a5c4f47afd81934f85c03a8bdef5014
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/BoughtOut.unity
+    guid: d4090c51c9bbf2f4785c84acdab21c49
   m_configObjects: {}
