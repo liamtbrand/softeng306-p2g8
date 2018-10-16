@@ -136,7 +136,8 @@ public class ProjectManager : Singleton<ProjectManager>
     // Returns current project object
     public Project GetCurrentProject()
     {
-        return projects[selectedProject];
+        return projects != null && projects.ContainsKey(selectedProject) ? projects[selectedProject] : null;
+
     }
 
     public void DisplayProjectDescription()
