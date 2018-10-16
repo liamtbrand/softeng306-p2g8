@@ -38,7 +38,7 @@ namespace ProjectScripts
         }
 
         // Adds a project to the project menu
-        public void AddNewProject(string title, string company, string description, string stats, bool selectable,
+        public void AddNewProject(string title, string company, string description, string stats, bool selectable, 
             Action<string> callback)
         {
             var projectPrefab = Instantiate(ProjectEntryPrefab, Vector3.zero, Quaternion.identity, ProjectSelectionContent.transform);
