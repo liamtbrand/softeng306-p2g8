@@ -3554,7 +3554,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 3155ba2e3acbb4bdc9f83f14cb675887, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -11558,6 +11558,10 @@ Prefab:
     - target: {fileID: 1033694411126022, guid: 322eeb28967b1433c8d6f68c3d0d5f4c, type: 2}
       propertyPath: m_Name
       value: ProjectDetails
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033694411126022, guid: 322eeb28967b1433c8d6f68c3d0d5f4c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 322eeb28967b1433c8d6f68c3d0d5f4c, type: 2}

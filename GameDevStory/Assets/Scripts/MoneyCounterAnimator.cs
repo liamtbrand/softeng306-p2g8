@@ -25,10 +25,10 @@ public class MoneyCounterAnimator : MonoBehaviour {
 		//Debug.Log("Difference: "+Math.Abs(currentValue - Target));
 		
 		var stepSize = 1.0;
-		if (Math.Abs(currentValue - Target) > 500)
+		if (Math.Abs(currentValue - Target) > 200)
 		{
 			stepSize = 5;
-		} else if (Math.Abs(currentValue - Target) > 100)
+		} else if (Math.Abs(currentValue - Target) > 10)
 		{
 			stepSize = 2;
 		} else if (Math.Abs(currentValue - Target) > 0.1)
@@ -36,7 +36,8 @@ public class MoneyCounterAnimator : MonoBehaviour {
 			stepSize = 0.1;
 		} else
 		{
-			stepSize = 0.005;
+			MoneyCounter.text = "$"+(Target);
+			return;
 		}
 		
 		if (currentValue < Target)
