@@ -107,7 +107,7 @@ namespace DialogueScripts{
                 StopCoroutine(TypingCoroutine);
             }
             
-            if(sentence.sentenceChoices.Length != 0){
+            if(sentence.sentenceChoices != null && sentence.sentenceChoices.Length != 0){
                 DialogueText.text = sentence.sentenceLine;
             }else{
                 TypingCoroutine = StartCoroutine(TypeSentence(sentence.sentenceLine));

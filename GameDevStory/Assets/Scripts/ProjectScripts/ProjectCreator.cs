@@ -22,7 +22,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 
 
 		/* EASY PROJECTS */
-		/* 
+		
 		Project projectEight = new Project();
 		projectEight.setTitle("Analysing Dependencies");
 		projectEight.setCompany("NZ Game Developers Association");
@@ -48,7 +48,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projects.Add(projectSix.getTitle(),projectSix);
 
 		/* MEDIUM PROJECTS */
-		/* 
+		
 		Project projectThree = new Project();
 		projectThree.setTitle("Rail Freight Software");
 		projectThree.setCompany("ERail");
@@ -72,9 +72,9 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectFour.setLength(21);
 		projectFour.setDifficulty(ProjectDifficulty.Medium);
 		projects.Add(projectFour.getTitle(),projectFour);
-*/
+
 		/* HARD PROJECTS */
-		/* 
+		
 		Project projectFive = new Project();
 		projectFive.setTitle("Investment Software");
 		projectFive.setCompany("Optimar");
@@ -98,7 +98,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectTen.setLength(40);
 		projectTen.setDifficulty(ProjectDifficulty.Hard);
 		projects.Add(projectTen.getTitle(),projectTen);
-*/
+
 		return projects;
 	}
 
