@@ -23,7 +23,10 @@ public class LoadScene : MonoBehaviour {
 
 	public void LoadHighScoreScene()
 	{
-		DontDestroyOnLoad(GameManager.Instance);
+		if (GameManager.IsInstantiated())
+		{
+			DontDestroyOnLoad(GameManager.Instance);
+		}
 		SceneManager.LoadScene("HighScoreTestScene");
 	}
 
