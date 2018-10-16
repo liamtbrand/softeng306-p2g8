@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscenes/BoughtOut.unity
     guid: d4090c51c9bbf2f4785c84acdab21c49
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Loss.unity
+    guid: 3d28ea7c302900f4b833cbfa411ff399
   m_configObjects: {}
