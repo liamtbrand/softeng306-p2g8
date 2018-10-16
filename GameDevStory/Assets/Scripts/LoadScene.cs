@@ -13,11 +13,13 @@ public class LoadScene : MonoBehaviour {
 	public void OpenConfirmationDisplay()
 	{
 		ConfirmationDisplay.SetActive(true);
+		ProjectManager.Instance.PauseProject();
 	}
 
 	public void CloseConfirmationDisplay()
 	{
 		ConfirmationDisplay.SetActive(false);
+		ProjectManager.Instance.ResumeProject();
 	}
 
 	public void LoadMainMenu()
