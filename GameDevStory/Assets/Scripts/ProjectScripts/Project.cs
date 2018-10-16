@@ -106,12 +106,11 @@ public class Project {
 	{
 		if (this.difficulty == ProjectDifficulty.Tutorial)
 		{
-			return "Length: " + this.length + "\nDifficulty: Easy \nMinimum workers: " + this.minWorkers.ToString();
+			return "Length: " + this.length + "\nDifficulty: Easy \nMinimum workers: " + this.minWorkers;
 		}
 		else
 		{
-			return "Length: " + length + "\nDifficulty: " + difficulty.ToString() + "\nMinimum workers: " + this.minWorkers.ToString();
+			return "Length: " + length + "\nDifficulty: " + difficulty.ToString() + "\nMinimum workers: " + this.minWorkers;
 		}
 	}
-	
 }

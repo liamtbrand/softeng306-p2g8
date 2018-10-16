@@ -62,16 +62,31 @@ public class ProjectManager : Singleton<ProjectManager>
             loadScript.LoadEndingCutscene();
         }
 
+        // Current number of workers
+        int numberOfWorkers = NPCController.Instance.NpcInstances.Count;
+
         // Display projects
         foreach (var entry in projects)
         {
-            displayScript.AddNewProject(
+            if (entry.Value.getMinWorkers() > numberOfWorkers) 
+            {
+                displayScript.AddNewProject(
+                entry.Value.getTitle(),
+                entry.Value.getCompany(),
+                entry.Value.getDescription(),
+                entry.Value.getStats(),
+                false,
+                StartProject);
+            } else 
+            {
+                displayScript.AddNewProject(
                 entry.Value.getTitle(),
                 entry.Value.getCompany(),
                 entry.Value.getDescription(),
                 entry.Value.getStats(),
                 entry.Value.getEnabled(),
                 StartProject);
+            }
         }
     }
 
