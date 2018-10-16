@@ -986,12 +986,17 @@ Prefab:
     - target: {fileID: 224333707988064256, guid: a7e5294496f2a9e4f92f1d898a6584d4,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 7.499954
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 224454100252124598, guid: a7e5294496f2a9e4f92f1d898a6584d4,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 7.499954
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224333707988064256, guid: a7e5294496f2a9e4f92f1d898a6584d4,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7e5294496f2a9e4f92f1d898a6584d4, type: 2}
@@ -4900,7 +4905,12 @@ Prefab:
     - target: {fileID: 224974124282640674, guid: 3fc95124b82cc47c68f6020b0ccc2d59,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -7.500038
+      value: -7.5000305
+      objectReference: {fileID: 0}
+    - target: {fileID: 224490243670471716, guid: 3fc95124b82cc47c68f6020b0ccc2d59,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.5000305
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fc95124b82cc47c68f6020b0ccc2d59, type: 2}
@@ -5920,12 +5930,12 @@ Prefab:
     - target: {fileID: 224333707988064256, guid: a7e5294496f2a9e4f92f1d898a6584d4,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 7.499954
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 224454100252124598, guid: a7e5294496f2a9e4f92f1d898a6584d4,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 7.499954
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 224134157707862198, guid: a7e5294496f2a9e4f92f1d898a6584d4,
         type: 2}
@@ -6033,6 +6043,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224333707988064256, guid: a7e5294496f2a9e4f92f1d898a6584d4,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114801133497940700, guid: a7e5294496f2a9e4f92f1d898a6584d4, type: 2}
@@ -9196,6 +9211,33 @@ MonoBehaviour:
   UpgradedAlready: {fileID: 21300006, guid: d9e9a5e0d65f50648b0a3bfd4f25bb18, type: 3}
   UpgradeNormal: {fileID: 21300000, guid: d9e9a5e0d65f50648b0a3bfd4f25bb18, type: 3}
   CheatButton: {fileID: 255584467}
+--- !u!1 &1899980749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1052776412150478, guid: 9587a283d32aa344590c77245a4f31c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1264213638}
+--- !u!114 &1899980752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1899980749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247311adc924d1648b42abd6b5c0c92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnonymousHeadShot: {fileID: 21300000, guid: 68683ec65a909f04a8c0487cd85b385f, type: 3}
+  DialoguePool:
+  - Sentences:
+    - Title: Test DIalogue!!
+      icon: {fileID: 0}
+      sentenceLine: Yo this is a testy test
+      sentenceChoices: []
+  RewardAmount: 0
+  PenaltyAmount: 0
+  notificationButton: {fileID: 1620553512249654, guid: 56107d701350da349af1b138d0348e36,
+    type: 2}
 --- !u!114 &1908992281 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114409469319822774, guid: 322eeb28967b1433c8d6f68c3d0d5f4c,
