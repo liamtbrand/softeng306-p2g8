@@ -11576,7 +11576,7 @@ Prefab:
     - target: {fileID: 224842607578555216, guid: 322eeb28967b1433c8d6f68c3d0d5f4c,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -449.80447
       objectReference: {fileID: 0}
     - target: {fileID: 224842607578555216, guid: 322eeb28967b1433c8d6f68c3d0d5f4c,
         type: 2}
@@ -11621,6 +11621,22 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114531024247177522, guid: 322eeb28967b1433c8d6f68c3d0d5f4c,
+        type: 2}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114409469319822774, guid: 322eeb28967b1433c8d6f68c3d0d5f4c,
+        type: 2}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114409469319822774, guid: 322eeb28967b1433c8d6f68c3d0d5f4c,
+        type: 2}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300002, guid: 194e4d7544272b842a1cee4f94b216bb,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 322eeb28967b1433c8d6f68c3d0d5f4c, type: 2}
   m_IsPrefabAsset: 0
@@ -12254,6 +12270,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224842607578555216, guid: 322eeb28967b1433c8d6f68c3d0d5f4c,
     type: 2}
   m_PrefabInternal: {fileID: 1634849593}
+--- !u!114 &1741186928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1741186926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1254083943, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1.33
 --- !u!114 &1764335403 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114748354844819420, guid: fa7c16f81aa53ad4894cf092327d4d36,
@@ -12486,6 +12515,11 @@ Prefab:
         type: 2}
       propertyPath: DialoguePool.Array.data[3].PenaltyAmount
       value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialogueProbability
+      value: 0.005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
