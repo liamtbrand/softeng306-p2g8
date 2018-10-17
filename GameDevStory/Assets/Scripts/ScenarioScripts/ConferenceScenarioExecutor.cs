@@ -13,6 +13,8 @@ public class ConferenceScenarioExecutor : AScenarioExecutor
     public override void execute()
     {
 
+        ProjectManager.Instance.PauseProject();
+
 		var dialogue1 = new Dialogue
 		{
 			Sentences = new Sentence[]{
