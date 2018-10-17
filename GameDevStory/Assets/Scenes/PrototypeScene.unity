@@ -205,7 +205,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 39933072}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &34289526
 GameObject:
@@ -358,6 +358,7 @@ Transform:
   - {fileID: 1917491472}
   - {fileID: 185995403}
   - {fileID: 290394554}
+  - {fileID: 1780452785}
   - {fileID: 1654320302}
   - {fileID: 22678366}
   - {fileID: 1229203816}
@@ -367,91 +368,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &41277491
-GameObject:
+--- !u!1001 &63126312
+Prefab:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1358747122087314, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 41277492}
-  - component: {fileID: 41277495}
-  - component: {fileID: 41277494}
-  - component: {fileID: 41277493}
-  m_Layer: 0
-  m_Name: GarageLevel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &41277492
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4903723238438510, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 41277491}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1290423736}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &41277493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114653190065410948, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 41277491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 210abc84b8ab4499297830c68607ed50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coordinateSystem: {fileID: 41277494}
-  desks:
-  - {x: 1, y: 1}
-  - {x: 3, y: 1}
-  - {x: 3, y: 3}
-  - {x: 1, y: 3}
-  instantiatedDeskList: []
-  freeDesks: []
-  deskOffset: {x: 0, y: -0.04, z: 0}
-  desk: {fileID: 1822675527662198, guid: db9f56b1283e64f508809c3a92597054, type: 2}
---- !u!114 &41277494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114678729140730434, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 41277491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9d0bab254124ad494cd36c1b0fb3a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  origin: {x: 0, y: 0.04, z: 0}
-  x: {x: -0.16, y: -0.08, z: -1}
-  y: {x: 0.16, y: -0.08, z: -1}
---- !u!114 &41277495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114714749044859598, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 41277491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f9917fb8099944096d12baa4a92bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  officeLayout: {fileID: 41277493}
-  background: {fileID: 1647582877699224, guid: 56c3fdcc627984132bfa3d7ee86dddfb, type: 2}
-  setupScript: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1290423736}
+    m_Modifications:
+    - target: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998294176188690, guid: da55e3848557345608b084287e847cac, type: 2}
+      propertyPath: m_Name
+      value: BrownLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114172271816957394, guid: da55e3848557345608b084287e847cac,
+        type: 2}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 1252629316500660, guid: 176e6ffb9abb6144182f62245bf44b04,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da55e3848557345608b084287e847cac, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &69273502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,12 +1029,12 @@ Prefab:
     - target: {fileID: 224333707988064256, guid: a7e5294496f2a9e4f92f1d898a6584d4,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 7.499939
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 224454100252124598, guid: a7e5294496f2a9e4f92f1d898a6584d4,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 7.499939
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 114056253886600062, guid: a7e5294496f2a9e4f92f1d898a6584d4,
         type: 2}
@@ -1647,11 +1615,15 @@ MonoBehaviour:
       sentenceLine: Hi there! Welcome to the DivDevs Conference! Come on in, the next
         speaker's interview is just starting!....
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
       sentenceLine: 'Welcome! Welcome! My name is Riley, and I''m the current CEO
         of the innovative tech start-up NextSpace. '
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
       sentenceLine: 'I''m lucky enough to have been invited along to this conference,
@@ -1659,26 +1631,38 @@ MonoBehaviour:
         employee SATISFACTION, and customer base, in but a few months. I did this
         by making three executive decisions:'
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
       sentenceLine: '1: Listening to my employees, and fixing conflict scenarios by
         making ethical decisions.'
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
       sentenceLine: '2: Being careful in how I ADVERTISE job positions, and what words
         I use to attract people into my company.'
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
       sentenceLine: '3: Making sure my employees have a fun time as well, and incentivizing
         good behaviour with rewards! With this in mind... [Continues Talking]'
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: Speaker [Riley]
       icon: {fileID: 21300000, guid: 34878726ba0ee4a89a6118f981c8c02b, type: 3}
       sentenceLine: '[Finishes Talking] ... Thanks for listening to my talk! I hope
         you took a lot out of it. Have a great day!'
       sentenceChoices: []
+      booleanChoices: []
+      results: []
+    RewardAmount: 0
+    PenaltyAmount: 0
   Jayne: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
 --- !u!114 &185995401
 MonoBehaviour:
@@ -1699,17 +1683,25 @@ MonoBehaviour:
       sentenceLine: Hey there! Glad to finally hear you decided to take off with that
         start-up idea of yours.
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: Wilson MoneyBags
       icon: {fileID: 21300000, guid: df3adebd31486494d8483a82b80faf12, type: 3}
       sentenceLine: "Making it in the Software Industry isn\u2019t easy, but with
         hard work, brains, and a lot of luck, you might be able to take your idea
         far."
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: Wilson MoneyBags
       icon: {fileID: 21300000, guid: df3adebd31486494d8483a82b80faf12, type: 3}
       sentenceLine: Jane and I are more than happy to invest in your company, you
         just have to make sure you hold up on your end of the bargain!
       sentenceChoices: []
+      booleanChoices: []
+      results: []
+    RewardAmount: 0
+    PenaltyAmount: 0
   dialogue2:
     Sentences:
     - Title: Jayne Hustleson
@@ -1717,16 +1709,24 @@ MonoBehaviour:
       sentenceLine: "Speaking of which, I know you\u2019re a small company now, but
         there\u2019s heaps of potential to grow."
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: Jayne Hustleson
       icon: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
       sentenceLine: Growing from your garage, to a building complex, then a multinational,
         you could even work towards selling your firm off to behemoths like Google
         or Microsoft, or be the CEO of a Unicorn eventually.
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: Jayne Hustleson
       icon: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
       sentenceLine: Your success is limitless, as long as you make the RIGHT decisions.
       sentenceChoices: []
+      booleanChoices: []
+      results: []
+    RewardAmount: 0
+    PenaltyAmount: 0
   dialogue3:
     Sentences:
     - Title: Wilson MoneyBags
@@ -1735,6 +1735,10 @@ MonoBehaviour:
         and take on well-paying projects, and you\u2019ll be filthy stinking rich
         in no time."
       sentenceChoices: []
+      booleanChoices: []
+      results: []
+    RewardAmount: 0
+    PenaltyAmount: 0
   dialogue4:
     Sentences:
     - Title: Jayne Hustleson
@@ -1742,23 +1746,35 @@ MonoBehaviour:
       sentenceLine: Treat your employees right, appreciate variety of thought, and
         you might find you learn a thing or two.
       sentenceChoices: []
+      booleanChoices: []
+      results: []
+    RewardAmount: 0
+    PenaltyAmount: 0
   dialogue5:
     Sentences:
     - Title: 'Jayne Hustleson & Wilson MoneyBags '
       icon: {fileID: 21300000, guid: 1af1646638d404d33ad787e48b4f7403, type: 3}
       sentenceLine: Here are some people we thought could be great first employees.
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: 'Jayne Hustleson & Wilson MoneyBags '
       icon: {fileID: 21300000, guid: 1af1646638d404d33ad787e48b4f7403, type: 3}
       sentenceLine: Remember the aim of the game is to earn enough money and status
         to get the attention of a Silicon Valley company. Then either merge with them,
         or sell your business out!
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: 'Jayne Hustleson & Wilson MoneyBags '
       icon: {fileID: 21300000, guid: 1af1646638d404d33ad787e48b4f7403, type: 3}
       sentenceLine: 'Hire employees, complete projects, earn money, upgrade your amenities,
         and rinse and repeat until success. Bon Voyage! '
       sentenceChoices: []
+      booleanChoices: []
+      results: []
+    RewardAmount: 0
+    PenaltyAmount: 0
 --- !u!114 &185995402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2594,14 +2610,22 @@ MonoBehaviour:
       icon: {fileID: 0}
       sentenceLine: Hello my name is Cameron
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: 
       icon: {fileID: 0}
       sentenceLine: And I have changed the dialogue manager
       sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: 
       icon: {fileID: 0}
       sentenceLine: Hope you like it :^)
       sentenceChoices: []
+      booleanChoices: []
+      results: []
+    RewardAmount: 0
+    PenaltyAmount: 0
 --- !u!114 &313343584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3846,7 +3870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 41277495}
+  - {fileID: 858247913}
   - {fileID: 1534529995}
   - {fileID: 1278438920}
   level: 0
@@ -4642,7 +4666,7 @@ RectTransform:
   - {fileID: 1225304781}
   - {fileID: 313343582}
   m_Father: {fileID: 39933072}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6669,7 +6693,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 39933072}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &840313927
 MonoBehaviour:
@@ -7004,6 +7028,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1383279839953220, guid: 609813783d8e04ea5a06492fd94f796f,
     type: 2}
   m_PrefabInternal: {fileID: 849164174}
+--- !u!114 &858247913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114290652548369286, guid: 9587a283d32aa344590c77245a4f31c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1853520086}
+  m_Script: {fileID: 11500000, guid: 89f9917fb8099944096d12baa4a92bbb, type: 3}
 --- !u!1001 &858458996
 Prefab:
   m_ObjectHideFlags: 0
@@ -7849,7 +7879,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4556768295668126, guid: e6af488a6ec834bdfa73069074619006, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114823462161515084, guid: e6af488a6ec834bdfa73069074619006,
         type: 2}
@@ -9139,7 +9169,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 39933072}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1229203817
 MonoBehaviour:
@@ -9541,7 +9571,8 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 0.000061035156
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114328662297512956, guid: fa7c16f81aa53ad4894cf092327d4d36, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: fa7c16f81aa53ad4894cf092327d4d36, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1255135084
@@ -9776,109 +9807,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1273241085}
   m_CullTransparentMesh: 0
---- !u!1 &1278438916
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1358747122087314, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1278438917}
-  - component: {fileID: 1278438920}
-  - component: {fileID: 1278438919}
-  - component: {fileID: 1278438918}
-  - component: {fileID: 1278438921}
-  m_Layer: 0
-  m_Name: BrownLevel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1278438917
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4903723238438510, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278438916}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1290423736}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1278438918
+--- !u!114 &1278438920 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114653190065410948, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
+  m_CorrespondingSourceObject: {fileID: 114172271816957394, guid: da55e3848557345608b084287e847cac,
     type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278438916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 210abc84b8ab4499297830c68607ed50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coordinateSystem: {fileID: 1278438919}
-  desks:
-  - {x: -1.5, y: 0}
-  - {x: -1.5, y: 2}
-  - {x: -3.5, y: 0}
-  - {x: -3.5, y: 2}
-  - {x: 1, y: 5}
-  - {x: -1, y: 5}
-  - {x: 1, y: 7}
-  - {x: -1, y: 7}
-  - {x: 2, y: -5.5}
-  - {x: 3, y: 2}
-  instantiatedDeskList: []
-  freeDesks: []
-  deskOffset: {x: 0, y: -0.05, z: 0}
-  desk: {fileID: 1628781954183574, guid: 4bf839a8aa357456cac4f12a48e87920, type: 2}
---- !u!114 &1278438919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114678729140730434, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278438916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9d0bab254124ad494cd36c1b0fb3a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  origin: {x: 0, y: 0.04, z: -50}
-  x: {x: -0.16, y: -0.08, z: -1}
-  y: {x: 0.16, y: -0.08, z: -1}
---- !u!114 &1278438920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114714749044859598, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278438916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabInternal: {fileID: 63126312}
   m_Script: {fileID: 11500000, guid: 89f9917fb8099944096d12baa4a92bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  officeLayout: {fileID: 1278438918}
-  background: {fileID: 1998294176188690, guid: da55e3848557345608b084287e847cac, type: 2}
-  setupScript: {fileID: 1278438921}
---- !u!114 &1278438921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278438916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43d255d3659134ec69a2cb55bed69b80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1290423736
 Transform:
   m_ObjectHideFlags: 0
@@ -9890,9 +9824,9 @@ Transform:
   m_LocalPosition: {x: 0.67842495, y: -0.4279505, z: 1344.2035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 41277492}
   - {fileID: 1697250579}
-  - {fileID: 1278438917}
+  - {fileID: 1853520087}
+  - {fileID: 1654449343}
   m_Father: {fileID: 39933072}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11722,7 +11656,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 39933072}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11761,10 +11695,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectMenu: {fileID: 2039450369}
-  selectedProject: 
+  SelectedProject: 
   DisplayButton: {fileID: 69273504}
   DescriptionCloseButton: {fileID: 1908992281}
   ProjectCompletedButton: {fileID: 913224114}
+  ObjectsToMonitor:
+  - {fileID: 2133209319}
+  - {fileID: 238724954}
+  - {fileID: 2039450369}
+  - {fileID: 1394559177}
+  - {fileID: 1886128330}
+  - {fileID: 1117076622}
+  - {fileID: 840099622}
 --- !u!114 &1654320305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11777,6 +11719,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConfirmationDisplay: {fileID: 0}
+--- !u!4 &1654449343 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac,
+    type: 2}
+  m_PrefabInternal: {fileID: 63126312}
 --- !u!1 &1677646973
 GameObject:
   m_ObjectHideFlags: 0
@@ -11956,7 +11903,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4122153594223966, guid: 5b41bb94f8225094da01848cd11de088, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b41bb94f8225094da01848cd11de088, type: 2}
@@ -12318,6 +12265,236 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1433498927077146, guid: 991eeb235c6ab4cc8a13e210ca28254d,
     type: 2}
   m_PrefabInternal: {fileID: 654959302}
+--- !u!1001 &1780452784
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 39933072}
+    m_Modifications:
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[0].results.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].results.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].booleanChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].booleanChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351696334592536, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.057296753
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351696334592536, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.09240723
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351696334592536, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 267.54123
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351696334592536, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351696334592536, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351696334592536, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351696334592536, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351696334592536, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].results.Array.data[0]
+      value: Great choice! And because you decided to (correctly) look after your
+        employees, you get an extra $100 from additional productivity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[6].results.Array.data[1]
+      value: Unfortunately that was a bad decision. The employee in question became
+        upset, and because of a loss in productivity, you have lost $100.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].results.Array.data[0]
+      value: Because of your positive attitude, and great amount of honesty with your
+        new employee, they doubled down on their first week of work, and earnt you
+        $250! Nice!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].results.Array.data[1]
+      value: Your decision to acknowledge but not address the problem, has negatively
+        affected the performance of your company, and gave you a temporary bad look.
+        You've lost a pretty penny because of this ($250).
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[2].booleanChoices.Array.data[0].isCorrectChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].Sentences.Array.data[3].results.Array.data[1]
+      value: Your choice was very business-minded, unfortunately your employees didn't
+        really like it. Due to a sense of unease in the company, productivity has
+        dropped slightly, and you've lost some revenue as a result. Word spread of
+        your selfishness, and demand went down quite a lot ($400).
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[0].Title
+      value: Wilson MoneyBags
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[0].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: df3adebd31486494d8483a82b80faf12,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[0].sentenceLine
+      value: Hi there, hope you're handling everything well, in the middle of the
+        business end of the year. I thought I'd just approach you over an issue I've
+        been feeling strongly about, with your company setup.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[1].Title
+      value: Anonymous Employee
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[1].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[1].sentenceLine
+      value: I think it would be a good usage of extra profit, and show that we care
+        about our social responsibility, as a software firm.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].Title
+      value: Your Response
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].sentenceLine
+      value: How will you respond? Will you choose to donate some of your hard-earnt
+        profits to charity, or keep them and invest them in your own company?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].booleanChoices.Array.data[0].isCorrectChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].booleanChoices.Array.data[0].sentenceChoice
+      value: I will pledge some money to charity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].booleanChoices.Array.data[1].sentenceChoice
+      value: I will keep the profit, for the company's sake.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].Title
+      value: Outcome
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].booleanChoices.Array.data[0].sentenceChoice
+      value: I will pledge some money to charity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].booleanChoices.Array.data[1].sentenceChoice
+      value: I will keep the profit, for the company's sake.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].results.Array.data[0]
+      value: Great work! Your kindness has been appreciated, as - although you lost
+        some money from giving it away - your employees loved your generosity, and
+        were even happier this week, and thus completed more work! Happy days are
+        here again!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].results.Array.data[1]
+      value: Your choice was very business-minded, unfortunately your employees didn't
+        really like it. Due to a sense of unease in the company, productivity has
+        dropped slightly, and you've lost some revenue as a result. Word spread of
+        your selfishness, and demand went down quite a lot ($400).
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].RewardAmount
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].PenaltyAmount
+      value: 400
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &1780452785 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4351696334592536, guid: 3f53236fc301e5b40b470b29fb8647be,
+    type: 2}
+  m_PrefabInternal: {fileID: 1780452784}
 --- !u!1 &1782067819
 GameObject:
   m_ObjectHideFlags: 0
@@ -13494,6 +13671,127 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1001 &1853520086
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1290423736}
+    m_Modifications:
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[0].sentenceChoices.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[2].sentenceChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151276543292172, guid: 9587a283d32aa344590c77245a4f31c5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151276543292172, guid: 9587a283d32aa344590c77245a4f31c5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151276543292172, guid: 9587a283d32aa344590c77245a4f31c5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151276543292172, guid: 9587a283d32aa344590c77245a4f31c5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151276543292172, guid: 9587a283d32aa344590c77245a4f31c5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151276543292172, guid: 9587a283d32aa344590c77245a4f31c5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151276543292172, guid: 9587a283d32aa344590c77245a4f31c5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151276543292172, guid: 9587a283d32aa344590c77245a4f31c5, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[0].sentenceLine
+      value: Something has gone wrong in your office...... Look at what one of your
+        employees has to say
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[0].Title
+      value: Jayne Hustleson
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[1].Title
+      value: Anonymous
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[1].sentenceLine
+      value: God i hate this stinking office, surely the boss shouts us a free lunch
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[0].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158,
+        type: 3}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[2].Title
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[2].sentenceLine
+      value: What do you decide to do?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[2].sentenceChoices.Array.data[0]
+      value: Give the people what they want
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[0].Sentences.Array.data[2].sentenceChoices.Array.data[1]
+      value: Screw 'em
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: DialogueProbability
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5,
+        type: 2}
+      propertyPath: NotificationButton
+      value: 
+      objectReference: {fileID: 1620553512249654, guid: 56107d701350da349af1b138d0348e36,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 114273874990887104, guid: 9587a283d32aa344590c77245a4f31c5, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 9587a283d32aa344590c77245a4f31c5, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &1853520087 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4151276543292172, guid: 9587a283d32aa344590c77245a4f31c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1853520086}
 --- !u!1 &1875459007
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,212 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1902046213433550}
+  m_IsPrefabAsset: 1
+--- !u!1 &1902046213433550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4351696334592536}
+  - component: {fileID: 114750414520323782}
+  m_Layer: 0
+  m_Name: SuggestionBoxManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4351696334592536
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902046213433550}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.057296753, y: 0.09240723, z: 267.54123}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114750414520323782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902046213433550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247311adc924d1648b42abd6b5c0c92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnonymousHeadShot: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
+  DialoguePool:
+  - Sentences:
+    - Title: Jayne Hustleson
+      icon: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
+      sentenceLine: 'Looks like one of your employees may have something to say... '
+      sentenceChoices: []
+      booleanChoices: []
+      results: []
+    - Title: Jayne Hustleson
+      icon: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
+      sentenceLine: As the leader of your firm, make sure to continually check the
+        Suggestion Box. All of your employees/investors may submit to the box, either
+        anonymously or under their own names.
+      sentenceChoices: []
+      booleanChoices: []
+      results: []
+    - Title: Jayne Hustleson
+      icon: {fileID: 21300000, guid: d81cd28d8cd6fd849a0864b834bf1158, type: 3}
+      sentenceLine: It may help you find problems in the workplace faster, and ultimately
+        make your employees happier. Team work makes the dream work!
+      sentenceChoices: []
+      booleanChoices: []
+      results: []
+    - Title: Anonymous Employee
+      icon: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
+      sentenceLine: "It\u2019s the upcoming Women\u2019s Suffrage Day, and I asked
+        our employees as to whether or not they would be keen for an afternoon visit
+        to a caf\xE9, to speak about their thoughts on Women\u2019s Suffrage, and
+        inclusion of females in tech. "
+      sentenceChoices: []
+      booleanChoices: []
+      results: []
+    - Title: Anonymous Employee
+      icon: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
+      sentenceLine: No one was really interested, and that really saddened me, and
+        made me feel like an outcast in my own workplace. I'd love if this could be
+        remedied somehow, and am scared of having to leave, if not.
+      sentenceChoices: []
+      booleanChoices: []
+      results: []
+    - Title: Your Response
+      icon: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef, type: 3}
+      sentenceLine: What is your response to this? Do you support this employee, by
+        having a compulsory day off to talk about Women's Suffrage, or do you ignore
+        the problem, and sweep it under the rug?
+      sentenceChoices: []
+      booleanChoices:
+      - isCorrectChoice: 1
+        sentenceChoice: Compulsory day off to talk about Women's Suffrage.
+      - isCorrectChoice: 0
+        sentenceChoice: Ignore the problem.
+      results: []
+    - Title: Outcome
+      icon: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef, type: 3}
+      sentenceLine: 
+      sentenceChoices: []
+      booleanChoices: []
+      results:
+      - Great choice! And because you decided to (correctly) look after your employees,
+        you get an extra $150 from additional productivity.
+      - Unfortunately that was a bad decision. The employee in question became upset,
+        and because of a loss in productivity, you have lost $150.
+    RewardAmount: 100
+    PenaltyAmount: 100
+  - Sentences:
+    - Title: Anonymous New Employee
+      icon: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
+      sentenceLine: "Hi there! I\u2019m a new employee, and I'm really really glad
+        you\u2019ve decided to give me a position. I only have one concern. The last
+        company I came from, didn\u2019t have much diversity, and I was constantly
+        subject to sexist remarks from my managers."
+      sentenceChoices: []
+      booleanChoices: []
+      results: []
+    - Title: Anonymous New Employee
+      icon: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
+      sentenceLine: This made me really unhappy, and I decided I had to leave. Does
+        your company also have a problem with incorporation of diversity?
+      sentenceChoices: []
+      booleanChoices: []
+      results: []
+    - Title: Your Response
+      icon: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef, type: 3}
+      sentenceLine: This made me really unhappy, and I decided I had to leave. Does
+        your company also have a problem with incorporation of diversity?
+      sentenceChoices: []
+      booleanChoices:
+      - isCorrectChoice: 1
+        sentenceChoice: Yes, but we'll fix it with hard work!
+      - isCorrectChoice: 0
+        sentenceChoice: There is a problem, but my hands are tied.
+      results: []
+    - Title: Outcome
+      icon: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef, type: 3}
+      sentenceLine: 
+      sentenceChoices: []
+      booleanChoices: []
+      results:
+      - Because of your positive attitude, and great amount of honesty with your new
+        employee, they doubled down on their first week of work, and earnt you heaps
+        of money! Nice!
+      - Your decision to acknowledge but not address the problem, has negatively affected
+        the performance of your company, and gave you a temporary bad look. You've
+        lost a little money because of this.
+    RewardAmount: 250
+    PenaltyAmount: 250
+  - Sentences:
+    - Title: Anonymous Employee
+      icon: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
+      sentenceLine: 'As an employee of yours, I''ve been thinking a little bit about
+        our company, about our employees, and about the amounts of money we''re making.
+        I feel like we should donate some of our money to a charity; there have been
+        plenty that have been approaching us. '
+      sentenceChoices: []
+      booleanChoices: []
+      results:
+      - 
+      - 
+    - Title: Anonymous Employee
+      icon: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
+      sentenceLine: I think it would be a good usage of extra profit, and show that
+        we care about our social responsibility, as a software firm.
+      sentenceChoices: []
+      booleanChoices: []
+      results: []
+    - Title: Your Response
+      icon: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
+      sentenceLine: How will you respond? Will you choose to donate some of your hard-earnt
+        profits to charity, or keep them and invest them in your own company?
+      sentenceChoices: []
+      booleanChoices:
+      - isCorrectChoice: 0
+        sentenceChoice: I will pledge some money to charity.
+      - isCorrectChoice: 0
+        sentenceChoice: I will keep the profit, for the company's sake.
+      results: []
+    - Title: Outcome
+      icon: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef, type: 3}
+      sentenceLine: 
+      sentenceChoices: []
+      booleanChoices:
+      - isCorrectChoice: 0
+        sentenceChoice: I will pledge some money to charity.
+      - isCorrectChoice: 0
+        sentenceChoice: I will keep the profit, for the company's sake.
+      results:
+      - Great work! Your kindness has been appreciated, as - although you lost some
+        money from giving it away - your employees loved your generosity, and were
+        even happier this week, and thus completed more work! Happy days are here
+        again!
+      - Your choice was very business-minded, unfortunately your employees didn't
+        really like it. Due to a sense of unease in the company, productivity has
+        dropped slightly, and you've lost some revenue as a result.
+    RewardAmount: 400
+    PenaltyAmount: 400
+  NotificationButton: {fileID: 1620553512249654, guid: 56107d701350da349af1b138d0348e36,
+    type: 2}
+  DialogueProbability: 1

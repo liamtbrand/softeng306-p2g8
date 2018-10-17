@@ -56,6 +56,7 @@ public class HiringDisplayManager : MonoBehaviour {
     {
         HideHiringMenu();
         if (fromProjectMenu) {
+            fromProjectMenu = false;
             ProjectManager.Instance.PickProject();
         } else {
             ProjectManager.Instance.ResumeProject();    
