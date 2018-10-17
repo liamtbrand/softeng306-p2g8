@@ -118,7 +118,7 @@ namespace NPCScripts.StaffStateScripts
                         // Leave company!
                         _currentlyDisplaying = true;
                         NPCController.Instance.RemoveNPC(npc.Key);
-                        GameManager.Instance.changeBalance(-500);
+                        GameManager.Instance.changeBalance(-150);
                         ProjectManager.Instance.PauseProject();
                         DialogueManager.Instance.StartDialogue(GenerateLeaveDialogue(npc.Value));
                     }
