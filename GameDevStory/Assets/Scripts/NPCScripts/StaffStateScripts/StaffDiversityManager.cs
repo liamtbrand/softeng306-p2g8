@@ -118,7 +118,7 @@ namespace NPCScripts.StaffStateScripts
                         // Leave company!
                         _currentlyDisplaying = true;
                         NPCController.Instance.RemoveNPC(npc.Key);
-                        GameManager.Instance.changeBalance(-150);
+                        GameManager.Instance.changeBalance(-200);
                         ProjectManager.Instance.PauseProject();
                         DialogueManager.Instance.StartDialogue(GenerateLeaveDialogue(npc.Value));
                     }
@@ -177,7 +177,7 @@ namespace NPCScripts.StaffStateScripts
                         sentenceLine = npc.Attributes.npcName + " has resigned. " + GetPronoun(npc, true) +
                                        " has moved on to a more inclusive workplace. " +
                                        "Maintaining a diverse workforce helps improve employee satisfaction and productivity. " +
-                                       "You have paid a $500 penalty for lost productivity.",
+                                       "You have paid a $200 penalty for lost productivity.",
                         sentenceChoices = new[] {"OK"},
                         sentenceChoiceActions = new UnityAction[]
                         {

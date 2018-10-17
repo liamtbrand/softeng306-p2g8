@@ -17,7 +17,7 @@ public class OfficeUpgradeManager : MonoBehaviour
     public Button CheatButton;
 
     private const int NormalOfficePrice = 400;
-    private const int LargeOfficePrice = 750;
+    private const int LargeOfficePrice = 400;
 
     private int _cheatButtonCount = 0;
 
@@ -80,18 +80,14 @@ public class OfficeUpgradeManager : MonoBehaviour
                 // Garage
                 GarageButton.interactable = false;
                 GarageButton.GetComponent<Image>().sprite = UpgradedAlready;
-                LargeOfficeButton.interactable = true;
-                LargeOfficeButton.GetComponent<Image>().sprite = UpgradeNormal;
+                LargeOfficeButton.interactable = false;
+                LargeOfficeButton.GetComponent<Image>().sprite = UpgradeDisabled;
                 NormalOfficeButton.interactable = true;
                 NormalOfficeButton.GetComponent<Image>().sprite = UpgradeNormal;
                 if (GameManager.Instance.MoneyBalance < NormalOfficePrice - 249)
                 {
                     NormalOfficeButton.interactable = false;
                     NormalOfficeButton.GetComponent<Image>().sprite = UpgradeDisabled;
-                    LargeOfficeButton.interactable = false;
-                    LargeOfficeButton.GetComponent<Image>().sprite = UpgradeDisabled;
-                } else if (GameManager.Instance.MoneyBalance < LargeOfficePrice)
-                {
                     LargeOfficeButton.interactable = false;
                     LargeOfficeButton.GetComponent<Image>().sprite = UpgradeDisabled;
                 }
