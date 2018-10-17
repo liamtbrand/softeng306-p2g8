@@ -24,7 +24,10 @@ public class LoadScene : MonoBehaviour {
 
 	public void LoadMainMenu()
 	{
-		ConfirmationDisplay.SetActive(false);
+		if (ConfirmationDisplay != null)
+		{
+			ConfirmationDisplay.SetActive(false);
+		}
 		Destroy(GameObject.FindGameObjectWithTag("GameManager"));
 		Debug.Log("Destroying gm and going to main menu");
 		SceneManager.LoadScene("MainMenu");

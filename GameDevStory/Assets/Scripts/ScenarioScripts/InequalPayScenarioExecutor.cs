@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -104,7 +105,7 @@ public class InequalPayScenarioExecutor : AScenarioExecutor
         var dialogue3 = new Dialogue(){
             Sentences = new Sentence[]{
                 new Sentence(){
-                    sentenceLine = "The lawsuit was lost, and company had to pay $800 in remediations, $" +  payDifferential +
+                    sentenceLine = "The lawsuit was lost, and company had to pay $500 in remediations, $" +  payDifferential +
                      " to even current pay gaps, and use fair pay and hiring practices in the future"
                 }
             }
@@ -115,12 +116,12 @@ public class InequalPayScenarioExecutor : AScenarioExecutor
 
         DialogueManager.Instance.QueueDialogue(dialogue3);
 
-        GameManager.Instance.changeBalance(-800);
+        GameManager.Instance.changeBalance(-500);
 
         EqualisePayChoice();
 	}
 
-    private float CalculateAverageDifference(){
+    private int CalculateAverageDifference(){
         var malePaySum = 0f;
 		var maleCount = 0f;
 		var femalePaySum = 0f;
@@ -139,7 +140,7 @@ public class InequalPayScenarioExecutor : AScenarioExecutor
 		float maleAvg = malePaySum/maleCount;
 		float femaleAvg = femalePaySum/femaleCount;
 
-        return (maleAvg - femaleAvg) * femaleCount;
+        return Convert.ToInt32((maleAvg - femaleAvg) * femaleCount);
     }
 
     public IEnumerator WaitThenQueueDialogue(){
