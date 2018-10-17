@@ -104,7 +104,7 @@ public class ProjectCreator : Singleton<ProjectCreator> {
 		projectTen.setDescription("Build a surveillance system that provides continual video recording and detects movements during closing hours.");
 		projectTen.setLength(40);
 		projectTen.setDifficulty(ProjectDifficulty.Hard);
-		projectTen.setMinWorkers(10);
+		projectTen.setMinWorkers(8);
 		projects.Add(projectTen.getTitle(),projectTen);
 
 		return projects;

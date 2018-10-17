@@ -1693,6 +1693,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue1:
     Sentences:
+    - Title: Tutorial
+      icon: {fileID: 21300000, guid: f4cd1a23395a449efa07a890d062941a, type: 3}
+      sentenceLine: You are a manager of a new start-up. Complete projects to earn
+        money, while keeping your employees happy. The buttons in the top left can
+        be used to hire employees, upgrade your office in the shop, and leave the
+        game.
+      sentenceChoices: []
+      booleanChoices: []
+      results: []
+    - Title: Tutorial
+      icon: {fileID: 21300000, guid: f4cd1a23395a449efa07a890d062941a, type: 3}
+      sentenceLine: Some projects require you to have a certain number of employees
+        to complete them. When hiring employees, you may also edit your job advertisements
+        to impact who applies. Have fun!
+      sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: Wilson MoneyBags
       icon: {fileID: 21300000, guid: df3adebd31486494d8483a82b80faf12, type: 3}
       sentenceLine: Hey there! Glad to finally hear you decided to take off with that
@@ -3887,7 +3904,7 @@ MonoBehaviour:
   levels:
   - {fileID: 858247913}
   - {fileID: 1534529995}
-  - {fileID: 1278438920}
+  - {fileID: 1154242304}
   level: 0
 --- !u!1001 &565775505
 Prefab:
@@ -9118,6 +9135,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224125486635203804, guid: 3fc95124b82cc47c68f6020b0ccc2d59,
     type: 2}
   m_PrefabInternal: {fileID: 858458996}
+--- !u!114 &1154242304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114172271816957394, guid: da55e3848557345608b084287e847cac,
+    type: 2}
+  m_PrefabInternal: {fileID: 63126312}
+  m_Script: {fileID: 11500000, guid: 89f9917fb8099944096d12baa4a92bbb, type: 3}
 --- !u!1 &1157595480
 GameObject:
   m_ObjectHideFlags: 0
@@ -10117,21 +10140,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac,
     type: 2}
   m_PrefabInternal: {fileID: 63126312}
---- !u!114 &1278438920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114714749044859598, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f9917fb8099944096d12baa4a92bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  officeLayout: {fileID: 0}
-  background: {fileID: 0}
-  setupScript: {fileID: 0}
 --- !u!4 &1290423736
 Transform:
   m_ObjectHideFlags: 0
