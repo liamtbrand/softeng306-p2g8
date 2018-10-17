@@ -12311,7 +12311,7 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12321,16 +12321,26 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].results.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[4].results.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].booleanChoices.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].booleanChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[4].booleanChoices.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4351696334592536, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
@@ -12425,36 +12435,40 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[1].Title
-      value: Anonymous Employee
+      value: Wilson MoneyBags
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[1].icon
       value: 
-      objectReference: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4,
+      objectReference: {fileID: 21300000, guid: df3adebd31486494d8483a82b80faf12,
         type: 3}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[1].sentenceLine
-      value: I think it would be a good usage of extra profit, and show that we care
-        about our social responsibility, as a software firm.
+      value: I feel like we are SACRIFICING the good of the company, for a perceieved
+        social benefit. We are hiring people based on where they come from/who they
+        are, and we're letting go of our quality of product.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].Title
-      value: Your Response
+      value: Wilson MoneyBags
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].icon
       value: 
-      objectReference: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4,
+      objectReference: {fileID: 21300000, guid: df3adebd31486494d8483a82b80faf12,
         type: 3}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].sentenceLine
-      value: How will you respond? Will you choose to donate some of your hard-earnt
-        profits to charity, or keep them and invest them in your own company?
+      value: "Survival of the fittest is unattainable, if you're not employing the
+        fittest! It\u2019s because of this, that I\u2019m providing an ultimatum;
+        I\u2019ve had enough, and bloody need change! Either I\u2019ll leave, or you
+        give up this whole diversity thing, and just hire normally. No in-betweens,
+        make a choice."
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12474,23 +12488,23 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].Title
-      value: Outcome
+      value: Your Response
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].icon
       value: 
-      objectReference: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef,
+      objectReference: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4,
         type: 3}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].booleanChoices.Array.data[0].sentenceChoice
-      value: I will pledge some money to charity.
+      value: Drop Wilson, and continue to have Diversity Scheme.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].booleanChoices.Array.data[1].sentenceChoice
-      value: I will keep the profit, for the company's sake.
+      value: Keep the investor, but give up any Diversity Scheme.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12511,12 +12525,63 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].RewardAmount
-      value: 400
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].PenaltyAmount
       value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].sentenceLine
+      value: 'How will you respond? You can choose to keep your investor - and his
+        related capital - within the company, at the cost of dropping your entire
+        diversity initiative, with employee hiring.
+
+        OR you can drop the investor, lose his financial aid, and ensure your team
+        continues to have the freedom to be diverse.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[3].booleanChoices.Array.data[0].isCorrectChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[4].Title
+      value: Outcome
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[4].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[4].booleanChoices.Array.data[0].sentenceChoice
+      value: I will pledge some money to charity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[4].booleanChoices.Array.data[1].sentenceChoice
+      value: I will keep the profit, for the company's sake.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[4].results.Array.data[0]
+      value: A difficult, but a well-made choice. Letting go of financial aid is hard,
+        but if it's for the sake of moral consistency, then you're doing right by
+        yourself and your company. Your loss of capital for now is $300, but you'll
+        be able to make it back in time, don't worry.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[4].results.Array.data[1]
+      value: A short-term smart decision, but long-term a business kamikaze. Wilson
+        MoneyBags has given your company a bad reputation. Be careful who you associate
+        with; your vibe attracts your tribe.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
