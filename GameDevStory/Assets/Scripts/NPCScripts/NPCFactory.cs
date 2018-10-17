@@ -38,8 +38,8 @@ public class NPCFactory : Singleton<NPCFactory> {
     public float FemalePayMultiplier = 0.75f;
 
     // fields defining the range of values for the NPC costs
-    public int MinEmployeeCost = 50;
-    public int MaxEmployeeCost = 100;
+    public int MinEmployeeCost = 75;
+    public int MaxEmployeeCost = 250;
 
     public double NumberOfFemales = 0;
     public int FemaleCount = 0;                 // Remember how many females we
