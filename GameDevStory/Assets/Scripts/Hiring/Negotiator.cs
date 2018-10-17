@@ -32,7 +32,7 @@ public class Negotiator : MonoBehaviour
     {
         // Offer slider starts out at npc's optimum value.
         PaySlider.value = npc.Attributes.cost;
-        PaySlider.maxValue = Math.Min(2 * npc.Attributes.cost, (int)GameManager.Instance.getBalance()); // Dynamically assign max. offer and ensure not more than player can afford
+        PaySlider.maxValue = Math.Min(2 * npc.Attributes.cost, (int)GameManager.Instance.getBalance() + 249); // Dynamically assign max. offer and ensure not more than player can afford
         NameHeader.text = npc.Attributes.npcName;
     }
 
