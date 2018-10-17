@@ -47,5 +47,7 @@ public class MoneyCounterAnimator : MonoBehaviour {
 		{
 			MoneyCounter.text = "$"+(currentValue - stepSize).ToString();
 		}
+
+		MoneyCounter.color = currentValue < 0 ? Color.red : Color.black;
 	}
 }

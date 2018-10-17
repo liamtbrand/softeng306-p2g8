@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1998294176188690}
+  m_IsPrefabAsset: 1
+--- !u!1 &1998294176188690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4157529801183508}
+  - component: {fileID: 114172271816957394}
+  - component: {fileID: 114099136210296628}
+  - component: {fileID: 114907214916589620}
+  - component: {fileID: 114963918109187544}
+  m_Layer: 0
+  m_Name: brownlevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4157529801183508
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998294176188690}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114099136210296628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998294176188690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9d0bab254124ad494cd36c1b0fb3a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0.04, z: -50}
+  x: {x: -0.16, y: -0.08, z: -1}
+  y: {x: 0.16, y: -0.08, z: -1}
+--- !u!114 &114172271816957394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998294176188690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f9917fb8099944096d12baa4a92bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  officeLayout: {fileID: 114907214916589620}
+  background: {fileID: 1998294176188690}
+  setupScript: {fileID: 114963918109187544}
+--- !u!114 &114907214916589620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998294176188690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210abc84b8ab4499297830c68607ed50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coordinateSystem: {fileID: 114099136210296628}
+  desks:
+  - {x: -1.5, y: 0}
+  - {x: -1.5, y: 2}
+  - {x: -3.5, y: 0}
+  - {x: -3.5, y: 2}
+  - {x: 1, y: 5}
+  - {x: -1, y: 5}
+  - {x: 1, y: 7}
+  - {x: -1, y: 7}
+  - {x: 2, y: -5.5}
+  - {x: 3, y: 2}
+  suggestionBoxPos: {x: 3, y: 3.5}
+  suggestionBox: {fileID: 1268805483322930, guid: 0ff72211cf0079b49b26652f6607a860,
+    type: 2}
+  instantiatedDeskList: []
+  instantiatedSuggestionBox: {fileID: 0}
+  freeDesks: []
+  deskOffset: {x: 0, y: -0.05, z: 0}
+  desk: {fileID: 1628781954183574, guid: 4bf839a8aa357456cac4f12a48e87920, type: 2}
+--- !u!114 &114963918109187544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998294176188690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d255d3659134ec69a2cb55bed69b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
