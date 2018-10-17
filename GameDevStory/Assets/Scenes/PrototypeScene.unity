@@ -13250,9 +13250,8 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[8].Sentences.Array.data[0].sentenceLine
-      value: 'I''ve been getting really tired in the morning and I always find I am
-        much more productive later in the day. Are we able to get more flexible work
-        hours? '
+      value: The air conditioning uni has been broken. It's getting really stuffy
+        in here. Can we please get it fixed?
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -13262,12 +13261,12 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[8].Sentences.Array.data[0].booleanChoices.Array.data[0].sentenceChoice
-      value: Of course. That's no problem at all.
+      value: Fix the air conditioning for $50.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[8].Sentences.Array.data[0].booleanChoices.Array.data[1].sentenceChoice
-      value: Definitely not. Employees should be punctual.
+      value: Leave it broken it's not worth fixing.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -13298,14 +13297,14 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[8].Sentences.Array.data[1].results.Array.data[0]
-      value: Employee work is in sync with their circadian rhythms. Extra productivity
-        has granted you an additonal $50.
+      value: You've earned an extra $100. Employees are more productive when they
+        have efficient cooling.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[8].Sentences.Array.data[1].results.Array.data[1]
-      value: Employees are out of sync with their circadian rhythms. Lower productivity
-        has cost you $30.
+      value: Employees are overheating and can't think straight. They've been less
+        productive and you've lost $80 as a result.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -13315,7 +13314,7 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[8].PenaltyAmount
-      value: 30
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
