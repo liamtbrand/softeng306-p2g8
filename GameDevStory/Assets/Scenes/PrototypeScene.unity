@@ -13642,7 +13642,12 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialogueProbability
-      value: 0.002
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: GracePeriod
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
