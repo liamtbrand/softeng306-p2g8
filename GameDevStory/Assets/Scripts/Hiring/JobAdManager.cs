@@ -37,10 +37,12 @@ public class JobAdManager : MonoBehaviour {
     // Display the job advertisement editor
     public void ShowEditor()
     {
-        if (GameManager.Instance.getBalance() <= 80) {
+        if (GameManager.Instance.getBalance() < 80) {
             sendButton.GetComponent<Button>().interactable = false;
+            sendButton.GetComponent<Image>().color = new Color(194f/255f, 194f/255f, 194f/255f, 255f/255f);
         } else {
             sendButton.GetComponent<Button>().interactable = true;
+            sendButton.GetComponent<Image>().color = new Color(66f/255f, 255f/255f, 74f/255f, 255f/255f);
         }
         jobAdEditor.SetActive(true);
     }
@@ -52,6 +54,10 @@ public class JobAdManager : MonoBehaviour {
     }
 
     public void Advertise() {
+
+        // Pay for cost of advertising
+        GameManager.Instance.changeBalance(-80);
+
         List<String> values = GetDropdownValues();
         int proportion = (int)(GetFemaleApplicantProportion(values)*10);
 
