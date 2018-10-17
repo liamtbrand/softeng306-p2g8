@@ -54,10 +54,16 @@ MonoBehaviour:
   npcName: Jasmine
   age: 52
   gender: 1
-  biography: I develop new code metrics and apply them and metrics others have proposed
-    to code. At the moment I'm concentrating on Java.
+  biography: 'I develop new code metrics and apply them and metrics others have proposed
+    to code. At the moment I''m concentrating on Java.
+
+
+    I enjoy a good walk on the beach, and love typing characters onto a screen with
+    keys.'
   animationController: {fileID: 22100000, guid: f976e1ca54aa3b940b59a3d5cef12298,
     type: 2}
   cost: 72
   costThreshold: 66
+  ammountPaidFor: 0
+  negotiationFrustration: 0
   headshot: {fileID: 21300000, guid: 390abdb7887117241906bd70b434dac9, type: 3}

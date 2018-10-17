@@ -54,10 +54,22 @@ MonoBehaviour:
   npcName: Merida
   age: 40
   gender: 1
-  biography: I am a very talented coder and have a lot of practical experience in
-    Web Development
+  biography: 'I am a very talented coder and have a lot of practical experience in
+    Web Development.
+
+
+    Currently I am involved in a project developing a collaborative game design prototyping
+    tool for the Surface Hub.
+
+
+    Other interests include: mathematics, graphic design, typography, puns, learning
+    languages (programming and IRL), signage, and more puns.
+
+'
   animationController: {fileID: 22100000, guid: 7b764b6c153729b49a382e96f2f247a3,
     type: 2}
   cost: 72
   costThreshold: 66
+  ammountPaidFor: 0
+  negotiationFrustration: 0
   headshot: {fileID: 21300000, guid: 3b5e060cedc14cc4ca10d9e85bcec6f3, type: 3}

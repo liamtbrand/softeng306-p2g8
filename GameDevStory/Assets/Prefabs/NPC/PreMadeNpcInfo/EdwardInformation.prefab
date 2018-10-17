@@ -55,9 +55,15 @@ MonoBehaviour:
   age: 21
   gender: 0
   biography: 'Hi! I''m a Software Engineering and technology enthusiast. I''m after
-    opportunities in Software and Computer Systems engineering. '
+    opportunities in Software and Computer Systems engineering.
+
+
+    To say I love coding would be an understatement; from testing, to documentation,
+    to working in Agile teams, I immerse myself in all aspects. '
   animationController: {fileID: 22100000, guid: 6992cba3f5fd79b4eb117018fd011124,
     type: 2}
   cost: 72
   costThreshold: 61
+  ammountPaidFor: 0
+  negotiationFrustration: 0
   headshot: {fileID: 21300000, guid: 21a3410471464a348801e406d702f93e, type: 3}
