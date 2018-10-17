@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using NPCScripts.StaffStateScripts;
 using ProjectScripts;
+using UnityEditor.Experimental.UIElements;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // Handles projects
@@ -53,13 +55,13 @@ public class ProjectManager : Singleton<ProjectManager>
         if (projects.Count == 0)
         {
             // TODO: change to cutscene
-            /* if (GameManager.Instance.getBalance() > 0) {
-                // Bought out cut scene
+            if (GameManager.Instance.getBalance() > 0) {
+                loadScript = GetComponent<LoadScene>();
+                loadScript.LoadEndingCutscene();
             } else {
-                // Bankrupt cut scene
-            }*/
-            loadScript = GetComponent<LoadScene>();
-            loadScript.LoadEndingCutscene();
+                Destroy(GameManager.Instance);
+                SceneManager.LoadScene("Loss");
+            }
         }
 
         // Current number of workers
@@ -242,7 +244,7 @@ public class ProjectManager : Singleton<ProjectManager>
     }
     
     // Calculates the profit from a project
-    double CalculateProjectProfit(Project project, int bugsMissed, double diversityScore)
+    int CalculateProjectProfit(Project project, int bugsMissed, double diversityScore)
     {
         // Get base amount based on difficulty
         var baseValue = 0.0;
@@ -269,7 +271,7 @@ public class ProjectManager : Singleton<ProjectManager>
         
         // DiversityStore DECREASES with INCREASED diversity
         // BugPenalty INCREASES with more bugs
-        return (baseValue) * (1 - (diversityScore*0.2)) * (1 - bugPenalty*0.2) * (1 - npcStatPenalty*0.3);
+        return Convert.ToInt32((baseValue) * (1 - (diversityScore*0.2)) * (1 - bugPenalty*0.2) * (1 - npcStatPenalty*0.3));
     }
 
     // Updates the project menu

@@ -84,7 +84,7 @@ public class OfficeUpgradeManager : MonoBehaviour
                 LargeOfficeButton.GetComponent<Image>().sprite = UpgradeNormal;
                 NormalOfficeButton.interactable = true;
                 NormalOfficeButton.GetComponent<Image>().sprite = UpgradeNormal;
-                if (GameManager.Instance.MoneyBalance < NormalOfficePrice)
+                if (GameManager.Instance.MoneyBalance < NormalOfficePrice - 249)
                 {
                     NormalOfficeButton.interactable = false;
                     NormalOfficeButton.GetComponent<Image>().sprite = UpgradeDisabled;
@@ -104,7 +104,7 @@ public class OfficeUpgradeManager : MonoBehaviour
                 LargeOfficeButton.GetComponent<Image>().sprite = UpgradeNormal;
                 GarageButton.GetComponent<Image>().sprite = UpgradedAlready;
                 NormalOfficeButton.GetComponent<Image>().sprite = UpgradedAlready;
-                if (GameManager.Instance.MoneyBalance < LargeOfficePrice)
+                if (GameManager.Instance.MoneyBalance < LargeOfficePrice -249)
                 {
                     LargeOfficeButton.interactable = false;
                     LargeOfficeButton.GetComponent<Image>().sprite = UpgradeDisabled;
