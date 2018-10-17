@@ -90,6 +90,8 @@ public class OfficeLayout : MonoBehaviour
         {
             freeDesks.Add(desk);
         }
+
+        SuggestionBoxManager.Instance.SceneWasSwitched();
     }
 
     // Use this for initialization

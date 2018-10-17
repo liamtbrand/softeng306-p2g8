@@ -8,7 +8,7 @@ using UnityEngine.UI;
 // manages showing notifications above the suggestion box in the scene and
 // maintains a queue of scenarios that can occur at any point in game. These
 // scenarios are made by anonymous employees
-public class SuggestionBoxManager : MonoBehaviour {
+public class SuggestionBoxManager : Singleton<SuggestionBoxManager> {
 
     public Sprite AnonymousHeadShot;
     public List<Dialogue> DialoguePool; // possible dialogues that can appear
@@ -19,6 +19,7 @@ public class SuggestionBoxManager : MonoBehaviour {
     private readonly Queue<Dialogue> dialogueQueue = new Queue<Dialogue>();
     private bool active = false;
     private Vector3 notificationPosition;
+    private List<Dialogue> dialoguePoolCopy; // working copy for each instance of suggestion box
 
     private const float NOTIFICATION_HEIGHT_OFFSET = 0.14f;
     private const float NOTIFICATION_X_OFFSET = -0.01f;
@@ -26,35 +27,8 @@ public class SuggestionBoxManager : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        Debug.Log(" suggestion box is live");
-
-        // get reference to the in-game suggestion box
-        suggestionBox = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().instantiatedSuggestionBox;
-
-		// set the first element in the dialogue pool, to be the head of queue (it MUST come first)
-		dialogueQueue.Enqueue(DialoguePool[0]);
-		DialoguePool.RemoveAt(0);
-
-        // fill up the queue in random order
-        int N = DialoguePool.Count;
-        for (int i = 0; i < N; i++)
-        {
-            int randomIndex = Random.Range(0, DialoguePool.Count);
-            dialogueQueue.Enqueue(DialoguePool[randomIndex]);
-            DialoguePool.RemoveAt(randomIndex);
-        }
-
-        // calculate position for notification button
-        Vector3 boxPos = suggestionBox.transform.position;
-        notificationPosition = new Vector3
-        {
-            x = boxPos.x + NOTIFICATION_X_OFFSET,
-            y = boxPos.y + NOTIFICATION_HEIGHT_OFFSET,
-            z = boxPos.z + 1
-        };
-
-        Debug.Log(boxPos);
-        Debug.Log(notificationPosition);
+        Debug.Log("suggestion box is live");
+        InitSuggestionBoxManager();
     }
 
     // Update is called once per frame
@@ -89,6 +63,8 @@ public class SuggestionBoxManager : MonoBehaviour {
                                     delegate ()
                                     {
                                         ProjectManager.Instance.ResumeProject();
+                                        // remove from the global queue once complete so it won't occur twice
+                                        DialoguePool.Remove(dialogue);
                                     }
                                 };
                                 
@@ -104,6 +80,8 @@ public class SuggestionBoxManager : MonoBehaviour {
                                     delegate ()
                                     {
                                         ProjectManager.Instance.ResumeProject();
+                                        // remove from the global queue once complete so it won't occur twice
+                                        DialoguePool.Remove(dialogue);
                                     }
                                 };
                             };
@@ -129,6 +107,51 @@ public class SuggestionBoxManager : MonoBehaviour {
                 Destroy(button);
             });
 
+        }
+    }
+
+    // notifies this script that it needs to update its reference to the suggestion box
+    // and reset state
+    public void SceneWasSwitched()
+    {
+        InitSuggestionBoxManager();
+        active = false;
+    }
+
+    private void InitSuggestionBoxManager()
+    {
+        dialogueQueue.Clear();
+
+        // get reference to the in-game suggestion box
+        suggestionBox = LevelManager.Instance.GetCurrentLevel().GetOfficeLayout().instantiatedSuggestionBox;
+
+        // calculate position for notification button
+        Vector3 boxPos = suggestionBox.transform.position;
+        notificationPosition = new Vector3
+        {
+            x = boxPos.x + NOTIFICATION_X_OFFSET,
+            y = boxPos.y + NOTIFICATION_HEIGHT_OFFSET,
+            z = boxPos.z + 1
+        };
+
+        if (DialoguePool.Count == 0)
+            return;
+
+        // use the copy so we don't remove scenarios that should persist when scene is changed
+        dialoguePoolCopy = new List<Dialogue>(DialoguePool);
+
+        // set the first element in the dialogue pool, to be the head of queue (it MUST come first)
+
+        dialogueQueue.Enqueue(dialoguePoolCopy[0]);
+        dialoguePoolCopy.RemoveAt(0);
+
+        // fill up the queue in random order
+        int N = dialoguePoolCopy.Count;
+        for (int i = 0; i < N; i++)
+        {
+            int randomIndex = Random.Range(0, dialoguePoolCopy.Count);
+            dialogueQueue.Enqueue(dialoguePoolCopy[randomIndex]);
+            dialoguePoolCopy.RemoveAt(randomIndex);
         }
     }
 }
