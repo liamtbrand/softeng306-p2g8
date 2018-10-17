@@ -9571,7 +9571,8 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 0.000061035156
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114328662297512956, guid: fa7c16f81aa53ad4894cf092327d4d36, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: fa7c16f81aa53ad4894cf092327d4d36, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1255135084
@@ -9806,38 +9807,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1273241085}
   m_CullTransparentMesh: 0
---- !u!4 &1278438917 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278438916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 210abc84b8ab4499297830c68607ed50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coordinateSystem: {fileID: 1278438919}
-  desks:
-  - {x: -1.5, y: 0}
-  - {x: -1.5, y: 2}
-  - {x: -3.5, y: 0}
-  - {x: -3.5, y: 2}
-  - {x: 1, y: 5}
-  - {x: -1, y: 5}
-  - {x: 1, y: 7}
-  - {x: -1, y: 7}
-  - {x: 2, y: -5.5}
-  - {x: 3, y: 2}
-  suggestionBoxPos: {x: 0, y: 0}
-  suggestionBox: {fileID: 0}
-  instantiatedDeskList: []
-  instantiatedSuggestionBox: {fileID: 0}
-  freeDesks: []
-  deskOffset: {x: 0, y: -0.05, z: 0}
-  desk: {fileID: 1628781954183574, guid: 4bf839a8aa357456cac4f12a48e87920, type: 2}
---- !u!114 &1278438919
-  m_PrefabInternal: {fileID: 63126312}
 --- !u!114 &1278438920 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114172271816957394, guid: da55e3848557345608b084287e847cac,
@@ -9857,7 +9826,7 @@ Transform:
   m_Children:
   - {fileID: 1697250579}
   - {fileID: 1853520087}
-  - {fileID: 1278438917}
+  - {fileID: 1654449343}
   m_Father: {fileID: 39933072}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11750,6 +11719,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConfirmationDisplay: {fileID: 0}
+--- !u!4 &1654449343 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac,
+    type: 2}
+  m_PrefabInternal: {fileID: 63126312}
 --- !u!1 &1677646973
 GameObject:
   m_ObjectHideFlags: 0
