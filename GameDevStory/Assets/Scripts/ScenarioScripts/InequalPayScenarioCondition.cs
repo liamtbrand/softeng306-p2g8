@@ -32,7 +32,8 @@ public class InequalPayScenarioCondition : AScenarioCondition
 		float femaleAvg = femalePaySum/femaleCount;
 
         if(Scenario.getActive() == false && DialogueManager.Instance.GetQueueSize() == 0 && !ProjectManager.Instance.IsPaused()
-		 && GameManager.Instance.getBalance() > 200 && ProjectManager.Instance.GetCurrentProject().getDifficulty().Equals(ProjectDifficulty.Hard) && femaleAvg < 0.8 * maleAvg){
+		 && GameManager.Instance.getBalance() > 200 && ProjectManager.Instance.GetCurrentProject() != null 
+         && ProjectManager.Instance.GetCurrentProject().getDifficulty().Equals(ProjectDifficulty.Hard) && femaleAvg < 0.8 * maleAvg){
 			return 0.005;
 		}else{
 			return 0;
