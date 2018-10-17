@@ -14,12 +14,15 @@ public class SuggestionBoxManager : Singleton<SuggestionBoxManager> {
     public List<Dialogue> DialoguePool; // possible dialogues that can appear
     public GameObject NotificationButton; // the button to show above the suggestion box
     public float DialogueProbability; // probability that one of the dialogues will be started
+    public float GracePeriod = 30;
 
     private GameObject suggestionBox;
     private readonly Queue<Dialogue> dialogueQueue = new Queue<Dialogue>();
     private bool active = false;
     private Vector3 notificationPosition;
     private List<Dialogue> dialoguePoolCopy; // working copy for each instance of suggestion box
+
+    private float lastScenarioTime; // holds the last time a scenario popped up
 
     private const float NOTIFICATION_HEIGHT_OFFSET = 0.14f;
     private const float NOTIFICATION_X_OFFSET = -0.01f;
@@ -29,12 +32,16 @@ public class SuggestionBoxManager : Singleton<SuggestionBoxManager> {
     void Start() {
         Debug.Log("suggestion box is live");
         InitSuggestionBoxManager();
+        lastScenarioTime = Time.realtimeSinceStartup;
     }
 
     // Update is called once per frame
     void Update() {
+
+        float time = Time.realtimeSinceStartup;
+
         // scenario will only show up if one is not already showing and the queue is non-empty
-        if (!active && dialogueQueue.Count != 0 && Random.Range(0.0f, 1.0f) < DialogueProbability)
+        if (time - lastScenarioTime > GracePeriod && !active && dialogueQueue.Count != 0 && Random.Range(0.0f, 1.0f) < DialogueProbability && !ProjectManager.Instance.IsPaused())
         {
             active = true;
 
@@ -65,6 +72,8 @@ public class SuggestionBoxManager : Singleton<SuggestionBoxManager> {
                                         ProjectManager.Instance.ResumeProject();
                                         // remove from the global queue once complete so it won't occur twice
                                         DialoguePool.Remove(dialogue);
+                                        active = false;
+                                        lastScenarioTime = Time.realtimeSinceStartup;
                                     }
                                 };
                                 
@@ -82,6 +91,8 @@ public class SuggestionBoxManager : Singleton<SuggestionBoxManager> {
                                         ProjectManager.Instance.ResumeProject();
                                         // remove from the global queue once complete so it won't occur twice
                                         DialoguePool.Remove(dialogue);
+                                        active = false;
+                                        lastScenarioTime = Time.realtimeSinceStartup;
                                     }
                                 };
                             };
@@ -101,7 +112,6 @@ public class SuggestionBoxManager : Singleton<SuggestionBoxManager> {
             Debug.Log(notificationPosition);
             button.GetComponentInChildren<Button>().onClick.AddListener(() =>
             {
-                active = false;
                 DialogueManager.Instance.StartDialogue(dialogue);
                 ProjectManager.Instance.PauseProject();
                 Destroy(button);
