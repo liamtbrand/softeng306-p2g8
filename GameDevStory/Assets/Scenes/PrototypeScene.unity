@@ -1693,6 +1693,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue1:
     Sentences:
+    - Title: Tutorial
+      icon: {fileID: 0}
+      sentenceLine: You are a manager of a new start-up. Complete projects to earn
+        money, while keeping your employees happy. The buttons in the top left can
+        be used to hire employees, upgrade your office in the shop, and leave the
+        game.
+      sentenceChoices: []
+      booleanChoices: []
+      results: []
+    - Title: Tutorial
+      icon: {fileID: 0}
+      sentenceLine: Some projects require you to have a certain number of employees
+        to complete them. When hiring employees, you may also edit your job advertisements
+        to impact who applies. Have fun!
+      sentenceChoices: []
+      booleanChoices: []
+      results: []
     - Title: Wilson MoneyBags
       icon: {fileID: 21300000, guid: df3adebd31486494d8483a82b80faf12, type: 3}
       sentenceLine: Hey there! Glad to finally hear you decided to take off with that
