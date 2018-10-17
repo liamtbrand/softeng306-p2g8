@@ -9812,7 +9812,10 @@ MonoBehaviour:
   - {x: -1, y: 7}
   - {x: 2, y: -5.5}
   - {x: 3, y: 2}
+  suggestionBoxPos: {x: 0, y: 0}
+  suggestionBox: {fileID: 0}
   instantiatedDeskList: []
+  instantiatedSuggestionBox: {fileID: 0}
   freeDesks: []
   deskOffset: {x: 0, y: -0.05, z: 0}
   desk: {fileID: 1628781954183574, guid: 4bf839a8aa357456cac4f12a48e87920, type: 2}
@@ -9869,8 +9872,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1697250579}
-  - {fileID: 1278438917}
   - {fileID: 1853520087}
+  - {fileID: 1278438917}
   m_Father: {fileID: 39933072}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12306,12 +12309,17 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12330,6 +12338,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[0].results.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[4].results.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[3].results.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[2].results.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[1].results.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].booleanChoices.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -12342,6 +12375,26 @@ Prefab:
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[4].booleanChoices.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[3].booleanChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[4].booleanChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[2].booleanChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[1].booleanChoices.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4351696334592536, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
       propertyPath: m_LocalPosition.x
@@ -12579,6 +12632,196 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[4].results.Array.data[1]
+      value: A short-term smart decision, but long-term a business kamikaze. Wilson
+        MoneyBags has given your company a bad reputation. Be careful who you associate
+        with; your vibe attracts your tribe.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[0].Title
+      value: Anonymous Employee 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[0].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[0].sentenceLine
+      value: "I swear I keep getting problems with this one issue that was supposed
+        to be resolved. I thought the tester was supposed to have finished that? If
+        it weren\u2019t for the pay, I wouldn\u2019t stay in this damn job I swear."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[1].Title
+      value: Anonymous Employee 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[1].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 556121e2f27544df9a40a7ce4dada581,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[1].sentenceLine
+      value: "It\u2019s been a couple days now and I simply can\u2019t progress with
+        my work, until the software team lead is done with their section. This is
+        outrageous, and if this continues, I might just leave the company, there\u2019s
+        no point working in conditions like this. We need more employees with better
+        communication skills."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[2].Title
+      value: Your Response
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[2].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[2].sentenceLine
+      value: How will you respond? You can choose to let this problem brew, and hope
+        it doesn't escalate into something greater. Or, you can address it straight
+        away, and potentially have someone leave the company.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[3].Title
+      value: Outcome
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[3].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[3].sentenceLine
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[3].booleanChoices.Array.data[0].isCorrectChoice
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[3].booleanChoices.Array.data[0].sentenceChoice
+      value: I will pledge some money to charity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[3].booleanChoices.Array.data[1].sentenceChoice
+      value: I will keep the profit, for the company's sake.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[4].Title
+      value: Outcome
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[4].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[4].booleanChoices.Array.data[0].sentenceChoice
+      value: I will pledge some money to charity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[4].booleanChoices.Array.data[1].sentenceChoice
+      value: I will keep the profit, for the company's sake.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[4].results.Array.data[0]
+      value: A difficult, but a well-made choice. Letting go of financial aid is hard,
+        but if it's for the sake of moral consistency, then you're doing right by
+        yourself and your company. Your loss of capital for now is $300, but you'll
+        be able to make it back in time, don't worry.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[4].results.Array.data[1]
+      value: A short-term smart decision, but long-term a business kamikaze. Wilson
+        MoneyBags has given your company a bad reputation. Be careful who you associate
+        with; your vibe attracts your tribe.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].RewardAmount
+      value: -300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].PenaltyAmount
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[2].booleanChoices.Array.data[0].isCorrectChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[2].booleanChoices.Array.data[0].sentenceChoice
+      value: Address the problem with your employees.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[2].booleanChoices.Array.data[1].sentenceChoice
+      value: Leave it, and hope it doesn't escalate.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[3].results.Array.data[0]
+      value: 'By addressing the problem, '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[3].results.Array.data[1]
+      value: Unfortunately the problem escalated, and one of your employees threatened
+        to leave. To keep them in the company, you had to pay them out the hefty sum
+        of $150.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[1].booleanChoices.Array.data[0].isCorrectChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[1].booleanChoices.Array.data[0].sentenceChoice
+      value: Drop Wilson, and continue to have Diversity Scheme.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[1].booleanChoices.Array.data[1].sentenceChoice
+      value: Keep the investor, but give up any Diversity Scheme.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[2].results.Array.data[0]
+      value: A difficult, but a well-made choice. Letting go of financial aid is hard,
+        but if it's for the sake of moral consistency, then you're doing right by
+        yourself and your company. Your loss of capital for now is $300, but you'll
+        be able to make it back in time, don't worry.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[2].results.Array.data[1]
       value: A short-term smart decision, but long-term a business kamikaze. Wilson
         MoneyBags has given your company a bad reputation. Be careful who you associate
         with; your vibe attracts your tribe.
