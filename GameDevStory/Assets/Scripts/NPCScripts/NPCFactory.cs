@@ -38,8 +38,8 @@ public class NPCFactory : Singleton<NPCFactory> {
     public float FemalePayMultiplier = 0.75f;
 
     // fields defining the range of values for the NPC costs
-    public int MinEmployeeCost = 50;
-    public int MaxEmployeeCost = 100;
+    public readonly int MinEmployeeCost = 50;
+    public readonly int MaxEmployeeCost = 100;
 
     public double NumberOfFemales = 0;
     public int FemaleCount = 0;                 // Remember how many females we
@@ -151,8 +151,14 @@ public class NPCFactory : Singleton<NPCFactory> {
 
         // each of the stats is worth an equal amount, and when added together must be within the
         // range of potential employee costs
-        float minStatCost = MinEmployeeCost / 5;
-        float maxStatCost = MaxEmployeeCost / 5;
+        float minStatCost = MinEmployeeCost / 5f;
+        float maxStatCost = MaxEmployeeCost / 5f;
+
+        int npcCount = NPCController.Instance.NpcInstances.Count;
+        float multiplier = (npcCount / 50f) + 1;
+
+        minStatCost *= multiplier;
+        maxStatCost *= multiplier;
 
         NPCStats stats = npc.Stats;
 
