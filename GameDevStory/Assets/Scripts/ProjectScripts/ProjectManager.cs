@@ -8,6 +8,7 @@ using ProjectScripts;
 using UnityEditor.Experimental.UIElements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 // Handles projects
@@ -19,10 +20,12 @@ public class ProjectManager : Singleton<ProjectManager>
     public GameObject projectMenu;
 
     public Dictionary<string, Project> projects; // Making non static to fix replayability issues
-    public string selectedProject;
+    public string SelectedProject;
     public Button DisplayButton;
     public Button DescriptionCloseButton;
     public Button ProjectCompletedButton;
+
+    public GameObject[] ObjectsToMonitor;
 
     void Start()
     {
@@ -109,14 +112,14 @@ public class ProjectManager : Singleton<ProjectManager>
     public void StartProject(string project)
     {
         // Remove project menu from display
-        selectedProject = project;
+        SelectedProject = project;
         projectMenu.SetActive(false);
         displayScript.ClearAllProjects();
 
         // Start project progress timer
         timerScript.enabled = true;
         Debug.Log("Timer script enabled");
-        timerScript.DisplayCurrentProject(selectedProject);
+        timerScript.DisplayCurrentProject(SelectedProject);
 
         // If you want to test the pausing functionality (pauses after 3s)
         //Invoke("PauseProject", 5f);
@@ -133,19 +136,23 @@ public class ProjectManager : Singleton<ProjectManager>
     // Resumes the work on a project
     public void ResumeProject()
     {
+        foreach (var obj in ObjectsToMonitor)
+        {
+            if (obj.activeInHierarchy) return;
+        }
         timerScript.Resume();
     }
 
     // Returns current project object
     public Project GetCurrentProject()
     {
-        return projects != null && projects.ContainsKey(selectedProject) ? projects[selectedProject] : null;
+        return projects != null && projects.ContainsKey(SelectedProject) ? projects[SelectedProject] : null;
 
     }
 
     public void DisplayProjectDescription()
     {
-        Project current = projects[selectedProject];
+        var current = projects[SelectedProject];
         displayScript.ProjectDescription(
             current.getTitle(),
             current.getCompany(),
@@ -171,17 +178,17 @@ public class ProjectManager : Singleton<ProjectManager>
         var bugsMissed = timerScript.GetBugsMissed();
         Debug.Log("Bugs Missed: " + bugsMissed);
 
-        var completedProject = projects[selectedProject];
+        var completedProject = projects[SelectedProject];
 
         // Update project menu
-        UpdateProjectMenu(selectedProject);
+        UpdateProjectMenu(SelectedProject);
 
         var diversityScore = StaffDiversityManager.Instance.DiversityScore;
         // Calculate project profit
         var profit = CalculateProjectProfit(completedProject, bugsMissed, diversityScore);
 
         // Get project feedback
-        var feedback = GetProjectFeedback(selectedProject);
+        var feedback = GetProjectFeedback(SelectedProject);
 
         // Show project completion display
         displayScript.ProjectCompleted(profit, feedback);
@@ -277,7 +284,7 @@ public class ProjectManager : Singleton<ProjectManager>
     // Updates the project menu
     void UpdateProjectMenu(string project)
     {
-        ProjectDifficulty difficulty = projects[selectedProject].getDifficulty();
+        ProjectDifficulty difficulty = projects[SelectedProject].getDifficulty();
         projects.Remove(project);
 
         // Check if finished all projects of the same difficulty

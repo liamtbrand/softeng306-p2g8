@@ -9812,7 +9812,10 @@ MonoBehaviour:
   - {x: -1, y: 7}
   - {x: 2, y: -5.5}
   - {x: 3, y: 2}
+  suggestionBoxPos: {x: 0, y: 0}
+  suggestionBox: {fileID: 0}
   instantiatedDeskList: []
+  instantiatedSuggestionBox: {fileID: 0}
   freeDesks: []
   deskOffset: {x: 0, y: -0.05, z: 0}
   desk: {fileID: 1628781954183574, guid: 4bf839a8aa357456cac4f12a48e87920, type: 2}
@@ -9869,8 +9872,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1697250579}
-  - {fileID: 1278438917}
   - {fileID: 1853520087}
+  - {fileID: 1278438917}
   m_Father: {fileID: 39933072}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11739,10 +11742,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectMenu: {fileID: 2039450369}
-  selectedProject: 
+  SelectedProject: 
   DisplayButton: {fileID: 69273504}
   DescriptionCloseButton: {fileID: 1908992281}
   ProjectCompletedButton: {fileID: 913224114}
+  ObjectsToMonitor:
+  - {fileID: 2133209319}
+  - {fileID: 238724954}
+  - {fileID: 2039450369}
+  - {fileID: 1394559177}
+  - {fileID: 1886128330}
+  - {fileID: 1117076622}
+  - {fileID: 840099622}
 --- !u!114 &1654320305
 MonoBehaviour:
   m_ObjectHideFlags: 0
