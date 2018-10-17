@@ -54,12 +54,13 @@ MonoBehaviour:
   npcName: Katrina
   age: 59
   gender: 1
-  biography: 'I am passionate about speech recognition technologies and cultural diversity.
+  biography: I am passionate about speech recognition technologies and cultural diversity.
     My research has involved training recognition algorithms. I believe everyone deserves
-    to enjoy ground-breaking technology, not just those in the majority. '
+    to enjoy ground-breaking technology, not just those in the majority.
   animationController: {fileID: 22100000, guid: acd6cb4bb5d944fa1880ecb2ed0acacb,
     type: 2}
   cost: 85
   costThreshold: 66
+  ammountPaidFor: 0
   negotiationFrustration: 0
   headshot: {fileID: 21300000, guid: e859a712a184a4e2884fa0d43d5d7421, type: 3}

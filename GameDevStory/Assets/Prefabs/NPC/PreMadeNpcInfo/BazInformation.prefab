@@ -56,10 +56,13 @@ MonoBehaviour:
   gender: 0
   biography: My general goal is to understand the meaning of data, and to investigate
     how this meaning can be modeled and enforced effectively and efficiently in database
-    systems. This will help with the processing of data, the discovery of information
-    from the data, and with the creation of new knowledge.
+    systems. This will help with the processing of data, the analysis of insights
+    given from within the nuances of the data, and with the leveraging of such analysis
+    to benefit the greater good.
   animationController: {fileID: 22100000, guid: 734bf8952e4845f45bde39dfd7dcfddf,
     type: 2}
   cost: 65
   costThreshold: 63
+  ammountPaidFor: 0
+  negotiationFrustration: 0
   headshot: {fileID: 21300000, guid: 4cf04969af05eb74985ea52898f0925f, type: 3}

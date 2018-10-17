@@ -55,10 +55,15 @@ MonoBehaviour:
   age: 36
   gender: 1
   biography: 'I love developing quality software and eating great food. I think I
-    can bring valuable technical and design skills to the job. '
+    can bring valuable technical and design skills to the job.
+
+
+    I appreciate Agile and Lean Development in Software, and dislike anyone who supports
+    old methodologies like the Waterfall Model.'
   animationController: {fileID: 22100000, guid: b2847bd3e0a41489bb790c108c7d6e5d,
     type: 2}
   cost: 72
   costThreshold: 66
+  ammountPaidFor: 0
   negotiationFrustration: 0
   headshot: {fileID: 21300000, guid: f228883466e37478cb18ae2c635af1c8, type: 3}
