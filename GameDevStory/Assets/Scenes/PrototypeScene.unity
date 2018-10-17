@@ -1694,7 +1694,7 @@ MonoBehaviour:
   dialogue1:
     Sentences:
     - Title: Tutorial
-      icon: {fileID: 0}
+      icon: {fileID: 21300000, guid: f4cd1a23395a449efa07a890d062941a, type: 3}
       sentenceLine: You are a manager of a new start-up. Complete projects to earn
         money, while keeping your employees happy. The buttons in the top left can
         be used to hire employees, upgrade your office in the shop, and leave the
@@ -1703,7 +1703,7 @@ MonoBehaviour:
       booleanChoices: []
       results: []
     - Title: Tutorial
-      icon: {fileID: 0}
+      icon: {fileID: 21300000, guid: f4cd1a23395a449efa07a890d062941a, type: 3}
       sentenceLine: Some projects require you to have a certain number of employees
         to complete them. When hiring employees, you may also edit your job advertisements
         to impact who applies. Have fun!
