@@ -114,6 +114,8 @@ MonoBehaviour:
         you get an extra $150 from additional productivity.
       - Unfortunately that was a bad decision. The employee in question became upset,
         and because of a loss in productivity, you have lost $150.
+    RewardAmount: 100
+    PenaltyAmount: 100
   - Sentences:
     - Title: Anonymous New Employee
       icon: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
@@ -154,6 +156,8 @@ MonoBehaviour:
       - Your decision to acknowledge but not address the problem, has negatively affected
         the performance of your company, and gave you a temporary bad look. You've
         lost a little money because of this.
+    RewardAmount: 250
+    PenaltyAmount: 250
   - Sentences:
     - Title: Anonymous Employee
       icon: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
@@ -163,7 +167,9 @@ MonoBehaviour:
         plenty that have been approaching us. '
       sentenceChoices: []
       booleanChoices: []
-      results: []
+      results:
+      - 
+      - 
     - Title: Anonymous Employee
       icon: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4, type: 3}
       sentenceLine: I think it would be a good usage of extra profit, and show that
@@ -199,8 +205,8 @@ MonoBehaviour:
       - Your choice was very business-minded, unfortunately your employees didn't
         really like it. Due to a sense of unease in the company, productivity has
         dropped slightly, and you've lost some revenue as a result.
-  RewardAmount: 150
-  PenaltyAmount: 150
+    RewardAmount: 400
+    PenaltyAmount: 400
   NotificationButton: {fileID: 1620553512249654, guid: 56107d701350da349af1b138d0348e36,
     type: 2}
   DialogueProbability: 1

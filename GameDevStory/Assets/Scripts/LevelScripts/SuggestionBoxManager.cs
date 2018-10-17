@@ -12,8 +12,6 @@ public class SuggestionBoxManager : MonoBehaviour {
 
     public Sprite AnonymousHeadShot;
     public List<Dialogue> DialoguePool; // possible dialogues that can appear
-    public double RewardAmount; // reward if player makes correct choice
-    public double PenaltyAmount; // penalty if player makes incorrect choice
     public GameObject NotificationButton; // the button to show above the suggestion box
     public float DialogueProbability; // probability that one of the dialogues will be started
 
@@ -74,7 +72,7 @@ public class SuggestionBoxManager : MonoBehaviour {
                 // assuming that there are exactly two options
                 if (s.booleanChoices.Length != 0)
                 {
-                    s.sentenceChoiceActions = new UnityEngine.Events.UnityAction[2];
+                    s.sentenceChoiceActions = new UnityAction[2];
                     s.sentenceChoices = new string[2];
                     // set the sentence choices and their actions depending if they were correct or incorrect
                     for (int i = 0; i < 2; i++)
@@ -83,7 +81,7 @@ public class SuggestionBoxManager : MonoBehaviour {
                         if (s.booleanChoices[i].isCorrectChoice)
                             s.sentenceChoiceActions[i] = delegate ()
                             {
-                                GameManager.Instance.changeBalance(RewardAmount);
+                                GameManager.Instance.changeBalance(dialogue.RewardAmount);
                                 Sentence outcome = dialogue.Sentences[dialogue.Sentences.Length - 1];
 							    outcome.sentenceLine = dialogue.Sentences[dialogue.Sentences.Length - 1].results[0];
                                 outcome.sentenceChoices = new string[] { "Okay" };
@@ -98,7 +96,7 @@ public class SuggestionBoxManager : MonoBehaviour {
                         else
                             s.sentenceChoiceActions[i] = delegate ()
                             {
-                                GameManager.Instance.changeBalance(-1 * PenaltyAmount);
+                                GameManager.Instance.changeBalance(-1 * dialogue.PenaltyAmount);
                                 Sentence outcome = dialogue.Sentences[dialogue.Sentences.Length - 1];
                                 outcome.sentenceLine = dialogue.Sentences[dialogue.Sentences.Length - 1].results[1];
                                 outcome.sentenceChoices = new string[] { "Okay" };
