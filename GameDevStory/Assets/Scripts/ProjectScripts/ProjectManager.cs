@@ -277,7 +277,7 @@ public class ProjectManager : Singleton<ProjectManager>
         
         // DiversityStore DECREASES with INCREASED diversity
         // BugPenalty INCREASES with more bugs
-        return Convert.ToInt32((baseValue) * (1 - (diversityScore*0.2)) * (1 - bugPenalty*0.2) * (1 - npcStatPenalty*0.3));
+        return Convert.ToInt32((baseValue) * (1 - (diversityScore*0.3)) * (1 - bugPenalty*0.4) * (1 - npcStatPenalty*0.3));
     }
 
     // Updates the project menu
