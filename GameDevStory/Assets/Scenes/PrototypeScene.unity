@@ -11714,10 +11714,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectMenu: {fileID: 2039450369}
-  selectedProject: 
+  SelectedProject: 
   DisplayButton: {fileID: 69273504}
   DescriptionCloseButton: {fileID: 1908992281}
   ProjectCompletedButton: {fileID: 913224114}
+  ObjectsToMonitor: []
 --- !u!114 &1654320305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13443,6 +13444,11 @@ Prefab:
         type: 2}
       propertyPath: DialoguePool.Array.data[9].PenaltyAmount
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialogueProbability
+      value: 0.00075
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
