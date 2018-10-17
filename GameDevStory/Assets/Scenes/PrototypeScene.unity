@@ -1029,12 +1029,12 @@ Prefab:
     - target: {fileID: 224333707988064256, guid: a7e5294496f2a9e4f92f1d898a6584d4,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 7.4999847
+      value: 7.4999695
       objectReference: {fileID: 0}
     - target: {fileID: 224454100252124598, guid: a7e5294496f2a9e4f92f1d898a6584d4,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 7.4999847
+      value: 7.4999695
       objectReference: {fileID: 0}
     - target: {fileID: 114056253886600062, guid: a7e5294496f2a9e4f92f1d898a6584d4,
         type: 2}
@@ -9816,61 +9816,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4157529801183508, guid: da55e3848557345608b084287e847cac,
     type: 2}
   m_PrefabInternal: {fileID: 63126312}
---- !u!114 &1278438920 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114172271816957394, guid: da55e3848557345608b084287e847cac,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278438916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 210abc84b8ab4499297830c68607ed50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coordinateSystem: {fileID: 1278438919}
-  desks:
-  - {x: -1.5, y: 0}
-  - {x: -1.5, y: 2}
-  - {x: -3.5, y: 0}
-  - {x: -3.5, y: 2}
-  - {x: 1, y: 5}
-  - {x: -1, y: 5}
-  - {x: 1, y: 7}
-  - {x: -1, y: 7}
-  - {x: 2, y: -5.5}
-  - {x: 3, y: 2}
-  suggestionBoxPos: {x: 0, y: 0}
-  suggestionBox: {fileID: 0}
-  instantiatedDeskList: []
-  instantiatedSuggestionBox: {fileID: 0}
-  freeDesks: []
-  deskOffset: {x: 0, y: -0.05, z: 0}
-  desk: {fileID: 1628781954183574, guid: 4bf839a8aa357456cac4f12a48e87920, type: 2}
---- !u!114 &1278438919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114678729140730434, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278438916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9d0bab254124ad494cd36c1b0fb3a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  origin: {x: 0, y: 0.04, z: -50}
-  x: {x: -0.16, y: -0.08, z: -1}
-  y: {x: 0.16, y: -0.08, z: -1}
 --- !u!114 &1278438920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 114714749044859598, guid: 7dbe0fee322f3c743966ee1d83a7fc06,
     type: 2}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278438916}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89f9917fb8099944096d12baa4a92bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  officeLayout: {fileID: 0}
+  background: {fileID: 0}
+  setupScript: {fileID: 0}
 --- !u!4 &1290423736
 Transform:
   m_ObjectHideFlags: 0
@@ -10580,7 +10540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.67, y: 0.5}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.4999237, y: 0}
+  m_AnchoredPosition: {x: 7.4999084, y: 0}
   m_SizeDelta: {x: -15, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1450139819 stripped
@@ -12320,7 +12280,7 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12335,6 +12295,16 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[5].Sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
@@ -12394,6 +12364,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[0].results.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[1].results.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[0].results.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[1].results.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[2].booleanChoices.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -12445,6 +12435,26 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[5].Sentences.Array.data[1].booleanChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[0].booleanChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[1].booleanChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[0].booleanChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[1].booleanChoices.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
@@ -13020,12 +13030,12 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[5].Sentences.Array.data[1].booleanChoices.Array.data[0].sentenceChoice
-      value: Your friend has nothing to worry about
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[5].Sentences.Array.data[1].booleanChoices.Array.data[1].sentenceChoice
-      value: Absolutely. Choose wisely.
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -13039,6 +13049,156 @@ Prefab:
       propertyPath: DialoguePool.Array.data[5].Sentences.Array.data[1].results.Array.data[1]
       value: Word got out that your company doesn't support parental leave. You've
         been fined $200 for discriminatory practices.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[0].Title
+      value: Anonymous Employee
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[0].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[0].sentenceLine
+      value: My last workplace had free tea and coffee for employees. Is there any
+        chance we could receive some sort of amenities in the workplace?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[0].booleanChoices.Array.data[0].isCorrectChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[0].booleanChoices.Array.data[0].sentenceChoice
+      value: Yes, of course!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[0].booleanChoices.Array.data[1].sentenceChoice
+      value: Definitely not. That's a waste of money.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[1].Title
+      value: Outcome
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[1].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[1].booleanChoices.Array.data[0].isCorrectChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[1].booleanChoices.Array.data[0].sentenceChoice
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[1].booleanChoices.Array.data[1].sentenceChoice
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[1].results.Array.data[0]
+      value: Your employees have become more productive, converting caffeine into
+        code.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].Sentences.Array.data[1].results.Array.data[1]
+      value: 'Your employees are getting tired during the day. 404: Java not found.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].RewardAmount
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[6].PenaltyAmount
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[0].Title
+      value: Anonymous Employee
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[0].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 932b2a48f27373147878f617674807e4,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[0].sentenceLine
+      value: I've been getting really tired in the morning and I find I am always
+        much more productive later in the day. Are we able to get more flexible work
+        hours?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[0].booleanChoices.Array.data[0].isCorrectChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[0].booleanChoices.Array.data[0].sentenceChoice
+      value: Of course, that's no problem at all.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[0].booleanChoices.Array.data[1].sentenceChoice
+      value: Definitely not. Employees should be punctual.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[1].Title
+      value: Outcome
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[1].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: a200e220f93a84fa4ac1795403c19cef,
+        type: 3}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[1].booleanChoices.Array.data[0].isCorrectChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[1].results.Array.data[0]
+      value: Employee work is in sync with their circadian rhythms. Increased productivity
+        has granted you an extra $250.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].Sentences.Array.data[1].results.Array.data[1]
+      value: Employees are out of sync with their circadian rhythms. This has resulted
+        in a loss of productivity. You've lost $100.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].RewardAmount
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[7].PenaltyAmount
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f53236fc301e5b40b470b29fb8647be, type: 2}
@@ -14656,7 +14816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.67, y: 0.10234356}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 7.4999237, y: -0.5}
+  m_AnchoredPosition: {x: 7.4999084, y: -0.5}
   m_SizeDelta: {x: -15, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1908992281 stripped
