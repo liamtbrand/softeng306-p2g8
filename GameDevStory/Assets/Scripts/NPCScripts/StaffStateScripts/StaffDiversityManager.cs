@@ -20,7 +20,7 @@ namespace NPCScripts.StaffStateScripts
         private const double ScoreGrowRate = 0.1;
 
         private const double GenderDialogueThreshold = -10;
-        private const double AgeDialogueThreshold = -10;
+        private const double AgeDialogueThreshold = -12;
 
         private const double NormalRecovery = -2;
         private const double IgnoreRecovery = -5;
@@ -230,7 +230,7 @@ namespace NPCScripts.StaffStateScripts
                 case StaffMentalState.State.NORMAL:
                     sentence = npc.Attributes.npcName + " thinks the office is boring. " + GetPronoun(npc, true) +
                                " feels out of place.\n" +
-                               "Hire some like-minded coworkers to improve their mood.";
+                               "Hire some coworkers with the same demographic to improve their mood.";
                     nextState = StaffMentalState.State.ANNOYED;
                     choices = new string[]
                     {
@@ -238,7 +238,8 @@ namespace NPCScripts.StaffStateScripts
                     };
                     break;
                 case StaffMentalState.State.ANNOYED:
-                    sentence = npc.Attributes.npcName + " doesn't know many people here and feels lonely.\n" +
+                    var similar_annoyed = isAgeDialogue ? "a similar age" : "the same gender";
+                    sentence = npc.Attributes.npcName + " doesn't know many people here and feels lonely, as there aren't many others with "+similar_annoyed+"." +
                                "Encourage your employees to get to know " + GetPronoun(npc, false).ToLower() +
                                " by hosting a pizza party.";
                     nextState = StaffMentalState.State.ABOUT_TO_LEAVE;
@@ -323,7 +324,7 @@ namespace NPCScripts.StaffStateScripts
         private void Update()
         {
             _update += Time.deltaTime;
-            if (!(_update > 2.5f) || ProjectManager.Instance.IsPaused()) return;
+            if (!(_update > 3f) || ProjectManager.Instance.IsPaused()) return;
             // run every 5 seconds
             _update = 0.0f;
             RecalculateMentalState(NPCController.Instance.NpcInstances);
