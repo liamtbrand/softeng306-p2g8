@@ -20,7 +20,7 @@ namespace NPCScripts.StaffStateScripts
         private const double ScoreGrowRate = 0.1;
 
         private const double GenderDialogueThreshold = -10;
-        private const double AgeDialogueThreshold = -15;
+        private const double AgeDialogueThreshold = -10;
 
         private const double NormalRecovery = -2;
         private const double IgnoreRecovery = -5;
@@ -323,7 +323,7 @@ namespace NPCScripts.StaffStateScripts
         private void Update()
         {
             _update += Time.deltaTime;
-            if (!(_update > 3.0f) || ProjectManager.Instance.IsPaused()) return;
+            if (!(_update > 2.5f) || ProjectManager.Instance.IsPaused()) return;
             // run every 5 seconds
             _update = 0.0f;
             RecalculateMentalState(NPCController.Instance.NpcInstances);
