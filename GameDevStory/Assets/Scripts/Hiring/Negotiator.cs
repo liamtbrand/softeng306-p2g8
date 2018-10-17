@@ -125,6 +125,9 @@ public class Negotiator : MonoBehaviour
                             Debug.Log(string.Format("{0} has accepted your offer, they have now joined the team!", npc.Attributes.npcName));
                             npc.IsAvailableForHire = false;
                             HiringDisplay.GetComponent<HiringDisplayManager>().ShowHiringGrid();
+                            HiringDisplay.GetComponent<HiringDisplayManager>().CloseHiringGrid();
+                            HiringDisplay.GetComponent<HiringDisplayManager>().ShowHiringMenu();
+                            
                         }
                     }
                 }
