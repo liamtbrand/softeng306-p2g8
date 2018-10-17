@@ -3,6 +3,9 @@ Find our releases in the releases tab. This will let you see the state of the re
 
 To install the APK, simply run it on your phone, and click install.
 
+For testing reasons a cheat exists to gain large amounts of money.
+To do this, in the item shop, click on the "Upgrade your Office" title text 11 times.
+
 More documentation for each release (i.e. known bugs) are shown with each release.
 
 ### Team Members
