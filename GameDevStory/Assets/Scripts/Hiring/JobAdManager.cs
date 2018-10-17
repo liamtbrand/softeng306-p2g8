@@ -9,6 +9,7 @@ public class JobAdManager : MonoBehaviour {
     
     // The job advertisement screen to be shown
     public GameObject jobAdEditor;
+    public GameObject sendButton;
 
     private List<string> feminineWords = new List<string>() {
         "community of engineers", 
@@ -36,6 +37,11 @@ public class JobAdManager : MonoBehaviour {
     // Display the job advertisement editor
     public void ShowEditor()
     {
+        if (GameManager.Instance.getBalance() <= 80) {
+            sendButton.GetComponent<Button>().interactable = false;
+        } else {
+            sendButton.GetComponent<Button>().interactable = true;
+        }
         jobAdEditor.SetActive(true);
     }
 
