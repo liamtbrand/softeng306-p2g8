@@ -12879,7 +12879,9 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[3].results.Array.data[0]
-      value: 'By addressing the problem, '
+      value: By addressing the problem, you prevented the situation from getting out
+        of hand, early.  This however required some counselling services to come into
+        the workplace, with administration fees being billed to you.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
