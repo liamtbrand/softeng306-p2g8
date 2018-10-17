@@ -4069,7 +4069,7 @@ Prefab:
     - target: {fileID: 224935326972726722, guid: e4079cbbcc5773145a09a9a978e9fa0a,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 3.8120623
+      value: 3.3118804
       objectReference: {fileID: 0}
     - target: {fileID: 224935326972726722, guid: e4079cbbcc5773145a09a9a978e9fa0a,
         type: 2}
@@ -12537,14 +12537,14 @@ Prefab:
       propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].results.Array.data[0]
       value: Because of your positive attitude, and great amount of honesty with your
         new employee, they doubled down on their first week of work, and earnt you
-        $250! Nice!
+        $80! Nice!
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[1].Sentences.Array.data[3].results.Array.data[1]
       value: Your decision to acknowledge but not address the problem, has negatively
         affected the performance of your company, and gave you a temporary bad look.
-        You've lost a pretty penny because of this ($250).
+        You've lost a pretty penny because of this ($50).
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12557,7 +12557,7 @@ Prefab:
       value: Your choice was very business-minded, unfortunately your employees didn't
         really like it. Due to a sense of unease in the company, productivity has
         dropped slightly, and you've lost some revenue as a result. Word spread of
-        your selfishness, and demand went down quite a lot ($400).
+        your selfishness, and demand went down quite a lot ($80).
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12670,12 +12670,12 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].RewardAmount
-      value: -300
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[3].PenaltyAmount
-      value: 400
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12718,7 +12718,7 @@ Prefab:
       propertyPath: DialoguePool.Array.data[3].Sentences.Array.data[4].results.Array.data[0]
       value: A difficult, but a well-made choice. Letting go of financial aid is hard,
         but if it's for the sake of moral consistency, then you're doing right by
-        yourself and your company. Your loss of capital for now is $300, but you'll
+        yourself and your company. Your loss of capital for now is $60, but you'll
         be able to make it back in time, don't worry.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
@@ -12854,12 +12854,12 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[4].RewardAmount
-      value: -300
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[4].PenaltyAmount
-      value: 400
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -12886,7 +12886,7 @@ Prefab:
       propertyPath: DialoguePool.Array.data[4].Sentences.Array.data[3].results.Array.data[1]
       value: Unfortunately the problem escalated, and one of your employees threatened
         to leave. To keep them in the company, you had to pay them out the hefty sum
-        of $150.
+        of $80.
       objectReference: {fileID: 0}
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
@@ -13314,6 +13314,26 @@ Prefab:
     - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
         type: 2}
       propertyPath: DialoguePool.Array.data[8].PenaltyAmount
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[1].RewardAmount
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[1].PenaltyAmount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].RewardAmount
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750414520323782, guid: 3f53236fc301e5b40b470b29fb8647be,
+        type: 2}
+      propertyPath: DialoguePool.Array.data[2].PenaltyAmount
       value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
